@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2017
-lastupdated: "2017-09-26"
+  years: 2017, 2018
+lastupdated: "2018-01-16"
 ---
 
 {:shortdesc: .shortdesc}
@@ -9,23 +9,30 @@ lastupdated: "2017-09-26"
 {:tip: .tip}
 
 
-# Using Red Hat Cloud Access 
+# Using your own OS license or subscription 
 
-When you create an image template with a VHD image, you can select to provide your own operating system license through the [Red Hat Cloud 
-Access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) subscription.
+When you create an image template with a VHD image, you can select to provide your own RHEL operating system license through the [Red Hat Cloud Access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) subscription or a Windows license through the Microsoft Enterprise Agreement.
 {:shortdesc}
 
-If you deploy an image in {{site.data.keyword.BluSoftlayer_full}} that indicates you are using your own license through Red Hat Cloud Access, the following support terms exist:
+If you deploy an image in {{site.data.keyword.BluSoftlayer_full}} that indicates you are using your own license, the following support terms exist:
 * IBM provides support for hypervisors, provisioning instances, importing images, rebooting an image, reloading an OS, and capturing an image.
-* Red Hat provides support for the image itself. IBM does not provide support for the image.
+* The company that you purchase the operating system license from provides support for the image itself. IBM does not provide support for the image.
 
+When you provide your own license for an image, the following restrictions apply to the image:
+* The image is a private image. It cannot be shared publicly.
+* The image cannot have any software add-ons included. Additional software must be added after the image is provisioned.
+
+## Using Red Hat Cloud Access
 For more information about our certification as a Red Hat Enterprise Linux cloud provider, see [Infrastructure as a Service (Iaas) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://access.redhat.com/ecosystem/cloud-provider/2262101).
+
+## Using your own Windows license
+If you have questions about your existing Windows license eligibility or understanding reporting requirements, contact your Microsoft representative. When you create an image template that specifies that you are using your own Windows license, you must provision that image on a dedicated host. You cannot provision a public instance or a dedicated instance that is auto-assigned to a host when you use an image that indicates that you are using your own Windows license. Additionally, when you create or update a Windows image template that specifies that you are using your own license, the Windows image cannot be a cloud-init image.
 
 ## Importing an image that designates your own license
 
-You can import a VHD image and specify that you will provide your own license or subscription for the operating system.
+You can import a VHD image and specify that you are providing your own license or subscription for the operating system.
 
-To access the Import Image page of Image Templates and mark a VHD image to use your own RHEL operating system license, complete the following steps:
+To access the Import Image page of Image Templates and mark a VHD image to use your own license or subscription, complete the following steps:
 1. From the **Devices** menu select **Manage > Images**.
 2. Click the **Import Image** tab.
 3. Complete the required information for importing your VHD image, and select the **Your License** checkbox that’s shown near the **Operating System** 
@@ -35,7 +42,7 @@ dropdown box. For more information about importing images, see [Preparing and im
 
 If you have an existing VHD image template, you can specify that you want to provide your own license or subscription for the operating system.
 
-To access an image template and designate that it use your own existing RHEL license, complete the following steps:
+To access an image template and designate that it use your own existing license or subscription, complete the following steps:
 1. From the **Devices** menu select **Manage > Images**.
 2. From the list of templates, click the image template name that you want to update.
 3. On the Image Template Details page, select the **User Provided** checkbox under the **OS License** heading, and click **Update**.
