@@ -26,6 +26,11 @@ When you provide your own license for an image, the following restrictions apply
 For more information about our certification as a Red Hat Enterprise Linux cloud provider, see [Infrastructure as a Service (Iaas) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://access.redhat.com/ecosystem/cloud-provider/2262101).
 
 ## Using your own Windows license
+The following operating systems are supported:
+* Windows Server 2016
+* Windows Server 2012
+* Windows Server 2012 R2
+
 If you have questions about your existing Windows license eligibility or understanding reporting requirements, contact your Microsoft representative. When you create an image template that specifies that you are using your own Windows license, you must provision that image on a dedicated host. You cannot provision a public instance or a dedicated instance that is auto-assigned to a host when you use an image that indicates that you are using your own Windows license. Additionally, when you create or update a Windows image template that specifies that you are using your own license, the Windows image cannot be a cloud-init image.
 
 ## Importing an image that designates your own license
