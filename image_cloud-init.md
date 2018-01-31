@@ -29,6 +29,8 @@ software, post-provisioning scripts, or advanced monitoring.
 * Windows Server 2012 R2
 * Windows Server 2016
 
+When you order a virtual server with a cloud-init enabled operating system, you can add user data or metadata with custom provisioning scripts. In the User Data field on the order form, enter optional cloud-init user data or optional metadata for the server. 
+
 ## Import a customized cloud-init enabled image
 
 If you’ve created a customized image that’s cloud-init enabled, you can designate it as a cloud-init image on the Import Image page of 
