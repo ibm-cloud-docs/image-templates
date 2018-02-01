@@ -1,6 +1,6 @@
 ---
 copyright:
-  years: 2017
+  years: 2014, 2018
 lastupdated: "2017-10-27"
 ---
 
@@ -31,5 +31,5 @@ After you export an image, the image remains in the list of image templates, but
 location that was specified during the export process. For more information about viewing a file that was
 exported to an Object Storage Account, see [Viewing and Editing Object Storage File Details](/docs/infrastructure/objectstorage-swift/view-and-edit-object-storage-file-details.html). Because each image is a different size and has different characteristics, the export process might 
 take several minutes before it completes. The average export speed is 2 GB / minute. If several minutes lapse and the image is still not 
-available on the Object Storage Account, [contact Support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://knowledgelayer.softlayer.com/topic/support).
+available on the Object Storage Account, [Contact Support](/docs/get-support/howtogetsupport.html).
 
