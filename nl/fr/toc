@@ -1,0 +1,25 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="image-templates" audience="compute" href="/docs/infrastructure/image-templates/image_index.html"}
+Modèles d'image
+    
+    {: .navgroup id="learn"}
+    image_index.md
+    image_about.md
+    {: .navgroup-end}
+    
+    {: .navgroup id="howto"}
+    access-image-templates-screen.md
+    create-standard-image.md
+    import-image.md
+    export-image.md
+    delete-image-template.md
+    boot-vsi-image.md
+    image_cloud-init.md
+    use-red-hat-cloud-access.md
+    {: .navgroup-end}
+    
+    {: .navgroup id="help"}
+    image-templates-faq.md
+    {: .navgroup-end}
