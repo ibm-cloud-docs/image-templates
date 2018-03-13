@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2017-10-27"
+lastupdated: "2018-03-13"
 ---
 
 {:shortdesc: .shortdesc}
@@ -15,7 +15,7 @@ From the Image Templates page you can export an image template to an Object Stor
 The image export process takes a preexisting, private standard image template and coverts the image into an 
 image file that is stored in a specified location on an Object Storage account. Use the following steps to export an image template.
 
-1. From the **Devices** menu in the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), select **Manage > Images**.
+1. From the **Devices** menu in the [{{site.data.keyword.slportal_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), select **Manage > Images**.
 2. Click **Actions** for the image template that you want to export and select **Export Image**. If an image template with the configuration that you want is not yet 
 available, see [Creating a Standard Image](create-standard-image.html).
 3. On the Export Image page, enter the file name for the image in the **File Name** field.
