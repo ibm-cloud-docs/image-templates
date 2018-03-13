@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2017-10-27"
+lastupdated: "2018-03-13"
 ---
 
 {:shortdesc: .shortdesc}
@@ -19,7 +19,7 @@ Booting a virtual server from an image brings the device online safely so that i
 Use the following steps to start a virtual server from an image.
 
 1. Back up all data on the device.
-2. From the **Devices** menu in the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), select **Device List**. 
+2. From the **Devices** menu in the [{{site.data.keyword.slportal_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), select **Device List**. 
 3. From the Device List, click the virtual server that you want to start from an ISO template.
 4. On the Device Details page for the virtual server, select **Actions > Boot from Image**.
 5. Click **Boot from this Image** for the desired image
