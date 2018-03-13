@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-01-31"
+lastupdated: "2018-03-13"
 
 ---
 
@@ -34,7 +34,7 @@ When you order a virtual server with a cloud-init enabled operating system, you 
 ## Import a customized cloud-init enabled image
 
 If you’ve created a customized image that’s cloud-init enabled, you can designate it as a cloud-init image on the Import Image page of 
-the Customer Portal.
+the {{site.data.keyword.slportal_full}}.
 
 To access the Import Image page of Image Templates and mark an image as cloud-init enabled, complete the following steps:
 1. From the **Devices** menu select **Manage** > **Images**.
@@ -63,7 +63,7 @@ virtual server, cloud-init runs again.
 For information about configuring images, see 
 [cloud-init documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloudinit.readthedocs.io/en/latest/).
 
-For information about datasources, see [Datasources ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html). {{site.data.keyword.cloud}} cloud-init images are created for the 
+For information about datasources, see [Datasources ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html). {{site.data.keyword.cloud_notm}} cloud-init images are created for the 
 environment by using the [Config Drive ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) - Version 2 datasource to supply the metadata.
 
 ### Linux requirements
@@ -72,5 +72,5 @@ environment by using the [Config Drive ![External link icon](../../icons/launch-
 ### Windows requirements
 * Cloudbase-init Metadata Service for public and private network support in {{site.data.keyword.cloud_notm}} infrastructure. The service  also updates the Customer Portal with the Windows virtual server credentials. You can access the service at 
 [https://github.com/softlayer/bluemix-cloudbase-init ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/softlayer/bluemix-cloudbase-init).
-* If you are using a Vyatta in your environment, you must configure the Vyatta to allow API calls to API load balancers. For more information, see [Brocade vRouter (Vyatta) Set up Guide for VMware Environments with Endurance or Performance Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://knowledgelayer.softlayer.com/content/brocade-vrouter-vyatta-set-guide-vmware-environments-endurance-or-performance-storage).
+* If you are using a Vyatta in your environment, you must configure the Vyatta to allow API calls to API load balancers. For more information, see [Brocade vRouter (Vyatta) Set up Guide for VMware Environments with File Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/infrastructure/FileStorage/brocade-vrouter-vyatta-set-guide-vmware-environments-endurance-or-performance-storage.html).
 
