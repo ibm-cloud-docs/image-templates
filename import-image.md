@@ -132,7 +132,7 @@ Complete the following steps to import an image in the {{site.data.keyword.slpor
   {:tip}
 
 11. If the image that you are importing is cloud-init enabled, select the **Cloud Init** check box. For more information, see [Provisioning with a cloud-init enabled image](image_cloud-init.html).        
-12. If you plan to provide your own operating system license, select the **Your License** check box. For more information, see [Using Red Hat Cloud Access](use-red-hat-cloud-access.html).
+12. If you plan to provide your own operating system license, select the **Your License** check box. For more information, see [Using your own OS license or subscription](use-red-hat-cloud-access.html).
 13. Click **Import** to import the image to the Image Templates screen. Click **Cancel** to cancel the action.
 
 ## Next Steps
