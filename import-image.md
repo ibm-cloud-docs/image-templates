@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2017-10-31"
+lastupdated: "2018-03-13"
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,7 +13,7 @@ lastupdated: "2017-10-31"
 
 # Preparing and importing images
 
-The Image Templates screen in the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/) allows users to upload an existing image from a Swift-based [Object Storage](/docs/infrastructure/objectstorage-swift/index.html) account. 
+The Image Templates screen in the {{site.data.keyword.slportal_full}} allows users to upload an existing image from a Swift-based [Object Storage](/docs/infrastructure/objectstorage-swift/index.html) account. 
 {:shortdesc}
 
 After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an Object Storage account can be either VHDs or custom ISOs. VHD imports are restricted to the following 64-bit operating systems:
@@ -111,14 +111,14 @@ For more information about cloud-init enabled images, see [Provisioning with a c
 
 ## Importing an Image
 
-Complete the following steps to import an image in the Customer Portal.
+Complete the following steps to import an image in the {{site.data.keyword.slportal}}.
 
 1. Locate and record the following details for the image from the {{site.data.keyword.objectstorageshort}} account.  For more information, see [Viewing and Editing Object Storage File Details](/docs/infrastructure/objectstorage-swift/view-and-edit-object-storage-file-details.html).
   * Account Name
   * Cluster
   * Container
   * Image Filename
-2. In the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), access the **Image Templates** page by selecting **Devices > Manage > Images**.
+2. In the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), access the **Image Templates** page by selecting **Devices > Manage > Images**.
 3. Click the **Import Image** tab to open the Import tool.
 4. Select the **{{site.data.keyword.objectstorageshort}} Account** for the image that you want to import from the **Account** drop-down list.
 5. Select the **{{site.data.keyword.objectstorageshort}} Cluster** for the image that you want to import from the **Cluster** drop-down list.
