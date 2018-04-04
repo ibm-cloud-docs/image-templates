@@ -15,8 +15,8 @@ When you create an image template with a VHD image, you can select to provide yo
 {:shortdesc}
 
 If you deploy an image in {{site.data.keyword.BluSoftlayer_full}} that indicates you are using your own license, the following support terms exist:
-* IBM provides support for hypervisors, provisioning instances, importing images, rebooting an image, reloading an OS, and capturing an image.
-* The company that you purchase the operating system license from provides support for the image itself. IBM does not provide support for the image.
+* {{site.data.keyword.IBM_notm}} provides support for hypervisors, provisioning instances, importing images, rebooting an image, reloading an OS, and capturing an image.
+* The company that you purchase the operating system license from provides support for the image itself. {{site.data.keyword.IBM_notm}} does not provide support for the image.
 
 When you provide your own license for an image, the following restrictions apply to the image:
 * The image is a private image. It cannot be shared publicly.
