@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2017-10-04"
+lastupdated: "2017-04-04"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-10-04"
 
 ## What is a Standard Image template?
 
-A Standard Image template is the {{site.data.keyword.virtualmachineslong}} imaging option for {{site.data.keyword.BluSoftlayer_full}}. 
+A Standard Image template is the {{site.data.keyword.virtualmachineslong}} imaging option for {{site.data.keyword.BluSoftlayer_notm}}. 
 Standard image templates allow users to capture an image of an existing virtual server regardless of its operating system and create a new 
 virtual server based on the image.
 
@@ -30,7 +30,7 @@ Only {{site.data.keyword.BluSoftlayer_notm}} Supported Operating Systems can be 
 A Public Image is an image that can be viewed and applied to a new virtual server by any {{site.data.keyword.BluSoftlayer_notm}} user. {{site.data.keyword.BluSoftlayer_notm}} 
 currently creates public images as a solution for configuration options on different devices. Customers can also make images public and available to any user. A Private Image is an image that can be 
 viewed only by authorized users. Authorized users default to any user on your account; however, images also can be shared between multiple 
-accounts by updating the sharing options in the {{site.data.keyword.slportal_full}}.
+accounts by updating the sharing options in the {{site.data.keyword.slportal}}.
 
 ## Can I capture and deploy virtual servers with my self-managed hypervisor?
 
