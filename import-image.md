@@ -27,7 +27,7 @@ VHD imports are limited to 100 GB disks. VHDs must be named according to the fol
 
 ## Converting images to VHD
 
-VHD format is the only support image format for {{site.data.keyword.BluVirtServers_full}}. To convert images to VHD, use the following information:
+VHD format is the only supported image format for virtual servers. To convert images to VHD, use the following information:
 
 * Qemu-img 2.7.0 or newer is required
 * Convert the image with the following command: 
