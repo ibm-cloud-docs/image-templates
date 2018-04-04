@@ -15,7 +15,7 @@ Standard image templates can be deleted at any time after they are created.
 Upon deletion, image templates cannot be retrieved and are 
 wiped permanently from all data centers. Use the following steps to delete an image template.
 
-1. From the **Devices** menu, select **Manage > Images**.
+1. From the **Devices** menu in the [{{site.data.keyword.slportal_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), select **Manage > Images**.
 2. Click **Actions** for the image template that you want to delete and select **Delete**. 
 3. Select **Yes** on the confirmation box to complete the deletion. Select **No** to cancel the deletion.
 
