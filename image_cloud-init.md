@@ -24,7 +24,7 @@ The following operating systems now default to a cloud-init enabled image when y
 software, post-provisioning scripts, or advanced monitoring.
 * CentOS 7
 * Debian 8
-* Ubuntu 16
+* Ubuntu 16.04
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
