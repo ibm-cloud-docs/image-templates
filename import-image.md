@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-05-29"
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,7 +13,7 @@ lastupdated: "2018-03-13"
 
 # Preparing and importing images
 
-The Image Templates screen in the {{site.data.keyword.slportal_full}} allows users to upload an existing image from a Swift-based [Object Storage](/docs/infrastructure/objectstorage-swift/index.html) account. 
+The Image Templates screen in the {{site.data.keyword.slportal_full}} allows users to upload an existing image from an [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift/index.html) account. 
 {:shortdesc}
 
 After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an Object Storage account can be either VHDs or custom ISOs. VHD imports are restricted to the following 64-bit operating systems:
