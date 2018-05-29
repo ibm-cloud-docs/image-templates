@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-05-29"
 ---
 
 {:shortdesc: .shortdesc}
@@ -9,7 +9,7 @@ lastupdated: "2018-03-13"
 
 # Exporting an image
 
-From the Image Templates page you can export an image template to an Object Storage account. 
+From the Image Templates page you can export an image template to an [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift/index.html) account. 
 {:shortdesc}
 
 The image export process takes a preexisting, private standard image template and coverts the image into an 
