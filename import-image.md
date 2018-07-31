@@ -113,7 +113,7 @@ For more information about cloud-init enabled images, see [Provisioning with a c
 
 Complete the following steps to import an image in the {{site.data.keyword.slportal}}.
 
-1. Locate and record the following details for the image from the {{site.data.keyword.objectstorageshort}} account.  For more information, see [Viewing and Editing Object Storage File Details](/docs/infrastructure/objectstorage-swift/view-and-edit-object-storage-file-details.html).
+1. Locate and record the following details for the image from the {{site.data.keyword.objectstorageshort}} account.  For more information, see [Viewing and Editing Object Storage File Details](/docs/infrastructure/objectstorage-swift/interacting-in-portal.html#viewing-and-editing-file-details).
   * Account Name
   * Cluster
   * Container
