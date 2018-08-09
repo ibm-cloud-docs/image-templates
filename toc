@@ -15,6 +15,7 @@ Image Templates
     import-image.md
     export-image.md
     delete-image-template.md
+    order-vsi-from-image-template.md
     boot-vsi-image.md
     image_cloud-init.md
     use-red-hat-cloud-access.md
