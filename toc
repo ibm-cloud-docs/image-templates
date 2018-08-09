@@ -18,6 +18,10 @@ Image Templates
     boot-vsi-image.md
     image_cloud-init.md
     use-red-hat-cloud-access.md
+    provision-encrypted-image.md
+        create-encrypted-image.md
+        import-encrypted-image-api.md
+        activity-tracker.md
     {: .navgroup-end}
     
     {: .navgroup id="help"}
