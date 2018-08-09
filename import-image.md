@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2018-07-31"
+lastupdated: "2018-08-09"
 ---
 
 {:shortdesc: .shortdesc}
@@ -134,6 +134,44 @@ Complete the following steps to import an image in the {{site.data.keyword.slpor
 11. If the image that you are importing is cloud-init enabled, select the **Cloud Init** check box. For more information, see [Provisioning with a cloud-init enabled image](image_cloud-init.html).        
 12. If you plan to provide your own operating system license, select the **Your License** check box. For more information, see [Using your own OS license or subscription](use-red-hat-cloud-access.html).
 13. Click **Import** to import the image to the Image Templates screen. Click **Cancel** to cancel the action.
+
+## Importing an Image from IBM Cloud Object Storage 
+{: #import-icos}
+
+Complete the following steps to import an encrypted image from {{site.data.keyword.cos_full_notm}}. 
+
+This task is currently part of the End to End (E2E) Encryption feature. To gain access to this feature, please contact Support.
+{: tip}
+
+To limit access to only the information that is needed to complete the import task, authenticate to {{site.data.keyword.slportal}} with a service ID. The service ID should have access only to the encrypted image in IBM Cloud Object Storage that you want to import and the Key Protect instance where your root key is stored.
+
+1. In the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), access the **Image Templates** page by selecting **Devices > Manage > Images**.
+2. Click the **Import Image from IBM COS** tab to open the Import tool.
+3. Complete the required fields (see Table 1). You must provide the {{site.data.keyword.keymanagementserviceshort}} Instance ID, the wrapped data encryption key (WDEK), and the root key ID. The {{site.data.keyword.keymanagementserviceshort}} information is needed to access the image when it is provisioned. 
+4. When the import is complete from {{site.data.keyword.cos_full_notm}}, the encrypted image appears on the Image Templates page. 
+
+Currently it is not supported to export an encrypted image template to object storage. Additionally, a virtual server instance that is provisioned from an encrypted image template does not support the following actions: Create image template, Migrate instance, and Migrate to SAN. 
+{: tip}
+
+| Field | Value |
+| ----- | ----- |
+| {{site.data.keyword.cos_full_notm}} | Select the {{site.data.keyword.cos_full_notm}} account for the image that you want to import. |
+| Location | Select the specific geographic region where your image is stored. | 
+| Bucket | Select the {{site.data.keyword.cos_full_notm}} bucket where your image is stored. |
+| Image File | Select the encrypted image file in the {{site.data.keyword.cos_full_notm}} that you want to import. The image must be in the RAW file format and encrypted with LUKS disk encryption. |
+| Image Name | Specify a descriptive name for your encrypted image. This is the image that you will use to provision virtual server instances. |
+| Encryption | This check box is selected by default and not editable. Encrypted images are currently the only type of image that can be imported from {{site.data.keyword.cos_full_notm}}. |
+| Operating System | Select the operating system that is included in your encrypted image. |
+| Cloud-init | This option is selected by default and not editable because your encrypted image must be cloud-init enabled. |
+| Your License | This option is selected by default and not editable because your encrypted image must include its own operating system license. |
+| Boot Mode | Select the boot mode for your image. |
+| Notes | Add any notes related to the image that might be helpful to users. |
+| {{site.data.keyword.keymanagementserviceshort}} Service Instance ID | You can use the {{site.data.keyword.cloud_notm}} CLI to find your {{site.data.keyword.keymanagementserviceshort}} instance ID. For more information, see [Retrieving your instance ID](/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID). |
+| Wrapped Data Encryption Key | Specify the cipher text that is associated with the data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/services/keymgmt/keyprotect_wrap_keys.html). |
+| Root Key ID | Specify the ID of the root key that was used to wrap the data encryption key. For more information, see [Viewing keys](/docs/services/keymgmt/keyprotect_view_keys.html). |
+| API Key | Specify the API key that you noted when you created it. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Managing your API keys](/docs/iam/userid_keys.html). |
+{: caption="Table 1. Supported data centers" caption-side="top"}
+
 
 ## Next Steps
 
