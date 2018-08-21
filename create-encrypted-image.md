@@ -81,7 +81,7 @@ Complete the following steps to encrypt your image.
 2. Convert your fixed VHD image file to RAW file format by using QEMU. The image must be in RAW file format before you can encrypt it. Run the following QEMU command:
 
   ```
-  $ qemu-img convert -p -O raw <FIXED_VHD_FILE> <RAW_IMAGE_FILE>
+  qemu-img convert -p -O raw <FIXED_VHD_FILE> <RAW_IMAGE_FILE>
   ```
   {: pre}
 
@@ -98,7 +98,7 @@ Complete the following steps to encrypt your image.
 3. Identify the data encryption key that you will use to encrypt and decrypt the drive. This data encryption key is the same key that you wrap and specify when you import the encrypted image to {{site.data.keyword.slportal}}. Create a file that contains the data encryption key that you'll use to encrypt and decrypt the drive. In this file, the key must be unwrapped and in base64 encoded text. Base64 helps ensure that no accidental spaces or breaks are included. The base64 encoded data encryption key must have a minimum of 32 characters or bytes, and a maximum of 10,000 characters or bytes. The data encryption key material must be on one line with no line breaks and no newline. For example, use the following command to create a file called `secret.dek` to store your `unwrapped_key_material` for your data encryption key and encode it with base64:
   
   ```
-  $ echo -n ‘unwrapped_key_material’  | base64  > secret.dek
+  $ echo -n $(echo 'unwrapped_key_material' | base64) > secret.dek
   ```
   {: screen}
 
