@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-22"
 
 ---
 
@@ -54,7 +54,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
 1. Using IBM {{site.data.keyword.iamshort}} (IAM), create a service ID to authenticate with when you import the encrypted image into {{site.data.keyword.slportal}}. 
       1. Create a [service ID](/docs/iam/serviceid.html#serviceids).
       2. Assign an [access policy](/docs/iam/serviceidaccess.html#serviceidpolicy). Assign access for these services: {{site.data.keyword.cos_full_notm}} and {{site.data.keyword.keymanagementservicelong_notm}}.
-      3. Create an [API key](/docs/iam/userid_keys.html).
+      3. Create an [API key for a service ID](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
       4. For more information, see [Introducing {{site.data.keyword.cloud_notm}} IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/){: new_window}.
 2. From {{site.data.keyword.slportal}}, [import the encrypted image](import-image.html#import-icos) to the Image Templates page. (You can also import the encrypted image by [using the {{site.data.keyword.slapi_short}}](import-encrypted-image-api.html).)
 3. From the Image Templates page, you can use your encrypted image to [order](order-vsi-from-image-template.html) a dedicated virtual server instance. 
