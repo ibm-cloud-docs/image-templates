@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-29"
 ---
 
 {:shortdesc: .shortdesc}
@@ -170,7 +170,7 @@ Currently it is not supported to export an encrypted image template to object st
 | Wrapped Data Encryption Key | Specify the cipher text that is associated with the data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/services/keymgmt/keyprotect_wrap_keys.html). |
 | Root Key ID | Specify the ID of the root key that was used to wrap the data encryption key. For more information, see [Viewing keys](/docs/services/keymgmt/keyprotect_view_keys.html). |
 | API Key | Specify the API key that you noted when you created it. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Managing your API keys](/docs/iam/userid_keys.html). |
-{: caption="Table 1. Supported data centers" caption-side="top"}
+{: caption="Table 1. Values for importing an image from IBM Cloud Object Storage" caption-side="top"}
 
 
 ## Next Steps
