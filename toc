@@ -22,7 +22,6 @@ Image Templates
     provision-encrypted-image.md
         create-encrypted-image.md
         import-encrypted-image-api.md
-        activity-tracker.md
     {: .navgroup-end}
     
     {: .navgroup id="help"}
