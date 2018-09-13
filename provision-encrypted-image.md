@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-22"
+lastupdated: "2018-09-13"
 
 ---
 
@@ -58,4 +58,4 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
       4. For more information, see [Introducing {{site.data.keyword.cloud_notm}} IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/){: new_window}.
 2. From {{site.data.keyword.slportal}}, [import the encrypted image](import-image.html#import-icos) to the Image Templates page. (You can also import the encrypted image by [using the {{site.data.keyword.slapi_short}}](import-encrypted-image-api.html).)
 3. From the Image Templates page, you can use your encrypted image to [order](order-vsi-from-image-template.html) a dedicated virtual server instance. 
-4. [Audit events](activity-tracker.html) associated with your encrypted virtual servers through [Activity Tracker](/docs/services/cloud-activity-tracker/activity_tracker_ov.html). 
+4. With an encrypted virtual server provisioned, you have the option to audit [virtual server events](/docs/vsi/vsi_activity_tracker_events.html#at_events) through [Activity Tracker](/docs/services/cloud-activity-tracker/activity_tracker_ov.html). 
