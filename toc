@@ -13,7 +13,12 @@ Image Templates
     access-image-templates-screen.md
     create-standard-image.md
     import-image.md
-    export-image.md
+    
+    {: .topicgroup}
+    Exporting image templates
+        export-image.md
+        export-image-ibm-cos.md
+    
     delete-image-template.md
     order-vsi-from-image-template.md
     boot-vsi-image.md
