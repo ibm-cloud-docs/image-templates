@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-09-19"
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,7 +14,7 @@ lastupdated: "2018-08-08"
 With image templates, you can replicate various configuration options for {{site.data.keyword.virtualmachinesshort}}. 
 {:shortdesc}
 
-At any point during the life of a virtual server, you can create an image template of a device and use it to quickly replicate portions of its configuration in another virtual server. Image templates can be taken of any virtual server, regardless of its operating system, but can be used only to create another virtual server. 
+At any point during the life of a virtual server, you can create an image template of a device and use it to quickly replicate portions of its configuration in another virtual server. Image templates can be taken of any virtual server, regardless of its operating system.Then, the image template can be used to create another virtual server. 
 
 Complete the following steps to create an image template of a virtual server.
 
