@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-21"
+lastupdated: "2018-09-19"
 
 ---
 
@@ -26,10 +26,9 @@ As part of the E2E Encryption feature, you can encrypt an image to import into I
 An encrypted image that you create must meet the following image requirements: 
 
 * Image is compatible with the {{site.data.keyword.cloud}} Console infrastructure evironment.
-* Operating system is Red Hat Enterprise Linux and includes license for use.
+* Image includes a Linux operating system such as CentOS, Debian, Red Hat Enterprise Linux, or Ubuntu.
 * Image is cloud-init enabled.
 * Image is encrypted with [LUKS disk encryption](create-encrypted-image.html#luks-disk-encryption).
-* Swap partition is included in the encryption image if swap is required. Swap drive encryption using an {{site.data.keyword.cloud_notm}} infrastructure generated swap drive is not supported.
 
 ## Using QEMU and DM-Crypt to create an encrypted RAW image
 {: #luks-disk-encryption}
@@ -230,3 +229,4 @@ Complete the following steps to encrypt your image.
   Where _encryptedVolume_ is the name of the encrypted volume block device. 
   
   Your _ENCRYPTED_RAW_FILENAME_ is now initialized and you can upload it to IBM Cloud Object Storage. For example, if your encrypted RAW file is _Rhel_7.encrypted.raw_, upload that image to IBM Cloud Object Storage.
+  
