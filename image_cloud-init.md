@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-09-19"
 
 ---
 
@@ -52,10 +52,10 @@ To access an image template and mark it as cloud-init enabled, complete the foll
 2. From the list of templates, click the image template name that you want to update.
 3. On the Image Template Details page, select the **Enabled** checkbox under the **Cloud Init** heading, and click **Update**.
 
-## Work with a standard image created from a cloud-init provisioned virtual server
+## Work with an image template created from a cloud-init provisioned virtual server
 
 Cloud-init typically only runs once. However, if you provision a virtual server from a cloud-init enabled image and subsequently create 
-a standard image template from that virtual server, the UUID is recorded. If that standard image template is used to create another 
+an image template from that virtual server, the UUID is recorded. If that image template is used to create another 
 virtual server, cloud-init runs again.
 
 ## Create image templates that are cloud-init enabled
