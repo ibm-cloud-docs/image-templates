@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-29"
+lastupdated: "2018-09-19"
 ---
 
 {:shortdesc: .shortdesc}
@@ -12,8 +12,9 @@ lastupdated: "2018-08-29"
 
 
 # Preparing and importing images
+{: #preparing-and-importing-images}
 
-The Image Templates screen in the {{site.data.keyword.slportal_full}} allows users to upload an existing image from an [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift/index.html) account. 
+The Image Templates screen in the {{site.data.keyword.slportal_full}} allows users to upload an existing image from an [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift/index.html) or an [IBM Cloud Object Storage](/docs/services/cloud-object-storage/about-cos.html) account. 
 {:shortdesc}
 
 After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an Object Storage account can be either VHDs or custom ISOs. VHD imports are restricted to the following 64-bit operating systems:
@@ -26,6 +27,7 @@ After images are imported as an image template, they can be used to provision or
 VHD imports are limited to 100 GB disks. VHDs must be named according to the following example: filename.vhd-0.vhd.
 
 ## Converting images to VHD
+{: #convert-to-vhd}
 
 VHD format is the only supported image format for virtual servers. To convert images to VHD, use the following information:
 
@@ -48,6 +50,7 @@ For more information, see [Converting image formats ![External link icon](../../
 documentation.
 
 ## ISO Templates
+{: #iso-templates}
 
 Only {{site.data.keyword.BluSoftlayer_notm}} Supported Operating Systems can be used to load an ISO Template onto a VSI. A list of 
 Supported Operating Systems can be found here: [http://www.softlayer.com/services/software/ ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.softlayer.com/services/software/)
@@ -55,6 +58,7 @@ Supported Operating Systems can be found here: [http://www.softlayer.com/service
 ISOs that are imported by using this tool must be bootable in order for the image to be eligible for import.
 
 ## Configuring an Image for {{site.data.keyword.virtualmachinesshort}}
+{: #config-image-vsi}
 
 To ensure that an image can be successfully deployed in the {{site.data.keyword.BluSoftlayer_notm}} infrastructure environment, virtual server images must be configured to the following specifications:
 
@@ -109,9 +113,10 @@ To ensure that an image can be successfully deployed in the {{site.data.keyword.
     
 For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](image_cloud-init.html).
 
-## Importing an Image
+## Importing an Image from OpenStack Swift
+{: #import-swift}
 
-Complete the following steps to import an image in the {{site.data.keyword.slportal}}.
+Complete the following steps to import an image from Object Storage OpenStack Swift in the {{site.data.keyword.slportal}}.
 
 1. Locate and record the following details for the image from the {{site.data.keyword.objectstorageshort}} account.  For more information, see [Viewing and Editing Object Storage File Details](/docs/infrastructure/objectstorage-swift/interacting-in-portal.html#viewing-and-editing-file-details).
   * Account Name
@@ -138,45 +143,42 @@ Complete the following steps to import an image in the {{site.data.keyword.slpor
 ## Importing an Image from IBM Cloud Object Storage 
 {: #import-icos}
 
-Complete the following steps to import an encrypted image from {{site.data.keyword.cos_full_notm}}. 
+Complete the following steps to import an image from {{site.data.keyword.cos_full_notm}}. 
 
-This task is currently part of the End to End (E2E) Encryption feature. To gain access to this feature, please contact Support.
+This task is currently part of the End to End (E2E) Encryption feature. To gain access to this feature, please contact Support. If you are importing an encrypted image, you can limit access to only the information that is needed to complete the import task by  authenticating to {{site.data.keyword.slportal}} with a service ID. The service ID should have access only to the encrypted image in {{site.data.keyword.cos_full_notm}} that you want to import and the Key Protect instance where your root key is stored.
 {: tip}
-
-To limit access to only the information that is needed to complete the import task, authenticate to {{site.data.keyword.slportal}} with a service ID. The service ID should have access only to the encrypted image in IBM Cloud Object Storage that you want to import and the Key Protect instance where your root key is stored.
 
 1. In the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), access the **Image Templates** page by selecting **Devices > Manage > Images**.
 2. Click the **Import Image from IBM COS** tab to open the Import tool.
-3. Complete the required fields (see Table 1). You must provide the {{site.data.keyword.keymanagementserviceshort}} Instance ID, the wrapped data encryption key (WDEK), and the root key ID. The {{site.data.keyword.keymanagementserviceshort}} information is needed to access the image when it is provisioned. 
-4. When the import is complete from {{site.data.keyword.cos_full_notm}}, the encrypted image appears on the Image Templates page. 
+3. Complete the required fields (see Table 1). 
+4. When the import is complete from {{site.data.keyword.cos_full_notm}}, the image appears on the Image Templates page. 
 
-Currently it is not supported to export an encrypted image template to object storage. Additionally, a virtual server instance that is provisioned from an encrypted image template does not support the following actions: Create image template, Migrate instance, and Migrate to SAN. 
+Currently a virtual server instance that is provisioned from an encrypted image template does not support the following actions: Migrate instance, and Migrate to SAN. 
 {: tip}
 
 | Field | Value |
 | ----- | ----- |
 | {{site.data.keyword.cos_full_notm}} | Select the {{site.data.keyword.cos_full_notm}} account for the image that you want to import. |
 | Location | Select the specific geographic region where your image is stored. | 
-| Bucket | Select the {{site.data.keyword.cos_full_notm}} bucket where your image is stored. |
-| Image File | Select the encrypted image file in the {{site.data.keyword.cos_full_notm}} that you want to import. The image must be in the RAW file format and encrypted with LUKS disk encryption. |
-| Image Name | Specify a descriptive name for your encrypted image. This is the image that you will use to provision virtual server instances. |
-| Encryption | This check box is selected by default and not editable. Encrypted images are currently the only type of image that can be imported from {{site.data.keyword.cos_full_notm}}. |
-| Operating System | Select the operating system that is included in your encrypted image. |
-| Cloud-init | This option is selected by default and not editable because your encrypted image must be cloud-init enabled. |
-| Your License | This option is selected by default and not editable because your encrypted image must include its own operating system license. |
-| Boot Mode | Select the boot mode for your image. |
+| Bucket | Select the {{site.data.keyword.cos_full_notm}} bucket where your image is stored. Only buckets that exist in the regional  location that you selected are valid. You will receive an error message if you select a bucket that doesn't exist in the selected location.|
+| Image File | Select the image file in the {{site.data.keyword.cos_full_notm}} that you want to import. Supported file types are VHD, ISO, and RAW. If you are importing an encrypted image, the image must be in the RAW file format and encrypted with LUKS disk encryption. |
+| Image Name | Specify a descriptive name for your image. This is the image that you will use to provision virtual server instances. |
+| Encryption | The selection for this check box is determined by the file type of the image that you select to import. A RAW image file  indicates that the image is an encrypted image. If a RAW image file is specified, this check box is selected by default and not editable. VHD and ISO images indicate that the image file is not encrypted. Thus, the check box is not selected for VHD and ISO images.|
+| Operating System | Select the operating system that is included in your image. For encrypted images, only Linux operating systems are valid selections. |
+| Cloud-init | If the image that you are importing is cloud-init enabled, select this check box. If you are importing an image that has a cloud-init enabled Windows operating system and you select this option, you cannot also specify **Your License**. If you are importing an encrypted image, this option is selected by default and not editable because your encrypted image must be cloud-init enabled. |
+| Your License | If you plan to provide your own operating system license, select this check box. If you are importing an image with a Windows operating system, you can select this option if you plan to use the image to provision [dedicated host instances](/docs/vsi/vsi_dedicated_host.html#dedicated-hosts-and-dedicated-instances). If your version of Windows operating system does not support using your own license, this option is disabled. For Windows images, you cannot select Cloud Init if you specify that you will use your own license. If you are importing an encrypted image with Red Hat Enterprise Linux as your operating system, this option is selected by default and not editable because your encrypted image must include its own operating system license. |
+| Boot Mode | Select the boot mode for your image. If a default boot mode is set for the operating system that you specify, that boot mode is selected here automatically. |
 | Notes | Add any notes related to the image that might be helpful to users. |
-| {{site.data.keyword.keymanagementserviceshort}} Service Instance ID | You can use the {{site.data.keyword.cloud_notm}} CLI to find your {{site.data.keyword.keymanagementserviceshort}} instance ID. For more information, see [Retrieving your instance ID](/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID). |
-| Wrapped Data Encryption Key | Specify the cipher text that is associated with the data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/services/keymgmt/keyprotect_wrap_keys.html). |
-| Root Key ID | Specify the ID of the root key that was used to wrap the data encryption key. For more information, see [Viewing keys](/docs/services/keymgmt/keyprotect_view_keys.html). |
-| API Key | Specify the API key that you noted when you created it. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Managing your API keys](/docs/iam/userid_keys.html). |
+| {{site.data.keyword.keymanagementserviceshort}} Service Instance ID | When importing an encrypted image, your {{site.data.keyword.keymanagementserviceshort}} service must be provisioned in the same regional location as your {{site.data.keyword.cos_full_notm}} location. You can use the {{site.data.keyword.cloud_notm}} CLI to find your {{site.data.keyword.keymanagementserviceshort}} instance ID. For more information, see [Retrieving your instance ID](/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID). |
+| Wrapped Data Encryption Key | When importing an encrypted image, specify the cipher text that is associated with the data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/services/keymgmt/keyprotect_wrap_keys.html). |
+| Root Key ID | When importing an encrypted image, specify the ID of the root key that was used to wrap the data encryption key. For more information, see [Viewing keys](/docs/services/keymgmt/keyprotect_view_keys.html). |
+| API Key | Specify the API key that gives access to {{site.data.keyword.cos_full_notm}}. When importing an encrypted image, the API Key must also have access to Key Protect. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Managing your API keys](/docs/iam/userid_keys.html). |
 {: caption="Table 1. Values for importing an image from IBM Cloud Object Storage" caption-side="top"}
 
 
 ## Next Steps
 
 After the import begins, the system locates the image file in the {{site.data.keyword.objectstorageshort}} account by using the 
-specified path (Account > Cluster > Container > Image File). The image file is imported as an image template that is then accessible on 
+specified path. The image file is imported as an image template that is then accessible on 
 the Image Templates page. After the import completes, the image can be used to order a new device or to start an existing device. 
 Additionally, the image can be deleted at any time. Image import times vary based on file size, but generally take several minutes to an hour.
-
