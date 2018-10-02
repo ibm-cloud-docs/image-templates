@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-19"
+lastupdated: "2018-10-02"
 ---
 
 {:shortdesc: .shortdesc}
@@ -20,9 +20,6 @@ From the Image Templates page you can export an image template to an [IBM Cloud 
 
 The image export process takes a preexisting, private standard image template or an encrypted image template and converts the image into an 
 image file that is stored in a specified location on an IBM Cloud Object Storage account. 
-
-This task is currently part of the End to End (E2E) Encryption feature. To gain access to this feature, please contact Support.
-{: tip}
 
 Use the following steps to export an image template to IBM Cloud Object Storage.
 
