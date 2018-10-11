@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-03"
+lastupdated: "2018-10-11"
 ---
 
 {:shortdesc: .shortdesc}
@@ -116,7 +116,10 @@ For more information about cloud-init enabled images, see [Provisioning with a c
 ## Uploading an image to {{site.data.keyword.cos_full_notm}}
 {: #upload-to-ibm-cos}
 
-When your image is ready, you can upload it to {{site.data.keyword.cos_full_notm}}. In {{site.data.keyword.cos_full_notm}}, navigate to your bucket and click **Add Objects** to [upload](/docs/services/cloud-object-storage/basics/upload.html#uploading-data) the image. Use the [Aspera](/docs/services/cloud-object-storage/basics/aspera.html#Aspera-high-speed-transfer) high-speed transfer plug-in for the fastest upload speeds of your image.
+When your image is ready, you can upload it to {{site.data.keyword.cos_full_notm}}. Make sure to use a bucket with a regional location that also supports importing images. (You can import images to the following regions: US-South, US-East, EU-Great Britain, and EU-Germany.) 
+
+1. In {{site.data.keyword.cos_full_notm}}, navigate to your bucket and click **Add Objects** to [upload](/docs/services/cloud-object-storage/basics/upload.html#uploading-data) the image. 
+2. Use the [Aspera](/docs/services/cloud-object-storage/basics/aspera.html#Aspera-high-speed-transfer) high-speed transfer plug-in for the fastest upload speeds of your image.
 
 You can use COS SDK with Aspera to initiate high-speed transfer within your custom applications when using Java, Python, or NodeJS. For more information, see [Using Libraries and SDKs](/docs/services/cloud-object-storage/basics/aspera.html#sdk).
 {: tip}
@@ -127,9 +130,6 @@ You can use COS SDK with Aspera to initiate high-speed transfer within your cust
 
 Complete the following steps to import an image from {{site.data.keyword.cos_full_notm}}. 
 
-To import an encrypted image, your account must have access to the End to End (E2E) Encryption feature. To enable your account for E2E Encryption, please contact Support. 
-{: tip}
-
 1. In the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), access the **Image Templates** page by selecting **Devices > Manage > Images**.
 2. Click the **Import Image from IBM COS** tab to open the Import tool.
 3. Complete the required fields (see Table 1). 
@@ -137,23 +137,31 @@ To import an encrypted image, your account must have access to the End to End (E
 
 | Field | Value |
 | ----- | ----- |
-| {{site.data.keyword.cos_full_notm}} | Select the {{site.data.keyword.cos_full_notm}} service instance for the image that you want to import. |
-| Location | Select the specific geographic region where your image is stored. | 
+| {{site.data.keyword.cos_full_notm}} | Select the {{site.data.keyword.cos_full_notm}} service instance where the image that you want to import is stored. |
+| Location | Select the specific geographic region where your image is stored. You can import images into the following regions and associated data centers: US-South (DAL13), US-East (WDC07), EU-Great Britain (LON02), EU-Germany (FRA02). After the image is imported to one of the data centers that are listed, you can move it to another data center. | 
 | Bucket | Select the {{site.data.keyword.cos_full_notm}} bucket where your image is stored. Only buckets that exist in the regional  location that you selected are valid. You will receive an error message if you select a bucket that doesn't exist in the selected location.|
-| Image File | Select the image file in the {{site.data.keyword.cos_full_notm}} that you want to import. Supported file types are VHD, ISO, and RAW. If you are importing an encrypted image, the image must be in the RAW file format and encrypted with LUKS disk encryption. |
+| Image File | Select the image file in the {{site.data.keyword.cos_full_notm}} service instance that you want to import. Supported file types are VHD, ISO, and RAW. If you are importing an encrypted image, the image must be in the RAW file format and encrypted with LUKS disk encryption. |
 | Image Name | Specify a descriptive name for your image. This is the image that you will use to provision virtual server instances. |
-| Encryption | The selection for this check box is determined by the file type of the image that you select to import. A RAW image file  indicates that the image is an encrypted image. If a RAW image file is specified, this check box is selected by default and not editable. VHD and ISO images indicate that the image file is not encrypted. Thus, the check box is not selected for VHD and ISO images.|
+| API Key | Specify the API key that gives access to {{site.data.keyword.cos_full_notm}}. When importing an encrypted image, the API Key must also have access to Key Protect. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Working with API keys](/docs/iam/apikeys.html). |
 | Operating System | Select the operating system that is included in your image. For encrypted images, only Linux operating systems are valid selections. |
 | Cloud-init | If the image that you are importing is cloud-init enabled, select this check box. If you are importing an image that has a cloud-init enabled Windows operating system and you select this option, you cannot also specify **Your License**. If you are importing an encrypted image, this option is selected by default and not editable because your encrypted image must be cloud-init enabled. |
 | Your License | If you plan to provide your own operating system license, select this check box. If you are importing an image with a Windows operating system, you can select this option if you plan to use the image to provision [dedicated host instances](/docs/vsi/vsi_dedicated_host.html#dedicated-hosts-and-dedicated-instances). If your version of Windows operating system does not support using your own license, this option is disabled. For Windows images, you cannot select Cloud Init if you specify that you will use your own license. If you are importing an encrypted image with Red Hat Enterprise Linux as your operating system, this option is selected by default and not editable because your encrypted image must include its own operating system license. |
 | Boot Mode | Select the boot mode for your image. If a default boot mode is set for the operating system that you specify, that boot mode is selected here automatically. |
 | Notes | Add any notes related to the image that might be helpful to users. |
+| Encryption | The selection for this check box is determined by the file type of the image that you select to import. VHD and ISO images indicate that the image file is not encrypted. Thus, the check box is not selected for VHD and ISO images. A RAW image file indicates that the image is an encrypted image. If a RAW image file is specified, this check box is selected by default and not editable. |
+{: caption="Table 1. Values for importing an image from IBM Cloud Object Storage" caption-side="top"}
+
+The following table shows additional fields that are applicable to importing encrypted images only. For more information about encrypted images, see [Using End to End (E2E) Encryption to provision an encrypted instance](provision-encrypted-image.html).
+
+To import an encrypted image, your account must have access to the End to End (E2E) Encryption feature. To enable your account for E2E Encryption, please contact Support. 
+{: tip}
+
+| Field | Value |
+| ----- | ----- |
 | {{site.data.keyword.keymanagementserviceshort}} Service Instance ID | When importing an encrypted image, your {{site.data.keyword.keymanagementserviceshort}} service instance must be in the same location as your {{site.data.keyword.cos_full_notm}} bucket. You can use the {{site.data.keyword.cloud_notm}} CLI to find your {{site.data.keyword.keymanagementserviceshort}} instance ID. For more information, see [Retrieving your instance ID](/docs/services/key-protect/access-api.html#retrieve-instance-ID). |
 | Wrapped Data Encryption Key | When importing an encrypted image, specify the cipher text that is associated with the data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/services/key-protect/wrap-keys.html#api). |
 | Root Key ID | When importing an encrypted image, specify the ID of the root key that was used to wrap the data encryption key. For more information, see [Viewing keys](/docs/services/key-protect/view-keys.html#view-keys). |
-| API Key | Specify the API key that gives access to {{site.data.keyword.cos_full_notm}}. When importing an encrypted image, the API Key must also have access to Key Protect. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Managing your API keys](/docs/iam/userid_keys.html). |
-{: caption="Table 1. Values for importing an image from IBM Cloud Object Storage" caption-side="top"}
-
+{: caption="Table 2. Values for importing an encrypted image from IBM Cloud Object Storage" caption-side="top"}
 
 ## Next Steps
 
