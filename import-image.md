@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-10-12"
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,10 +14,13 @@ lastupdated: "2018-10-11"
 # Preparing and importing images
 {: #preparing-and-importing-images}
 
-The Image Templates screen in the {{site.data.keyword.slportal_full}} allows users to import an image from an [IBM Cloud Object Storage](/docs/services/cloud-object-storage/about-cos.html) account. After you have uploaded an existing image to an object storage account, you can import it to the image templates repository.   
+The Image Templates screen in the {{site.data.keyword.slportal_full}} allows users to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage/about-cos.html) service instance. After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.slportal_notm}}.
 {:shortdesc}
 
-After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an Object Storage account can be either VHDs or custom ISOs. VHD imports are restricted to the following 64-bit operating systems:
+You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}. For more informaton, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
+{: tip}
+
+After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an {{site.data.keyword.cos_full_notm}} service instance can be either VHDs or custom ISOs. VHD imports are restricted to the following 64-bit operating systems:
 
 * CentOS 6 and 7
 * RedHat Enterprise Linux 6 and 7
@@ -142,7 +145,7 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 | Bucket | Select the {{site.data.keyword.cos_full_notm}} bucket where your image is stored. Only buckets that exist in the regional  location that you selected are valid. You will receive an error message if you select a bucket that doesn't exist in the selected location.|
 | Image File | Select the image file in the {{site.data.keyword.cos_full_notm}} service instance that you want to import. Supported file types are VHD, ISO, and RAW. If you are importing an encrypted image, the image must be in the RAW file format and encrypted with LUKS disk encryption. |
 | Image Name | Specify a descriptive name for your image. This is the image that you will use to provision virtual server instances. |
-| API Key | Specify the API key that gives access to {{site.data.keyword.cos_full_notm}}. When importing an encrypted image, the API Key must also have access to Key Protect. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Working with API keys](/docs/iam/apikeys.html). |
+| API Key | Specify the API key that gives access to your {{site.data.keyword.cos_full_notm}} service instance. When importing an encrypted image, the API Key must also have access to Key Protect. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Working with API keys](/docs/iam/apikeys.html). |
 | Operating System | Select the operating system that is included in your image. For encrypted images, only Linux operating systems are valid selections. |
 | Cloud-init | If the image that you are importing is cloud-init enabled, select this check box. If you are importing an image that has a cloud-init enabled Windows operating system and you select this option, you cannot also specify **Your License**. If you are importing an encrypted image, this option is selected by default and not editable because your encrypted image must be cloud-init enabled. |
 | Your License | If you plan to provide your own operating system license, select this check box. If you are importing an image with a Windows operating system, you can select this option if you plan to use the image to provision [dedicated host instances](/docs/vsi/vsi_dedicated_host.html#dedicated-hosts-and-dedicated-instances). If your version of Windows operating system does not support using your own license, this option is disabled. For Windows images, you cannot select Cloud Init if you specify that you will use your own license. If you are importing an encrypted image with Red Hat Enterprise Linux as your operating system, this option is selected by default and not editable because your encrypted image must include its own operating system license. |
@@ -158,7 +161,7 @@ To import an encrypted image, your account must have access to the End to End (E
 
 | Field | Value |
 | ----- | ----- |
-| {{site.data.keyword.keymanagementserviceshort}} Service Instance ID | When importing an encrypted image, your {{site.data.keyword.keymanagementserviceshort}} service instance must be in the same location as your {{site.data.keyword.cos_full_notm}} bucket. You can use the {{site.data.keyword.cloud_notm}} CLI to find your {{site.data.keyword.keymanagementserviceshort}} instance ID. For more information, see [Retrieving your instance ID](/docs/services/key-protect/access-api.html#retrieve-instance-ID). |
+| {{site.data.keyword.keymanagementserviceshort}} Service Instance ID | When importing an encrypted image, your {{site.data.keyword.keymanagementserviceshort}} service instance must be in the same region as your {{site.data.keyword.cos_full_notm}} bucket. You can use the {{site.data.keyword.cloud_notm}} CLI to find your {{site.data.keyword.keymanagementserviceshort}} instance ID. For more information, see [Retrieving your instance ID](/docs/services/key-protect/access-api.html#retrieve-instance-ID). |
 | Wrapped Data Encryption Key | When importing an encrypted image, specify the cipher text that is associated with the data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/services/key-protect/wrap-keys.html#api). |
 | Root Key ID | When importing an encrypted image, specify the ID of the root key that was used to wrap the data encryption key. For more information, see [Viewing keys](/docs/services/key-protect/view-keys.html#view-keys). |
 {: caption="Table 2. Values for importing an encrypted image from IBM Cloud Object Storage" caption-side="top"}
@@ -170,3 +173,4 @@ the Image Templates page. After the import completes, the image can be used to o
 Additionally, the image template can be deleted at any time. Image import times vary based on file size, but generally take several minutes to an hour.
 
 After an image is imported into the image template repository, you can delete it from {{site.data.keyword.cos_full_notm}}. You can continue   accessing the image template from the **Image Templates** page and using it to provision virtual server instances. 
+
