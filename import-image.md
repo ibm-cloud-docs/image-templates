@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-12"
+lastupdated: "2018-10-22"
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,13 +14,13 @@ lastupdated: "2018-10-12"
 # Preparing and importing images
 {: #preparing-and-importing-images}
 
-The Image Templates screen in the {{site.data.keyword.slportal_full}} allows users to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage/about-cos.html) service instance. After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.slportal_notm}}.
+The Image Templates screen in the {{site.data.keyword.slportal_full}} allows users to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage/about-cos.html) service instance. After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.slportal}}.
 {:shortdesc}
 
-You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}. For more informaton, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
+You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more informaton, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
 {: tip}
 
-After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an {{site.data.keyword.cos_full_notm}} service instance can be either VHDs or custom ISOs. VHD imports are restricted to the following 64-bit operating systems:
+After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an {{site.data.keyword.cos_full_notm}} service instance can be either VHDs or custom ISOs. VHD imports are restricted to the following 64-bit operating systems:  
 
 * CentOS 6 and 7
 * RedHat Enterprise Linux 6 and 7
@@ -119,7 +119,7 @@ For more information about cloud-init enabled images, see [Provisioning with a c
 ## Uploading an image to {{site.data.keyword.cos_full_notm}}
 {: #upload-to-ibm-cos}
 
-When your image is ready, you can upload it to {{site.data.keyword.cos_full_notm}}. Make sure to use a bucket with a regional location that also supports importing images. (You can import images to the following regions: US-South, US-East, EU-Great Britain, and EU-Germany.) 
+When your image is ready, you can upload it to {{site.data.keyword.cos_full_notm}}. Make sure to use a bucket in a [regional location](/docs/services/cloud-object-storage/basics/endpoints.html#select-regions-and-endpoints). 
 
 1. In {{site.data.keyword.cos_full_notm}}, navigate to your bucket and click **Add Objects** to [upload](/docs/services/cloud-object-storage/basics/upload.html#uploading-data) the image. 
 2. Use the [Aspera](/docs/services/cloud-object-storage/basics/aspera.html#Aspera-high-speed-transfer) high-speed transfer plug-in for the fastest upload speeds of your image.
@@ -141,7 +141,7 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 | Field | Value |
 | ----- | ----- |
 | {{site.data.keyword.cos_full_notm}} | Select the {{site.data.keyword.cos_full_notm}} service instance where the image that you want to import is stored. |
-| Location | Select the specific geographic region where your image is stored. You can import images into the following regions and associated data centers: US-South (DAL13), US-East (WDC07), EU-Great Britain (LON02), EU-Germany (FRA02). After the image is imported to one of the data centers that are listed, you can move it to another data center. | 
+| Location | Select the specific geographic region where your image is stored. You can import images into the following regions and associated data centers: US-South (DAL13), US-East (WDC07), EU-Great Britain (LON02), EU-Germany (FRA02), AP-Japan. After the image is imported to one of the data centers that are listed, you can move it to another data center. | 
 | Bucket | Select the {{site.data.keyword.cos_full_notm}} bucket where your image is stored. Only buckets that exist in the regional  location that you selected are valid. You will receive an error message if you select a bucket that doesn't exist in the selected location.|
 | Image File | Select the image file in the {{site.data.keyword.cos_full_notm}} service instance that you want to import. Supported file types are VHD, ISO, and RAW. If you are importing an encrypted image, the image must be in the RAW file format and encrypted with LUKS disk encryption. |
 | Image Name | Specify a descriptive name for your image. This is the image that you will use to provision virtual server instances. |
