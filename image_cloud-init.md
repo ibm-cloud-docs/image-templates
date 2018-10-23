@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-09-19"
+lastupdated: "2018-10-23"
 
 ---
 
@@ -20,8 +20,7 @@ When you order a virtual server, many operating systems now use a cloud-init ena
 a customized image that you've enabled for cloud-init.
 {:shortdesc}
 
-The following operating systems now default to a cloud-init enabled image when you order a virtual server without selecting additional 
-software, post-provisioning scripts, or advanced monitoring.
+The following operating systems now default to a cloud-init enabled image when you order a virtual server without add-ons. (Add-ons include additional software, post-provisioning scripts, and advanced monitoring.)
 * CentOS 7
 * Debian 8
 * Ubuntu 16.04
