@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-22"
+lastupdated: "2018-10-23"
 ---
 
 {:shortdesc: .shortdesc}
@@ -141,7 +141,7 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 | Field | Value |
 | ----- | ----- |
 | {{site.data.keyword.cos_full_notm}} | Select the {{site.data.keyword.cos_full_notm}} service instance where the image that you want to import is stored. |
-| Location | Select the specific geographic region where your image is stored. You can import images into the following regions and associated data centers: US-South (DAL13), US-East (WDC07), EU-Great Britain (LON02), EU-Germany (FRA02), AP-Japan. After the image is imported to one of the data centers that are listed, you can move it to another data center. | 
+| Location | Select the specific geographic region where your image is stored. You can import images into the following regions and associated data centers: US-South (DAL13), US-East (WDC07), EU-Great Britain (LON02), EU-Germany (FRA02), AP-Japan (TOK02). After the image is imported to one of the data centers that are listed, you can move it to another data center. | 
 | Bucket | Select the {{site.data.keyword.cos_full_notm}} bucket where your image is stored. Only buckets that exist in the regional  location that you selected are valid. You will receive an error message if you select a bucket that doesn't exist in the selected location.|
 | Image File | Select the image file in the {{site.data.keyword.cos_full_notm}} service instance that you want to import. Supported file types are VHD, ISO, and RAW. If you are importing an encrypted image, the image must be in the RAW file format and encrypted with LUKS disk encryption. |
 | Image Name | Specify a descriptive name for your image. This is the image that you will use to provision virtual server instances. |
