@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-04-04"
+lastupdated: "2018-10-30"
 
 ---
 
@@ -55,4 +55,10 @@ Volume is the disk space that is available for storing files, while physical dat
 
 The image import/export feature that is located on the Image Templates page in the {{site.data.keyword.slportal}} allows for the conversion of VHDs and ISOs stored on an {{site.data.keyword.objectstorageshort}} account to be converted into image templates, and vice versa. When you import an image, a specific file (either VHD or ISO) is sourced from a specified [{{site.data.keyword.objectstorageshort}}] Account's Container and is converted into an image template. The image template can then be used to boot or load a device. When you export an image, the image template is converted into a file (or several files if the template has multiple disks) that is stored in a specified location on an {{site.data.keyword.objectstorageshort}} Account's Container. 
 
+## How do I create an image template for my entire server and not just my primary drive?
+
+To create an image template for your entire server, see the instructions in [Creating an image template](create-standard-image.html). 
+
+If you choose to export an image template to IBM Cloud Object Storage, each block device (or disk) has its own associated file. For example, if your image file is named image.vhd, the first block device is exported as image-0.vhd. The second block device is exported as image-1.vhd, and so on. 
+{: tip}
 
