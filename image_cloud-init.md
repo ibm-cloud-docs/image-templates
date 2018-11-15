@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -22,8 +22,8 @@ a customized image that you've enabled for cloud-init.
 
 The following operating systems now default to a cloud-init enabled image when you order a virtual server without add-ons. (Add-ons include additional software, post-provisioning scripts, and advanced monitoring.)
 * CentOS 7
-* Debian 8
-* Ubuntu 16.04
+* Debian 8, 9
+* Ubuntu 16.04, 18.04
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
