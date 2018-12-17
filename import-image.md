@@ -72,7 +72,7 @@ To ensure that an image can be successfully deployed in the {{site.data.keyword.
 * wget must be installed
 * Latest xe-guest-utilities Xen tools must be installed. Complete the following steps:
     
-    1. Download the XenServer ISO from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.citrix.com/downloads/xenserver/product-software/xenserver-72-standard-edition.html)
+    1. Download the XenServer ISO from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html)
     
     2. Mount the ISO by running the following command: 
     
