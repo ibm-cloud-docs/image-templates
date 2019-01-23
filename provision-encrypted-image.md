@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-09-19"
+  years: 2014, 2019
+lastupdated: "2018-01-23"
 
 ---
 
@@ -36,7 +36,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
       2. [Create](/docs/services/key-protect/create-root-keys.html#create-root-keys) or [import](/docs/services/key-protect/import-root-keys.html#import-root-keys) a root key (CRK) in {{site.data.keyword.keymanagementservicelong_notm}}.
       3. **Optional**: If you choose, you can [create](/docs/services/key-protect/create-standard-keys.html#create-standard-keys) or [import](/docs/services/key-protect/import-standard-keys.html#import-standard-keys) a standard key for decryption. 
       4. Obtain [access to the {{site.data.keyword.keymanagementserviceshort}} API](/docs/services/key-protect/access-api.html#access-api) so that you can wrap the data encryption key.
-      5. [Wrap the data encryption key (WDEK)](/docs/services/key-protect/wrap-keys.html#wrap-keys) with the root key. You will need the cipher text that is associated with the WDEK when you import your encrypted image to {{site.data.keyword.slportal}}.
+      5. [Wrap the data encryption key](/docs/services/key-protect/wrap-keys.html#wrap-keys) with the root key. You will need the cipher text that is associated with the wrapped data encryption key (WDEK) when you import your encrypted image to {{site.data.keyword.slportal}}.
 3. From IBM {{site.data.keyword.iamshort}} (IAM), [authorize access](/docs/iam/authorizations.html#create-an-authorization) between Disk Encryption for {{site.data.keyword.cloud_notm}} {{site.data.keyword.virtualmachinesshort}} (source service) and {{site.data.keyword.keymanagementservicelong_notm}} (target service). Users who import encrypted images from {{site.data.keyword.cos_full_notm}} must have an [access policy defined](/docs/iam/users_roles.html) for {{site.data.keyword.keymanagementservicelong_notm}} in IAM. 
 4. In IBM Cloud Console, create  an instance of {{site.data.keyword.cos_full_notm}} and create a bucket to store data. For more information, see [Getting started with {{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage/getting-started.html#getting-started-console-). 
       1. Create the {{site.data.keyword.cos_full_notm}} instance in the same regional location as your {{site.data.keyword.keymanagementserviceshort}} service is provisioned. 
