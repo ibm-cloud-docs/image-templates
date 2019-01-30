@@ -25,6 +25,7 @@ Image Templates
     image_cloud-init.md
     use-red-hat-cloud-access.md
     
+    {: .topicgroup}
     Using end-to-end encryption to provision
         provision-encrypted-image.md
         create-encrypted-image.md
