@@ -24,7 +24,9 @@ Image Templates
     boot-vsi-image.md
     image_cloud-init.md
     use-red-hat-cloud-access.md
-    provision-encrypted-image.md
+    
+    Using end-to-end encryption to provision
+        provision-encrypted-image.md
         create-encrypted-image.md
         import-encrypted-image-api.md
     {: .navgroup-end}
