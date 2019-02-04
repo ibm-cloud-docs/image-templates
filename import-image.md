@@ -17,7 +17,7 @@ lastupdated: "2018-12-17"
 The Image Templates screen in the {{site.data.keyword.slportal_full}} allows users to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage/about-cos.html) service instance. After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.slportal}}.
 {:shortdesc}
 
-You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more informaton, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
+You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more information, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
 {: tip}
 
 After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an {{site.data.keyword.cos_full_notm}} service instance can be either VHDs or custom ISOs. VHD imports are restricted to the following 64-bit operating systems:  
