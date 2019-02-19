@@ -28,7 +28,7 @@ An encrypted image that you create must meet the following image requirements:
 * Image is compatible with the {{site.data.keyword.cloud}} Console infrastructure evironment.
 * Image includes a Linux operating system such as CentOS, Debian, Red Hat Enterprise Linux, or Ubuntu.
 * Image is cloud-init enabled.
-* Image is encrypted with [LUKS disk encryption](create-encrypted-image.html#luks-disk-encryption).
+* Image is encrypted with [LUKS disk encryption](/docs/infrastructure/image-templates/create-encrypted-image.html#luks-disk-encryption).
 
 ## Using QEMU and DM-Crypt to create an encrypted RAW image
 {: #luks-disk-encryption}

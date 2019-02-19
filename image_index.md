@@ -21,12 +21,12 @@ With {{site.data.keyword.BluSoftlayer_full}} image templates, you can capture an
 ## Creating an image template
 
 Complete the following steps to use image templates:
-1. Learn about [image templates](image_about.html).
+1. Learn about [image templates](/docs/infrastructure/image-templates/image_about.html).
 2. [Create a standard image](create-standard-image.html). 
 
 ## Next steps 
 
-After you've created one or more image templates, you can [access and manage them](access-image-templates-screen.html) on the Image Templates page.
+After you've created one or more image templates, you can [access and manage them](/docs/infrastructure/image-templates/access-image-templates-screen.html) on the Image Templates page.
 
 
 

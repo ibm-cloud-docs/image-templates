@@ -9,7 +9,7 @@ lastupdated: "2018-09-19"
 
 # Exporting an image to OpenStack Swift
 
-From the Image Templates page you can export an image template to an [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift/index.html) account. 
+From the Image Templates page you can export an image template to an [Object Storage OpenStack Swift](/docs/infrastructure/image-templates/objectstorage-swift/index.html) account. 
 {:shortdesc}
 
 The image export process takes a preexisting, private standard image template and converts the image into an 
@@ -28,6 +28,6 @@ the action.
 ## Next Steps
 
 After you export an image, the image remains in the list of image templates, but it is also available as a file in the Object Storage OpenStack Swift location that was specified during the export process. For more information about viewing a file that was
-exported to an Object Storage Account, see [Viewing and Editing File Details](/docs/infrastructure/objectstorage-swift/interacting-in-portal.html#viewing-and-editing-file-details). Because each image is a different size and has different characteristics, the export process might 
+exported to an Object Storage Account, see [Viewing and Editing File Details](/docs/infrastructure/image-templates/objectstorage-swift/interacting-in-portal.html#viewing-and-editing-file-details). Because each image is a different size and has different characteristics, the export process might 
 take several minutes before it completes. The average export speed is 2 GB / minute. If several minutes lapse and the image is still not 
 available on the Object Storage OpenStack Swift Account, [Contact Support](/docs/get-support/howtogetsupport.html).

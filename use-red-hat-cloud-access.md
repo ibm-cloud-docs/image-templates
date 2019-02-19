@@ -41,7 +41,7 @@ To access the Import Image page of Image Templates and mark a VHD image to use y
 1. From the **Devices** menu select **Manage > Images**.
 2. Click the **Import Image** tab.
 3. Complete the required information for importing your VHD image, and select the **Your License** checkbox that’s shown near the **Operating System** 
-dropdown box. For more information about importing images, see [Preparing and importing images](import-image.html).
+dropdown box. For more information about importing images, see [Preparing and importing images](/docs/infrastructure/image-templates/import-image.html).
 
 ## Updating an image template to specify a user provided OS license
 
