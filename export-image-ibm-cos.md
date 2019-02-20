@@ -26,7 +26,7 @@ Use the following steps to export an image template to IBM Cloud Object Storage.
 1. Authenticate to {{site.data.keyword.slportal}} with a service ID that has write access to IBM Cloud Object Storage.
 2. From the **Devices** menu in the [{{site.data.keyword.slportal_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), select **Manage > Images**.
 3. Click **Actions** for the image template that you want to export and select **Export Image to IBM COS**. If an image template with the configuration that you want is not yet 
-available, see [Creating an Image Template](create-standard-image.html).
+available, see [Creating an Image Template](/docs/infrastructure/image-templates/create-standard-image.html).
 4. Complete the required fields (see table 1). 
 5. Click **OK** to export the image to the specified location in the IBM Cloud Object Storage Account. 
 

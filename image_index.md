@@ -22,7 +22,7 @@ With {{site.data.keyword.BluSoftlayer_full}} image templates, you can capture an
 
 Complete the following steps to use image templates:
 1. Learn about [image templates](/docs/infrastructure/image-templates/image_about.html).
-2. [Create a standard image](create-standard-image.html). 
+2. [Create a standard image](/docs/infrastructure/image-templates/create-standard-image.html). 
 
 ## Next steps 
 

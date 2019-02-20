@@ -17,7 +17,7 @@ image file that is stored in a specified location on an Object Storage OpenStack
 
 1. From the **Devices** menu in the [{{site.data.keyword.slportal_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), select **Manage > Images**.
 2. Click **Actions** for the image template that you want to export and select **Export Image**. If an image template with the configuration that you want is not yet 
-available, see [Creating an Image Template](create-standard-image.html).
+available, see [Creating an Image Template](/docs/infrastructure/image-templates/create-standard-image.html).
 3. On the Export Image page, enter the file name for the image in the **File Name** field.
 5. From the **Account** drop-down list, select an **Object Storage Account**.
 6. From the **Cluster** drop-down list, select an **Object Storage Cluster**.
