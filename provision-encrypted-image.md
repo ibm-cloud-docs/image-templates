@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2018-01-23"
+lastupdated: "2018-02-21"
 
 ---
 
@@ -22,7 +22,7 @@ The End to End (E2E) Encryption feature enables you to bring your own encrypted,
 E2E Encryption brings together several {{site.data.keyword.cloud}} components to provide a secure solution for your critical information.
 
 * {{site.data.keyword.keymanagementservicefull_notm}} secures your keys with FIPS 140-2 Level 2 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. 
-* IBM {{site.data.keyword.iamshort}} (IAM) enables the Disk Encryption for {{site.data.keyword.cloud_notm}} {{site.data.keyword.virtualmachinesshort}} service to access {{site.data.keyword.keymanagementserviceshort}} and your root key that is used to wrap your data encryption key.
+* IBM {{site.data.keyword.iamshort}} (IAM) enables the **Cloud Block Storage** service to access {{site.data.keyword.keymanagementserviceshort}} and your root key that is used to wrap your data encryption key.
 * {{site.data.keyword.cos_full_notm}} securely stores your encrypted image when you upload it. 
 * In {{site.data.keyword.slportal}} you can import your encrypted image and create an image template. 
 * With an encrypted image template available in the {{site.data.keyword.cloud_notm}} Console infrastructure environment, you can provision encrypted virtual server instances.
@@ -37,7 +37,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
       3. **Optional**: If you choose, you can [create](/docs/services/key-protect/create-standard-keys.html#create-standard-keys) or [import](/docs/services/key-protect/import-standard-keys.html#import-standard-keys) a standard key for decryption. 
       4. Obtain [access to the {{site.data.keyword.keymanagementserviceshort}} API](/docs/services/key-protect/access-api.html#access-api) so that you can wrap the data encryption key.
       5. [Wrap the data encryption key](/docs/services/key-protect/wrap-keys.html#wrap-keys) with the root key. You will need the cipher text that is associated with the wrapped data encryption key (WDEK) when you import your encrypted image to {{site.data.keyword.slportal}}.
-3. From IBM {{site.data.keyword.iamshort}} (IAM), [authorize access](/docs/iam/authorizations.html#create-an-authorization) between Disk Encryption for {{site.data.keyword.cloud_notm}} {{site.data.keyword.virtualmachinesshort}} (source service) and {{site.data.keyword.keymanagementservicelong_notm}} (target service). Users who import encrypted images from {{site.data.keyword.cos_full_notm}} must have an [access policy defined](/docs/iam/users_roles.html) for {{site.data.keyword.keymanagementservicelong_notm}} in IAM. 
+3. From IBM {{site.data.keyword.iamshort}} (IAM), [authorize access](/docs/iam/authorizations.html#create-an-authorization) between **Cloud Block Storage** (source service) and {{site.data.keyword.keymanagementservicelong_notm}} (target service). Users who import encrypted images from {{site.data.keyword.cos_full_notm}} must have an [access policy defined](/docs/iam/users_roles.html) for {{site.data.keyword.keymanagementservicelong_notm}} in IAM. 
 4. In IBM Cloud Console, create  an instance of {{site.data.keyword.cos_full_notm}} and create a bucket to store data. For more information, see [Getting started with {{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage/getting-started.html#getting-started-console-). 
       1. Create the {{site.data.keyword.cos_full_notm}} instance in the same regional location as your {{site.data.keyword.keymanagementserviceshort}} service is provisioned. 
       2. When you create the bucket, the **Resiliency** setting must be _Regional_. 
