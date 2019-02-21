@@ -22,7 +22,7 @@ The End to End (E2E) Encryption feature enables you to bring your own encrypted,
 E2E Encryption brings together several {{site.data.keyword.cloud}} components to provide a secure solution for your critical information.
 
 * {{site.data.keyword.keymanagementservicefull_notm}} secures your keys with FIPS 140-2 Level 2 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. 
-* IBM {{site.data.keyword.iamshort}} (IAM) enables the **Cloud Block Storage** service to access {{site.data.keyword.keymanagementserviceshort}} and your root key that is used to wrap your data encryption key.
+* IBM {{site.data.keyword.iamshort}} (IAM) enables the Cloud Block Storage service to access {{site.data.keyword.keymanagementserviceshort}} and your root key that is used to wrap your data encryption key.
 * {{site.data.keyword.cos_full_notm}} securely stores your encrypted image when you upload it. 
 * In {{site.data.keyword.slportal}} you can import your encrypted image and create an image template. 
 * With an encrypted image template available in the {{site.data.keyword.cloud_notm}} Console infrastructure environment, you can provision encrypted virtual server instances.
