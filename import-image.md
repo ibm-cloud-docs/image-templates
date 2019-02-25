@@ -114,7 +114,7 @@ To ensure that an image can be successfully deployed in the {{site.data.keyword.
         ```
         {: pre}
 
-For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/infrastructure/image-templates/imag-templates/image_cloud-init.html).
+For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/infrastructure/image-templates/image_cloud-init.html).
 
 ## Uploading an image to {{site.data.keyword.cos_full_notm}}
 {: #upload-to-ibm-cos}
@@ -154,14 +154,14 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 | Encryption | The selection for this check box is determined by the file type of the image that you select to import. VHD and ISO images indicate that the image file is not encrypted. Thus, the check box is not selected for VHD and ISO images. A RAW image file indicates that the image is an encrypted image. If a RAW image file is specified, this check box is selected by default and not editable. |
 {: caption="Table 1. Values for importing an image from IBM Cloud Object Storage" caption-side="top"}
 
-The following table shows additional fields that are applicable to importing encrypted images only. For more information about encrypted images, see [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/infrastructure/image-templates/image-templates/provision-encrypted-image.html).
+The following table shows additional fields that are applicable to importing encrypted images only. For more information about encrypted images, see [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/infrastructure/image-templates/provision-encrypted-image.html).
 
 To import an encrypted image, your account must have access to the End to End (E2E) Encryption feature. To enable your account for E2E Encryption, please contact Support.
 {: tip}
 
 | Field | Value |
 | ----- | ----- |
-| {{site.data.keyword.keymanagementserviceshort}} Service Instance ID | When importing an encrypted image, your {{site.data.keyword.keymanagementserviceshort}} service instance must be in the same region as your {{site.data.keyword.cos_full_notm}} bucket. You can use the {{site.data.keyword.cloud_notm}} CLI to find your {{site.data.keyword.keymanagementserviceshort}} instance ID. For more information, see [Retrieving your instance ID](/docs/services/key-protect/access-api.html#retrieve-instance-ID). |
+| {{site.data.keyword.keymanagementserviceshort}} Service Instance ID | When importing an encrypted image, your {{site.data.keyword.keymanagementserviceshort}} service instance must be in the same region as your {{site.data.keyword.cos_full_notm}} bucket. You can use the {{site.data.keyword.cloud_notm}} CLI to find your {{site.data.keyword.keymanagementserviceshort}} instance ID. For more information, see [Retrieving your instance ID](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
 | Wrapped Data Encryption Key | When importing an encrypted image, specify the cipher text that is associated with the data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/services/key-protect/wrap-keys.html#api). |
 | Root Key ID | When importing an encrypted image, specify the ID of the root key that was used to wrap the data encryption key. For more information, see [Viewing keys](/docs/services/key-protect/view-keys.html#view-keys). |
 {: caption="Table 2. Values for importing an encrypted image from IBM Cloud Object Storage" caption-side="top"}
