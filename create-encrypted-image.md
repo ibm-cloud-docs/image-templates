@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-09-19"
 
+subcollection: image-templates
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -15,25 +17,25 @@ lastupdated: "2018-09-19"
 {:tip: .tip}
 
 
-# Creating an encrypted image 
+# Creating an encrypted image
 
-As part of the E2E Encryption feature, you can encrypt an image to import into Image Templates and use it to deploy an encrypted virtual server instance. 
+As part of the E2E Encryption feature, you can encrypt an image to import into Image Templates and use it to deploy an encrypted virtual server instance.
 {:shortdesc}
 
 ## Encrypted image requirements
 {: #encrypted-image-reqs}
 
-An encrypted image that you create must meet the following image requirements: 
+An encrypted image that you create must meet the following image requirements:
 
-* Image is compatible with the {{site.data.keyword.cloud}} Console infrastructure evironment.
+* Image is compatible with the {{site.data.keyword.cloud}} Console infrastructure environment.
 * Image includes a Linux operating system such as CentOS, Debian, Red Hat Enterprise Linux, or Ubuntu.
 * Image is cloud-init enabled.
-* Image is encrypted with [LUKS disk encryption](/docs/infrastructure/image-templates/create-encrypted-image.html#luks-disk-encryption).
+* Image is encrypted with [LUKS disk encryption](/docs/infrastructure/image-templates?topic=image-templates-creating-an-encrypted-image#luks-disk-encryption).
 
 ## Using QEMU and DM-Crypt to create an encrypted RAW image
 {: #luks-disk-encryption}
 
-To encrypt your image, you must convert a fixed VHD image file to RAW format. Then, use QEMU and DM-Crypt to create a new image file with LUKS disk encryption. Mount the file as an encrypted volume, and copy the unencrypted image file into the encrypted volume. 
+To encrypt your image, you must convert a fixed VHD image file to RAW format. Then, use QEMU and DM-Crypt to create a new image file with LUKS disk encryption. Mount the file as an encrypted volume, and copy the unencrypted image file into the encrypted volume.
 
 This procedure walks you through the following tasks:
 
@@ -52,11 +54,11 @@ sudo echo "Hello!"
 ```
 {: pre}
 
-You must receive "Hello!" echoed back in reply to complete this encryption task. 
+You must receive "Hello!" echoed back in reply to complete this encryption task.
 
 **Tip**: You must complete this encryption task on a system that is running a Linux operating system and has the following packages available:
 * qemu or qemu-image (depending on your Linux operating system)
-* cryptsetup 
+* cryptsetup
 
 Complete the following steps to encrypt your image.
 
@@ -74,7 +76,7 @@ Complete the following steps to encrypt your image.
   ```
   {: screen}
 
-  This command might take 30 minutes or more to complete. 
+  This command might take 30 minutes or more to complete.
   {: tip}
 
 2. Convert your fixed VHD image file to RAW file format by using QEMU. The image must be in RAW file format before you can encrypt it. Run the following QEMU command:
@@ -91,17 +93,17 @@ Complete the following steps to encrypt your image.
   ```
   {: screen}
 
-  This command might take 30 minutes or more to complete. 
+  This command might take 30 minutes or more to complete.
   {: tip}
 
 3. Identify the data encryption key that you will use to encrypt and decrypt the drive. This data encryption key is the same key that you wrap and specify when you import the encrypted image to {{site.data.keyword.slportal}}. Create a file that contains the data encryption key that you'll use to encrypt and decrypt the drive. In this file, the key must be unwrapped and in base64 encoded text. Base64 helps ensure that no accidental spaces or breaks are included. The base64 encoded data encryption key must have a minimum of 32 characters or bytes, and a maximum of 512 characters or bytes. The data encryption key material must be on one line with no line breaks and no newline. For example, use the following command to create a file called `secret.dek` to store your `unwrapped_key_material` for your data encryption key and encode it with base64:
-  
+
   ```
   $ echo -n $(echo 'unwrapped_key_material' | base64) > secret.dek
   ```
   {: screen}
 
-  Keep this key safe. If you lose this key, you won't be able to decrypt your disk. 
+  Keep this key safe. If you lose this key, you won't be able to decrypt your disk.
   {: tip}
 
 4. Identify the correct size of the new RAW file to create in the following step for the encrypted disk, accounting for the addition of a LUKS header. The new RAW file will be used by _dmcrypt_ and _cryptsetup_ to hold the disk content in an encrypted LUKS format. The size of the new RAW file must be the sum of the size of the RAW file created in step 2 and a constant 4 MB LUKS header. To determine the size of your existing RAW image, run the following command, where _Rhel_7.raw-0.raw_ is the image name:
@@ -119,9 +121,9 @@ Complete the following steps to encrypt your image.
   {: screen}
 
   Where _42949017600_ is the number of bytes that the RAW image is using
-      1. Add 4 MB (converted to bytes) to the RAW image file size to account for the LUKS header. For example, 42949017600 + (4 x 1024 x 1024) = 42953211904 bytes. 
-      2. Convert the sum of the RAW image size and the LUKS header to megabytes and round up to the next megabyte. For example, 42953211904 bytes / 1024 bytes / 1024 kilobytes = 40963.375 megabytes = **40964 MG**. 
-      
+      1. Add 4 MB (converted to bytes) to the RAW image file size to account for the LUKS header. For example, 42949017600 + (4 x 1024 x 1024) = 42953211904 bytes.
+      2. Convert the sum of the RAW image size and the LUKS header to megabytes and round up to the next megabyte. For example, 42953211904 bytes / 1024 bytes / 1024 kilobytes = 40963.375 megabytes = **40964 MG**.
+
 5. Create a new RAW file with the correct number of bytes that will become the encrypted RAW image. Use the following _dd_ command to create the RAW file:
 
   ```
@@ -216,17 +218,16 @@ Complete the following steps to encrypt your image.
   ```
   {: screen}
 
-  This command might take 30 minutes or more to complete. 
+  This command might take 30 minutes or more to complete.
   {: tip}
 
-10. Destroy the volume mapper and close the LUKS connection to the encrypted data file: 
+10. Destroy the volume mapper and close the LUKS connection to the encrypted data file:
 
   ```
   sudo cryptsetup luksClose encryptedVolume
   ```
   {: pre}
 
-  Where _encryptedVolume_ is the name of the encrypted volume block device. 
-  
+  Where _encryptedVolume_ is the name of the encrypted volume block device.
+
   Your _ENCRYPTED_RAW_FILENAME_ is now initialized and you can upload it to IBM Cloud Object Storage. For example, if your encrypted RAW file is _Rhel_7.encrypted.raw_, upload that image to IBM Cloud Object Storage.
-  

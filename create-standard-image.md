@@ -1,7 +1,11 @@
 ---
+
 copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
+
+subcollection: image-templates
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -11,10 +15,10 @@ lastupdated: "2018-11-15"
 
 # Creating an image template
 
-With image templates, you can replicate various configuration options for {{site.data.keyword.virtualmachinesshort}}. 
+With image templates, you can replicate various configuration options for {{site.data.keyword.virtualmachinesshort}}.
 {:shortdesc}
 
-At any point during the life of a virtual server, you can create an image template. Then, you can use it to quickly replicate portions of its configuration in another virtual server. You can create image templates from any virtual server, regardless of its operating system. When your image template is complete, you can use it to create another virtual server. 
+At any point during the life of a virtual server, you can create an image template. Then, you can use it to quickly replicate portions of its configuration in another virtual server. You can create image templates from any virtual server, regardless of its operating system. When your image template is complete, you can use it to create another virtual server.
 
 Complete the following steps to create an image template of a virtual server.
 
@@ -24,7 +28,7 @@ Complete the following steps to create an image template of a virtual server.
 
   Check the **Passwords** tab of the **Device Details** page. Ensure that any passwords listed on the **Device Details** page match the actual operating system passwords and any other software add-on passwords. If passwords do not match, virtual servers that are created from this image template fail.
   {:tip}
-  
+
 4. From the **Actions** menu, select **Create Image Template**.
 5. Enter the new name for the image in the **Image Name** field.
 6. Enter any necessary notes for the image in the **Note** field.
@@ -33,6 +37,5 @@ Complete the following steps to create an image template of a virtual server.
 
 ## Next steps
 
-After the image template is created, more virtual servers can be created by using the template. The new 
+After the image template is created, more virtual servers can be created by using the template. The new
 virtual servers have the same configurations that are included in the image template.
-

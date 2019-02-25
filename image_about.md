@@ -1,11 +1,10 @@
 ---
 
-
-
 copyright:
-  years: 2014, 2018
+  years: 2014, 2017
 lastupdated: "2017-10-03"
 
+subcollection: image-templates
 
 ---
 
@@ -14,7 +13,7 @@ lastupdated: "2017-10-03"
 
 # About image templates
 
-Standard image templates provide an imaging option for all {{site.data.keyword.BluVirtServers_short}}, regardless of operating system. 
+Standard image templates provide an imaging option for all {{site.data.keyword.BluVirtServers_short}}, regardless of operating system.
 {:shortdesc}
 
 With standard image templates, you can capture an image of an existing virtual server and create a new one based on the captured image. Standard image templates are not compatible with bare metal servers.
@@ -24,10 +23,8 @@ The two main actions for any image template are create and deploy. When you requ
 
 ## Private Images
 
-Private images are images that are created by a user on the account or images that are created on another account and shared. By default, all images that are created are private. 
+Private images are images that are created by a user on the account or images that are created on another account and shared. By default, all images that are created are private.
 
 ## Public Images
 
 Public images are pre-configured virtual servers that are posted by {{site.data.keyword.BluSoftlayer_notm}} or made public by customers and are available for use by all {{site.data.keyword.BluSoftlayer_notm}} customers. Virtual servers that are provisioned through public image templates are generally configured for optimal performance, with specific combinations of different configuration specs.
-
-

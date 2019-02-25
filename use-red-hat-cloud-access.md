@@ -1,7 +1,11 @@
 ---
+
 copyright:
   years: 2014, 2018
 lastupdated: "2018-04-04"
+
+subcollection: image-templates
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -9,7 +13,7 @@ lastupdated: "2018-04-04"
 {:tip: .tip}
 
 
-# Using your own OS license or subscription 
+# Using your own OS license or subscription
 
 When you create an image template with a VHD image, you can select to provide your own RHEL operating system license through the [Red Hat Cloud Access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) subscription or a Windows license through the Microsoft Enterprise Agreement.
 {:shortdesc}
@@ -40,8 +44,8 @@ You can import a VHD image and specify that you are providing your own license o
 To access the Import Image page of Image Templates and mark a VHD image to use your own license or subscription, complete the following steps:
 1. From the **Devices** menu select **Manage > Images**.
 2. Click the **Import Image** tab.
-3. Complete the required information for importing your VHD image, and select the **Your License** checkbox that’s shown near the **Operating System** 
-dropdown box. For more information about importing images, see [Preparing and importing images](/docs/infrastructure/image-templates/import-image.html).
+3. Complete the required information for importing your VHD image, and select the **Your License** checkbox that’s shown near the **Operating System**
+dropdown box. For more information about importing images, see [Preparing and importing images](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images).
 
 ## Updating an image template to specify a user provided OS license
 
@@ -51,4 +55,3 @@ To access an image template and designate that it use your own existing license 
 1. From the **Devices** menu select **Manage > Images**.
 2. From the list of templates, click the image template name that you want to update.
 3. On the Image Template Details page, select the **User Provided** checkbox under the **OS License** heading, and click **Update**.
-
