@@ -32,6 +32,10 @@ Image Templates
         import-encrypted-image-api.md
     {: .navgroup-end}
     
+    {: .navgroup id="reference"}
+    image-template-api-reference.md
+    {: .navgroup-end}
+    
     {: .navgroup id="help"}
     image-templates-faq.md
     {: .navgroup-end}
