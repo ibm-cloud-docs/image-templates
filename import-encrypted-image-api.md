@@ -59,7 +59,7 @@ For more information about locating values that are needed to import the encrypt
 | Field    | Value   |
 | -------- | ------- |
 | ibmApiKey | Specify the API key that you noted when you created it. If the API key is lost, you must create a new API key. For more information, see [Managing your API keys](/docs/iam/userid_keys.html). |
-| rootKeyId | Specify the ID of the root key that was used to wrap the data encryption key. For more information, see [Viewing keys](/docs/services/keymgmt/keyprotect_view_keys.html). |
-| wrappedDek | Specify the cipher text that is associated with your wrapped data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/services/keymgmt/keyprotect_wrap_keys.html). |
-| keyProtectId | You can use the {{site.data.keyword.cloud_notm}} CLI to find your {{site.data.keyword.keymanagementserviceshort}} instance ID. For more information, see [Retrieving your instance ID](/docs/services/keymgmt/keyprotect_authentication.html#retrieve_instance_ID). |
+| rootKeyId | Specify the ID of the root key that was used to wrap the data encryption key. For more information, see [Viewing keys](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
+| wrappedDek | Specify the cipher text that is associated with your wrapped data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/services/key-protect?topic=key-protect-wrap-keys#wrap-keys). |
+| keyProtectId | You can use the {{site.data.keyword.cloud_notm}} CLI to find your {{site.data.keyword.keymanagementserviceshort}} instance ID. For more information, see [Retrieving your instance ID](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
 {: caption="Table 1. Values needed for importing encrypted image" caption-side="top"}
