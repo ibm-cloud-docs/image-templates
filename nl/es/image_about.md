@@ -1,11 +1,10 @@
 ---
 
-
-
 copyright:
-  years: 2014, 2018
+  years: 2014, 2017
 lastupdated: "2017-10-03"
 
+subcollection: image-templates
 
 ---
 
@@ -14,7 +13,8 @@ lastupdated: "2017-10-03"
 
 # Acerca de las plantillas de imagen
 
-Las plantillas de imagen estándares proporcionan una opción de creación de imágenes para todos los {{site.data.keyword.BluVirtServers_short}}, independientemente del sistema operativo. {:shortdesc}
+Las plantillas de imagen estándares proporcionan una opción de creación de imágenes para todos los {{site.data.keyword.BluVirtServers_short}}, independientemente del sistema operativo.
+{:shortdesc}
 
 Con las plantillas de imagen estándar, puede capturar una imagen de un servidor virtual existente y crear uno nuevo basado en la imagen capturada. Las plantillas de imágenes estándares no son compatibles con los servidores nativos.
 
@@ -23,10 +23,8 @@ Las dos acciones principales para cualquier plantilla de imagen son crear y desp
 
 ## Imágenes privadas
 
-Las imágenes privadas son imágenes que crea un usuario en la cuenta o imágenes que se crean en otra cuenta y se comparten. De forma predeterminada, todas las imágenes que se crean son privadas. 
+Las imágenes privadas son imágenes que crea un usuario en la cuenta o imágenes que se crean en otra cuenta y se comparten. De forma predeterminada, todas las imágenes que se crean son privadas.
 
 ## Imágenes públicas
 
 Las imágenes públicas son servidores virtuales preconfigurados que publica {{site.data.keyword.BluSoftlayer_notm}} o clientes y que están disponibles para el uso de todos los clientes de {{site.data.keyword.BluSoftlayer_notm}}. Los servidores virtuales que se suministran a través de plantillas de imágenes públicas suelen estar configurados para un rendimiento óptimo, con combinaciones específicas de diversas especificaciones de configuración.
-
-

@@ -1,25 +1,41 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="image-templates" audience="compute" href="/docs/infrastructure/image-templates/image_index.html"}
+{: .toc subcollection="image-templates" audience="compute" href="/docs/infrastructure/image-templates?topic=image-templates-getting-started" path="infrastructure/image-templates/"}
 Plantillas de imagen
-    
+
     {: .navgroup id="learn"}
     image_index.md
     image_about.md
     {: .navgroup-end}
-    
+
     {: .navgroup id="howto"}
     access-image-templates-screen.md
     create-standard-image.md
     import-image.md
-    export-image.md
+    
+    {: .topicgroup}
+    Exportación de plantillas de imagen
+        export-image.md
+        export-image-ibm-cos.md
+
     delete-image-template.md
+    order-vsi-from-image-template.md
     boot-vsi-image.md
     image_cloud-init.md
     use-red-hat-cloud-access.md
+
+    {: .topicgroup}
+    Uso de cifrado de extremo a extremo para el suministro
+        provision-encrypted-image.md
+        create-encrypted-image.md
+        import-encrypted-image-api.md
     {: .navgroup-end}
-    
+
+    {: .navgroup id="reference"}
+    image-template-api-reference.md
+    {: .navgroup-end}
+
     {: .navgroup id="help"}
     image-templates-faq.md
     {: .navgroup-end}

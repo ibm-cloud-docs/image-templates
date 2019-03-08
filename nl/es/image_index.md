@@ -1,11 +1,10 @@
 ---
 
-
-
 copyright:
-  years: 2014, 2018
+  years: 2014, 2017
 lastupdated: "2017-10-05"
 
+subcollection: image-templates
 
 ---
 
@@ -18,20 +17,12 @@ Con las plantillas {{site.data.keyword.BluSoftlayer_full}} de imagen, puede capt
 {:shortdesc}
 
 
-## Creación una plantilla de imagen 
+## Creación una plantilla de imagen
 
 Complete los pasos siguientes para utilizar las plantillas de imagen:
-1. Más información sobre [plantillas de imagen](image_about.html).
-2. [Crear una imagen estándar](create-standard-image.html). 
+1. Más información sobre [plantillas de imagen](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates).
+2. [Crear una imagen estándar](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
 
-## Siguientes pasos 
+## Siguientes pasos
 
-Después de crear una o varias plantillas de imagen, puede acceder y gestionarlas [](access-image-templates-screen.html) en la página Plantillas de imagen.
-
-
-
-
-
-
-
-
+Después de crear una o varias plantillas de imagen, puede [acceder y gestionarlas](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page) en la página Plantillas de imagen.
