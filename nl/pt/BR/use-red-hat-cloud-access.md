@@ -1,7 +1,11 @@
 ---
+
 copyright:
   years: 2014, 2018
-lastupdated: "2018-01-16"
+lastupdated: "2018-04-04"
+
+subcollection: image-templates
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -9,14 +13,14 @@ lastupdated: "2018-01-16"
 {:tip: .tip}
 
 
-# Usando sua própria licença ou assinatura do S.O. 
+# Usando sua própria licença ou assinatura do S.O.
 
 Quando você cria um modelo de imagem com uma imagem do VHD, é possível selecionar para fornecer sua própria licença do sistema operacional RHEL por meio da assinatura do [Red Hat Cloud Access ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) ou uma licença do Windows por meio do Microsoft Enterprise Agreement.
 {:shortdesc}
 
 Se você implementar uma imagem no {{site.data.keyword.BluSoftlayer_full}} que indique que você está usando sua própria licença, os termos de suporte a seguir existirão:
-* A IBM fornece suporte para hypervisors, fornecimento de instâncias, importação de imagens, reinicialização de uma imagem, recarregamento de um S.O. e captura de uma imagem.
-* A empresa da qual você compra a licença do sistema operacional fornece suporte para a própria imagem. A IBM não fornece suporte para a imagem.
+* O {{site.data.keyword.IBM_notm}} fornece suporte para hypervisores, fornecendo instâncias, importando imagens, reinicializando uma imagem, recarregando um S.O. e capturando uma imagem.
+* A empresa da qual você compra a licença do sistema operacional fornece suporte para a própria imagem. O {{site.data.keyword.IBM_notm}} não fornece suporte para a imagem.
 
 Quando você fornece sua própria licença para uma imagem, as restrições a seguir se aplicam à imagem:
 * A imagem é uma imagem privada. Ela não pode ser compartilhada publicamente.
@@ -41,7 +45,7 @@ Para acessar a página Importar imagem de modelos de imagem e marcar uma imagem 
 1. No menu **Dispositivos**, selecione **Gerenciar > Imagens**.
 2. Clique na guia **Importar imagem**.
 3. Conclua as informações necessárias para importar sua imagem do VHD e selecione a caixa de seleção **Sua Licença** que é mostrada próxima à
-caixa suspensa **Sistema Operacional**. Para obter mais informações sobre como importar imagens, consulte [Preparando e importando imagens](import-image.html).
+caixa suspensa **Sistema Operacional**. Para obter mais informações sobre como importar imagens, consulte [Preparando e importando imagens](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images).
 
 ## Atualizando um modelo de imagem para especificar uma licença de S.O. fornecida pelo usuário
 
@@ -51,4 +55,3 @@ Para acessar um modelo de imagem e designar que ele use sua própria licença ou
 1. No menu **Dispositivos**, selecione **Gerenciar > Imagens**.
 2. Na lista de modelos, clique no nome do modelo de imagem que você deseja atualizar.
 3. Na página Detalhes do modelo de imagem, selecione a caixa de seleção **Fornecido pelo usuário** sob o título **Licença do S.O.** e clique em **Atualizar**.
-
