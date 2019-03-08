@@ -1,11 +1,10 @@
 ---
 
-
-
 copyright:
-  years: 2014, 2018
+  years: 2014, 2017
 lastupdated: "2017-10-05"
 
+subcollection: image-templates
 
 ---
 
@@ -21,17 +20,9 @@ lastupdated: "2017-10-05"
 ## 建立映像檔範本
 
 請完成下列步驟，以使用映像檔範本：
-1. 瞭解[映像檔範本](image_about.html)。
-2. [建立標準映像檔](create-standard-image.html)。 
+1. 瞭解[映像檔範本](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates)。
+2. [建立標準映像檔](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template)。
 
-## 後續步驟 
+## 後續步驟
 
-您建立一個以上的映像檔範本之後，可以在「映像檔範本」頁面[存取及管理它們](access-image-templates-screen.html)。
-
-
-
-
-
-
-
-
+您建立一個以上的映像檔範本之後，可以在「映像檔範本」頁面[存取及管理它們](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page)。
