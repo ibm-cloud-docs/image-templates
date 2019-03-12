@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ subcollection: image-templates
 
 
 # Provisioning with a cloud-init enabled image
+{: #cloud-init-image}
 
 When you order a virtual server, many operating systems now use a cloud-init enabled image to optimize provisioning time. You can also import
 a customized image that you've enabled for cloud-init.

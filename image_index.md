@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-05"
 
+keywords: image templates
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Getting started with image templates
+{: #getting-started}
 
 With {{site.data.keyword.BluSoftlayer_full}} image templates, you can capture an image of a virtual server to quickly replicate its configuration with minimal changes in the order process.
 {:shortdesc}

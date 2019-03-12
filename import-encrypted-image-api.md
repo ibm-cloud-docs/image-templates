@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # Importing an encrypted image by using the SoftLayer API
+{: #import-encrypted-image-api}
 
 You can use the {{site.data.keyword.slapi_short}} to import an encrypted image from {{site.data.keyword.cos_full}}
 and create an image template. When your image template is created, you can use it to provision instances.

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 
 
 # Creating an image template
+{: #create-std-image}
 
 With image templates, you can replicate various configuration options for {{site.data.keyword.virtualmachinesshort}}.
 {:shortdesc}

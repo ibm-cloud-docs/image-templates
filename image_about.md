@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-03"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # About image templates
+{: #about-image-templates}
 
 Standard image templates provide an imaging option for all {{site.data.keyword.BluVirtServers_short}}, regardless of operating system.
 {:shortdesc}

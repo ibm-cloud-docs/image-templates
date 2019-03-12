@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 sunbcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ sunbcollection: image-templates
 
 
 # Ordering an instance from an image template
+{: #order-instance-image-templates}
 
 On the Image Templates page, you can provision a virtual server instance from an image template.
 {:shortdesc}

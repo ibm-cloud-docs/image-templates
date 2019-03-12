@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-09-19"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # Creating an encrypted image
+{: #create-encrypted-image}
 
 As part of the E2E Encryption feature, you can encrypt an image to import into Image Templates and use it to deploy an encrypted virtual server instance.
 {:shortdesc}
