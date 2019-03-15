@@ -16,7 +16,7 @@ subcollection: image-templates
 {:faq: data-hd-content-type='faq'}
 
 # FAQs: Image templates
-{: #image-templates-faq}
+{: #faq-image-templates}
 
 ## What is a Standard Image template?
 {: faq}
