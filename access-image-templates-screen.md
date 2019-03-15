@@ -14,7 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Managing images from the Image Templates page
-{: #access-image-templates-page}
+{: #managing-images-from-the-image-templates-page}
 
 The Image Templates page in the {{site.data.keyword.slportal_full}} displays all of the images that are associated with
 an account. From the Image Templates page you can interact with those images and import new images that are stored on existing Object Storage accounts.
