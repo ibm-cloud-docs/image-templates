@@ -18,7 +18,7 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # Auditing virtual server events with Activity Tracker
-{: #audit-events-activity-tracker}
+{: #auditing-virtual-server-events-with-activity-tracker}
 
 You can audit a virtual server instance through its life cycle by using [Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov). You must have an instance of Activity Tracker with the premium service plan provisioned in US South. The premimum plan gives you access to the Kibana dashboard that has more options for filtering and searching audit logs.
 
