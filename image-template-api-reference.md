@@ -18,7 +18,7 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # Image template API reference
-{: #api-reference}
+{: #image-template-api-reference}
 
 The {{site.data.keyword.slapi_full}} is the development interface that gives developers and system administrators direct interaction with
 {{site.data.keyword.cloud}} backend system. The {{site.data.keyword.slapi_short}} powers many of the features in the
