@@ -16,7 +16,7 @@ subcollection: image-templates
 
 
 # Creating an image template
-{: #create-std-image}
+{: #creating-an-image-template}
 
 With image templates, you can replicate various configuration options for {{site.data.keyword.virtualmachinesshort}}.
 {:shortdesc}
