@@ -14,7 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Exporting an image to OpenStack Swift
-{: #export-image-openstack-swift}
+{: #exporting-an-image-to-openstack-swift}
 
 From the Image Templates page you can export an image template to an [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift?topic=objectstorage-swift-GettingStarted#getting-started-with-object-storage-openstack-swift) account.
 {:shortdesc}
