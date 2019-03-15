@@ -16,7 +16,7 @@ subcollection: image-templates
 
 
 # Using your own OS license or subscription
-{: #use-own-os-subscription}
+{: #using-your-own-os-license-or-subscription}
 
 When you create an image template with a VHD image, you can select to provide your own RHEL operating system license through the [Red Hat Cloud Access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) subscription or a Windows license through the Microsoft Enterprise Agreement.
 {:shortdesc}
