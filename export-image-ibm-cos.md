@@ -19,7 +19,7 @@ subcollection: image-templates
 {:tip: .tip}
 
 # Exporting an image to IBM Cloud Object Storage
-{: #exporting-to-ibm-cos}
+{: #exporting-an-image-to-ibm-cloud-object-storage}
 
 From the Image Templates page you can export an image template to an [IBM Cloud Object Storage](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage) account.
 {:shortdesc}
