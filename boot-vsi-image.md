@@ -15,7 +15,7 @@ subcollection: image-templates
 {:tip: .tip}
 
 # Booting a VSI from an image
-{: #boot-vsi-image}
+{: #booting-a-vsi-from-an-image}
 
 The Boot from Image feature starts a virtual server instance (VSI) by using an ISO template that is
 imported from an Object Storage Account.
