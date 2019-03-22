@@ -26,7 +26,7 @@ The Image Templates screen in the {{site.data.keyword.slportal_full}} allows you
 You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more information, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
 {: tip}
 
-After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an {{site.data.keyword.cos_full_notm}} service instance can be either VHDs or custom ISOs. VHD imports are restricted to the following 64-bit operating systems:  
+After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an {{site.data.keyword.cos_full_notm}} service instance can be either VHD, VMDK, or or custom ISOs. VHD imports are restricted to the following 64-bit operating systems:  
 
 * CentOS 6 and 7
 * RedHat Enterprise Linux 6 and 7
