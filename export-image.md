@@ -19,8 +19,7 @@ subcollection: image-templates
 From the Image Templates page you can export an image template to an [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift?topic=objectstorage-swift-GettingStarted#getting-started-with-object-storage-openstack-swift) account.
 {:shortdesc}
 
-The image export process takes a preexisting, private standard image template and converts the image into an
-image file that is stored in a specified location on an Object Storage OpenStack Swift account. Use the following steps to export an image template.
+The image export process takes a preexisting, private standard image template and converts the image into an image file that is stored in a specified location on an Object Storage OpenStack Swift account. Use the following steps to export an image template.
 
 1. From the **Devices** menu in the [{{site.data.keyword.slportal_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), select **Manage > Images**.
 2. Click **Actions** for the image template that you want to export and select **Export Image**. If an image template with the configuration that you want is not yet
