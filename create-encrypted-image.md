@@ -44,7 +44,7 @@ Follow these steps to create your encrypted VHD image:
 
 1. Select a CentOS system running version 7 or higher to encrypt your virtual disk image (VHD file) for {{site.data.keyword.cloud_notm}}. If you do not have access to physical hardware with CentOS installed, you can provision a virtual server instance with CentOS 7 inside {{site.data.keyword.cloud_notm}} by using either a public or dedicated host. The CentOS system used to encrypt VHD files need not be encrypted itself.
 
-2. Log in to your CentOS system and connect to your customer VPN, then [go to the Softlayer download site ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://downloads.service.softlayer.com/citrix/xen/){: new_window} and select the vhd-util tool RPM package file: vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm   
+2. Log in to your CentOS system and connect to your customer VPN, then [go to the SoftLayer download site ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://downloads.service.softlayer.com/citrix/xen/){: new_window} and select the vhd-util tool RPM package file: vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm   
 
    If you cannot download the RPM package file directly into your CentOS system, then download the file to the workstation you are          currently working on. You can then upload it to your CentOS system by using the secure copy (scp) command. If you are using a virtual    server instance in {{site.data.keyword.cloud_notm}}, use the system’s public IP address for this upload by using the following          command.
 
