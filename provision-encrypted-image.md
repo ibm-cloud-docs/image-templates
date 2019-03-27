@@ -24,30 +24,6 @@ subcollection: image-templates
 The End to End (E2E) Encryption feature enables you to bring your own encrypted, cloud-init enabled operating system image that you've encrypted by using a data encryption key that you own and control. After completing some environment setup, you can import your encrypted image to the image template repository and use it to provision encrypted virtual server instances. E2E encryption provides data-at-rest encryption for the storage that is associated with provisioned virtual server instances.
 {:shortdesc}
 
-copyright:
-  years: 2014, 2019
-lastupdated: "2019-03-27"
-
-keywords:
-
-subcollection: image-templates
-
----
-
-{:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:new_window: target="_blank"}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-
-
-# Using End to End (E2E) Encryption to provision an encrypted instance
-{: #using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance}
-
-The End to End (E2E) Encryption feature enables you to bring your own encrypted, cloud-init enabled operating system image that you've encrypted by using a data encryption key that you own and control. After completing some environment setup, you can import your encrypted image to the image template repository and use it to provision encrypted virtual server instances. E2E encryption provides data-at-rest encryption for the storage that is associated with provisioned virtual server instances.
-{:shortdesc}
-
 E2E Encryption brings together several {{site.data.keyword.cloud}} components to provide a secure solution for your critical information.
 
 * {{site.data.keyword.keymanagementservicefull_notm}} secures your keys with FIPS 140-2 Level 2 certified cloud-based hardware security modules (HSMs) that protect against the theft of information.
