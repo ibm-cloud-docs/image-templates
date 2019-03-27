@@ -12,13 +12,8 @@ Image Templates
     {: .navgroup id="howto"}
     access-image-templates-screen.md
     create-standard-image.md
-    import-image.md
-    
-    {: .topicgroup}
-    Exporting image templates
-        export-image.md
-        export-image-ibm-cos.md
-
+    import-image.md    
+    export-image-ibm-cos.md
     delete-image-template.md
     order-vsi-from-image-template.md
     boot-vsi-image.md
@@ -29,7 +24,6 @@ Image Templates
     Using end-to-end encryption to provision
         provision-encrypted-image.md
         create-encrypted-image.md
-        import-encrypted-image-api.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
