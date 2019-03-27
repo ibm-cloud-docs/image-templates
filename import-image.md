@@ -39,6 +39,10 @@ After images are imported as an image template, they can be used to provision or
 
 Imports are limited to 100 GB disks. Images must be named according to the following example: filename.vhd-0.vhd or filename.vmdk-0.vmdk
 
+## Converting images to VHD
+{: #convert-to-vhd}
+
+VHD and VMDK format are the only supported image formats for virtual servers. To convert images to VHD from any format other than VMDK, use the following information:
 
 * Qemu-img 2.7.0 or newer is required
 * Convert the image with the following command:
@@ -122,6 +126,14 @@ To ensure that an image can be successfully deployed in the {{site.data.keyword.
 
 For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/infrastructure/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
 
+## Preparing to import an encrypted image
+{: #preparing-to-import-an-encrypted-image}
+
+If you plan to import a VHD image that's encrypted with your own data encryption key, make sure that you complete the prerequisites and instructions for encryption that are described in [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
+
+You must use the vhd-util tool to encrypt your image, which must be in VHD format. For more information see, [Encrypting VHD images](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image). 
+{: important}
+
 ## Uploading an image to {{site.data.keyword.cos_full_notm}}
 {: #upload-to-ibm-cos}
 
@@ -152,24 +164,26 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 | Image File | Select the image file in the {{site.data.keyword.cos_full_notm}} service instance that you want to import. Supported file types are VHD (Virtual Hard Disk), VMDK (Virtual Machine Disk), and ISO. If you are importing an encrypted image, the image must be in the VHD file format and encrypted with the vhd-util tool. |
 | Image Name | Specify a descriptive name for your image. This is the image that you will use to provision virtual server instances. |
 | API Key | Specify the API key that gives access to your {{site.data.keyword.cos_full_notm}} service instance. When importing an encrypted image, the API Key must also have access to Key Protect. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Working with API keys](/docs/iam?topic=iam-manapikey#manapikey). |
-| Operating System | Select the operating system that is included in your image. For encrypted images, only Linux operating systems are valid selections. |
+| Operating System | Select the operating system that is included in your image. |
 | Cloud-init | If the image that you are importing is cloud-init enabled, select this check box. If you are importing an image that has a cloud-init enabled Windows operating system and you select this option, you cannot concurrently select **Your License**. If you are importing an encrypted image, this option is selected by default and not editable because your encrypted image must be cloud-init enabled. |
 | Your License | If you plan to provide your own operating system license, select this check box. If you are importing an image with a Windows operating system, you can select this option if you plan to use the image to provision [dedicated host instances](/docs/vsi?topic=virtual-servers-dedicated-hosts-and-dedicated-instances#dedicated-hosts-and-dedicated-instances). If your version of Windows operating system does not support using your own license, this option is disabled. For Windows images, you cannot select Cloud Init if you specify that you will use your own license. If you are importing an encrypted image with Red Hat Enterprise Linux as your operating system, this option is selected by default and not editable because your encrypted image must include its own operating system license. |
 | Boot Mode | Select the boot mode for your image. If a default boot mode is set for the operating system that you specify, that boot mode is selected here automatically. |
 | Notes | Add any notes related to the image that might be helpful to users. |
-| Encryption | The selection for this check box depends on whether the image to be imported is an encrypted VHD file. |
+| Encryption | If you are importing an image that you have encrypted with your own data encryption key by using the vhd-util tool, select this check box. |
 {: caption="Table 1. Values for importing an image from IBM Cloud Object Storage" caption-side="top"}
 
 The following table shows additional fields that are applicable to importing encrypted images only. For more information about encrypted images, see [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
 
+<!--
 To import an encrypted image, your account must have access to the End to End (E2E) Encryption feature. To enable your account for E2E Encryption, please contact [Support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 {: tip}
+-->
 
 | Field | Value |
 | ----- | ----- |
-| {{site.data.keyword.keymanagementserviceshort}} Service Instance ID | When importing an encrypted image, your {{site.data.keyword.keymanagementserviceshort}} service instance must be in the same region as your {{site.data.keyword.cos_full_notm}} bucket. You can use the {{site.data.keyword.cloud_notm}} CLI to find your {{site.data.keyword.keymanagementserviceshort}} instance ID. For more information, see [Retrieving your instance ID](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
 | Wrapped Data Encryption Key | When importing an encrypted image, specify the cipher text that is associated with the data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/services/key-protect?topic=key-protect-wrap-keys#api). |
-| Root Key ID | When importing an encrypted image, specify the ID of the root key that was used to wrap the data encryption key. For more information, see [Viewing keys](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
+| {{site.data.keyword.keymanagementserviceshort}} Service Instance | Select a Key Protect instance in your account from the drop-down list. The Key Protect instance must include the customer root key that you used to wrap your data encryption key. |
+| Key Name | Select the name of the root key within the {{site.data.keyword.keymanagementserviceshort}} Service instance that you used to wrap your data encryption key. For more information, see [Viewing keys](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
 {: caption="Table 2. Values for importing an encrypted image from IBM Cloud Object Storage" caption-side="top"}
 
 ## Next Steps
