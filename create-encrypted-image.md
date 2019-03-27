@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-19"
+  years: 2019
+lastupdated: "2019-03-27"
 
-keywords:
+keywords: VHD image file, encryption, encrypted image, image
 
 subcollection: image-templates
 
@@ -17,220 +17,117 @@ subcollection: image-templates
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:tip: .tip}
+{:important: .important}
 
 
-# Creating an encrypted image
-{: #creating-an-encrypted-image}
+# Encrypting VHD images 
+{: #create-encrypted-image}
 
-As part of the E2E Encryption feature, you can encrypt an image to import into Image Templates and use it to deploy an encrypted virtual server instance.
+To use the E2E Encryption feature, you must encrypt your VHD image with the vhd-util tool before importing it into Image Templates for provisioning encrypted instances. Two levels of AES encryption are supported: AES 256-bit and AES 512-bit.
 {:shortdesc}
 
-## Encrypted image requirements
+## Encrypted VHD image requirements
 {: #encrypted-image-reqs}
 
-An encrypted image that you create must meet the following image requirements:
+Encrypted VHD images must meet the following requirements:
 
-* Image is compatible with the {{site.data.keyword.cloud}} Console infrastructure environment.
-* Image includes a Linux operating system such as CentOS, Debian, Red Hat Enterprise Linux, or Ubuntu.
-* Image is cloud-init enabled.
-* Image is encrypted with [LUKS disk encryption](/docs/infrastructure/image-templates?topic=image-templates-creating-an-encrypted-image#luks-disk-encryption).
+* VHD formatted.
+* Compatibility with the {{site.data.keyword.cloud}} Console infrastructure environment.
+* Provisioned with a [supported OS](/docs/infrastructure/image-templates/?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images).
+* Cloud-init enabled.
+* Encrypted with [the vhd-util tool](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image#vhd-util-tool).
 
-## Using QEMU and DM-Crypt to create an encrypted RAW image
-{: #luks-disk-encryption}
+## Encrypting your VHD image
+{: #vhd-util-tool}
 
-To encrypt your image, you must convert a fixed VHD image file to RAW format. Then, use QEMU and DM-Crypt to create a new image file with LUKS disk encryption. Mount the file as an encrypted volume, and copy the unencrypted image file into the encrypted volume.
+Follow these steps to create your encrypted VHD image:
 
-This procedure walks you through the following tasks:
+1. Select a CentOS system running version 7 or higher to encrypt your virtual disk image (VHD file) for {{site.data.keyword.cloud_notm}}. If you do not have access to physical hardware with CentOS installed, you can provision a virtual server instance with CentOS 7 inside {{site.data.keyword.cloud_notm}} by using either a public or dedicated host. The CentOS system used to encrypt VHD files need not be encrypted itself.
 
-* Convert your dynamic VHD image to a fixed VHD image.
-* Convert your fixed VHD image to RAW file format.
-* Create a data encryption key file that you will use to encrypt the drive.
-* Create a new RAW file to contain the image as well as the LUKS encryption header.
-* Format the RAW file with LUKS disk encryption.
-* Attach the encrypted RAW file to a block device.
-* Copy the unencrypted image into the encrypted volume device.
+2. Log in to your CentOS system and connect to your customer VPN, then [go to the Softlayer download site ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://downloads.service.softlayer.com/citrix/xen/){: new_window} and select the vhd-util tool RPM package file: vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm   
 
-You must have the privilege to run commands using `root` user authority, via sudo, to mount and unmount encrypted volumes on your system. You can issue the following command to verify your `root` user privileges:
+   If you cannot download the RPM package file directly into your CentOS system, then download the file to the workstation you are          currently working on. You can then upload it to your CentOS system by using the secure copy (scp) command. If you are using a virtual    server instance in {{site.data.keyword.cloud_notm}}, use the system’s public IP address for this upload by using the following          command.
 
-```
-sudo echo "Hello!"
-```
-{: pre}
+   ```
+   scp vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm root@<vsi_public_ip>:
+   ```
+   {: pre}
 
-You must receive "Hello!" echoed back in reply to complete this encryption task.
+3. Install the RPM by using the following command:
 
-**Tip**: You must complete this encryption task on a system that is running a Linux operating system and has the following packages available:
-* qemu or qemu-image (depending on your Linux operating system)
-* cryptsetup
+   ```
+   rpm -iv vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm
+   ```
+   {: pre}
 
-Complete the following steps to encrypt your image.
+4. Identify the AES encryption key that you need to encrypt and decrypt your disk image and write it into a keyfile. This AES encryption key is the same data encryption key that you wrapped with the Key Protect customer root key in [Preparing your environment](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). Key material that is written into keyfiles must be unwrapped and not be encoded. 
 
-1. Convert your dynamic VHD image file to a fixed VHD image file. A fixed VHD file prevents corruption that might occur if a dynamic VHD is converted directly to RAW file format. Run the following command to convert the dynamic VHD image file to a fixed VHD image file:
+   Because the data_key is not base64 encoded inside the keyfiles, you cannot print or view the keyfile content from the command line      by using standard ASCII characters. 
+   {: tip}
 
-  ```
-  qemu-img convert -p -O vpc -o subformat=fixed <DYNAMIC_VHD_FILE> <FIXED_VHD_FILE>
-  ```
-  {: pre}
+   Use the following command to create keyfiles with either an **AES 256-bit** or an **AES 512-bit** encryption key: 
+   
+   ```
+   echo <data_key> | base64 -d - > <keyfile_name>
+   ```
+   {: pre} 
 
-  For example, if your dynamic VHD file is _Rhel_7.vhd-0.vhd_ and you want the fixed VHD file to be named _Rhel_7.fixed.vhd-0.vhd_, run the following command:
+   Example command:
 
-  ```
-  $ qemu-img convert -p -O vpc -o subformat=fixed Rhel_7.vhd-0.vhd Rhel_7.fixed.vhd-0.vhd
-  ```
-  {: screen}
+   ```
+   echo Nrfen98EpMxF2B+wdgLfagzrqvgUZfMK4vL2T0NsT20ihrsNC9pUUHtizF6218pze8RLCgQ6kwxuE58IWLzgDA== | base64 -d - > aes512.dek
+   ```
+   {: screen}
 
-  This command might take 30 minutes or more to complete.
-  {: tip}
+5. Use the following command to verify the keyfiles that you created in the previous step:
 
-2. Convert your fixed VHD image file to RAW file format by using QEMU. The image must be in RAW file format before you can encrypt it. Run the following QEMU command:
+   ```
+   vhd-util key -C -k <keyfile_name>
+   ```
+   {: pre}
 
-  ```
-  qemu-img convert -p -O raw <FIXED_VHD_FILE> <RAW_IMAGE_FILE>
-  ```
-  {: pre}
+   Example command with output:
 
-  For example, if your fixed VHD file is _Rhel_7.fixed.vhd-0.vhd_, and you want the RAW output file named _Rhel_7.raw-0.raw_, run the following command:
+   ```
+   vhd-util key -C -k aes512.dek
+   vhd_util_read_key: using keyfile aes512.dek, Size (bytes) 64
+   21681bba94f04b33b112f5f90a0faa885a6d1dbf1bd68ed16c5b995143088eda
+   ```
+   {: screen}
 
-  ```
-  qemu-img convert -p -O raw Rhel_7.fixed.vhd-0.vhd Rhel_7.raw-0.raw
-  ```
-  {: screen}
+   The first line of the output from the previous example command indicates that the keyfile named `aes512.dek` contains a 64-byte key,    while the numbers listed on the second line are the SHA256 hashes or security hashes for the respective encryption keys. Output for      files containing an AES 256-bit encryption key will indicate a 32-byte key.
+   {: tip} 
 
-  This command might take 30 minutes or more to complete.
-  {: tip}
+6. Use the following command to create encrypted copies of your VHD files. `target_vhd` represents the name of the file that contains the encrypted version of `source_vhd`.
 
-3. Identify the data encryption key that you will use to encrypt and decrypt the drive. This data encryption key is the same key that you wrap and specify when you import the encrypted image to {{site.data.keyword.slportal}}. Create a file that contains the data encryption key that you'll use to encrypt and decrypt the drive. In this file, the key must be unwrapped and in base64 encoded text. Base64 helps ensure that no accidental spaces or breaks are included. The base64 encoded data encryption key must have a minimum of 32 characters or bytes, and a maximum of 512 characters or bytes. The data encryption key material must be on one line with no line breaks and no newline. For example, use the following command to create a file called `secret.dek` to store your `unwrapped_key_material` for your data encryption key and encode it with base64:
+   ```
+   vhd-util copy -n <source_vhd> -N <target_vhd> -k <keyfile_name>
+   ```
+   {: pre}    
 
-  ```
-  $ echo -n $(echo 'unwrapped_key_material' | base64) > secret.dek
-  ```
-  {: screen}
+   Example command:
 
-  Keep this key safe. If you lose this key, you won't be able to decrypt your disk.
-  {: tip}
+   ```
+   vhd-util copy -n debian8-ne.vhd -N debian8-aes512.vhd -k aes512.dek
+   ```
+   {: screen}
 
-4. Identify the correct size of the new RAW file to create in the following step for the encrypted disk, accounting for the addition of a LUKS header. The new RAW file will be used by _dmcrypt_ and _cryptsetup_ to hold the disk content in an encrypted LUKS format. The size of the new RAW file must be the sum of the size of the RAW file created in step 2 and a constant 4 MB LUKS header. To determine the size of your existing RAW image, run the following command, where _Rhel_7.raw-0.raw_ is the image name:
+7. Verify that the VHD files are encrypted by using the following command.
 
-  ```
-  ls -l Rhel_7.raw-0.raw
-  ```
-  {: pre}
+   ```
+   vhd-util key -p -n <vhd_filename>
+   ```
+   {: pre}
 
-  You will see output similar to the following:
+   Example command with output:
 
-  ```
-  -rw-r--r--. 1 user user 42949017600 Mar 5 10:02 Rhel_7.raw-0.raw
-  ```
-  {: screen}
+   ```
+   vhd-util key -p -n debian8-aes512.vhd
+   0000000000000000000000000000000000000000000000000000000000000000
+   21681bba94f04b33b112f5f90a0faa885a6d1dbf1bd68ed16c5b995143088eda
+   ```
+   {: screen}
 
-  Where _42949017600_ is the number of bytes that the RAW image is using
-      1. Add 4 MB (converted to bytes) to the RAW image file size to account for the LUKS header. For example, 42949017600 + (4 x 1024 x 1024) = 42953211904 bytes.
-      2. Convert the sum of the RAW image size and the LUKS header to megabytes and round up to the next megabyte. For example, 42953211904 bytes / 1024 bytes / 1024 kilobytes = 40963.375 megabytes = **40964 MG**.
+If the VHD file is encrypted, you see two hash values in the output as shown in the previous example. The first hash is all zeros. The second hash is the SHA256 hash that the AES encryption key uses to encrypt and decrypt the VHD. Make sure that the SHA256 hashes for the VHD files are the same as the hashes shown in **Step 5**.
 
-5. Create a new RAW file with the correct number of bytes that will become the encrypted RAW image. Use the following _dd_ command to create the RAW file:
-
-  ```
-  dd if=/dev/zero of=<ENCRYPTED_RAW_FILENAME> bs=1M count=<TARGET_SIZE_IN_MEGABYTE> status=progress
-  ```
-  {: pre}
-
-  Where _ENCRYPTED_RAW_FILENAME_ is the file that will become the encrypted RAW image and _TARGET_SIZE_IN_MEGABYTE_ is the number you got from step 4, the size of the unencrypted RAW image plus the LUKS header.
-
-  For example, if you want your new RAW file that will become the encrypted image to be _Rhel_7.encrypted.raw_, and its target size is _40964_ MB, you run the following command:
-
-  ```
-  $ dd if=/dev/zero of=Rhel_7.encrypted.raw bs=1M count=40964 status=progress
-  ```
-  {: screen}
-
-6. Format the RAW file with LUKS disk encryption by using _dmcrypt_ and your data encryption key (from step 3). This step prepares the file to contain the image. To format the file with LUKS encryption, run the following _cryptsetup_ command:
-
-  ```
-  cryptsetup -v luksFormat <ENCRYPTED_RAW_FILENAME> <DEK_FILENAME>
-  ```
-  {: pre}
-
-  Where _ENCRYPTED_RAW_FILENAME_ is the file name of the RAW file that you want to encrypt and _DEK_FILENAME_ is the name of the file where your data encryption key is stored.
-
-  For example, if your RAW file is _Rhel_7.encrypted.raw_, and the key file is _secret.dek_, you enter:
-
-  ```
-  $ cryptsetup -v luksFormat Rhel_7.encrypted.raw secret.dek
-  ```
-  {: screen}
-
-  After running the cryptsetup command, you will receive the following prompt. This prompt is expected, and you must respond with YES to continue.
-
-  ```
-  WARNING!
-  ========
-  This will overwrite data on Rhel_7.encrypted.raw irrevocably.
-  Are you sure (Type uppercase yes): YES
-  ```
-  {: screen}
-
-7. Attach the encrypted RAW file as a volume to associate a new block device to the operating system. Using _cryptsetup_, run the following command to open the encrypted RAW device using the luksOpen option.
-
-  You must have sudo privilege to run the following command using `root` user authority.
-  {: tip}
-
-  ```
-  sudo cryptsetup -v luksOpen <ENCRYPTED_RAW_FILENAME> <VOLUME_NAME> --key-file <DEK_FILENAME>
-  ```
-  {: pre}
-
-  Where _ENCRYPTED_RAW_FILENAME_ is the file name of the encrypted RAW file, _VOLUME_NAME_ is the name of the device that _dmcrypt_ will attempt to create, and _DEK_FILENAME_ is the file name of your data encryption key.
-
-  For example, if your encrypted RAW file is _Rhel_7.encrypted.raw_, you want to name the block device _encryptedVolume_, and the data encryption key file is _secret.dek_, you use the following command:
-
-  ```
-  $ sudo cryptsetup -v luksOpen Rhel_7.encrypted.raw encryptedVolume --key-file secret.dek
-  ```
-  {: screen}
-
-  When this step is complete, a new block device is created that you can read from and write to under _/dev/mapper/_.
-
-8. Confirm that the LUKS volume mapper was created successfully by running the following command:
-
-  ```
-  ls -l /dev/mapper/
-  ```
-  {: pre}
-
-  You should see output that looks similar to the following example:
-
-  ```
-  total 0
-  lrw-rw---- 1 root root        7 Mar 5 22:22 encryptedVolume -> ../dm-0
-  ```
-  {: screen}
-
-9. Copy the unencrypted image (from step 2) into the encrypted volume device (from step 7). Run the following _dd_ command to copy the unencrypted image to the encrypted volume:
-
-  ```
-  sudo dd if=<RAW_IMAGE_FILE> of=/dev/mapper/<VOLUME_NAME>
-  ```
-  {: pre}
-
-  Where _RAW_IMAGE_FILE_ is the file name of the unencrypted RAW image (created in step 2) and _VOLUME_NAME_ is the name of the encrypted volume block device name (created in step 7).
-
-  For example, if your RAW_IMAGE_FILE is named _Rhel_7.raw-0.raw_, and your VOLUME_NAME is _encryptedVolume_, you run the following command:
-
-  ```
-  $ sudo dd if=Rhel_7.raw-0.raw of=/dev/mapper/encryptedVolume status=progress
-  ```
-  {: screen}
-
-  This command might take 30 minutes or more to complete.
-  {: tip}
-
-10. Destroy the volume mapper and close the LUKS connection to the encrypted data file:
-
-  ```
-  sudo cryptsetup luksClose encryptedVolume
-  ```
-  {: pre}
-
-  Where _encryptedVolume_ is the name of the encrypted volume block device.
-
-  Your _ENCRYPTED_RAW_FILENAME_ is now initialized and you can upload it to IBM Cloud Object Storage. For example, if your encrypted RAW file is _Rhel_7.encrypted.raw_, upload that image to IBM Cloud Object Storage.
+The example command in **Step 7** creates a new encrypted VHD file that is named, “debian8-aes512.vhd”. It is encrypted with the AES 512-bit encryption key from the keyfile named “aes512.dek”. The SHA256 hash for its encryption is                                  `21681bba94f04b33b112f5f90a0faa885a6d1dbf1bd68ed16c5b995143088eda`.
