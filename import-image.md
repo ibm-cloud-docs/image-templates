@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-03-27"
 
 keywords:
 
@@ -13,6 +13,7 @@ subcollection: image-templates
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:tip: .tip}
+{:important: .important}
 {:pre: .pre}
 {:screen: .screen}
 
@@ -26,7 +27,10 @@ The Image Templates screen in the {{site.data.keyword.slportal_full}} allows you
 You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more information, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
 {: tip}
 
-After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an {{site.data.keyword.cos_full_notm}} service instance can be either VHD, VMDK, or or custom ISOs. VHD imports are restricted to the following 64-bit operating systems:  
+You must have an [IBM Cloud Object Storage instance](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-order-storage#creating-a-new-ibm-cloud-platform-account) ordered through the {{site.data.keyword.cloud_notm}} console (cloud.ibm.com) to use this import feature.  IBM Cloud Object Storage from control.softlayer.com is not supported.
+{: important}
+
+After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an {{site.data.keyword.cos_full_notm}} service instance can be either VHD, VMDK, or custom ISOs. VHD and VMDK imports are restricted to the following 64-bit operating systems:  
 
 * CentOS 6 and 7
 * RedHat Enterprise Linux 6 and 7
@@ -35,10 +39,6 @@ After images are imported as an image template, they can be used to provision or
 
 Imports are limited to 100 GB disks. Images must be named according to the following example: filename.vhd-0.vhd or filename.vmdk-0.vmdk
 
-## Converting images to VHD
-{: #convert-to-vhd}
-
-VHD and VMDK format are the only supported image formats for virtual servers. To convert images to VHD from any format other than VMDK, use the following information:
 
 * Qemu-img 2.7.0 or newer is required
 * Convert the image with the following command:
