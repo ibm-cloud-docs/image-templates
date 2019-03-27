@@ -151,7 +151,11 @@ You can use COS SDK with Aspera to initiate high-speed transfer within your cust
 
 Complete the following steps to import an image from {{site.data.keyword.cos_full_notm}}.
 
-1. In the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/), access the **Image Templates** page by selecting **Devices > Manage > Images**.
+1. In the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/) or [{{site.data.keyword.cloud_notm}} console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/classic), access the **Image Templates** page by selecting **Devices > Manage > Images**. 
+
+   If you are importing an encrypted image, you must use {{site.data.keyword.cloud_notm}} console.
+   {: important}
+
 2. Click the **Import Image from IBM COS** tab to open the Import tool.
 3. Complete the required fields (see Table 1).
 4. When the import is complete from {{site.data.keyword.cos_full_notm}}, the image appears on the Image Templates page.
