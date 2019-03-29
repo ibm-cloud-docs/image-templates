@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-09-19"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # OpenStack Swift에 이미지 내보내기
+{: #exporting-an-image-to-openstack-swift}
 
 이미지 템플리트 페이지에서 이미지 템플리트를 [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift?topic=objectstorage-swift-GettingStarted#getting-started-with-object-storage-openstack-swift) 계정에 내보낼 수 있습니다.
 {:shortdesc}
@@ -21,7 +24,7 @@ OpenStack Swift 계정의 지정된 위치에 저장된 이미지 파일로 변�
 
 1. [{{site.data.keyword.slportal_full}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://control.softlayer.com/)의 **디바이스** 메뉴에서 **관리 > 이미지**를 선택하십시오.
 2. 내보낼 이미지 템플리트에 대한 **조치**를 클릭하고 **이미지 내보내기**를 선택하십시오. 원하는 구성의 이미지 템플리트를 아직 사용할 수 없는 경우에는
-[이미지 템플리트 작성](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template)을 참조하십시오. 
+[이미지 템플리트 작성](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template)을 참조하십시오.
 3. 이미지 내보내기 페이지의 **파일 이름** 필드에 이미지의 파일 이름을 입력하십시오.
 5. **계정** 드롭 다운 목록에서 **Object Storage 계정**을 선택하십시오.
 6. **클러스터** 드롭 다운 목록에서 **Object Storage 클러스터**를 선택하십시오.

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-05"
 
+keywords: image templates
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 이미지 템플리트 시작하기
+{: #getting-started-with-image-templates}
 
 {{site.data.keyword.BluSoftlayer_full}} 이미지 템플리트를 사용하면 가상 서버의 이미지를 캡처하여 주문 프로세스의 변경을 최소화하면서 해당 구성을 신속하게 복제할 수 있습니다.
 {:shortdesc}

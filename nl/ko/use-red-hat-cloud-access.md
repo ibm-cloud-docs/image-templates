@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-04-04"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,13 +16,14 @@ subcollection: image-templates
 
 
 # 자체 OS 라이센스 또는 구독 사용
+{: #using-your-own-os-license-or-subscription}
 
 VHD 이미지로 이미지 템플리트를 작성하는 경우에는 [Red Hat Cloud Access ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) 구독을 통한 자체 RHEL 운영 체제 라이센스 또는 Microsoft Enterprise Agreement를 통한 Windows 라이센스의 제공을 선택할 수 있습니다.
 {:shortdesc}
 
 자체 라이센스를 사용 중임을 표시하는 이미지를 {{site.data.keyword.BluSoftlayer_full}}에 배치하는 경우에는 다음의 지원 조항이 존재합니다.
-* {{site.data.keyword.IBM_notm}}에서는 하이퍼바이저, 인스턴스 프로비저닝, 이미지 가져오기, 이미지 재부팅, OS 재로드 및 이미지 캡처에 대한 지원을 제공합니다. 
-* 운영 체제 라이센스의 구입처인 회사는 이미지 자체에 대한 지원을 제공합니다. {{site.data.keyword.IBM_notm}}에서는 이미지에 대한 지원을 제공하지 않습니다. 
+* {{site.data.keyword.IBM_notm}}에서는 하이퍼바이저, 인스턴스 프로비저닝, 이미지 가져오기, 이미지 재부팅, OS 재로드 및 이미지 캡처에 대한 지원을 제공합니다.
+* 운영 체제 라이센스의 구입처인 회사는 이미지 자체에 대한 지원을 제공합니다. {{site.data.keyword.IBM_notm}}에서는 이미지에 대한 지원을 제공하지 않습니다.
 
 이미지에 대한 자체 라이센스를 제공하는 경우에는 다음의 제한사항이 이미지에 적용됩니다.
 * 이미지는 개인용 이미지입니다. 이는 공용으로 공유될 수 없습니다.

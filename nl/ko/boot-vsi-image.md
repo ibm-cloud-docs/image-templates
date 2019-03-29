@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-03-13"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -13,6 +15,7 @@ subcollection: image-templates
 {:tip: .tip}
 
 # 이미지에서 VSI 부팅
+{: #booting-a-vsi-from-an-image}
 
 이미지에서 부팅 기능은 Object Storage 계정에서 가져온 ISO 템플리트를 사용하여
 가상 서버 인스턴스(VSI)를 시작하는 기능입니다.

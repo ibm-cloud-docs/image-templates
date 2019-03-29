@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-03"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 이미지 템플리트 정보
+{: #about-image-templates}
 
 표준 이미지 템플리트는 운영 체제와는 무관하게 모든 {{site.data.keyword.BluVirtServers_short}}에 대한 이미징 옵션을 제공합니다.
 {:shortdesc}

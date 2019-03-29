@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-27"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 이미지 템플리트 페이지의 이미지 관리
+{: #managing-images-from-the-image-templates-page}
 
 {{site.data.keyword.slportal_full}}의 이미지 템플리트 페이지에는 계정과 연관된
 모든 이미지가 표시됩니다. 이미지 템플리트 페이지에서는 해당 이미지와 상호작용하고, 기존 Object Storage 계정에 저장된 새 이미지를 가져올 수 있습니다.

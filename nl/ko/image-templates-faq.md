@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-10-30"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 {:faq: data-hd-content-type='faq'}
 
 # FAQ: 이미지 템플리트
+{: #faq-image-templates}
 
 ## 표준 이미지 템플리트란 무엇입니까?
 {: faq}

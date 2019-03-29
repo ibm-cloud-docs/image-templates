@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 
 
 # 이미지 템플리트 작성
+{: #creating-an-image-template}
 
 이미지 템플리트를 사용하면 {{site.data.keyword.virtualmachinesshort}}에 대한 다양한 구성 옵션을 복제할 수 있습니다.
 {:shortdesc}

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 sunbcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ sunbcollection: image-templates
 
 
 # 이미지 템플리트에서 인스턴스 주문
+{: #order-instance-image-templates}
 
 템플리트 페이지의 이미지 템플리트에서 Virtual Server 인스턴스를 프로비저닝할 수 있습니다.
 {:shortdesc}

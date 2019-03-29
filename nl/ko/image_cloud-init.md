@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ subcollection: image-templates
 
 
 # cloud-init 사용 이미지로 프로비저닝
+{: #provisioning-wiht-a-cloud-init-enabled-image}
 
 가상 서버를 주문하는 경우 대부분의 운영 체제는 이제 cloud-init 사용 이미지를 사용하여
 프로비저닝 시간을 최적화합니다. cloud-init에 대해 사용 가능한, 사용자 정의된 이미지를 가져올 수도 있습니다.
@@ -35,7 +38,7 @@ cloud-init 사용 운영 체제의 가상 서버를 주문하는 경우에는 �
 ## 사용자 정의된 cloud-init 사용 이미지 가져오기
 
 사용자 정의된 cloud-init 사용 이미지를 작성한 경우에는 {{site.data.keyword.slportal_full}}의 이미지 가져오기 페이지에서 해당 이미지를
-cloud-init 이미지로 지정할 수 있습니다. 
+cloud-init 이미지로 지정할 수 있습니다.
 
 이미지 템플리트의 이미지 가져오기 페이지에 액세스하여 cloud-init 사용으로 이미지를 표시하려면 다음 단계를 완료하십시오.
 1. **디바이스** 메뉴에서 **관리** > **이미지**를 선택하십시오.

@@ -4,6 +4,8 @@ copyright:
   years: 2017, 2019
 lastupdated: "2019-01-23"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -16,7 +18,7 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # 이미지 템플리트 API 참조
-{: #api-reference}
+{: #image-template-api-reference}
 
 {{site.data.keyword.slapi_full}}는 개발자와 시스템 관리자가 {{site.data.keyword.cloud}} 백엔드 시스템과 직접 상호작용하는 데 사용할 수 있는 개발 인터페이스입니다. {{site.data.keyword.slapi_short}}에서는 {{site.data.keyword.slportal_full}}의
 많은 기능을 제공합니다. 즉, 일반적으로 {{site.data.keyword.slportal}}에서 상호작용이 가능하면 API에서도

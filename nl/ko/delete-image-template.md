@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-09-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 이미지 템플리트 삭제
+{: #deleting-an-image-template}
 
 표준 이미지 템플리트가 작성된 후에는 언제든지 이를 삭제할 수 있습니다.
 {:shortdesc}

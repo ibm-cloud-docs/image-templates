@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-12-17"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -147,12 +149,12 @@ Java, Python 또는 NodeJS를 사용할 때 사용자 정의 애플리케이션�
 | {{site.data.keyword.cos_full_notm}} | 가져오려는 이미지를 저장할 {{site.data.keyword.cos_full_notm}} 서비스 인스턴스를 선택하십시오. |
 | 위치 | 이미지가 저장된 특정 지역을 선택하십시오. 다음 지역 및 연관된 데이터 센터에 이미지를 가져올 수 있습니다. 미국-남부(DAL13), 미국-동부(WDC07), EU-영국(LON02), EU-독일(FRA02), AP-일본(TOK02). 나열된 데이터 센터 중 하나에 이미지를 가져오고 나면 다른 데이터 센터로 이동할 수 있습니다. |
 | 버킷 | 이미지를 저장할 {{site.data.keyword.cos_full_notm}} 버킷을 선택하십시오. 선택한 지역에 있는 버킷만 유효합니다. 선택한 위치에 없는 버킷을 선택하면 오류 메시지가 표시됩니다.|
-| 이미지 파일 | {{site.data.keyword.cos_full_notm}} 서비스 인스턴스에서 가져오려는 이미지 파일을 선택하십시오. 지원되는 파일 유형은 VHD, ISO 및 RAW입니다. 암호화된 이미지를 가져올 때 이미지는 RAW 파일 형식이어야 하며 LUKS 디스크 암호화로 암호화해야 합니다.|
+| 이미지 파일 | {{site.data.keyword.cos_full_notm}} 서비스 인스턴스에서 가져오려는 이미지 파일을 선택하십시오. 지원되는 파일 유형은 VHD, ISO 및 RAW입니다. 암호화된 이미지를 가져올 때 이미지는 RAW 파일 형식이어야 하며 LUKS 디스크 암호화로 암호화해야 합니다. |
 | 이미지 이름 | 이미지의 설명적 이름을 지정하십시오. Virtual Server 인스턴스를 프로비저닝하는 데 사용할 이미지입니다. |
 | API 키 | {{site.data.keyword.cos_full_notm}} 서비스 인스턴스에 대한 액세스 권한을 제공하는 API 키를 지정하십시오. 암호화된 이미지를 가져올 때 API 키도 키 보호에 액세스할 수 있어야 합니다. API 키는 작성 시에만 복사하거나 다운로드할 수 있습니다. API 키가 유실되면 새 API 키를 작성해야 합니다. 자세한 정보는 [API 키에 관한 작업](/docs/iam?topic=iam-manapikey)을 참조하십시오. |
 | 운영 체제 | 이미지에 포함된 운영 체제를 선택하십시오. 암호화된 이미지의 경우 Linux 운영 체제만 올바른 선택사항입니다. |
-| Cloud-init | 가져올 이미지에 cloud-init가 사용된 경우 이 선택란을 선택하십시오. cloud-init 사용 Windows 운영 체제가 있는 이미지를 가져오는 중이고 이 옵션을 선택하면 **라이센스**도 지정할 수 없습니다. 암호화된 이미지를 가져오는 경우 암호화된 이미지에 cloud-init이 사용되어야 하므로 이 옵션은 기본적으로 선택되며 편집할 수 없습니다.|
-| 사용자 라이센스 | 고유 운영 체제 라이센스를 제공하려면 이 선택란을 선택하십시오. Windows 운영 체제가 있는 이미지를 가져오는 경우 이미지를 사용하여 [데디케이티드 호스트 인스턴스](/docs/vsi?topic=virtual-servers-dedicated-hosts-and-dedicated-instances#dedicated-hosts-and-dedicated-instances)를 프로비저닝하려면 이 옵션을 선택할 수 있습니다. Windows 운영 체제 버전에서 고유 라이센스 사용을 지원하지 않으면 이 옵션은 사용되지 않습니다. Windows 이미지의 경우 고유 라이센스를 사용하도록 지정하면 Cloud init을 선택할 수 없습니다. Red Hat Enterprise Linux가 운영 체제로 포함된 암호화된 이미지를 가져오는 경우 암호화된 이미지에 고유 운영 체제 라이센스가 포함되어 있어야 하므로 이 옵션은 기본적으로 선택되며 편집할 수 없습니다.|
+| Cloud-init | 가져올 이미지에 cloud-init가 사용된 경우 이 선택란을 선택하십시오. cloud-init 사용 Windows 운영 체제가 있는 이미지를 가져오는 중이고 이 옵션을 선택하면 **라이센스**도 지정할 수 없습니다. 암호화된 이미지를 가져오는 경우 암호화된 이미지에 cloud-init이 사용되어야 하므로 이 옵션은 기본적으로 선택되며 편집할 수 없습니다. |
+| 사용자 라이센스 | 고유 운영 체제 라이센스를 제공하려면 이 선택란을 선택하십시오. Windows 운영 체제가 있는 이미지를 가져오는 경우 이미지를 사용하여 [데디케이티드 호스트 인스턴스](/docs/vsi?topic=virtual-servers-dedicated-hosts-and-dedicated-instances#dedicated-hosts-and-dedicated-instances)를 프로비저닝하려면 이 옵션을 선택할 수 있습니다. Windows 운영 체제 버전에서 고유 라이센스 사용을 지원하지 않으면 이 옵션은 사용되지 않습니다. Windows 이미지의 경우 고유 라이센스를 사용하도록 지정하면 Cloud init을 선택할 수 없습니다. Red Hat Enterprise Linux가 운영 체제로 포함된 암호화된 이미지를 가져오는 경우 암호화된 이미지에 고유 운영 체제 라이센스가 포함되어 있어야 하므로 이 옵션은 기본적으로 선택되며 편집할 수 없습니다. |
 | 부트 모드 | 이미지의 부트 모드를 선택하십시오. 사용자가 지정하는 운영 체제의 기본 부트 모드가 설정되어 있으면 여기에서 부트 모드가 자동으로 선택됩니다. |
 |참고 | 사용자에게 도움을 줄 수 있는 이미지와 관련된 참고사항을 추가하십시오. |
 | 암호화 | 이 선택란은 가져오도록 선택하는 이미지의 파일 유형에 따라 선택 여부가 결정됩니다. VHD와 ISO 이미지는 이미지 파일이 암호화되지 않았음을 나타냅니다. 따라서 VHD와 ISO 이미지의 경우 선택란을 선택하지 않습니다. RAW 이미지 파일은 이미지가 암호화된 이미지임을 나타냅니다. RAW 이미지 파일을 지정하면 이 선택란이 기본적으로 선택되고 편집할 수 없습니다. |
@@ -168,7 +170,7 @@ Java, Python 또는 NodeJS를 사용할 때 사용자 정의 애플리케이션�
 | {{site.data.keyword.keymanagementserviceshort}} 서비스 인스턴스 ID | 암호화된 이미지를 가져올 때 {{site.data.keyword.keymanagementserviceshort}} 서비스 인스턴스는 {{site.data.keyword.cos_full_notm}} 버킷과 같은 영역에 있어야 합니다. {{site.data.keyword.cloud_notm}} CLI를 사용하여 {{site.data.keyword.keymanagementserviceshort}} 인스턴스 ID를 찾을 수 있습니다. 자세한 정보는 [인스턴스 ID 검색](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID)을 참조하십시오. |
 | 랩핑된 데이터 암호화 키 | 암호화된 이미지를 가져올 때 이미지를 암호화하는 데 사용한 데이터 암호화 키와 연관된 암호 텍스트를 지정하십시오. 자세한 정보는 [API를 사용하여 키 랩핑](/docs/services/key-protect?topic=key-protect-wrap-keys#api)을 참조하십시오. |
 | 루트 키 ID | 암호화된 이미지를 가져올 때 데이터 암호화 키를 랩핑하는 데 사용한 루트 키의 ID를 지정하십시오. 자세한 정보는 [키 보기](/docs/services/key-protect?topic=key-protect-view-keys#view-keys)를 참조하십시오. |
-{: caption="표 2. IBM Cloud Object Storage에서 암호화된 이미지를 가져오는 데 사용하는 값 " caption-side="top"}
+{: caption="표 2. IBM Cloud Object Storage에서 암호화된 이미지를 가져오는 데 사용하는 값" caption-side="top"}
 
 ## 다음 단계
 

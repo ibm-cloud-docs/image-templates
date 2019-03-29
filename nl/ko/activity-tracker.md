@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -16,6 +18,7 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # 활동 트래커로 Virtual Server 이벤트 감사
+{: #auditing-virtual-server-events-with-activity-tracker}
 
 [활동 트래커](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov)를 사용하여 라이프사이클 동안 Virtual Server 인스턴스를 감사할 수 있습니다. 미국 남부에 프로비저닝된 프리미엄 서비스 플랜과 함께 활동 트래커 인스턴스가 있어야 합니다. 프리미엄 플랜에서는 감사 로그를 필터링하고 검색하는 추가 옵션이 있는 Kibana 대시보드에 액세스할 수 있습니다.
 

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-02-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ subcollection: image-templates
 
 
 # 엔드 투 엔드(E2E) 암호화를 사용하여 암호화된 인스턴스 프로비저닝
+{: #using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance}
 
 엔드 투 엔드(E2E) 암호화 기능을 사용하면 사용자가 소유하고 제어하는 데이터 암호화 키를 사용하여 암호화한 고유한 cloud-init 사용 운영 체제 이미지를 가져올 수 있습니다. 일부 환경 설정을 완료하고 나면 암호화된 이미지를 이미지 템플리트 저장소에 가져와서 암호화된 Virtual Server 인스턴스를 프로비저닝하는 데 사용할 수 있습니다. E2E 암호화에서는 프로비저닝된 Virtual Server 인스턴스와 연관된 스토리지의 저장 데이터 암호화를 제공합니다. 이 기능에 액세스할 수 있으려면 지원 센터에 문의하십시오.
 {:shortdesc}

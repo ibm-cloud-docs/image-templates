@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # SoftLayer API를 사용하여 암호화된 이미지 가져오기
+{: #importing-an-encrypted-image-by-using-the-softlayer-api}
 
 {{site.data.keyword.slapi_short}}를 사용하여 {{site.data.keyword.cos_full}}에서 암호화된 이미지를 가져오고
 이미지 템플리트를 작성할 수 있습니다. 이미지 템플리트가 작성되면 인스턴스를 프로비저닝하는 데 사용할 수 있습니다.
@@ -58,7 +61,7 @@ print(ret)
 
 {{site.data.keyword.cos_full_notm}}에서 암호화된 이미지를 가져오는 데 필요한 값을 찾는 데 관한 자세한 정보는 다음 표를 참조하십시오.
 
-| 필드 |값   |
+| 필드    |값   |
 | -------- | ------- |
 | ibmApiKey | 작성할 때 참고한 API 키를 지정합니다. API 키가 유실되면 새 API 키를 작성해야 합니다. 자세한 정보는 [API 키 관리](/docs/iam?topic=iam-userapikey)를 참조하십시오. |
 | rootKeyId | 데이터 암호화 키를 랩핑하는 데 사용한 루트 키의 ID를 지정합니다. 자세한 정보는 [키 보기](/docs/services/key-protect?topic=key-protect-view-keys#view-keys)를 참조하십시오. |

@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-09-19"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # 암호화된 이미지 작성
+{: #creating-an-encrypted-image}
 
 E2E 암호화 기능의 일부로 이미지 템플리트에 가져올 이미지를 암호화한 다음 암호화된 Virtual Server 인스턴스를 배치하는 데 사용할 수 있습니다.
 {:shortdesc}
