@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ subcollection: image-templates
 
 
 # 使用啟用 cloud-init 的映像檔進行佈建
+{: #provisioning-wiht-a-cloud-init-enabled-image}
 
 當您訂購虛擬伺服器時，許多作業系統現在使用啟用 cloud-init 的映像檔來最佳化佈建時間。您也可以匯入您已啟用 cloud-init 的自訂映像檔。
 {:shortdesc}

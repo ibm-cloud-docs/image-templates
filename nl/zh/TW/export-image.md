@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-09-19"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 將映像檔匯出至 OpenStack Swift
+{: #exporting-an-image-to-openstack-swift}
 
 從「映像檔範本」頁面，您可以將映像檔範本匯出至 [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift?topic=objectstorage-swift-GettingStarted#getting-started-with-object-storage-openstack-swift) 帳戶。
 {:shortdesc}

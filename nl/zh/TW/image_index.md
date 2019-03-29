@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-05"
 
+keywords: image templates
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 開始使用映像檔範本
+{: #getting-started-with-image-templates}
 
 使用 {{site.data.keyword.BluSoftlayer_full}} 映像檔範本，您可以擷取虛擬伺服器的映像檔，以快速抄寫其配置，並將訂購程序中的變更減到最少。
 {:shortdesc}

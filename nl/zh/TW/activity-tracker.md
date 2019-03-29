@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -16,6 +18,7 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # 使用 Activity Tracker 來審核虛擬伺服器事件
+{: #auditing-virtual-server-events-with-activity-tracker}
 
 您可以使用 [Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov)，在虛擬伺服器實例的整個生命週期加以審核。您必須具有 Activity Tracker 的實例，且其已在美國南部佈建超值服務方案。超值方案可讓您存取 Kibana 儀表板，其中具有其他過濾及搜尋審核日誌的選項。
 

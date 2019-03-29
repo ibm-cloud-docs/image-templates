@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-10-30"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 {:faq: data-hd-content-type='faq'}
 
 # 常見問題：映像檔範本
+{: #faq-image-templates}
 
 ## 何謂標準映像檔範本？
 {: faq}

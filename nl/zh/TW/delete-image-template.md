@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-09-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 刪除映像檔範本
+{: #deleting-an-image-template}
 
 標準映像檔範本建立之後，可以隨時將它們刪除。
 {:shortdesc}

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-03"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 關於映像檔範本
+{: #about-image-templates}
 
 標準映像檔範本為所有 {{site.data.keyword.BluVirtServers_short}} 標準映像選項，不論其作業系統為何。
 {:shortdesc}

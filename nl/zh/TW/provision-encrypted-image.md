@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-02-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ subcollection: image-templates
 
 
 # 使用端對端 (E2E) 加密來佈建已加密的實例
+{: #using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance}
 
 「端對端 (E2E) 加密」功能可讓您自帶已加密且已啟用 cloud-init 的作業系統映像檔，而您先前已使用您所擁有及控制的資料加密金鑰來加密此映像檔。在完成部分環境設定之後，您可以將已加密的映像檔匯入至映像檔範本儲存庫，並使用它來佈建已加密的虛擬伺服器實例。E2E 加密可對與佈建的虛擬伺服器實例相關聯的儲存空間，提供靜態資料加密。若要存取此功能，請與「支援中心」聯絡。
 {:shortdesc}

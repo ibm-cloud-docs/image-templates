@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-03-13"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -13,6 +15,7 @@ subcollection: image-templates
 {:tip: .tip}
 
 # 從映像檔啟動 VSI
+{: #booting-a-vsi-from-an-image}
 
 「從映像檔開機」功能會使用從 Object Storage 帳戶匯入的 ISO 範本，來啟動虛擬伺服器實例 (VSI)。
 {:shortdesc}

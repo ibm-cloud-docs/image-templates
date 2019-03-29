@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-27"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 從映像檔範本頁面管理映像檔
+{: #managing-images-from-the-image-templates-page}
 
 {{site.data.keyword.slportal_full}} 中的「映像檔範本」頁面會顯示與帳戶相關聯的所有映像檔。從「映像檔範本」頁面，您可以與那些映像檔互動，並匯入儲存在現有 Object
 Storage 帳戶上的新映像檔。
