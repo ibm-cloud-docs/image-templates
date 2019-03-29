@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-10-02"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,7 +19,7 @@ subcollection: image-templates
 {:tip: .tip}
 
 # Exportación de una imagen a IBM Cloud Object Storage
-{: #exporting-to-ibm-cos}
+{: #exporting-an-image-to-ibm-cloud-object-storage}
 
 En la página Plantillas de imagen puede exportar una plantilla de imagen a una cuenta de [IBM Cloud Object Storage](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage).
 {:shortdesc}

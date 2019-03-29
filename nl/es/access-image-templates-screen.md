@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-27"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Gestión de imágenes desde la página Plantillas de imagen
+{: #managing-images-from-the-image-templates-page}
 
 La página Plantillas de imagen en {{site.data.keyword.slportal_full}} muestra todas las imágenes que están asociadas con una cuenta. En la página Plantillas de imagen puede interactuar con las imágenes e importar nuevas imágenes que se almacenan en las cuentas de almacenamiento de objetos existentes.
 {:shortdesc}

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-03-13"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -13,6 +15,7 @@ subcollection: image-templates
 {:tip: .tip}
 
 # Arranque de un VSI desde una imagen
+{: #booting-a-vsi-from-an-image}
 
 La característica de arranque de imagen inicia una instancia de servidor virtual (VSI) mediante una plantilla ISO que se importa desde una cuenta de almacenamiento de objetos.
 {:shortdesc}

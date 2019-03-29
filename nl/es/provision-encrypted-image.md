@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-02-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ subcollection: image-templates
 
 
 # Uso de cifrado de extremo a extremo (E2E) para suministrar una instancia cifrada
+{: #using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance}
 
 La característica de cifrado de extremo a extremo (E2E) le permite llevar su propia imagen de sistema operativo cifrada y habilitada para cloud-init que haya cifrado utilizando una clave de cifrado de datos que posea y controle. Después de completar la configuración de entorno, puede importar la imagen cifrada en el repositorio de plantillas de imagen y utilizarla para suministrar instancias de servidor virtual cifradas. El cifrado E2E proporciona cifrado de datos en reposo para el almacenamiento que está asociado con instancias de servidor virtual suministradas. Para obtener acceso a esta característica, póngase en contacto con el servicio de soporte.
 {:shortdesc}

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 sunbcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ sunbcollection: image-templates
 
 
 # Solicitud de una instancia a partir de una plantilla de imagen
+{: #order-instance-image-templates}
 
 En la página Plantillas de imagen, puede suministrar una instancia de servidor virtual a partir de una plantilla de imagen.
 {:shortdesc}

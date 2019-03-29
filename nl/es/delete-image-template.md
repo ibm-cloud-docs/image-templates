@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-09-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Supresión de una plantilla de imagen
+{: #deleting-an-image-template}
 
 Las plantillas de imagen puede suprimirse en cualquier momento después de crearse.
 {:shortdesc}

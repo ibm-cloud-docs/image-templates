@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-03"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Acerca de las plantillas de imagen
+{: #about-image-templates}
 
 Las plantillas de imagen estándares proporcionan una opción de creación de imágenes para todos los {{site.data.keyword.BluVirtServers_short}}, independientemente del sistema operativo.
 {:shortdesc}

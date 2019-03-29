@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 
 
 # Creación una plantilla de imagen
+{: #creating-an-image-template}
 
 Con las plantillas de imagen, puede replicar varias opciones de configuración para {{site.data.keyword.virtualmachinesshort}}.
 {:shortdesc}

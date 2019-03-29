@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-05"
 
+keywords: image templates
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Iniciación con plantillas de imagen
+{: #getting-started-with-image-templates}
 
 Con las plantillas {{site.data.keyword.BluSoftlayer_full}} de imagen, puede capturar una imagen de un servidor virtual para replicar rápidamente su configuración con cambios mínimos para procesar.
 {:shortdesc}

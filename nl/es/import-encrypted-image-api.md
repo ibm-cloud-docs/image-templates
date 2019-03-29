@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # Importación de una imagen cifrada mediante la API de SoftLayer
+{: #importing-an-encrypted-image-by-using-the-softlayer-api}
 
 Puede utilizar la {{site.data.keyword.slapi_short}} para importar una imagen cifrada de {{site.data.keyword.cos_full}} y crear una plantilla de imagen. Cuando se crea la plantilla de imagen, puede utilizarla para suministrar instancias.
 {:shortdesc}

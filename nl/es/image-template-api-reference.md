@@ -4,6 +4,8 @@ copyright:
   years: 2017, 2019
 lastupdated: "2019-01-23"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -16,7 +18,7 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # Referencia de API de plantilla de imagen
-{: #api-reference}
+{: #image-template-api-reference}
 
 {{site.data.keyword.slapi_full}} es la interfaz de desarrollo que proporciona a los desarrolladores y a los administradores del sistema la interacción directa con el sistema de fondo de {{site.data.keyword.cloud}}. {{site.data.keyword.slapi_short}} alimenta muchas de las características del {{site.data.keyword.slportal_full}}, lo que normalmente significa que si una acción se puede ejecutar en el {{site.data.keyword.slportal}}, también se puede ejecutar en la API. Puesto que puede interactuar mediante programación con todas las partes del entorno de {{site.data.keyword.BluSoftlayer_full}} dentro de la API, {{site.data.keyword.slapi_short}} le permite automatizar las tareas. Por ejemplo, puede utilizar la API *SoftLayer_Virtual_Guest/createObject* para desplegar una instancia de servidor virtual a partir de una plantilla de imagen.
 {:shortdesc}

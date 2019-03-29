@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-04-04"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 
 
 # Mediante su propia licencia de sistema operativo o suscripción
+{: #using-your-own-os-license-or-subscription}
 
 Cuando se crea una plantilla de imagen con una imagen VHD, puede seleccionar proporcionar su propia licencia de sistema operativo RHEL a través de la suscripción a [Red Hat Cloud Access ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) o una licencia de Windows a través del Contrato empresarial de Microsoft.
 {:shortdesc}

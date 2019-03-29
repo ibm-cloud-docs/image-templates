@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-09-19"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # Creación de una imagen cifrada
+{: #creating-an-encrypted-image}
 
 Como parte de la característica de cifrado E2E, puede cifrar una imagen para importarla en Plantillas de imagen y utilizarla para desplegar una instancia de servidor virtual cifrada.
 {:shortdesc}

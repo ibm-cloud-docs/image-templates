@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ subcollection: image-templates
 
 
 # Suministro con una imagen habilitada con cloud-init
+{: #provisioning-wiht-a-cloud-init-enabled-image}
 
 Cuando ordena un servidor virtual, muchos sistemas operativos utilizan ahora una imagen de cloud-init
 para optimizar el tiempo de suministro. También puede importar una imagen personalizada que ha habilitado para cloud-init.
