@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -16,6 +18,7 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # 使用 Activity Tracker 审计虚拟服务器事件
+{: #auditing-virtual-server-events-with-activity-tracker}
 
 您可以使用 [Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov) 在虚拟服务器实例的整个生命周期内对其进行审计。您必须具有使用在美国南部供应的高端服务套餐的 Activity Tracker 实例。高端套餐授予您对 Kibana 仪表板的访问权，该仪表板具有更多用于过滤和搜索审计日志的选项。
 

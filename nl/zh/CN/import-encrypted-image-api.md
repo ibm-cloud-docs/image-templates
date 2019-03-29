@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # 使用 SoftLayer API 导入加密映像
+{: #importing-an-encrypted-image-by-using-the-softlayer-api}
 
 您可以使用 {{site.data.keyword.slapi_short}} 从 {{site.data.keyword.cos_full}} 导入加密映像，然后创建映像模板。创建映像模板后，可以将其用于供应实例。
 {:shortdesc}

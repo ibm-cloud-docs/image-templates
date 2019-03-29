@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ subcollection: image-templates
 
 
 # 使用启用了 cloud-init 的映像进行供应
+{: #provisioning-wiht-a-cloud-init-enabled-image}
 
 订购虚拟服务器时，许多操作系统现在都使用启用了 cloud-init 的映像来优化供应时间。您还可以导入启用了 cloud-init 的定制映像。
 {:shortdesc}

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-05"
 
+keywords: image templates
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 映像模板入门
+{: #getting-started-with-image-templates}
 
 通过 {{site.data.keyword.BluSoftlayer_full}} 映像模板，可以捕获虚拟服务器的映像，以在订购过程中进行极少更改的情况下快速复制其配置。
 {:shortdesc}

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-10-02"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,7 +19,7 @@ subcollection: image-templates
 {:tip: .tip}
 
 # 将映像导出到 IBM Cloud Object Storage
-{: #exporting-to-ibm-cos}
+{: #exporting-an-image-to-ibm-cloud-object-storage}
 
 在“映像模板”页面中，可以将映像模板导出到 [IBM Cloud Object Storage](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage) 帐户。
 {:shortdesc}

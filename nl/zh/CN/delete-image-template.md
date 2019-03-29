@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-09-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 删除映像模板
+{: #deleting-an-image-template}
 
 创建标准映像模板后，可以随时将其删除。
 {:shortdesc}

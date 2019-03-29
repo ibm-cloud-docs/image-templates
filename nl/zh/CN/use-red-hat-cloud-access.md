@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-04-04"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 
 
 # 使用您自己的操作系统许可证或预订
+{: #using-your-own-os-license-or-subscription}
 
 使用 VHD 映像创建映像模板时，可以选择通过 [Red Hat Cloud Access ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) 预订来提供您自己的 RHEL 操作系统许可证，或者通过 Microsoft Enterprise Agreement 提供 Windows 许可证。
 {:shortdesc}

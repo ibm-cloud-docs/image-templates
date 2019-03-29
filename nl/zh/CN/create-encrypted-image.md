@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-09-19"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # 创建加密映像
+{: #creating-an-encrypted-image}
 
 作为 E2E 加密功能的一部分，您可以对映像加密以导入到映像模板，然后将该映像用于部署加密虚拟服务器实例。
 {:shortdesc}

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-27"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 在映像模板页面中管理映像
+{: #managing-images-from-the-image-templates-page}
 
 {{site.data.keyword.slportal_full}} 中的“映像模板”页面显示与帐户关联的所有映像。在“映像模板”页面中，您可以与这些映像进行交互，还可以导入存储在现有对象存储器帐户上的新映像。
 {:shortdesc}

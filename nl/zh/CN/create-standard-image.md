@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 
 
 # 创建映像模板
+{: #creating-an-image-template}
 
 通过映像模板，可以为{{site.data.keyword.virtualmachinesshort}}复制各种配置选项。
 {:shortdesc}

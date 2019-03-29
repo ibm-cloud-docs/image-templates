@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 sunbcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ sunbcollection: image-templates
 
 
 # 通过映像模板订购实例
+{: #order-instance-image-templates}
 
 在“映像模板”页面上，可以通过映像模板来供应虚拟服务器实例。
 {:shortdesc}
