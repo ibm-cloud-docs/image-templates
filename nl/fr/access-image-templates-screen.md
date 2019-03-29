@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-27"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Gestion d'images depuis la page Modèles d'image
+{: #managing-images-from-the-image-templates-page}
 
 La page Modèles d'image dans le {{site.data.keyword.slportal_full}} affiche la totalité des images associées à un compte. Elle vous permet d'interagir avec ces images et d'importer de nouvelles images stockées sur des comptes Object Storage existants.
 {:shortdesc}

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-02-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,13 +19,14 @@ subcollection: image-templates
 
 
 # Utilisation du chiffrement de bout en bout pour la mise à disposition d'une instance chiffrée
+{: #using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance}
 
 La fonction de chiffrement de bout en bout vous permet d'utiliser votre propre image de système d'exploitation de type cloud-init que vous avez chiffrée en utilisant une clé de chiffrement de données qui vous appartient et que vous contrôlez. Une fois la configuration d'environnement effectuée, vous pouvez importer l'image chiffrée dans le référentiel de modèles d'image et l'utiliser pour mettre à disposition des instances de serveur virtuel chiffrées. Le chiffrement de bout en bout met à disposition le chiffrement des données au repos pour le stockage associé aux instances de serveur virtuel mises à disposition. Pour pouvoir accéder à cette fonction, contactez le support.
 {:shortdesc}
 
 Le chiffrement de bout en bout regroupe plusieurs composants {{site.data.keyword.cloud}} afin de fournir une solution sécurisée pour vos informations critiques.
 
-* {{site.data.keyword.keymanagementservicefull_notm}} sécurise vos clés avec des modules HSM (hardware security module) basés sur le cloud et certifiés FIPS 140-2 niveau 2 qui vous protègent contre le vol d'informations. 
+* {{site.data.keyword.keymanagementservicefull_notm}} sécurise vos clés avec des modules HSM (hardware security module) basés sur le cloud et certifiés FIPS 140-2 niveau 2 qui vous protègent contre le vol d'informations.
 * IBM {{site.data.keyword.iamshort}} (IAM) permet au service Cloud Block Storage d'accéder à {{site.data.keyword.keymanagementserviceshort}} et à votre clé racine utilisée pour l'encapsulage de votre clé de chiffrement de données.
 * {{site.data.keyword.cos_full_notm}} stocke de manière sécurisée votre image chiffrée lors de son téléchargement.
 * Dans {{site.data.keyword.slportal}}, vous pouvez importer votre image chiffrée et créer un modèle d'image.

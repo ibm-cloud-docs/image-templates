@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-10-02"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,7 +19,7 @@ subcollection: image-templates
 {:tip: .tip}
 
 # Exportation d'une image dans IBM Cloud Object Storage
-{: #exporting-to-ibm-cos}
+{: #exporting-an-image-to-ibm-cloud-object-storage}
 
 Sur la page Modèle d'image, vous pouvez exporter un modèle d'image dans un compte [IBM Cloud Object Storage](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage).
 {:shortdesc}

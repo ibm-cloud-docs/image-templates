@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-09-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Suppression d'un modèle d'image
+{: #deleting-an-image-template}
 
 Les modèles d'image standard peuvent être supprimés à tout moment après leur création.
 {:shortdesc}

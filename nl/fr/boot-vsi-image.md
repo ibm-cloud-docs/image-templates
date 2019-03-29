@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-03-13"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -13,6 +15,7 @@ subcollection: image-templates
 {:tip: .tip}
 
 # Initialisation d'une VSI à partir d'une image
+{: #booting-a-vsi-from-an-image}
 
 La fonction Initialiser à partir d'une image démarre une instance de serveur virtuel (VSI) à l'aide d'un modèle ISO importé d'un compte de stockage d'objets.
 {:shortdesc}

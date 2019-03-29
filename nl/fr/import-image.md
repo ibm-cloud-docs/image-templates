@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-12-17"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -141,7 +143,7 @@ Procédez comme suit pour importer une image à partir d'{{site.data.keyword.cos
 1. Dans le portail [{{site.data.keyword.slportal}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/), accédez à la page **Modèles d'image** en sélectionnant **Unités > Gérer > Images**.
 2. Cliquez sur l'onglet d'importation d'image à partir d'IBM COS**** pour ouvrir l'outil d'importation.
 3. Renseignez les zones suivantes (voir le tableau 1).
-4. Une fois l'importation à partir d'{{site.data.keyword.cos_full_notm}} terminée, l'image s'affiche sur la page Modèles d'image. 
+4. Une fois l'importation à partir d'{{site.data.keyword.cos_full_notm}} terminée, l'image s'affiche sur la page Modèles d'image.
 
 | Zone | Valeur |
 | ----- | ----- |

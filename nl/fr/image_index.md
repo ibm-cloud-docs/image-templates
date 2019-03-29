@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-05"
 
+keywords: image templates
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Initiation aux modèles d'image
+{: #getting-started-with-image-templates}
 
 Les modèles d'image {{site.data.keyword.BluSoftlayer_full}} vous permettent de capturer une image d'un serveur virtuel pour répliquer rapidement sa configuration avec un minimum de modifications dans le processus de commande.
 {:shortdesc}

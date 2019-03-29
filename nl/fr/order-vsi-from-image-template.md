@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 sunbcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ sunbcollection: image-templates
 
 
 # Commande d'une instance à partir d'un modèle d'image
+{: #order-instance-image-templates}
 
 Sur la page Modèles d'image, vous pouvez mettre à disposition une instance de serveur virtuel à partir d'un modèle d'image.
 {:shortdesc}

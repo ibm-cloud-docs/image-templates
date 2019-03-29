@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # Importation d'une image chiffrée en utilisant l'API SoftLayer
+{: #importing-an-encrypted-image-by-using-the-softlayer-api}
 
 Vous pouvez utiliser l'API {{site.data.keyword.slapi_short}} pour importer une image chiffrée à partir d'{{site.data.keyword.cos_full}}
 et créer un modèle d'image. Une fois que votre modèle d'image est créé, vous pouvez l'utiliser pour mettre des instances à disposition.

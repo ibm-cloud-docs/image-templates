@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ subcollection: image-templates
 
 
 # Mise à disposition avec une image cloud-init
+{: #provisioning-wiht-a-cloud-init-enabled-image}
 
 Lorsque vous commandez un serveur virtuel, de nombreux systèmes d'exploitation utilisent désormais une image cloud-init pour optimiser le temps de mise à disposition. Vous pouvez également importer une image personnalisée que vous avez activée pour cloud-init.
 {:shortdesc}

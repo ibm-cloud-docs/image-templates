@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-04-04"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 
 
 # Utilisation de votre propre licence de système d'exploitation ou abonnement
+{: #using-your-own-os-license-or-subscription}
 
 Lorsque vous créez un modèle d'image avec une image VHD, vous pouvez choisir de fournir votre propre licence de système d'exploitation RHEL via l'abonnement à [Red Hat Cloud Access ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) ou une licence Windows via l'abonnement Accord Entreprise Microsoft.
 {:shortdesc}

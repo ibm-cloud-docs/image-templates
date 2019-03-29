@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-09-19"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # Création d'une image chiffrée
+{: #creating-an-encrypted-image}
 
 Dans le cadre de la fonction de chiffrement de bout en bout, vous pouvez chiffrer une image à importer dans Modèles d'image et l'utiliser pour déployer une instance de serveur virtuel chiffrée.
 {:shortdesc}

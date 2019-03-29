@@ -4,6 +4,8 @@ copyright:
   years: 2017, 2019
 lastupdated: "2019-01-23"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -16,7 +18,7 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # Référence d'API de modèle d'image
-{: #api-reference}
+{: #image-template-api-reference}
 
 L'API {{site.data.keyword.slapi_full}} constitue l'interface de développement permettant aux développeurs et aux administrateurs système de gérer l'interaction avec le système dorsal d'{{site.data.keyword.cloud}}. Un grand nombre de fonctions du portail {{site.data.keyword.slportal_full}} sont également disponibles dans l'API {{site.data.keyword.slapi_short}}. Autrement dit, si une interaction est possible dans le portail {{site.data.keyword.slportal}}, elle peut également être exécutée dans l'API. Etant donné que vous pouvez interagir à l'aide d'un programme avec l'ensemble de l'environnement {{site.data.keyword.BluSoftlayer_full}} dans l'API, l'API {{site.data.keyword.slapi_short}} vous permet d'automatiser les tâches. Par exemple, vous pouvez utiliser
 l'API *SoftLayer_Virtual_Guest/createObject* pour déployer une instance de serveur virtuel à partir d'un modèle d'image.

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-09-19"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Exportation d'une image dans OpenStack Swift
+{: #exporting-an-image-to-openstack-swift}
 
 La page Modèles d'image vous permet d'exporter un modèle d'image vers un compte [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift?topic=objectstorage-swift-GettingStarted#getting-started-with-object-storage-openstack-swift).
 {:shortdesc}
