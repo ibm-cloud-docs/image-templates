@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-03-13"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -13,6 +15,7 @@ subcollection: image-templates
 {:tip: .tip}
 
 # VSI aus einem Image starten
+{: #booting-a-vsi-from-an-image}
 
 Mit der Funktion "Aus Image starten" wird eine virtuelle Serverinstanz (VSI) gestartet, indem eine ISO-Vorlage verwendet wird, die von einem Object Storage-Konto importiert wurde.
 {:shortdesc}

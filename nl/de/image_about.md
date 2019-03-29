@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-03"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Informationen zu Imagevorlagen
+{: #about-image-templates}
 
 Standard-Imagevorlagen stellen eine Option für die Imageerstellung für alle {{site.data.keyword.BluVirtServers_short}} unabhängig vom Betriebssystem bereit.
 {:shortdesc}

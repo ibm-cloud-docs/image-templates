@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-27"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Images über die Seite "Imagevorlagen" verwalten
+{: #managing-images-from-the-image-templates-page}
 
 Die Seite "Imagevorlagen" im {{site.data.keyword.slportal_full}} zeigt alle Images an, die zu einem Konto gehören. Sie können auf der Seite "Imagevorlagen" mit diesen Images interagieren und neue Images importieren, die in vorhandenen Object Storage-Konten gespeichert sind.
 {:shortdesc}

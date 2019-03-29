@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -16,14 +18,15 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # Audits für Ereignisse bei virtuellen Servern mit Activity Tracker durchführen
+{: #auditing-virtual-server-events-with-activity-tracker}
 
-Durch Verwenden von [Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov) können Sie für eine virtuelle Serverinstanz (VSI) im Verlauf ihres gesamten Lebenszyklus Audits durchführen. Dazu müssen Sie über eine Instanz von Activity Tracker mit dem in 'Vereinigte Staaten (Süden)' bereitgestellten Premium-Serviceplan verfügen. Durch den Premium-Plan erhalten Sie Zugriff auf das Kibana-Dashboard, das weitere Optionen zum Filtern und Durchsuchen von Auditprotokollen umfasst. 
+Durch Verwenden von [Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov) können Sie für eine virtuelle Serverinstanz (VSI) im Verlauf ihres gesamten Lebenszyklus Audits durchführen. Dazu müssen Sie über eine Instanz von Activity Tracker mit dem in 'Vereinigte Staaten (Süden)' bereitgestellten Premium-Serviceplan verfügen. Durch den Premium-Plan erhalten Sie Zugriff auf das Kibana-Dashboard, das weitere Optionen zum Filtern und Durchsuchen von Auditprotokollen umfasst.
 
-Die Protokolle sind für den Eigner des {{site.data.keyword.cloud}}-Kontos im Abschnitt für Kontoprotokolle sichtbar. Der Kontoeigner hat Einsicht in die folgenden Protokolle: 
+Die Protokolle sind für den Eigner des {{site.data.keyword.cloud}}-Kontos im Abschnitt für Kontoprotokolle sichtbar. Der Kontoeigner hat Einsicht in die folgenden Protokolle:
 * Ereignisse, die vom Eigner des Kontos ausgelöst wurden.
 * Ereignisse, die von Benutzern ausgelöst wurden, die mit dem Konto verknüpft sind.
 
-Sie können für die folgenden Ereignisse für virtuelle Serverinstanzen über Activity Tracker Audits durchführen: 
+Sie können für die folgenden Ereignisse für virtuelle Serverinstanzen über Activity Tracker Audits durchführen:
 * Bereitstellen/Einrichten einer virtuellen Serverinstanz
 * Inaktivieren eines Ports für eine private oder eine öffentliche Schnittstelle
 * Aktivieren eines Ports für eine private oder eine öffentliche Schnittstelle

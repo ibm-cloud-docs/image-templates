@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-05"
 
+keywords: image templates
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Einführung in Imagevorlagen
+{: #getting-started-with-image-templates}
 
 Mit den {{site.data.keyword.BluSoftlayer_full}}-Imagevorlagen können Sie ein Image eines virtuellen Servers erfassen, um die zugehörige Konfiguration mit minimalen Änderungen im Bestellvorgang zu replizieren.
 {:shortdesc}

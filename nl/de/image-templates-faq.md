@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-10-30"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 {:faq: data-hd-content-type='faq'}
 
 # Häufig gestellte Fragen (FAQs): Imagevorlagen
+{: #faq-image-templates}
 
 ## Was ist eine Standard-Imagevorlage?
 {: faq}
@@ -62,7 +65,7 @@ Die Funktion zum Importieren/Exportieren von Images befindet sich auf der Seite 
 ## Wie erstelle ich eine Imagevorlage für meinen gesamten Server und nicht nur für mein primäres Laufwerk?
 {: faq}
 
-Wenn Sie eine Imagevorlage für Ihren gesamten Server erstellen wollen, lesen Sie die Anweisungen in [Imagevorlage erstellen](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template). 
+Wenn Sie eine Imagevorlage für Ihren gesamten Server erstellen wollen, lesen Sie die Anweisungen in [Imagevorlage erstellen](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
 
 Wenn Sie eine Imagevorlage in IBM Cloud Object Storage exportieren, so ist jeder Blockeinheit (oder Platte) eine eigene Datei zugeordnet. Wenn Ihre Imagedatei beispielsweise den Namen "image.vhd" hat, so wird die erste Blockeinheit als "image-0.vhd" exportiert. Die zweite Blockeinheit wird dann mit dem Namen "image-1.vhd" exportiert usw.
 {: tip}

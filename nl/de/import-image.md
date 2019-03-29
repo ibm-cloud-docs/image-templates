@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-12-17"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -121,10 +123,10 @@ Weitere Informationen zu cloud-init-fähige Images finden Sie unter [Bereitstell
 ## Image auf {{site.data.keyword.cos_full_notm}} hochladen
 {: #upload-to-ibm-cos}
 
-Wenn Ihr Image bereitsteht, können Sie es auf {{site.data.keyword.cos_full_notm}} hochladen. Stellen Sie sicher, dass Sie an einem [regionalen Standort](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#select-regions-and-endpoints) ein Bucket verwenden. 
+Wenn Ihr Image bereitsteht, können Sie es auf {{site.data.keyword.cos_full_notm}} hochladen. Stellen Sie sicher, dass Sie an einem [regionalen Standort](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#select-regions-and-endpoints) ein Bucket verwenden.
 
-1. Navigieren Sie in {{site.data.keyword.cos_full_notm}} zu Ihrem Bucket und klicken Sie auf **Objekte hinzufügen**, um das Image [hochzuladen](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-upload-data#uploading-data). 
-2. Verwenden Sie das Plug-in [Aspera](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-use-aspera-high-speed-transfer#Aspera-high-speed-transfer) für die Hochgeschwindigkeitsübertragung, um die maximale Uploadgeschwindigkeit zum Hochladen Ihres Image nutzen zu können. 
+1. Navigieren Sie in {{site.data.keyword.cos_full_notm}} zu Ihrem Bucket und klicken Sie auf **Objekte hinzufügen**, um das Image [hochzuladen](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-upload-data#uploading-data).
+2. Verwenden Sie das Plug-in [Aspera](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-use-aspera-high-speed-transfer#Aspera-high-speed-transfer) für die Hochgeschwindigkeitsübertragung, um die maximale Uploadgeschwindigkeit zum Hochladen Ihres Image nutzen zu können.
 
 Sie können das SDK für Cloud Object Storage in Verbindung mit Aspera nutzen, um die Hochgeschwindigkeitsübertragung innerhalb Ihrer angepassten Anwendungen zu initiieren, wenn Sie Java, Python oder NodeJS verwenden. Weitere Informationen finden Sie unter [Bibliotheken und SDKs verwenden](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-use-aspera-high-speed-transfer#sdk).
 {: tip}
@@ -133,20 +135,20 @@ Sie können das SDK für Cloud Object Storage in Verbindung mit Aspera nutzen, u
 ## Image aus IBM Cloud Object Storage importieren
 {: #import-icos}
 
-Führen Sie zum Importieren eines Image aus{{site.data.keyword.cos_full_notm}} die folgenden Schritte aus. 
+Führen Sie zum Importieren eines Image aus{{site.data.keyword.cos_full_notm}} die folgenden Schritte aus.
 
 1. Öffnen Sie im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/) die Seite **Imagevorlagen**, indem Sie die Optionen **Einheiten > Verwalten > Images** auswählen.
-2. Klicken Sie auf die Registerkarte **Image von IBM COS importieren**, um das Importtool zu öffnen. 
+2. Klicken Sie auf die Registerkarte **Image von IBM COS importieren**, um das Importtool zu öffnen.
 3. Füllen Sie die Pflichtangabefelder aus (siehe Tabelle 1).
-4. Wenn der Vorgang für den Import aus {{site.data.keyword.cos_full_notm}} abgeschlossen ist, wird das Image auf der Seite "Imagevorlagen" angezeigt. 
+4. Wenn der Vorgang für den Import aus {{site.data.keyword.cos_full_notm}} abgeschlossen ist, wird das Image auf der Seite "Imagevorlagen" angezeigt.
 
 | Feld | Wert |
 | ----- | ----- |
 | {{site.data.keyword.cos_full_notm}} | Wählen Sie die Serviceinstanz von {{site.data.keyword.cos_full_notm}} aus, in der das Image gespeichert ist, das Sie importieren möchten. |
 | Standort | Wählen Sie die spezifische geografische Region aus, in der Ihr Image gespeichert ist. Sie können Images in die folgenden Regionen und die zugehörigen Rechenzentren importieren: US South (DAL13), US East (WDC07), EU Great Britain (LON02), EU Germany (FRA02), AP Japan (TOK02). Nachdem das Image in eines der aufgelisteten Rechenzentren importiert worden ist, können Sie es in ein anderes Rechenzentrum verschieben. |
-| Bucket | Wählen Sie das {{site.data.keyword.cos_full_notm}}-Bucket aus, in dem Ihr Image gespeichert ist. Es sind nur Buckets gültig, die innerhalb des von Ihnen ausgewählten Standorts vorhanden sind. Wenn Sie ein Bucket auswählen, das nicht am ausgewählten Standort vorhanden ist, erhalten Sie eine Fehlernachricht. |
+| Bucket | Wählen Sie das {{site.data.keyword.cos_full_notm}}-Bucket aus, in dem Ihr Image gespeichert ist. Es sind nur Buckets gültig, die innerhalb des von Ihnen ausgewählten Standorts vorhanden sind. Wenn Sie ein Bucket auswählen, das nicht am ausgewählten Standort vorhanden ist, erhalten Sie eine Fehlernachricht.|
 | Imagedatei | Wählen Sie in der {{site.data.keyword.cos_full_notm}}-Serviceinstanz die Imagedatei aus, die Sie importieren wollen. Es werden die Dateitypen VHD, ISO und RAW unterstützt. Wenn Sie ein verschlüsseltes Image importieren, muss das Image im Dateiformat RAW vorliegen und mit LUKS-Plattenverschlüsselung verschlüsselt sein. |
-| Imagename | Geben Sie einen beschreibenden Namen für Ihr Image an. Dabei handelt es sich um das Image, das Sie für die Bereitstellung von virtuellen Serverinstanzen (VSIs) verwenden werden.  |
+| Imagename | Geben Sie einen beschreibenden Namen für Ihr Image an. Dabei handelt es sich um das Image, das Sie für die Bereitstellung von virtuellen Serverinstanzen (VSIs) verwenden werden. |
 | API-Schlüssel | Geben Sie den API-Schlüssel an, der den Zugriff auf Ihre {{site.data.keyword.cos_full_notm}}-Serviceinstanz ermöglicht. Wenn ein verschlüsseltes Image importiert wird, muss der API-Schlüssel auch Zugriff auf Key Protect haben. Der API-Schlüssel steht nur zum Zeitpunkt der Erstellung zum Kopieren oder Herunterladen zur Verfügung. Wenn der API-Schlüssel verloren geht, müssen Sie einen neuen API-Schlüssel erzeugen. Weitere Informationen finden Sie unter [Mit API-Schlüsseln arbeiten](/docs/iam?topic=iam-manapikey). |
 | Betriebssystem | Wählen Sie das Betriebssystem aus, das in Ihrem Image enthalten ist. Bei verschlüsselten Images sind nur Linux-Betriebssysteme als Auswahl gültig. |
 | Cloud-init | Wenn das Image, das Sie importieren, cloud-init-fähig ist, wählen Sie dieses Kontrollkästchen aus. Wenn Sie ein Image importieren, das ein cloud-init-fähiges Windows-Betriebssystem umfasst, und Sie wählen diese Option aus, können Sie nicht auch noch **Ihre Lizenz** angeben. Wenn Sie ein verschlüsseltes Image importieren, ist diese Option standardmäßig ausgewählt und kann nicht bearbeitet werden, da Ihr verschlüsseltes Image cloud-init-fähig sein muss. |
@@ -163,7 +165,7 @@ Damit ein verschlüsseltes Image importiert werden kann, muss Ihr Konto über Zu
 
 | Feld | Wert |
 | ----- | ----- |
-| ID der {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz | Wenn ein verschlüsseltes Image importiert wird, muss sich Ihre {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz in derselben Region befinden wie Ihr {{site.data.keyword.cos_full_notm}}-Bucket.  Über die Befehlszeilenschnittstelle (CLI) von {{site.data.keyword.cloud_notm}} können Sie die ID für Ihre Instanz von {{site.data.keyword.keymanagementserviceshort}} suchen. Weitere Informationen finden Sie unter [Instanz-ID abrufen](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
+| ID der {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz | Wenn ein verschlüsseltes Image importiert wird, muss sich Ihre {{site.data.keyword.keymanagementserviceshort}}-Serviceinstanz in derselben Region befinden wie Ihr {{site.data.keyword.cos_full_notm}}-Bucket. Über die Befehlszeilenschnittstelle (CLI) von {{site.data.keyword.cloud_notm}} können Sie die ID für Ihre Instanz von {{site.data.keyword.keymanagementserviceshort}} suchen. Weitere Informationen finden Sie unter [Instanz-ID abrufen](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
 | Durch Wrapping erstellter Datenverschlüsselungsschlüssel | Geben Sie beim Importieren eines verschlüsselten Image den verschlüsselten Text an, der dem Datenverschlüsselungsschlüssel zugeordnet ist, den Sie zum Verschlüsseln Ihres Image verwendet haben. Weitere Informationen finden Sie unter [Wrapping für Schlüssel über die API durchführen](/docs/services/key-protect?topic=key-protect-wrap-keys#api). |
 | Rootschlüssel-ID | Geben Sie beim Importieren eines verschlüsselten Image die ID des Rootschlüssels an, der für das Key-Wrapping des Datenverschlüsselungsschlüssels verwendet wurde. Weitere Informationen finden Sie unter [Schlüssel anzeigen](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
 {: caption="Tabelle 2. Werte für den Import eines verschlüsselten Image aus IBM Cloud Object Storage" caption-side="top"}
@@ -173,4 +175,4 @@ Damit ein verschlüsseltes Image importiert werden kann, muss Ihr Konto über Zu
 Nachdem der Importvorgang gestartet worden ist, sucht das System in der Serviceinstanz von {{site.data.keyword.cos_full_notm}} die Imagedatei im angegebenen Bucket. Die Imagedatei wird als Imagevorlage importiert, auf die dann auf der Seite "Imagevorlagen" zugegriffen werden kann. Wenn der Import abgeschlossen ist, kann das Image verwendet werden, um eine neue Einheit zu bestellen oder eine Einheit zu starten.
 Die Imagevorlage kann außerdem jederzeit gelöscht werden. Die Dauer für den Imageimport variiert je nach Dateigröße, dauert aber in der Regel mehrere Minuten bis zu einer Stunde.
 
-Nachdem ein Image in das Repository für Imagevorlagen importiert worden ist, können Sie es aus {{site.data.keyword.cos_full_notm}} löschen. Über die Seite **Imagevorlagen** können Sie auch weiterhin auf die Imagevorlage zugreifen und diese für die Bereitstellung virtueller Serverinstanzen verwenden. 
+Nachdem ein Image in das Repository für Imagevorlagen importiert worden ist, können Sie es aus {{site.data.keyword.cos_full_notm}} löschen. Über die Seite **Imagevorlagen** können Sie auch weiterhin auf die Imagevorlage zugreifen und diese für die Bereitstellung virtueller Serverinstanzen verwenden.

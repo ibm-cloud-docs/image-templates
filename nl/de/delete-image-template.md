@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-09-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Imagevorlage löschen
+{: #deleting-an-image-template}
 
 Standard-Imagevorlagen können nach ihrer Erstellung jederzeit wieder gelöscht werden.
 {:shortdesc}

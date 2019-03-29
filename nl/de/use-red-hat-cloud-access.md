@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-04-04"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 
 
 # Eigene Betriebssystemlizenz oder eigenes Abonnement verwenden
+{: #using-your-own-os-license-or-subscription}
 
 Wenn Sie eine Imagevorlage mit einem VHD-Image erstellen, können Sie Ihre eigene RHEL-Betriebssystemlizenz über das [Red Hat Cloud Access-![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access)Abonnement oder eine Windows-Lizenz über die Microsoft Enterprise-Vereinbarung bereitstellen.
 {:shortdesc}

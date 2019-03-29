@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ subcollection: image-templates
 
 
 # Bereitstellung mit einem cloud-init-fähigen Image
+{: #provisioning-wiht-a-cloud-init-enabled-image}
 
 Wenn Sie einen virtuellen Server bestellen, verwenden viele Betriebssysteme jetzt ein cloud-init-fähiges Image, um die Bereitstellungszeit zu optimieren. Sie können auch ein angepasstes Image importieren, das Sie für den Typ "cloud-init" aktiviert haben.
 {:shortdesc}

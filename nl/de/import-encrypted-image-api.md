@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # Verschlüsseltes Image mit der SoftLayer-API importieren
+{: #importing-an-encrypted-image-by-using-the-softlayer-api}
 
 Mit der {{site.data.keyword.slapi_short}} können Sie ein verschlüsseltes Image aus {{site.data.keyword.cos_full}} importieren und eine Imagevorlage erstellen. Nachdem Ihre Imagevorlage erstellt worden ist, können Sie sie zur Bereitstellung (Einrichtung) von Instanzen verwenden.
 {:shortdesc}
@@ -54,7 +57,7 @@ print(ret)
 {: codeblock}
 
 
-Weitere Informationen dazu, wie Sie Werte finden, die zum Importieren des verschlüsselten Image von {{site.data.keyword.cos_full_notm}} benötigt werden, enthält die folgende Tabelle. 
+Weitere Informationen dazu, wie Sie Werte finden, die zum Importieren des verschlüsselten Image von {{site.data.keyword.cos_full_notm}} benötigt werden, enthält die folgende Tabelle.
 
 | Feld    | Wert   |
 | -------- | ------- |
@@ -62,4 +65,4 @@ Weitere Informationen dazu, wie Sie Werte finden, die zum Importieren des versch
 | rootKeyId | Geben Sie die ID des Rootschlüssels an, der für das Key-Wrapping des Datenverschlüsselungsschlüssels verwendet wurde. Weitere Informationen finden Sie unter [Schlüssel anzeigen](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
 | wrappedDek | Geben Sie den verschlüsselten Text an, der Ihrem mit Key-Wrapping erstellten Datenverschlüsselungsschlüssel zugeordnet ist, den Sie zum Verschlüsseln Ihres Image verwendet haben. Weitere Informationen finden Sie unter [Wrapping für Schlüssel über die API durchführen](/docs/services/key-protect?topic=key-protect-wrap-keys#wrap-keys). |
 | keyProtectId | Über die Befehlszeilenschnittstelle (CLI) von {{site.data.keyword.cloud_notm}} können Sie die ID für Ihre Instanz von {{site.data.keyword.keymanagementserviceshort}} suchen. Weitere Information finden Sie unter [Instanz-ID abrufen](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
-{: caption="Tabelle 1. Werte, die zum Importieren verschlüsselter Images erforderlich sind " caption-side="top"}
+{: caption="Tabelle 1. Werte, die zum Importieren verschlüsselter Images erforderlich sind" caption-side="top"}
