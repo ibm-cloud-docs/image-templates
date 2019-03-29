@@ -4,6 +4,8 @@ copyright:
   years: 2017, 2019
 lastupdated: "2019-01-23"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -16,7 +18,7 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # Referência de API de modelo de imagem
-{: #api-reference}
+{: #image-template-api-reference}
 
 O {{site.data.keyword.slapi_full}} é a interface de desenvolvimento que fornece aos desenvolvedores e administradores do sistema a interação direta com o sistema backend do {{site.data.keyword.cloud}}. O {{site.data.keyword.slapi_short}} impulsiona muitos dos recursos no {{site.data.keyword.slportal_full}}, o que geralmente significa que, se uma interação é possível no {{site.data.keyword.slportal}}, ela também pode ser executada na API. Como você pode interagir programaticamente com todas as partes do ambiente do {{site.data.keyword.BluSoftlayer_full}} dentro da API, o {{site.data.keyword.slapi_short}} permite automatizar tarefas. Por exemplo, é possível usar
 a API *SoftLayer_Virtual_Guest/createObject* para implementar uma instância de servidor virtual por meio de um modelo de imagem.

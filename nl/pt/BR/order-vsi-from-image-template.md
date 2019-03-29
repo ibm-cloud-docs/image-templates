@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 sunbcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ sunbcollection: image-templates
 
 
 # Pedindo uma instância por meio de um modelo de imagem
+{: #order-instance-image-templates}
 
 Na página Modelos de imagem, é possível provisionar uma instância de servidor virtual por meio de um modelo de imagem.
 {:shortdesc}

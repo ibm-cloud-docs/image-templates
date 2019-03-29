@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-12-17"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -165,7 +167,7 @@ Para importar uma imagem criptografada, a sua conta deve ter acesso ao recurso d
 
 | Campo | Value |
 | ----- | ----- |
-|ID da instância de serviço do {{site.data.keyword.keymanagementserviceshort}} | Ao importar uma imagem criptografada, a sua instância de serviço do {{site.data.keyword.keymanagementserviceshort}} deve estar na mesma região que o seu depósito do {{site.data.keyword.cos_full_notm}}. É possível usar a CLI do {{site.data.keyword.cloud_notm}} para localizar o seu ID da instância do {{site.data.keyword.keymanagementserviceshort}}. Para obter mais informações, consulte [Recuperando o seu ID da instância](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
+| ID da instância de serviço do {{site.data.keyword.keymanagementserviceshort}} | Ao importar uma imagem criptografada, a sua instância de serviço do {{site.data.keyword.keymanagementserviceshort}} deve estar na mesma região que o seu depósito do {{site.data.keyword.cos_full_notm}}. É possível usar a CLI do {{site.data.keyword.cloud_notm}} para localizar o seu ID da instância do {{site.data.keyword.keymanagementserviceshort}}. Para obter mais informações, consulte [Recuperando o seu ID da instância](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
 | Chave de criptografia de dados agrupados | Ao importar uma imagem criptografada, especifique o texto cifrado que está associado à chave de criptografia de dados que você usou para criptografar a sua imagem. Para obter mais informações, consulte [Agrupando chaves usando a API](/docs/services/key-protect?topic=key-protect-wrap-keys#api). |
 | ID da chave raiz | Ao importar uma imagem criptografada, especifique o ID da chave raiz que foi usada para agrupar a chave de criptografia de dados. Para obter mais informações, consulte [Visualizando chaves](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
 {: caption="Tabela 2. Valores para importar uma imagem criptografada do IBM Cloud Object Storage" caption-side="top"}

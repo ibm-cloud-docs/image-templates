@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-04-04"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 
 
 # Usando sua própria licença ou assinatura do S.O.
+{: #using-your-own-os-license-or-subscription}
 
 Quando você cria um modelo de imagem com uma imagem do VHD, é possível selecionar para fornecer sua própria licença do sistema operacional RHEL por meio da assinatura do [Red Hat Cloud Access ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) ou uma licença do Windows por meio do Microsoft Enterprise Agreement.
 {:shortdesc}

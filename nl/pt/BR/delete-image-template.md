@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-09-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Excluindo um modelo de imagem
+{: #deleting-an-image-template}
 
 Modelos de imagem padrão podem ser excluídos a qualquer momento após serem criados.
 {:shortdesc}

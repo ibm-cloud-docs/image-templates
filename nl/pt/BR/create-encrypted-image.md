@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-09-19"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # Criando uma imagem criptografada
+{: #creating-an-encrypted-image}
 
 Como parte do recurso de Criptografia E2E, é possível criptografar uma imagem para importá-la para os Modelos de imagem e usá-la para implementar uma instância de servidor virtual criptografada.
 {:shortdesc}

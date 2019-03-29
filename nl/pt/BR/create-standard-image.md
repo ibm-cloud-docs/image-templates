@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-11-15"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 
 
 # Criando um modelo de imagem
+{: #creating-an-image-template}
 
 Com modelos de imagem, é possível replicar várias opções de configuração para o {{site.data.keyword.virtualmachinesshort}}.
 {:shortdesc}

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-10-30"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 {:faq: data-hd-content-type='faq'}
 
 # Perguntas mais frequentes: modelos de imagem
+{: #faq-image-templates}
 
 ## O que é um modelo de imagem padrão?
 {: faq}

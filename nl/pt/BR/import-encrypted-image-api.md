@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -18,6 +20,7 @@ subcollection: image-templates
 
 
 # Importando uma imagem criptografada usando a API do SoftLayer
+{: #importing-an-encrypted-image-by-using-the-softlayer-api}
 
 É possível usar o {{site.data.keyword.slapi_short}} para importar uma imagem criptografada do {{site.data.keyword.cos_full}}
 e criar um modelo de imagem. Quando o seu modelo de imagem for criado, será possível usá-lo para provisionar instâncias.

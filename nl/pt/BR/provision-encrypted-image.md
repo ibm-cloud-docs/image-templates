@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-02-21"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -17,6 +19,7 @@ subcollection: image-templates
 
 
 # Usando a Criptografia End to End (E2E) para provisionar uma instância criptografada
+{: #using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance}
 
 O recurso Criptografia End to End (E2E) permite que você traga a sua própria imagem de sistema operacional criptografada, ativada por cloud-init que você criptografou usando uma chave de criptografia de dados que você possui e controla. Após concluir alguma configuração de ambiente, é possível importar a sua imagem criptografada para o repositório de modelo de imagem e usá-la para provisionar instâncias de servidor virtual criptografadas. A criptografia E2E fornece criptografia de dados em repouso para o armazenamento que está associado a instâncias de servidor virtual provisionadas. Para ganhar acesso a esse recurso, entre em contato com o Suporte.
 {:shortdesc}

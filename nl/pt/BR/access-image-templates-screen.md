@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-27"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Gerenciando imagens da página Modelos de imagem
+{: #managing-images-from-the-image-templates-page}
 
 A página Modelos de imagem no {{site.data.keyword.slportal_full}} exibe todas as imagens que estão associadas a
 uma conta. Na página Modelos de imagem é possível interagir com essas imagens e importar novas imagens que estão armazenadas em

@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-03-13"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -13,6 +15,7 @@ subcollection: image-templates
 {:tip: .tip}
 
 # Inicializando uma VSI de uma imagem
+{: #booting-a-vsi-from-an-image}
 
 O recurso Inicialização da imagem inicia uma instância do servidor virtual (VSI) usando um modelo ISO que é
 importado de uma conta do Object Storage.

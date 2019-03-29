@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-03"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # Sobre modelos de imagem
+{: #about-image-templates}
 
 Modelos de imagem padrão fornecem uma opção de criação de imagens para todos os {{site.data.keyword.BluVirtServers_short}}, independentemente do sistema operacional.
 {:shortdesc}
