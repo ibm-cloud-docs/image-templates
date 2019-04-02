@@ -21,6 +21,7 @@ With {{site.data.keyword.BluSoftlayer_full}} image templates, you can capture an
 
 
 ## Creating an image template
+{: #creating-template}
 
 Complete the following steps to use image templates:
 1. Learn about [image templates](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates).
