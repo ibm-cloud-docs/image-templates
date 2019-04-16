@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-04-16"
 
 keywords:
 
@@ -51,7 +51,7 @@ available, see [Creating an Image Template](/docs/infrastructure/image-templates
 {: #next-steps-exporting-an-image-to-ibm-cloud-object-storage}
 Because each image is a different size and has different characteristics, the export process might take several minutes before it completes.
 
-After you export an image, the image remains in the list of image templates, but it is also available as a file in the IBM Cloud Object Storage location that is specified during the export process.
+After you export an image, the image remains in the list of image templates, but it is also available as a file in the IBM Cloud Object Storage location that is specified during the export process. You can download the image file from {{site.data.keyword.cos_full_notm}}. In your service dashboard, select the **Download** action to retrieve your object from storage. You can use the Aspera high-speed transfer plug-in to download images larger than 200 MB.
 
 When your image template is exported to IBM Cloud Object Storage, each block device (or disk) has its own associated file. For example, if your image file is named image.vhd, the first block device is exported as image-0.vhd. The second block device is exported as image-1.vhd, and so on.
 {: tip}
