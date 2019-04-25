@@ -21,6 +21,7 @@ subcollection: image-templates
 
 
 ## 创建映像模板
+{: #creating-template}
 
 要使用映像模板，请完成以下步骤：
 1. 了解有关[映像模板](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates)的信息。

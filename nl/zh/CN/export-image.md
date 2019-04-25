@@ -11,6 +11,7 @@ subcollection: image-templates
 ---
 
 {:shortdesc: .shortdesc}
+{:deprecated: .deprecated}
 {:new_window: target="_blank"}
 
 # 将映像导出到 OpenStack Swift
@@ -18,6 +19,9 @@ subcollection: image-templates
 
 在“映像模板”页面中，可以将映像模板导出到 [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift?topic=objectstorage-swift-GettingStarted#getting-started-with-object-storage-openstack-swift) 帐户。
 {:shortdesc}
+
+此服务的所有实例已不推荐使用。可以使用现有帐户，但在 2018 年 12 月 10 日后无法供应新的 {{site.data.keyword.objectstorageshort}} OpenStack Swift 帐户。从 2019 年 3 月 31 日开始，IBM Cloud 不再支持 Cloud Object Storage OpenStack Swift 的映像模板导入/导出功能。
+{: deprecated}
 
 映像导出过程采用预先存在的专用标准映像模板，并将映像转换为存储在 Object Storage OpenStack Swift 帐户上指定位置中的映像文件。使用以下步骤导出映像模板。
 
