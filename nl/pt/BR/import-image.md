@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2018-12-17"
+  years: 2014, 2019
+lastupdated: "2019-03-27"
 
 keywords:
 
@@ -13,6 +13,7 @@ subcollection: image-templates
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:tip: .tip}
+{:important: .important}
 {:pre: .pre}
 {:screen: .screen}
 
@@ -20,25 +21,28 @@ subcollection: image-templates
 # Preparando e importando imagens
 {: #preparing-and-importing-images}
 
-A tela Modelos de imagem no {{site.data.keyword.slportal_full}} permite que os usuários importem uma imagem de uma instância de serviço do [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage). Após uma imagem ser transferida por upload para um depósito em uma instância de serviço do {{site.data.keyword.cos_full_notm}}, será possível importá-la para o repositório de modelos de imagem no {{site.data.keyword.slportal}}.
+A tela Modelos de imagem no {{site.data.keyword.slportal_full}} permite importar uma imagem de uma instância de serviço do [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage#about-ibm-cloud-object-storage). É possível importar imagens que estão no formato Virtual Hard Disk (VHD) ou Virtual Machine Disk (VMDK). Após a importação, as imagens VMDK são convertidas em VHD. Após uma imagem ser transferida por upload para um depósito em uma instância de serviço do {{site.data.keyword.cos_full_notm}}, será possível importá-la para o repositório de modelos de imagem no {{site.data.keyword.slportal}}.
 {:shortdesc}
 
-Deve-se ter uma conta atualizada para importar imagens do {{site.data.keyword.cos_full_notm}}. Para obter mais informações, veja [Alternando para IBMid e vinculando contas](/docs/account?topic=account-unifyingaccounts).
+Deve-se ter uma conta atualizada para importar imagens do {{site.data.keyword.cos_full_notm}}. Para obter mais informações, veja [Alternando para IBMid e vinculando contas](/docs/account/softlayerlink.html).
 {: tip}
 
-Após as imagens serem importadas como um modelo de imagem, elas poderão ser usadas para provisionar ou iniciar um servidor virtual existente. As imagens que são importadas de uma instância de serviço do {{site.data.keyword.cos_full_notm}} podem ser VHDs ou ISOs customizados. As importações VHD estão restritas aos sistemas operacionais de 64 bits a seguir:  
+Deve-se ter uma [instância do IBM Cloud Object Storage](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-order-storage#creating-a-new-ibm-cloud-platform-account) solicitada por meio do console do {{site.data.keyword.cloud_notm}} (cloud.ibm.com) para usar esse recurso de importação.  O IBM Cloud Object Storage do control.softlayer.com não é suportado.
+{: important}
+
+Após as imagens serem importadas como um modelo de imagem, elas poderão ser usadas para provisionar ou iniciar um servidor virtual existente. As imagens importadas de uma instância de serviço do {{site.data.keyword.cos_full_notm}} podem ser VHD, VMDK ou ISOs customizados. As importações de VHD e VMDK estão restritas aos sistemas operacionais de 64 bits a seguir:  
 
 * CentOS 6 e 7
 * RedHat Enterprise Linux 6 e 7
 * Ubuntu 14.04 e 16.04
 * Microsoft Server Standard 2012, R2 2012 e 2016
 
-As importações VHD estão limitadas a discos de 100 GB. Os VHDs devem ser nomeados de acordo com o exemplo a seguir: filename.vhd-0.vhd.
+As importações estão limitadas a discos de 100 GB. As imagens devem ser nomeadas de acordo com o exemplo a seguir: filename.vhd-0.vhd ou filename.vmdk-0.vmdk
 
 ## Convertendo imagens em VHD
 {: #convert-to-vhd}
 
-O formato VHD é o único formato de imagem suportado para servidores virtuais. Para converter imagens em VHD, use as informações a seguir:
+Os formatos VHD e VMDK são os únicos formatos de imagem suportados para servidores virtuais. Para converter imagens em VHD de qualquer formato diferente de VMDK, use as informações a seguir:
 
 * O Qemu-img 2.7.0 ou mais recente é necessário
 * Converta a imagem com o comando a seguir:
@@ -120,17 +124,25 @@ Para assegurar que uma imagem possa ser implementada com êxito no ambiente de i
         ```
         {: pre}
 
-Para obter mais informações sobre as imagens ativadas para cloud-init, consulte [Fornecimento com uma imagem ativada para cloud-init](/docs/infrastructure/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image).
+Para obter mais informações sobre as imagens ativadas para cloud-init, consulte [Fornecimento com uma imagem ativada para cloud-init](/docs/infrastructure/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
+
+## Preparando para importar uma imagem criptografada
+{: #preparing-to-import-an-encrypted-image}
+
+Se você planeja importar uma imagem de VHD que está criptografada com sua própria chave de criptografia de dados, certifique-se de concluir os pré-requisitos e instruções para criptografia descritos em [Usando a Criptografia End to End (E2E) para provisionar uma instância criptografada](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
+
+Deve-se usar a ferramenta vhd-util para criptografar sua imagem, que deve estar no formato VHD. Para obter mais informações, consulte [Criptografando imagens VHD](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image).
+{: important}
 
 ## Fazendo upload de uma imagem para o {{site.data.keyword.cos_full_notm}}
 {: #upload-to-ibm-cos}
 
-Quando a sua imagem estiver pronta, será possível fazer upload dela para o {{site.data.keyword.cos_full_notm}}. Certifique-se de usar um depósito em um [local regional](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#select-regions-and-endpoints).
+Quando a sua imagem estiver pronta, será possível fazer upload dela para o {{site.data.keyword.cos_full_notm}}. Certifique-se de usar um depósito em um [local regional](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints).
 
-1. No {{site.data.keyword.cos_full_notm}}, navegue para o seu depósito e clique em **Incluir objetos** para [fazer upload](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-upload-data#uploading-data) da imagem.
-2. Use o plug-in de transferência em alta velocidade do [Aspera](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-use-aspera-high-speed-transfer#Aspera-high-speed-transfer) para as velocidades de upload mais rápidas de sua imagem.
+1. No {{site.data.keyword.cos_full_notm}}, navegue para o seu depósito e clique em **Incluir objetos** para [fazer upload](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload-data#upload-data) da imagem.
+2. Use o plug-in de transferência em alta velocidade do [Aspera](/docs/services/cloud-object-storage?topic=cloud-object-storage-use-aspera-high-speed-transfer#use-aspera-high-speed-transfer) para as velocidades de upload mais rápidas de sua imagem.
 
-É possível usar o SDK do COS com o Aspera para iniciar a transferência em alta velocidade dentro de seus aplicativos customizados ao usar Java, Python ou NodeJS. Para obter mais informações, consulte [Usando bibliotecas e SDKs](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-use-aspera-high-speed-transfer#sdk).
+É possível usar o SDK do COS com o Aspera para iniciar a transferência em alta velocidade dentro de seus aplicativos customizados ao usar Java, Python ou NodeJS. Para obter mais informações, consulte [Usando bibliotecas e SDKs](/docs/services/cloud-object-storage?topic=cloud-object-storage-use-aspera-high-speed-transfer#sdk).
 {: tip}
 
 
@@ -139,7 +151,11 @@ Quando a sua imagem estiver pronta, será possível fazer upload dela para o {{s
 
 Conclua as etapas a seguir para importar uma imagem do {{site.data.keyword.cos_full_notm}}.
 
-1. No [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/), acesse a página **Modelos de imagem** selecionando **Dispositivos > Gerenciar > Imagens**.
+1. No [{{site.data.keyword.slportal}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://control.softlayer.com/) ou no [console do {{site.data.keyword.cloud_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/classic), acesse a página **Modelos de imagem**, selecionando **Dispositivos > Gerenciar > Imagens**. 
+
+   Se você estiver importando uma imagem criptografada, deverá usar o console do {{site.data.keyword.cloud_notm}}.
+   {: important}
+
 2. Clique na guia **Importar imagem do IBM COS** para abrir a ferramenta Importar.
 3. Preencha os campos necessários (consulte a Tabela 1).
 4. Quando a importação estiver concluída por meio do {{site.data.keyword.cos_full_notm}}, a imagem aparecerá na página Modelos de imagem.
@@ -147,29 +163,31 @@ Conclua as etapas a seguir para importar uma imagem do {{site.data.keyword.cos_f
 | Campo | Value |
 | ----- | ----- |
 | {{site.data.keyword.cos_full_notm}} | Selecione a instância de serviço do {{site.data.keyword.cos_full_notm}} na qual a imagem que você deseja importar está armazenada. |
-| Localização | Selecione a região geográfica específica na qual a sua imagem está armazenada. É possível importar imagens para as regiões e os data centers associados a seguir: Sul dos EUA (DAL13), Leste dos EUA (WDC07), UE-Grã Bretanha (LON02), UE-Alemanha (FRA02), AP-Japão (TOK02). Após a imagem ser importada para um dos data centers que estiverem listados, será possível movê-la para outro data center. |
+| Localização | Selecione a região geográfica específica na qual a sua imagem está armazenada. É possível importar imagens para as regiões e data centers associados a seguir: Sul dos EUA (DAL13), Leste dos EUA (WDC07), Grã-Bretanha - UE (LON02), Alemanha - UE (FRA02), Japão - AP. Após a imagem ser importada para um dos data centers que estiverem listados, será possível movê-la para outro data center. |
 | Depósito | Selecione o depósito do {{site.data.keyword.cos_full_notm}} no qual a sua imagem está armazenada. Somente depósitos que existem no local regional que você selecionou são válidos. Você receberá uma mensagem de erro se selecionar um depósito que não existe no local selecionado.|
-| Arquivo de imagem | Selecione o arquivo de imagem na instância de serviço do {{site.data.keyword.cos_full_notm}} que você deseja importar. Os tipos de arquivos suportados são VHD, ISO e RAW. Se você estiver importando uma imagem criptografada, a imagem deverá estar no formato de arquivo RAW e criptografada com a criptografia de disco LUKS. |
+| Arquivo de imagem | Selecione o arquivo de imagem na instância de serviço do {{site.data.keyword.cos_full_notm}} que você deseja importar. Os tipos de arquivos suportados são VHD (Virtual Hard Disk), VMDK (Virtual Machine Disk) e ISO. Se você estiver importando uma imagem criptografada, a imagem deverá estar no formato de arquivo VHD e criptografada com a ferramenta vhd-util. |
 | Nome da imagem | Especifique um nome descritivo para a sua imagem. Essa é a imagem que você usará para provisionar instâncias de servidor virtual. |
-| Chave API | Especifique a chave de API que dá acesso à sua instância de serviço do {{site.data.keyword.cos_full_notm}}. Ao importar uma imagem criptografada, a Chave de API também deverá ter acesso ao Key Protect. A chave de API está disponível apenas para ser copiada ou transferida por download no momento da criação. Se a chave API for perdida, uma nova chave API deverá ser criada. Para obter mais informações, veja [Trabalhando com chaves API](/docs/iam?topic=iam-manapikey). |
-| Sistema Operacional | Selecione o sistema operacional que está incluído em sua imagem. Para imagens criptografadas, apenas os sistemas operacionais Linux são seleções válidas. |
-| Cloud-init | Se a imagem que você estiver importando for ativada por cloud-init, marque essa caixa de seleção. Se você estiver importando uma imagem que tiver um sistema operacional Windows ativado por cloud-init e selecionar essa opção, também não será possível especificar **Sua licença**. Se você estiver importando uma imagem criptografada, essa opção será selecionada por padrão e não será editável porque a sua imagem criptografada deve ser ativada por cloud-init. |
+| Chave API | Especifique a chave de API que dá acesso à sua instância de serviço do {{site.data.keyword.cos_full_notm}}. Ao importar uma imagem criptografada, a Chave de API também deverá ter acesso ao Key Protect. A chave de API está disponível apenas para ser copiada ou transferida por download no momento da criação. Se a chave API for perdida, uma nova chave API deverá ser criada. Para obter mais informações, consulte [Trabalhando com chaves de API](/docs/iam?topic=iam-manapikey#manapikey). |
+| Sistema Operacional | Selecione o sistema operacional que está incluído em sua imagem. |
+| Cloud-init | Se a imagem que você estiver importando for ativada por cloud-init, marque essa caixa de seleção. Se você estiver importando uma imagem que tenha um sistema operacional Windows ativado para cloud-init e selecionar essa opção, não será possível selecionar simultaneamente **Sua licença**. Se você estiver importando uma imagem criptografada, essa opção será selecionada por padrão e não será editável porque a sua imagem criptografada deve ser ativada por cloud-init. |
 | Sua licença | Se você planejar fornecer a sua própria licença do sistema operacional, marque essa caixa de seleção. Se você estiver importando uma imagem com um sistema operacional Windows, será possível selecionar essa opção se planejar usar a imagem para provisionar [instâncias de host dedicadas](/docs/vsi?topic=virtual-servers-dedicated-hosts-and-dedicated-instances#dedicated-hosts-and-dedicated-instances). Se a sua versão do sistema operacional Windows não suportar o uso de sua própria licença, essa opção será desativada. Para imagens do Windows, não será possível selecionar Cloud Init se você especificar que usará a sua própria licença. Se você estiver importando uma imagem criptografada com o Red Hat Enterprise Linux como o seu sistema operacional, essa opção será selecionada por padrão e não será editável porque a sua imagem criptografada deverá incluir a sua própria licença do sistema operacional. |
 | Modo de inicialização | Selecione o modo de inicialização para a sua imagem. Se um modo de inicialização padrão for configurado para o sistema operacional que você especificar, esse modo de inicialização será selecionado aqui automaticamente. |
 | Notas | Inclua quaisquer notas relacionadas à imagem que possam ser úteis para os usuários. |
-| Criptografia | A seleção para essa caixa de seleção é determinada pelo tipo de arquivo da imagem que você seleciona para importar. Imagens VHD e ISO indicam que o arquivo de imagem não é criptografado. Portanto, a caixa de seleção não está selecionada para imagens VHD e ISO. Um arquivo de imagem RAW indica que a imagem é uma imagem criptografada. Se um arquivo de imagem RAW for especificado, essa caixa de seleção será selecionada por padrão e não será editável. |
+| Criptografia | Se você estiver importando uma imagem que foi criptografada com sua própria chave de criptografia de dados usando a ferramenta vhd-util, marque esta caixa de seleção. |
 {: caption="Tabela 1. Valores para importar uma imagem do IBM Cloud Object Storage" caption-side="top"}
 
-A tabela a seguir mostra os campos adicionais que são aplicáveis à importação de imagens criptografadas apenas. Para obter mais informações sobre imagens criptografadas, consulte [Usando criptografia End to End (E2E) para provisionar uma instância criptografada](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
+A tabela a seguir mostra os campos adicionais que são aplicáveis à importação de imagens criptografadas apenas. Para obter mais informações sobre imagens criptografadas, consulte [Usando criptografia End to End (E2E) para provisionar uma instância criptografada](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
 
-Para importar uma imagem criptografada, a sua conta deve ter acesso ao recurso de criptografia End to End (E2E). Para ativar a sua conta para Criptografia E2E, entre em contato com o Suporte.
+<!--
+To import an encrypted image, your account must have access to the End to End (E2E) Encryption feature. To enable your account for E2E Encryption, please contact [Support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 {: tip}
+-->
 
 | Campo | Value |
 | ----- | ----- |
-| ID da instância de serviço do {{site.data.keyword.keymanagementserviceshort}} | Ao importar uma imagem criptografada, a sua instância de serviço do {{site.data.keyword.keymanagementserviceshort}} deve estar na mesma região que o seu depósito do {{site.data.keyword.cos_full_notm}}. É possível usar a CLI do {{site.data.keyword.cloud_notm}} para localizar o seu ID da instância do {{site.data.keyword.keymanagementserviceshort}}. Para obter mais informações, consulte [Recuperando o seu ID da instância](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
 | Chave de criptografia de dados agrupados | Ao importar uma imagem criptografada, especifique o texto cifrado que está associado à chave de criptografia de dados que você usou para criptografar a sua imagem. Para obter mais informações, consulte [Agrupando chaves usando a API](/docs/services/key-protect?topic=key-protect-wrap-keys#api). |
-| ID da chave raiz | Ao importar uma imagem criptografada, especifique o ID da chave raiz que foi usada para agrupar a chave de criptografia de dados. Para obter mais informações, consulte [Visualizando chaves](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
+| Instância de serviço do {{site.data.keyword.keymanagementserviceshort}} | Selecione uma instância do Key Protect em sua conta na lista suspensa. A instância do Key Protect deve incluir a chave raiz do cliente que você usou para agrupar sua chave de criptografia de dados. |
+| Nome da chave | Selecione o nome da chave raiz dentro da instância de serviço do {{site.data.keyword.keymanagementserviceshort}} que você usou para agrupar sua chave de criptografia de dados. Para obter mais informações, consulte [Visualizando chaves](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
 {: caption="Tabela 2. Valores para importar uma imagem criptografada do IBM Cloud Object Storage" caption-side="top"}
 
 ## Próximas etapas

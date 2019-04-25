@@ -12,13 +12,8 @@ Modelos de Imagem
     {: .navgroup id="howto"}
     access-image-templates-screen.md
     create-standard-image.md
-    import-image.md
-    
-    {: .topicgroup}
-    Exportando modelos de imagem
-        export-image.md
-        export-image-ibm-cos.md
-
+    import-image.md    
+    export-image-ibm-cos.md
     delete-image-template.md
     order-vsi-from-image-template.md
     boot-vsi-image.md
@@ -26,14 +21,14 @@ Modelos de Imagem
     use-red-hat-cloud-access.md
 
     {: .topicgroup}
-    Usando a criptografia de ponta a ponta para provisionar
+    Using end-to-end encryption to provision
         provision-encrypted-image.md
         create-encrypted-image.md
-        import-encrypted-image-api.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     image-template-api-reference.md
+    import-image-icos-gov.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

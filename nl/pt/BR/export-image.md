@@ -11,6 +11,7 @@ subcollection: image-templates
 ---
 
 {:shortdesc: .shortdesc}
+{:deprecated: .deprecated}
 {:new_window: target="_blank"}
 
 # Exportando uma imagem para o OpenStack Swift
@@ -18,6 +19,9 @@ subcollection: image-templates
 
 Na página Modelos de imagem, é possível exportar um modelo de imagem para uma conta do [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift?topic=objectstorage-swift-GettingStarted#getting-started-with-object-storage-openstack-swift).
 {:shortdesc}
+
+Todas as instâncias desse serviço foram descontinuadas. As contas existentes podem ser usadas, mas nenhuma conta nova do {{site.data.keyword.objectstorageshort}} OpenStack Swift pode ser provisionada após 10 de dezembro de 2018. Efetivo em 31 de março de 2019, o IBM Cloud não suporta mais o recurso de importação/exportação de Modelos de imagem com o Cloud Object Storage OpenStack Swift.
+{: deprecated}
 
 O processo de exportação de imagem utiliza um modelo de imagem padrão preexistente, privado e converte a imagem em um
 arquivo de imagem que é armazenado em um local especificado em uma conta do Object Storage OpenStack Swift. Use as etapas a seguir para exportar um modelo de imagem.
