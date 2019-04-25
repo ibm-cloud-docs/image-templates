@@ -22,6 +22,7 @@ replicarne velocemente la configurazione con modifiche minime nel processo di or
 
 
 ## Creazione di un template dell'immagine
+{: #creating-template}
 
 Completare i seguenti passi per utilizzare i template dell'immagine:
 1. Acquisisci informazioni sui [template dell'immagine](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates).

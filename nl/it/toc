@@ -12,13 +12,8 @@ Template dell'immagine
     {: .navgroup id="howto"}
     access-image-templates-screen.md
     create-standard-image.md
-    import-image.md
-    
-    {: .topicgroup}
-    Esportazione dei template dell'immagine
-        export-image.md
-        export-image-ibm-cos.md
-
+    import-image.md    
+    export-image-ibm-cos.md
     delete-image-template.md
     order-vsi-from-image-template.md
     boot-vsi-image.md
@@ -29,11 +24,11 @@ Template dell'immagine
     Utilizzo della crittografia end-to-end per eseguire il provisioning
         provision-encrypted-image.md
         create-encrypted-image.md
-        import-encrypted-image-api.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     image-template-api-reference.md
+    import-image-icos-gov.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

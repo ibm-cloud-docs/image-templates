@@ -11,6 +11,7 @@ subcollection: image-templates
 ---
 
 {:shortdesc: .shortdesc}
+{:deprecated: .deprecated}
 {:new_window: target="_blank"}
 
 # Esportazione di un'immagine in OpenStack Swift
@@ -18,6 +19,9 @@ subcollection: image-templates
 
 Dalla pagina Template dell'immagine, puoi esportare un template dell'immagine in un account [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift?topic=objectstorage-swift-GettingStarted#getting-started-with-object-storage-openstack-swift).
 {:shortdesc}
+
+Tutte le istanze di questo servizio sono obsolete. Possono essere utilizzati gli account esistenti, ma non può essere eseguito il provisioning di nessun nuovo account {{site.data.keyword.objectstorageshort}} OpenStack Swift dopo il 10 dicembre 2018. Effettivo a partire dal 31 marzo 2019, IBM Cloud non supporta più la funzione di importazione/esportazione dei template dell'immagine con Cloud Object Storage OpenStack Swift.
+{: deprecated}
 
 Il processo di esportazione dell'immagine prende un template dell'immagine standard privato preesistente e converte l'immagine in un
 file immagine memorizzato in una specifica ubicazione in un account Object Storage OpenStack Swift. Utilizza i seguenti passi per esportare un template dell'immagine.
