@@ -21,6 +21,7 @@ Les modèles d'image {{site.data.keyword.BluSoftlayer_full}} vous permettent de 
 
 
 ## Création d'un modèle d'image
+{: #creating-template}
 
 Procédez comme suit pour utiliser des modèles d'image :
 1. Découvrez les [modèles d'image](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates).

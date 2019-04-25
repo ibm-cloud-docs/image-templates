@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-19"
+  years: 2019
+lastupdated: "2019-03-27"
 
-keywords:
+keywords: VHD image file, encryption, encrypted image, image
 
 subcollection: image-templates
 
@@ -17,220 +17,121 @@ subcollection: image-templates
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:tip: .tip}
+{:important: .important}
 
 
-# Création d'une image chiffrée
-{: #creating-an-encrypted-image}
+# Chiffrement d'images VHD 
+{: #create-encrypted-image}
 
-Dans le cadre de la fonction de chiffrement de bout en bout, vous pouvez chiffrer une image à importer dans Modèles d'image et l'utiliser pour déployer une instance de serveur virtuel chiffrée.
+Pour utiliser la fonction de chiffrement de bout en bout, vous devez chiffrer votre image VHD avec l'outil vhd-util avant de l'importer dans Modèles d'image pour mettre à disposition les instances chiffrées. Deux niveaux de chiffrement AES sont pris en charge : AES 256 bits et AES 512 bits.
 {:shortdesc}
 
-## Exigences liées aux images chiffrées
+## Exigences liées aux images VHD chiffrées
 {: #encrypted-image-reqs}
 
-Lorsque vous créez une image chiffrée, les exigences suivantes doivent être respectées :
+Les images VHD chiffrées doivent respecter les exigences suivantes : 
 
-* L'image doit être compatible avec l'environnement d'infrastructure {{site.data.keyword.cloud}} Console.
-* L'image doit inclure un système d'exploitation Linux, tels que CentOS, Debian, Red Hat Enterprise Linux ou Ubuntu.
-* L'image doit être de type cloud-init.
-* L'image doit être chiffrée via la méthode de [chiffrement de disque LUKS](/docs/infrastructure/image-templates?topic=image-templates-creating-an-encrypted-image#luks-disk-encryption).
+* Format VHD. 
+* Compatibilité avec l'environnement d'infrastructure de la console {{site.data.keyword.cloud}}. 
+* Mise à disposition avec un [système d'exploitation pris en charge](/docs/infrastructure/image-templates/?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images). 
+* Activation pour cloud-init. 
+* Chiffrement avec [l'outil vhd-util](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image#vhd-util-tool). 
 
-## Utilisation de QEMU et de DM-Crypt pour créer une image RAW chiffrée
-{: #luks-disk-encryption}
+## Chiffrement de votre image VHD
+{: #vhd-util-tool}
 
-Pour chiffrer votre image, vous devez convertir un fichier image VHD fixe au format RAW. Utilisez ensuite QEMU et DM-Crypt pour créer un fichier image en utilisant la méthode de chiffrement de disque LUKS. Montez le fichier en tant que volume chiffré puis copiez le fichier image non chiffré dans le volume chiffré.
+Procédez comme suit pour créer votre image VHD chiffrée : 
 
-Cette procédure vous guide pour effectuer les tâches suivantes :
+1. Sélectionnez un système CentOS exécutant la version 7 ou une version ultérieure pour chiffrer votre image de disque virtuel (fichier VHD) pour {{site.data.keyword.cloud_notm}}. Si vous n'avez pas accès à un matériel physique sur lequel CentOS est installé, vous pouvez mettre à disposition
+une instance de serveur virtuel avec CentOS 7 dans {{site.data.keyword.cloud_notm}} en utilisant un hôte public ou dédié. Il n'est pas nécessaire que
+le système CentOS utilisé pour le chiffrement des fichiers VHD soit lui-même chiffré. 
 
-* Convertir votre image VHD dynamique en image VHD fixe.
-* Convertir votre image VHD fixe au format de fichier RAW.
-* Créer un fichier de clé de chiffrement de données que vous allez utiliser pour chiffrer l'unité.
-* Créer un fichier RAW dans lequel placer l'image ainsi que l'en-tête de chiffrement LUKS.
-* Formater le fichier RAW avec la méthode de chiffrement de disque LUKS.
-* Associer le fichier RAW chiffré à une unité par bloc.
-* Copier l'image non chiffrée dans l'unité de volume chiffrée.
+2. Connectez-vous à votre système CentOS et au réseau privé virtuel (VPN) de votre client, puis [accédez au site de téléchargement SoftLayer ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://downloads.service.softlayer.com/citrix/xen/){: new_window} et sélectionnez le fichier de package RPM de l'outil vhd-util : vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm   
 
-Vous devez être autorisé à exécuter des commandes en utilisant les droits d'accès utilisateur `root`, via sudo, afin de monter et de démonter des volumes chiffrés sur votre système. Vous pouvez émettre la commande suivante pour vérifier vos privilèges d'utilisateur `root` :
+   Si vous ne pouvez pas télécharger le fichier de package RPM directement dans votre système CentOS, téléchargez le fichier sur le poste de travail sur lequel vous travaillez actuellement. Vous pouvez ensuite l'envoyer par téléchargement vers votre système CentOS à l'aide de la commande de copie sécurisée (scp). Si vous utilisez une instance de serveur
+virtuel dans {{site.data.keyword.cloud_notm}}, utilisez l'adresse IP publique du système pour cet envoi par téléchargement à l'aide de la commande suivante : 
 
-```
-sudo echo "Hello!"
-```
-{: pre}
+   ```
+   scp vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm root@<vsi_public_ip>:
+   ```
+   {: pre}
 
-Pour terminer cette tâche de chiffrement, "Hello!" doit être renvoyé en réponse.
+3. Installez le package RPM à l'aide de la commande suivante : 
 
-**Conseil** : Vous devez effectuer cette tâche de chiffrement sur un système sous Linux et disposant des packages suivants :
-* qemu ou qemu-image (en fonction de votre système d'exploitation Linux)
-* cryptsetup
+   ```
+   rpm -iv vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm
+   ```
+   {: pre}
 
-Procédez comme suit pour chiffrer votre image.
+4. Identifiez la clé de chiffrement AES dont vous avez besoin pour chiffrer et déchiffrer votre image de disque et écrivez-la dans un fichier de clés. La clé de chiffrement AES est la même clé de chiffrement de données que celle que vous avez encapsulée avec la clé racine du client Key Protect
+dans [Préparation de votre environnement](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). La clé qui est écrite dans les fichiers de clés doit être désencapsulée et non codée.  
 
-1. Convertissez votre fichier image VHD dynamique en fichier image VHD fixe. Un fichier VHD fixe empêche la corruption pouvant survenir si un élément VHD dynamique est converti directement au format de fichier RAW. Exécutez la commande suivante pour convertir le fichier image VHD dynamique en fichier image VHD fixe :
+   La clé de données n'étant pas codée en base64 dans les fichiers de clés, vous ne pouvez pas imprimer, ni afficher le contenu du fichier de clés à partir de la ligne de commande en utilisant des caractères ASCII standard.
+   {: tip}
 
-  ```
-  qemu-img convert -p -O vpc -o subformat=fixed <DYNAMIC_VHD_FILE> <FIXED_VHD_FILE>
-  ```
-  {: pre}
+   Utilisez la commande suivante pour créer des fichiers de clés avec une clé de chiffrement **AES 256 bits** ou **AES 512 bits** :  
+   
+   ```
+   echo <clé_données> | base64 -d - > <nom_fichier de clés>
+   ```
+   {: pre} 
 
-  Par exemple, si votre fichier VHD dynamique s'appelle _Rhel_7.vhd-0.vhd_ et que vous souhaitez que le fichier VHD fixe soit nommé _Rhel_7.fixed.vhd-0.vhd_, exécutez la commande suivante :
+   Exemple de commande :
 
-  ```
-  $ qemu-img convert -p -O vpc -o subformat=fixed Rhel_7.vhd-0.vhd Rhel_7.fixed.vhd-0.vhd
-  ```
-  {: screen}
+   ```
+   echo Nrfen98EpMxF2B+wdgLfagzrqvgUZfMK4vL2T0NsT20ihrsNC9pUUHtizF6218pze8RLCgQ6kwxuE58IWLzgDA== | base64 -d - > aes512.dek
+   ```
+   {: screen}
 
-  L'exécution de cette commande peut durer 30 minutes ou plus.
-  {: tip}
+5. Utilisez la commande suivante pour vérifier les fichiers de clés que vous avez créés lors de l'étape précédente : 
 
-2. Convertissez votre fichier image VHD fixe au format de fichier RAW en utilisant QEMU. Pour pouvoir être chiffrée, l'image doit être au format de fichier RAW. Exécutez la commande QEMU suivante :
+   ```
+   vhd-util key -C -k <nom_fichier de clés>
+   ```
+   {: pre}
 
-  ```
-  qemu-img convert -p -O raw <FIXED_VHD_FILE> <RAW_IMAGE_FILE>
-  ```
-  {: pre}
+   Exemple de commande avec sortie : 
 
-  Par exemple, si votre fichier VHD fixe se nomme _Rhel_7.fixed.vhd-0.vhd_ et que vous souhaitez que le fichier de sortie RAW soit nommé _Rhel_7.raw-0.raw_, exécutez la commande suivante :
+   ```
+   vhd-util key -C -k aes512.dek
+   vhd_util_read_key: using keyfile aes512.dek, Size (bytes) 64
+   21681bba94f04b33b112f5f90a0faa885a6d1dbf1bd68ed16c5b995143088eda
+   ```
+   {: screen}
 
-  ```
-  qemu-img convert -p -O raw Rhel_7.fixed.vhd-0.vhd Rhel_7.raw-0.raw
-  ```
-  {: screen}
+   La première ligne de la sortie provenant de l'exemple de commande précédent indique que le fichier de clés nommé `aes512.dek` contient une clé de 64 octets, tandis que les numéros répertoriés sur la deuxième ligne sont les hachages SHA256 ou les hachages de sécurité pour les clés de chiffrement respectives. La sortie pour les fichiers contenant une clé de chiffrement AES 256 bits correspond à une clés de 32 octets.
+   {: tip} 
 
-  L'exécution de cette commande peut durer 30 minutes ou plus.
-  {: tip}
+6. Utilisez la commande suivante pour créer des copies chiffrées de vos fichiers VHD. `vhd_cible` représente le nom du fichier contenant la version chiffrée de `vhd_source`. 
 
-3. Identifiez la clé de chiffrement de données que vous allez utiliser pour le chiffrement et le déchiffrement de l'unité. Il s'agit de la clé encapsulée et spécifiée lors de l'importation de l'image chiffrée dans le portail {{site.data.keyword.slportal}}. Créez un fichier contenant la clé de chiffrement de données utilisée pour le chiffrement et le déchiffrement de l'unité. Dans ce fichier, la clé doit être désencapsulée et codée en base64. Ainsi, il est garanti qu'aucun espace ou retour à la ligne accidentel n'est inclus. La clé de chiffrement de données codée en base64 doit inclure au moins 32 caractères ou octets et au maximum 512 caractères ou octets. Le matériel de clé de chiffrement de données doit se trouver sur une seule ligne. Par exemple, utilisez la commande suivante pour créer un fichier nommé `secret.dek` dans lequel stocker votre élément `unwrapped_key_material` pour votre clé de chiffrement de données et coder ce dernier avec base64 :
+   ```
+   vhd-util copy -n <vhd_source> -N <vhd_cible> -k <nom_fichier de clés>
+   ```
+   {: pre}    
 
-  ```
-  $ echo -n $(echo 'unwrapped_key_material' | base64) > secret.dek
-  ```
-  {: screen}
+   Exemple de commande :
 
-  Conservez précieusement cette clé. Si vous la perdez, vous ne pourrez plus déchiffrer votre disque.
-  {: tip}
+   ```
+   vhd-util copy -n debian8-ne.vhd -N debian8-aes512.vhd -k aes512.dek
+   ```
+   {: screen}
 
-4. Identifiez la taille correcte du nouveau fichier RAW à créer à l'étape suivante pour le disque chiffré, en prenant en compte l'ajout d'un en-tête LUKS. Le nouveau fichier RAW sera utilisé par _dmcrypt_ et _cryptsetup_ pour inclure le contenu du disque à un format LUKS chiffré. La taille du nouveau fichier RAW doit correspondre à la somme de la taille du fichier RAW créé à l'étape 2 plus un en-tête LUKS constant de 4 Mo. Pour déterminer la taille de votre image RAW existante, exécutez la commande suivante où _Rhel_7.raw-0.raw_ correspond au nom de l'image :
+7. Vérifiez que les fichiers VHD sont chiffrés à l'aide de la commande suivante : 
 
-  ```
-  ls -l Rhel_7.raw-0.raw
-  ```
-  {: pre}
+   ```
+   vhd-util key -p -n <nom_fichier_vhd>
+   ```
+   {: pre}
 
-  Le résultat est similaire à l'exemple suivant :
+   Exemple de commande avec sortie : 
 
-  ```
-  -rw-r--r--. 1 user user 42949017600 Mar 5 10:02 Rhel_7.raw-0.raw
-  ```
-  {: screen}
+   ```
+   vhd-util key -p -n debian8-aes512.vhd
+   0000000000000000000000000000000000000000000000000000000000000000
+   21681bba94f04b33b112f5f90a0faa885a6d1dbf1bd68ed16c5b995143088eda
+   ```
+   {: screen}
 
-  Où _42949017600_ correspond au nombre d'octets utilisés par l'image RAW
-      1. Ajoutez 4 Mo (convertis en octets) à la taille du fichier image RAW pour prendre en compte l'en-tête LUKS. Par exemple, 42949017600 + (4 x 1024 x 1024) = 42953211904 octets.
-      2. Convertissez la somme de la taille de l'image RAW et de l'en-tête LUKS en mégaoctets et arrondissez au mégaoctet suivant. Par exemple, 42953211904 octets / 1024 octets / 1024 kilooctets = 40963,375 mégaoctets = **40964 Mo**.
+Si le fichier VHD est chiffré, la sortie comporte deux valeurs de hachage, comme illustré dans l'exemple précédent. Le premier hachage est composé uniquement de zéros. Le deuxième est le hachage SHA256 que la clé de chiffrement AES utilise pour chiffrer et déchiffrer le fichier VHD. Assurez-vous que les hachages SHA256 pour les fichiers VHD sont identiques aux hachages indiqués à l'**Etape 5**. 
 
-5. Créez un fichier RAW avec le nombre correct d'octets qui deviendra l'image RAW chiffrée. Utilisez la commande _dd_ pour créer le fichier RAW :
-
-  ```
-  dd if=/dev/zero of=<ENCRYPTED_RAW_FILENAME> bs=1M count=<TARGET_SIZE_IN_MEGABYTE> status=progress
-  ```
-  {: pre}
-
-  Où _ENCRYPTED_RAW_FILENAME_ est le fichier qui deviendra l'image RAW chiffrée et _TARGET_SIZE_IN_MEGABYTE_ est le chiffre obtenu à l'étape 4 correspondant à la taille de l'image RAW non chiffrée plus l'en-tête LUKS.
-
-  Par exemple, si vous souhaitez que votre nouveau fichier RAW qui deviendra l'image chiffrée soit nommé _Rhel_7.encrypted.raw_ et que sa taille cible soit _40964_ Mo, exécutez la commande suivante :
-
-  ```
-  $ dd if=/dev/zero of=Rhel_7.encrypted.raw bs=1M count=40964 status=progress
-  ```
-  {: screen}
-
-6. Formatez le fichier RAW avec la méthode de chiffrement par disque LUKS en utilisant _dmcrypt_ et votre clé de chiffrement de données (étape 3). Cette étape permet de préparer le fichier pour qu'il contienne l'image. Pour formater le fichier avec le chiffrement LUKS, exécutez la commande _cryptsetup_ :
-
-  ```
-  cryptsetup -v luksFormat <ENCRYPTED_RAW_FILENAME> <DEK_FILENAME>
-  ```
-  {: pre}
-
-  Où _ENCRYPTED_RAW_FILENAME_ correspond au nom du fichier RAW à chiffrer et _DEK_FILENAME_ au nom du fichier dans lequel votre clé de chiffrement de données est stockée.
-
-  Par exemple, si votre fichier RAW se nomme _Rhel_7.encrypted.raw_ et que le fichier de clés s'appelle _secret.dek_, entrez :
-
-  ```
-  $ cryptsetup -v luksFormat Rhel_7.encrypted.raw secret.dek
-  ```
-  {: screen}
-
-  Après l'exécution de la commande cryptsetup, l'invite suivante s'affiche. Cette dernière est attendue et vous devez répondre en indiquant YES pour continuer.
-
-  ```
-  WARNING!
-  ========
-  This will overwrite data on Rhel_7.encrypted.raw irrevocably.
-  Are you sure (Type uppercase yes): YES
-  ```
-  {: screen}
-
-7. Connectez le fichier RAW chiffré en tant que volume pour associer une nouvelle unité par bloc au système d'exploitation. En utilisant _cryptsetup_, exécutez la commande suivante pour ouvrir l'unité RAW chiffrée avec l'option luksOpen.
-
-  Vous devez disposer du privilège sudo pour exécuter la commande suivante en utilisant les droits d'accès utilisateur `root`.
-  {: tip}
-
-  ```
-  sudo cryptsetup -v luksOpen <ENCRYPTED_RAW_FILENAME> <VOLUME_NAME> --key-file <DEK_FILENAME>
-  ```
-  {: pre}
-
-  Où _ENCRYPTED_RAW_FILENAME_ correspond au nom du fichier RAW chiffré, _VOLUME_NAME_ au nom de l'unité que _dmcrypt_ tente de créer et _DEK_FILENAME_ au nom de fichier de votre clé de chiffrement de données.
-
-  Par exemple, si votre fichier RAW chiffré se nomme _Rhel_7.encrypted.raw_, que vous souhaitez nommer l'unité par bloc _encryptedVolume_ et que le fichier de clé de chiffrement de données s'appelle _secret.dek_, utilisez la commande suivante :
-
-  ```
-  $ sudo cryptsetup -v luksOpen Rhel_7.encrypted.raw encryptedVolume --key-file secret.dek
-  ```
-  {: screen}
-
-  Une fois cette étape terminée, une nouvelle unité par bloc est créée. Cette dernière est accessible en lecture et en écriture sous _/dev/mapper/_.
-
-8. Confirmez que l'outil de mappage de volume LUKS a été créé en exécutant la commande suivante :
-
-  ```
-  ls -l /dev/mapper/
-  ```
-  {: pre}
-
-  Un résultat similaire à l'exemple suivant doit s'afficher :
-
-  ```
-  total 0
-  lrw-rw---- 1 root root        7 Mar 5 22:22 encryptedVolume -> ../dm-0
-  ```
-  {: screen}
-
-9. Copiez l'image non chiffrée (provenant de l'étape 2) dans l'unité de volume chiffrée (provenant de l'étape 7). Exécutez la commande _dd_ pour copier l'image non chiffrée dans le volume chiffré :
-
-  ```
-  sudo dd if=<RAW_IMAGE_FILE> of=/dev/mapper/<VOLUME_NAME>
-  ```
-  {: pre}
-
-  Où _RAW_IMAGE_FILE_ correspond au nom du fichier RAW non chiffré (créé à l'étape 2) et _VOLUME_NAME_ au nom de l'unité par bloc du volume chiffré (créée à l'étape 7).
-
-  Par exemple, si votre élément RAW_IMAGE_FILE se nomme _Rhel_7.raw-0.raw_ et que votre élément VOLUME_NAME s'appelle _encryptedVolume_, vous exécutez la commande suivante :
-
-  ```
-  $ sudo dd if=Rhel_7.raw-0.raw of=/dev/mapper/encryptedVolume status=progress
-  ```
-  {: screen}
-
-  L'exécution de cette commande peut durer 30 minutes ou plus.
-  {: tip}
-
-10. Supprimez l'outil de mappage de volume et fermez la connexion LUKS au fichier de données chiffré :
-
-  ```
-  sudo cryptsetup luksClose encryptedVolume
-  ```
-  {: pre}
-
-  Où _encryptedVolume_ correspond au nom de l'unité par bloc du volume chiffré.
-
-  Votre élément _ENCRYPTED_RAW_FILENAME_ est désormais initialisé et vous pouvez le télécharger dans IBM Cloud Object Storage. Par exemple, si votre fichier RAW chiffré se nomme _Rhel_7.encrypted.raw_, téléchargez cette image dans IBM Cloud Object Storage.
+L'exemple de commande figurant à l'**Etape 7** crée un nouveau fichier VHD chiffré, appelé "debian8-aes512.vhd". Il est chiffré avec la clé de chiffrement AES 512 bits provenant du fichier de clés nommé "aes512.dek". Le hachage SHA256 pour son chiffrement est `21681bba94f04b33b112f5f90a0faa885a6d1dbf1bd68ed16c5b995143088eda`. 
