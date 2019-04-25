@@ -12,13 +12,8 @@
     {: .navgroup id="howto"}
     access-image-templates-screen.md
     create-standard-image.md
-    import-image.md
-    
-    {: .topicgroup}
-    匯出映像檔範本
-        export-image.md
-        export-image-ibm-cos.md
-
+    import-image.md    
+    export-image-ibm-cos.md
     delete-image-template.md
     order-vsi-from-image-template.md
     boot-vsi-image.md
@@ -29,11 +24,11 @@
     使用端對端加密來佈建
         provision-encrypted-image.md
         create-encrypted-image.md
-        import-encrypted-image-api.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     image-template-api-reference.md
+    import-image-icos-gov.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

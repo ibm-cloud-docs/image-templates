@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-19"
+  years: 2019
+lastupdated: "2019-03-27"
 
-keywords:
+keywords: VHD image file, encryption, encrypted image, image
 
 subcollection: image-templates
 
@@ -17,220 +17,117 @@ subcollection: image-templates
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:tip: .tip}
+{:important: .important}
 
 
-# 建立已加密映像檔
-{: #creating-an-encrypted-image}
+# 加密 VHD 映像檔 
+{: #create-encrypted-image}
 
-作為「E2E 加密」功能的一部分，您可以加密要匯入至「映像檔範本」的映像檔，並使用它來部署已加密的虛擬伺服器實例。
+若要使用「E2E 加密」特性，您必須先使用 vhd-util 工具加密 VHD 映像檔，然後再將其匯入「映像檔範本」以佈建加密實例。支援兩種 AES 加密層次：AES 256 位元及 AES 512 位元。
 {:shortdesc}
 
-## 已加密映像檔需求
+## 加密 VHD 映像檔需求
 {: #encrypted-image-reqs}
 
-您建立的已加密映像檔必須符合下列映像檔需求：
+加密 VHD 映像檔必須符合下列需求：
 
-* 映像檔與「{{site.data.keyword.cloud}} 主控台」基礎架構環境相容。
-* 映像檔包括 Linux 作業系統，例如 CentOS、Debian、Red Hat Enterprise Linux 或 Ubuntu。
-* 映像檔已啟用 cloud-init。
-* 映像檔是使用 [LUKS 磁碟加密](/docs/infrastructure/image-templates?topic=image-templates-creating-an-encrypted-image#luks-disk-encryption)進行加密。
+* 格式化為 VHD。
+* 與「{{site.data.keyword.cloud}} 主控台」基礎架構環境相容。
+* 使用[受支援 OS](/docs/infrastructure/image-templates/?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images) 佈建。
+* 已啟用 Cloud-init。
+* 使用 [vhd-util 工具](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image#vhd-util-tool)加密。
 
-## 使用 QEMU 及 DM-Crypt 來建立已加密的 RAW 映像檔
-{: #luks-disk-encryption}
+## 加密您的 VHD 映像檔
+{: #vhd-util-tool}
 
-若要加密您的映像檔，您必須將固定 VHD 映像檔轉換為 RAW 格式。然後，使用 QEMU 及 DM-Crypt 來建立以 LUKS 磁碟加密的新映像檔。將檔案裝載為加密磁區，並將未加密的映像檔複製到已加密磁區。
+遵循這些步驟建立您的加密 VHD 映像檔：
 
-此程序會引導您完成下列作業：
+1. 選取執行第 7 版或更高版本的 CentOS 系統，以加密 {{site.data.keyword.cloud_notm}}　的虛擬磁碟映像檔（VHD 檔）。如果您無法存取已安裝 CentOS 的實體硬體，您可以使用公用或專用主機在 {{site.data.keyword.cloud_notm}} 內部佈建具有 CentOS 7 的虛擬伺服器實例。用來加密 VHD 檔案的 CentOS 系統本身不需加密。
 
-* 將動態 VHD 映像檔轉換為固定 VHD 映像檔。
-* 將固定 VHD 映像檔轉換為 RAW 檔案格式。
-* 建立您將用來加密磁碟機的資料加密金鑰檔。
-* 建立新的 RAW 檔案，以包含映像檔及 LUKS 加密標頭。
-* 將具有 LUKS 磁碟加密的 RAW 檔案格式化。
-* 將已加密的 RAW 檔案附加至區塊裝置。
-* 將未加密的映像檔複製到已加密的磁區裝置。
+2. 登入 CentOS 系統並連接至您的客戶 VPN，然後[前往 SoftLayer 下載網站 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://downloads.service.softlayer.com/citrix/xen/){: new_window}，並選取 vhd-util 工具 RPM 套件檔：vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm   
 
-您必須具有專用權，可透過 sudo 使用 `root` 使用者權限執行指令，才能在系統上裝載和卸載已加密磁區。您可以發出下列指令來驗證 `root` 使用者專用權：
+   如果無法將 RPM 套件檔直接下載至 CentOS 系統，請將檔案下載到目前正在執行的工作站。然後，您可以使用安全副本 (scp) 指令將其上傳至 CentOS 系統。如果您在 {{site.data.keyword.cloud_notm}} 使用虛擬伺服器實例，請使用下列指令並使用系統的公用 IP 位址進行此上傳。
 
-```
-sudo echo "Hello!"
-```
-{: pre}
+   ```
+   scp vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm root@<vsi_public_ip>:
+   ```
+   {: pre}
 
-您必須在回覆中收到 "Hello!" 回應，才能完成此加密作業。
+3. 使用下列指令安裝 RPM：
 
-**提示**：您必須在執行 Linux 作業系統且提供下列套件的系統上，完成此加密作業：
-* qemu 或 qemu-image（視您的 Linux 作業系統而定）
-* cryptsetup
+   ```
+   rpm -iv vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm
+   ```
+   {: pre}
 
-請完成下列步驟來加密您的映像檔。
+4. 識別加密及解密磁碟映像檔所需的 AES 加密金鑰，並將其寫入金鑰檔。此 AES 加密金鑰與您在[準備您的環境](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment)中使用 Key Protect 客戶根金鑰包裝的資料加密金鑰相同。寫入金鑰檔的金鑰資料必須解除包裝，且不能經過編碼。 
 
-1. 將動態 VHD 映像檔轉換為固定 VHD 映像檔。固定 VHD 檔案可防止動態 VHD 直接轉換為 RAW 檔案格式時可能發生的毀損。請執行下列指令，將動態 VHD 映像檔轉換為固定 VHD 映像檔：
+   因為 data_key 不是在金鑰檔中進行 base64 編碼，因此無法使用標準 ASCII 字元列印或檢視金鑰檔內容。
+   {: tip}
 
-  ```
-  qemu-img convert -p -O vpc -o subformat=fixed <DYNAMIC_VHD_FILE> <FIXED_VHD_FILE>
-  ```
-  {: pre}
+   使用下列指令，以 **AES 256 位元**或 **AES 512 位元**加密金鑰建立金鑰檔： 
+   
+   ```
+   echo <data_key> | base64 -d - > <keyfile_name>
+   ```
+   {: pre} 
 
-  比方說，如果動態 VHD 檔案是 _Rhel_7.vhd-0.vhd_，且您要將固定 VHD 檔案命名為 _Rhel_7.fixed.vhd-0.vhd_，請執行下列指令：
+   範例指令：
 
-  ```
-  $ qemu-img convert -p -O vpc -o subformat=fixed Rhel_7.vhd-0.vhd Rhel_7.fixed.vhd-0.vhd
-  ```
-  {: screen}
+   ```
+   echo Nrfen98EpMxF2B+wdgLfagzrqvgUZfMK4vL2T0NsT20ihrsNC9pUUHtizF6218pze8RLCgQ6kwxuE58IWLzgDA== | base64 -d - > aes512.dek
+   ```
+   {: screen}
 
-  此指令可能需要 30 分鐘以上才能完成。
-  {: tip}
+5. 使用下列指令驗證您在上一步建立的金鑰檔：
 
-2. 使用 QEMU 將固定 VHD 映像檔轉換為 RAW 檔案格式。映像檔必須採用 RAW 檔案格式，然後您才能將其加密。請執行下列 QEMU 指令：
+   ```
+   vhd-util key -C -k <keyfile_name>
+   ```
+   {: pre}
 
-  ```
-  qemu-img convert -p -O raw <FIXED_VHD_FILE> <RAW_IMAGE_FILE>
-  ```
-  {: pre}
+   含輸出的範例指令：
 
-  比方說，如果固定 VHD 檔案是 _Rhel_7.fixed.vhd-0.vhd_，且您要將 RAW 輸出檔命名為 _Rhel_7.raw-0.raw_，請執行下列指令：
+   ```
+   vhd-util key -C -k aes512.dek
+   vhd_util_read_key: using keyfile aes512.dek, Size (bytes) 64
+   21681bba94f04b33b112f5f90a0faa885a6d1dbf1bd68ed16c5b995143088eda
+   ```
+   {: screen}
 
-  ```
-  qemu-img convert -p -O raw Rhel_7.fixed.vhd-0.vhd Rhel_7.raw-0.raw
-  ```
-  {: screen}
+   上一個範例指令輸出的第一行表示名為 `aes512.dek` 的金鑰檔包含 64 位元組的金鑰，而第二行列出的數字是 SHA256 雜湊或各個加密金鑰的安全雜湊值。包含 AES 256 位元加密金鑰的檔案輸出將指出 32 位元組的金鑰。
+   {: tip} 
 
-  此指令可能需要 30 分鐘以上才能完成。
-  {: tip}
+6. 使用下列指令來建立 VHD 檔案的已加密副本。`target_vhd` 表示包含 `source_vhd` 加密版本的檔案名稱。
 
-3. 識別您將用來加密和解密磁碟機的資料加密金鑰。此資料加密金鑰是您將已加密映像檔匯入至 {{site.data.keyword.slportal}} 時，所包裝及指定的相同金鑰。建立一個檔案，其中包含您將用來加密及解密磁碟機的資料加密金鑰。在此檔案中，必須將金鑰解除包裝，並置於 base64 編碼文字中。Base64 可協助確保不會包括任何意外的空格或換行。Base64 編碼資料加密金鑰最少必須有 32 個字元或位元組，且最多可以有 512 個字元或位元組。資料加密金鑰資料必須在同一行上，沒有換行及新行字元。例如，使用下列指令來建立一個稱為 `secret.dek` 的檔案，為資料加密金鑰儲存 `unwrapped_key_material`，並使用 base64 將其編碼：
+   ```
+   vhd-util copy -n <source_vhd> -N <target_vhd> -k <keyfile_name>
+   ```
+   {: pre}    
 
-  ```
-  $ echo -n $(echo 'unwrapped_key_material' | base64) > secret.dek
-  ```
-  {: screen}
+   範例指令：
 
-  將此金鑰放在安全之處。如果遺失此金鑰，將無法解密您的磁碟。
-  {: tip}
+   ```
+   vhd-util copy -n debian8-ne.vhd -N debian8-aes512.vhd -k aes512.dek
+   ```
+   {: screen}
 
-4. 識別要在下列步驟為已加密磁碟建立之新 RAW 檔案的正確大小，這會計入 LUKS 標頭的長度。_dmcrypt_ 和 _cryptsetup_ 將使用新的 RAW 檔案，以已加密的 LUKS 格式保留磁碟內容。新 RAW 檔案的大小必須是在步驟 2 中建立之 RAW 檔案的大小，與固定 4 MB LUKS 標頭的總和。若要判斷現有 RAW 映像檔的大小，請執行下列指令，其中 _Rhel_7.raw-0.raw_ 是映像檔名稱：
+7. 使用下列指令驗證已加密 VHD 檔案。
 
-  ```
-  ls -l Rhel_7.raw-0.raw
-  ```
-  {: pre}
+   ```
+   vhd-util key -p -n <vhd_filename>
+   ```
+   {: pre}
 
-  您將會看到如下輸出：
+   含輸出的範例指令：
 
-  ```
-  -rw-r--r--. 1 user user 42949017600 Mar 5 10:02 Rhel_7.raw-0.raw
-  ```
-  {: screen}
+   ```
+   vhd-util key -p -n debian8-aes512.vhd
+   0000000000000000000000000000000000000000000000000000000000000000
+   21681bba94f04b33b112f5f90a0faa885a6d1dbf1bd68ed16c5b995143088eda
+   ```
+   {: screen}
 
-  其中 _42949017600_ 是 RAW 映像檔正在使用的位元組數
-      1. 將 4 MB（已轉換為位元組）新增至 RAW 映像檔大小，來計入 LUKS 標頭的長度。例如，42949017600 + (4 x 1024 x 1024) = 42953211904 個位元組。
-      2. 將 RAW 映像檔大小及 LUKS 標頭的總和轉換為 MB，並捨入至下一個 MB。例如，42953211904 個位元組 / 1024 個位元組 / 1024 KB = 40963.375 MB = **40964 MB**.
+如果 VHD 檔案已加密，則會在輸出中看到兩個雜湊值，如上一個範例所顯示。第一個雜湊全都是零。第二個雜湊是 AES 加密金鑰使用來加密及解密 VHD 的 SHA256 雜湊。確保 VHD 檔案的 SHA256 雜湊與**步驟 5** 中顯示的雜湊相同。
 
-5. 建立位元組數正確的新 RAW 檔案，其會變成已加密的 RAW 映像檔。請使用下列 _dd_ 指令來建立 RAW 檔案：
-
-  ```
-  dd if=/dev/zero of=<ENCRYPTED_RAW_FILENAME> bs=1M count=<TARGET_SIZE_IN_MEGABYTE> status=progress
-  ```
-  {: pre}
-
-  其中 _ENCRYPTED_RAW_FILENAME_ 是將變成已加密 RAW 映像檔的檔案，而 _TARGET_SIZE_IN_MEGABYTE_ 是您從步驟 4 取得的數目，這是未加密 RAW 映像檔加上 LUKS 標頭的大小。
-
-  比方說，如果您想要將變成已加密映像檔的新 RAW 檔案成為 _Rhel_7.encrypted.praw_，且其目標大小是 _40964_ MB，請執行下列指令：
-
-  ```
-  $ dd if=/dev/zero of=Rhel_7.encrypted.raw bs=1M count=40964 status=progress
-  ```
-  {: screen}
-
-6. 使用 _dmcrypt_ 和資料加密金鑰（來自步驟 3），將具有 LUKS 磁碟加密的 RAW 檔案格式化。此步驟會準備檔案以包含映像檔。若要將具有 LUKS 加密的檔案格式化，請執行下列 _cryptsetup_ 指令：
-
-  ```
-  cryptsetup -v luksFormat <ENCRYPTED_RAW_FILENAME> <DEK_FILENAME>
-  ```
-  {: pre}
-
-  其中 _ENCRYPTED_RAW_FILENAME_ 是您要加密之 RAW 檔案的檔名，而 _DEK_FILENAME_ 是儲存資料加密金鑰的檔案名稱。
-
-  比方說，如果您的 RAW 檔案是 _Rhel_7.encrypted.raw_，而金鑰檔是 _secre.dek_，請輸入：
-
-  ```
-  $ cryptsetup -v luksFormat Rhel_7.encrypted.raw secret.dek
-  ```
-  {: screen}
-
-  在執行 cryptsetup 指令之後，您會收到下列提示。此為預期提示，您必須回應 YES 以繼續。
-
-  ```
-  WARNING!
-  ========
-  This will overwrite data on Rhel_7.encrypted.raw irrevocably.
-  Are you sure (Type uppercase yes): YES
-  ```
-  {: screen}
-
-7. 將已加密的 RAW 檔案附加為磁區，以使新的區塊裝置與作業系統產生關聯。使用 _cryptsetup_，執行下列指令，以使用 luksOpen 選項來開啟已加密的 RAW 裝置。
-
-  您必須具有 sudo 專用權，才能使用 `root` 使用者權限執行下列指令。
-  {: tip}
-
-  ```
-  sudo cryptsetup -v luksOpen <ENCRYPTED_RAW_FILENAME> <VOLUME_NAME> --key-file <DEK_FILENAME>
-  ```
-  {: pre}
-
-  其中 _ENCRYPTED_RAW_FILENAME_ 是已加密 RAW 檔案的檔名、_VOLUME_NAME_ 是 _dmcrypt_ 將嘗試建立的裝置名稱，而 _DEK_FILENAME_ 是資料加密金鑰的檔名。
-
-  比方說，如果您的已加密 RAW 檔案是 _Rhel_7.encrypted.raw_、您想要將區塊裝置命名為 _encryptedVolume_，而且資料加密金鑰檔是 _secret.dek_，請使用下列指令：
-
-  ```
-  $ sudo cryptsetup -v luksOpen Rhel_7.encrypted.raw encryptedVolume --key-file secret.dek
-  ```
-  {: screen}
-
-  當此步驟完成時，會建立一個新的區塊裝置，您可以在 _/dev/mapper/_ 下讀取並寫入其中。
-
-8. 執行下列指令，確認已順利建立 LUKS 磁區對映程式：
-
-  ```
-  ls -l /dev/mapper/
-  ```
-  {: pre}
-
-  您應該會看到類似下列範例的輸出：
-
-  ```
-  total 0
-  lrw-rw---- 1 root root        7 Mar 5 22:22 encryptedVolume -> ../dm-0
-  ```
-  {: screen}
-
-9. 將未加密的映像檔（來自步驟 2）複製到已加密的磁區裝置（來自步驟 7）。請執行下列 _dd_ 指令，將未加密的映像檔複製到已加密磁區：
-
-  ```
-  sudo dd if=<RAW_IMAGE_FILE> of=/dev/mapper/<VOLUME_NAME>
-  ```
-  {: pre}
-
-  其中 _RAW_IMAGE_FILE_ 是未加密 RAW 映像檔（已在步驟 2 中建立）的檔名，而 _VOLUME_NAME_ 是已加密磁區區塊裝置（已在步驟 7 中建立）的名稱。
-
-  比方說，如果您的 RAW_IMAGE_FILE 命名為 _Rhel_7.raw-0.raw_，且您的 VOLUME_NAME 是 _encryptedVolume_，請執行下列指令：
-
-  ```
-  $ sudo dd if=Rhel_7.raw-0.raw of=/dev/mapper/encryptedVolume status=progress
-  ```
-  {: screen}
-
-  此指令可能需要 30 分鐘以上才能完成。
-  {: tip}
-
-10. 破壞磁區對映程式，並關閉 LUKS 與已加密資料檔的連線：
-
-  ```
-  sudo cryptsetup luksClose encryptedVolume
-  ```
-  {: pre}
-
-  其中 _encryptedVolume_ 是已加密磁區區塊裝置的名稱。
-
-  您的 _ENCRYPTED_RAW_FILENAME_ 現在已起始設定，您可以將它上傳至 IBM Cloud Object Storage。比方說，如果您的已加密 RAW 檔案是 _Rhel_7.encrypted.raw_，請將該映像檔上傳至 IBM Cloud Object Storage。
+在**步驟 7** 中的範例指令，會建立名為 "debian8-aes512.vhd" 的新加密 VHD 檔案。它使用名為 "aes512.dek" 之金鑰檔中的 AES 512 位元加密金鑰進行加密。其加密的 SHA256 雜湊為 `21681bba94f04b33b112f5f90a0faa885a6d1dbf1bd68ed16c5b995143088eda`。

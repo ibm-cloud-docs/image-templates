@@ -57,10 +57,10 @@ subcollection: image-templates
 
 磁區是可用來儲存檔案的磁碟空間，而實體資料則是由儲存在磁碟上的實際檔案所組成。
 
-## 何謂映像檔匯入/匯出功能？
+## 何謂映像檔匯入/匯出特性？
 {: faq}
 
-映像檔匯入/匯出功能（位於 {{site.data.keyword.slportal}} 的「映像檔範本」頁面）允許將 {{site.data.keyword.objectstorageshort}} 帳戶上儲存的 VHD 和 ISO，轉換成映像檔範本，反之亦然。當您匯入映像檔時，特定的檔案（VHD 或 ISO）會從指定的 [{{site.data.keyword.objectstorageshort}}] 帳戶容器讀取，並轉換成映像檔範本。然後映像檔範本便可以用來開機或載入裝置。當您匯出映像檔時，映像檔範本會轉換成檔案（若範本有多個磁碟則是數個檔案），該檔案儲存在 {{site.data.keyword.objectstorageshort}} 帳戶容器上的指定位置。
+映像檔匯入/匯出特性（位於 {{site.data.keyword.slportal}} 的「映像檔範本」頁面）允許將 {{site.data.keyword.objectstorageshort}} 帳戶上儲存的 VHD 和 ISO，轉換成映像檔範本，反之亦然。當您匯入映像檔時，特定的檔案（VHD 或 ISO）會從指定的 [{{site.data.keyword.objectstorageshort}}] 帳戶容器讀取，並轉換成映像檔範本。然後映像檔範本便可以用來開機或載入裝置。當您匯出映像檔時，映像檔範本會轉換成檔案（若範本有多個磁碟則是數個檔案），該檔案儲存在 {{site.data.keyword.objectstorageshort}} 帳戶容器上的指定位置。
 
 ## 如何為整個伺服器建立映像檔範本，而不只是我的主要磁碟機？
 {: faq}

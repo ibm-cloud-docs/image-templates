@@ -11,6 +11,7 @@ subcollection: image-templates
 ---
 
 {:shortdesc: .shortdesc}
+{:deprecated: .deprecated}
 {:new_window: target="_blank"}
 
 # 將映像檔匯出至 OpenStack Swift
@@ -18,6 +19,9 @@ subcollection: image-templates
 
 從「映像檔範本」頁面，您可以將映像檔範本匯出至 [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift?topic=objectstorage-swift-GettingStarted#getting-started-with-object-storage-openstack-swift) 帳戶。
 {:shortdesc}
+
+已淘汰此服務的所有實例。可以使用現有帳戶，但在 2018 年 12 月 10 日之後無法供應新的 {{site.data.keyword.objectstorageshort}} OpenStack Swift 帳戶。自 2019 年 3 月 31 日起，IBM Cloud 不再支援使用 Cloud Object Storage OpenStack Swift 的「映像檔範本」匯入/匯出特性。
+{: deprecated}
 
 映像檔匯出處理程序會取用預先存在的專用標準映像檔範本，然後將映像檔轉換成儲存在 Object Storage OpenStack Swift 帳戶上之指定位置的映像檔。請使用下列步驟來匯出映像檔範本。
 

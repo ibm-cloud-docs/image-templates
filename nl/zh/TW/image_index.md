@@ -21,6 +21,7 @@ subcollection: image-templates
 
 
 ## 建立映像檔範本
+{: #creating-template}
 
 請完成下列步驟，以使用映像檔範本：
 1. 瞭解[映像檔範本](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates)。
