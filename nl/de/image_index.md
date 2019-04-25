@@ -21,6 +21,7 @@ Mit den {{site.data.keyword.BluSoftlayer_full}}-Imagevorlagen können Sie ein Im
 
 
 ## Imagevorlage erstellen
+{: #creating-template}
 
 Führen Sie die folgenden Schritte aus, um Imagevorlagen zu verwenden:
 1. Erfahren Sie mehr über [Imagevorlagen](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates).
