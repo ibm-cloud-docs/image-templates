@@ -11,6 +11,7 @@ subcollection: image-templates
 ---
 
 {:shortdesc: .shortdesc}
+{:deprecated: .deprecated}
 {:new_window: target="_blank"}
 
 # Exportación de una imagen a OpenStack Swift
@@ -18,6 +19,9 @@ subcollection: image-templates
 
 En la página Plantillas de imagen puede exportar una plantilla de imagen a una cuenta de [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift?topic=objectstorage-swift-GettingStarted#getting-started-with-object-storage-openstack-swift).
 {:shortdesc}
+
+Todas las instancias de este servicio están en desuso. Se pueden utilizar las cuentas existentes, pero desde el 10 de diciembre de 2018 no se pueden suministrar cuentas nuevas de {{site.data.keyword.objectstorageshort}} OpenStack Swift. A partir del 31 de marzo de 2019, IBM Cloud ya no admite la función de importación/exportación de plantillas de imagen con Cloud Object Storage OpenStack Swift.
+{: deprecated}
 
 El proceso de exportación toma una plantilla de imagen privada estándar preexistente, y convierte la imagen en un archivo de imagen que se almacena en una ubicación especificada en una cuenta de Object Storage OpenStack Swift. Siga los pasos siguientes para exportar una plantilla e imagen.
 

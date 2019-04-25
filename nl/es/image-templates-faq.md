@@ -49,7 +49,7 @@ Solo los servidores que se suministran por {{site.data.keyword.BluSoftlayer_notm
 
 Las únicas Plantillas ISO que se publican a todos los clientes son plantillas que se generan por {{site.data.keyword.BluSoftlayer_notm}}. Plantillas ISO privadas son específicas de cuenta y no pueden compartirse entre los clientes a través del {{site.data.keyword.slportal}}.
 
-## ¿Mi plantilla ISO debe estar en el mismo centro de datos que mi servidor virtual para completar un arranque de imagen?
+## ¿Mi plantilla ISO debe estar en el mismo centro de datos que mi servidor virtual para completar el arranque desde una imagen?
 {: faq}
 
 Sí, Las plantillas ISO deben estar en el mismo centro de datos que el servidor virtual para arrancar desde la imagen. Si no está en el mismo centro de datos, la plantilla ISO debe copiarse en el centro de datos adecuado para completar la acción. Si se produce esta situación, aparece un aviso sobre la transacción. Cuando se copia una plantilla ISO un centro de datos diferente, se factura una cuota pequeña a la cuenta de la misma forma en la que se aplican las tarifas para copiar otros tipos de plantillas de imagen.

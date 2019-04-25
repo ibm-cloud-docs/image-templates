@@ -22,7 +22,7 @@ Cuando se crea una plantilla de imagen con una imagen VHD, puede seleccionar pro
 {:shortdesc}
 
 Si despliega una imagen en {{site.data.keyword.BluSoftlayer_full}} que indica que está utilizando su propia licencia, aparecen los siguientes términos de soporte:
-* {{site.data.keyword.IBM_notm}} proporciona soporte para hipervisores, suministro de instancias, importación de imágenes, reinicio de imágenes, captura de imágenes.
+* {{site.data.keyword.IBM_notm}} proporciona soporte para hipervisores, suministro de instancias, importación de imágenes, rearranque de imágenes, captura de imágenes.
 * La empresa de la que adquiere la licencia del sistema operativo proporciona un soporte para la imagen en sí misma. {{site.data.keyword.IBM_notm}} no proporciona soporte para la imagen.
 
 Cuando proporciona su propia licencia para una imagen, se aplican las siguientes restricciones a la imagen:

@@ -21,6 +21,7 @@ Con las plantillas {{site.data.keyword.BluSoftlayer_full}} de imagen, puede capt
 
 
 ## Creación una plantilla de imagen
+{: #creating-template}
 
 Complete los pasos siguientes para utilizar las plantillas de imagen:
 1. Más información sobre [plantillas de imagen](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates).
