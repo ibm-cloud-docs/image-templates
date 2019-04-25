@@ -4,6 +4,8 @@ copyright:
   years: 2018
 lastupdated: "2018-08-09"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -16,10 +18,11 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # アクティビティー・トラッカーによる仮想サーバー・イベントの監査
+{: #auditing-virtual-server-events-with-activity-tracker}
 
-[アクティビティー・トラッカー](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov)を使用すると、仮想サーバー・インスタンスをライフサイクル全体にわたって監査できます。プレミアム・サービス・プランで米国南部にプロビジョンしたアクティビティー・トラッカーのインスタンスが必要です。プレミアム・プランでは、監査ログのフィルタリングと検索のためのオプションを多く備えた Kibana ダッシュボードを利用できます。
+[アクティビティー・トラッカー](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov)を使用すると、仮想サーバー・インスタンスをライフサイクル全体にわたって監査できます。 プレミアム・サービス・プランで米国南部にプロビジョンしたアクティビティー・トラッカーのインスタンスが必要です。 プレミアム・プランでは、監査ログのフィルタリングと検索のためのオプションを多く備えた Kibana ダッシュボードを利用できます。
 
-ログは、{{site.data.keyword.cloud}} アカウントの所有者のアカウント・ログ・セクションに表示されます。アカウント所有者が表示できるログは、以下のとおりです。
+ログは、{{site.data.keyword.cloud}} アカウントの所有者のアカウント・ログ・セクションに表示されます。 アカウント所有者が表示できるログは、以下のとおりです。
 * アカウント所有者によってトリガーされたイベント。
 * アカウントにリンクされているユーザーによってトリガーされたイベント。
 

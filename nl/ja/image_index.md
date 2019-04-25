@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-05"
 
+keywords: image templates
+
 subcollection: image-templates
 
 ---
@@ -12,12 +14,14 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # イメージ・テンプレート入門
+{: #getting-started-with-image-templates}
 
 {{site.data.keyword.BluSoftlayer_full}} のイメージ・テンプレートを使用すると、仮想サーバーのイメージを取り込んでその構成を素早く複製できるので、注文プロセスで行う変更が最小限になります。
 {:shortdesc}
 
 
 ## イメージ・テンプレートの作成
+{: #creating-template}
 
 イメージ・テンプレートを使用するには、以下の手順を実行してください。
 1. [イメージ・テンプレート](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates)について学習する。

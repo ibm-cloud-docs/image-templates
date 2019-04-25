@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-03"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,6 +14,7 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # イメージ・テンプレートについて
+{: #about-image-templates}
 
 標準イメージ・テンプレートは、オペレーティング・システムに関係なく、あらゆる{{site.data.keyword.BluVirtServers_short}}に有効なイメージ作成方法の 1 つです。
 {:shortdesc}

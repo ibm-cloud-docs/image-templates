@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2018
 lastupdated: "2018-04-04"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -14,6 +16,7 @@ subcollection: image-templates
 
 
 # ユーザー自身の OS ライセンスまたはサブスクリプションの使用
+{: #using-your-own-os-license-or-subscription}
 
 VHD イメージを使用してイメージ・テンプレートを作成するとき、[Red Hat Cloud Access ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) サブスクリプションからユーザー自身の RHEL オペレーティング・システムのライセンスを指定したり、Microsoft エンタープライズ契約から Windows ライセンスを指定したりすることを選択できます。
 {:shortdesc}
@@ -44,7 +47,7 @@ VHD イメージをインポートし、オペレーティング・システム�
 イメージ・テンプレートの「イメージのインポート」ページにアクセスし、ユーザー自身のライセンスまたはサブスクリプションを使用するように VHD イメージにマークを付けるには、以下の手順を実行します。
 1. **「デバイス」**メニューから、**「管理」>「イメージ」**を選択します。
 2. **「イメージのインポート」**タブをクリックします。
-3. VHD イメージをインポートするために必要な情報を入力し、**「オペレーティング・システム」**ドロップダウン・ボックスの近くに表示されている**「自分のライセンス (Your License)」**チェック・ボックスを選択します。イメージのインポートについて詳しくは、[イメージの準備およびインポート](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images)を参照してください。
+3. VHD イメージをインポートするために必要な情報を入力し、**「オペレーティング・システム」**ドロップダウン・ボックスの近くに表示されている**「自分のライセンス (Your License)」**チェック・ボックスを選択します。 イメージのインポートについて詳しくは、[イメージの準備およびインポート](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images)を参照してください。
 
 ## ユーザー提供の OS ライセンスを指定するようイメージ・テンプレートを更新
 

@@ -4,6 +4,8 @@ copyright:
   years: 2017, 2019
 lastupdated: "2019-01-23"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -16,12 +18,12 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 # イメージ・テンプレート API のリファレンス
-{: #api-reference}
+{: #image-template-api-reference}
 
-{{site.data.keyword.slapi_full}} は、開発者やシステム管理者が {{site.data.keyword.cloud}} のバックエンド・システムと直接対話できる開発用インターフェースです。{{site.data.keyword.slportal_full}}の多くの機能は、{{site.data.keyword.slapi_short}} によって駆動しています。つまり、一般には、{{site.data.keyword.slportal}}で行える対話は、API でも行うことができます。API だけでプログラムから {{site.data.keyword.BluSoftlayer_full}} 環境のあらゆる部分と対話できるので、{{site.data.keyword.slapi_short}} は作業の自動化を可能にします。例えば、*SoftLayer_Virtual_Guest/createObject* API を使用すれば、イメージ・テンプレートから仮想サーバー・インスタンスをデプロイできます。
+{{site.data.keyword.slapi_full}} は、開発者やシステム管理者が {{site.data.keyword.cloud}} のバックエンド・システムと直接対話できる開発用インターフェースです。 {{site.data.keyword.slportal_full}}の多くの機能は、{{site.data.keyword.slapi_short}} によって駆動しています。つまり、一般には、{{site.data.keyword.slportal}}で行える対話は、API でも行うことができます。 API だけでプログラムから {{site.data.keyword.BluSoftlayer_full}} 環境のあらゆる部分と対話できるので、{{site.data.keyword.slapi_short}} は作業の自動化を可能にします。 例えば、*SoftLayer_Virtual_Guest/createObject* API を使用すれば、イメージ・テンプレートから仮想サーバー・インスタンスをデプロイできます。
 {:shortdesc}
 
-{{site.data.keyword.slapi_short}} は、リモート・プロシージャー・コールのシステムです。呼び出しごとに、API エンドポイントにデータを送信し、応答として返された構造化データを受信します。{{site.data.keyword.slapi_short}} とのデータの送受信に使用する形式は、選択した API の実装仕様によって異なります。{{site.data.keyword.slapi_short}} は現在、データ伝送に SOAP、XML-RPC、または REST を使用しています。
+{{site.data.keyword.slapi_short}} は、リモート・プロシージャー・コールのシステムです。 呼び出しごとに、API エンドポイントにデータを送信し、応答として返された構造化データを受信します。 {{site.data.keyword.slapi_short}} とのデータの送受信に使用する形式は、選択した API の実装仕様によって異なります。 {{site.data.keyword.slapi_short}} は現在、データ伝送に SOAP、XML-RPC、または REST を使用しています。
 
 {{site.data.keyword.slapi_short}} と仮想サーバー API について詳しくは、{{site.data.keyword.sldn_full}} の以下の資料を参照してください。
 * [{{site.data.keyword.slapi_short}} の概要 ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer.github.io/reference/softlayerapi/){: new_window}

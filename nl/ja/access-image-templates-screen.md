@@ -4,6 +4,8 @@ copyright:
   years: 2014, 2017
 lastupdated: "2017-10-27"
 
+keywords:
+
 subcollection: image-templates
 
 ---
@@ -12,9 +14,9 @@ subcollection: image-templates
 {:new_window: target="_blank"}
 
 # 「イメージ・テンプレート」ページからのイメージの管理
+{: #managing-images-from-the-image-templates-page}
 
-{{site.data.keyword.slportal_full}}の「イメージ・テンプレート」ページには、アカウントに関連付けられたすべてのイメージが表示されます。
-「イメージ・テンプレート」ページから、それらのイメージを操作したり、既存のオブジェクト・ストレージ・アカウントに保管されている新規イメージをインポートしたりできます。
+{{site.data.keyword.slportal_full}}の「イメージ・テンプレート」ページには、アカウントに関連付けられたすべてのイメージが表示されます。 「イメージ・テンプレート」ページから、それらのイメージを操作したり、既存のオブジェクト・ストレージ・アカウントに保管されている新規イメージをインポートしたりできます。
 {:shortdesc}
 
 「イメージ・テンプレート」画面にアクセスするには、以下の手順を使用します。
