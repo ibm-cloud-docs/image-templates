@@ -21,6 +21,7 @@ subcollection: image-templates
 
 
 ## 이미지 템플리트 작성
+{: #creating-template}
 
 이미지 템플리트를 사용하려면 다음 단계를 완료하십시오.
 1. [이미지 템플리트](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates)에 대해 알아보십시오.

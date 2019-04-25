@@ -11,6 +11,7 @@ subcollection: image-templates
 ---
 
 {:shortdesc: .shortdesc}
+{:deprecated: .deprecated}
 {:new_window: target="_blank"}
 
 # OpenStack Swift에 이미지 내보내기
@@ -18,6 +19,9 @@ subcollection: image-templates
 
 이미지 템플리트 페이지에서 이미지 템플리트를 [Object Storage OpenStack Swift](/docs/infrastructure/objectstorage-swift?topic=objectstorage-swift-GettingStarted#getting-started-with-object-storage-openstack-swift) 계정에 내보낼 수 있습니다.
 {:shortdesc}
+
+이 서비스의 모든 인스턴스는 더 이상 사용되지 않습니다. 기존 계정을 사용할 수 있지만 2018년 12월 10일 이후에는 새 {{site.data.keyword.objectstorageshort}} OpenStack Swift 계정을 프로비저닝할 수 없습니다. 2019년 3월 31일부터 IBM Cloud에서는 Cloud Object Storage OpenStack Swift를 사용한 이미지 템플리트 가져오기/내보내기 기능을 더 이상 지원하지 않습니다.
+{: deprecated}
 
 이미지 내보내기 프로세스는 기존의 개인용 표준 이미지 템플리트를 가져와서 해당 이미지를 Object Storage
 OpenStack Swift 계정의 지정된 위치에 저장된 이미지 파일로 변환합니다. 이미지 템플리트를 내보내려면 다음 단계를 수행하십시오.

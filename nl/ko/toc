@@ -12,13 +12,8 @@
     {: .navgroup id="howto"}
     access-image-templates-screen.md
     create-standard-image.md
-    import-image.md
-    
-    {: .topicgroup}
-    이미지 템플리트 내보내기
-        export-image.md
-        export-image-ibm-cos.md
-
+    import-image.md    
+    export-image-ibm-cos.md
     delete-image-template.md
     order-vsi-from-image-template.md
     boot-vsi-image.md
@@ -29,11 +24,11 @@
     엔드 투 엔드 암호화를 사용하여 프로비저닝
         provision-encrypted-image.md
         create-encrypted-image.md
-        import-encrypted-image-api.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     image-template-api-reference.md
+    import-image-icos-gov.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
