@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-04-29"
 
 keywords:
 
@@ -21,13 +21,13 @@ subcollection: image-templates
 # Preparing and importing images
 {: #preparing-and-importing-images}
 
-The Image Templates screen in the {{site.data.keyword.slportal_full}} allows you to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage#about-ibm-cloud-object-storage) service instance. You can import images that are in Virtual Hard Disk (VHD) or Virtual Machine Disk (VMDK) format. After import, VMDK images are converted to VHD. After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.slportal}}.
+The Image Templates screen in the {{site.data.keyword.slportal_full}} allows you to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage#about-ibm-cloud-object-storage) service instance. You can import images that are in Virtual Hard Disk (VHD) or Virtual Machine Disk (VMDK) format. After import, VMDK images are converted to VHD. After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.slportal}}.
 {:shortdesc}
 
 You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more information, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
 {: tip}
 
-You must have an [IBM Cloud Object Storage instance](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-order-storage#creating-a-new-ibm-cloud-platform-account) ordered through the {{site.data.keyword.cloud_notm}} console (cloud.ibm.com) to use this import feature.  IBM Cloud Object Storage from control.softlayer.com is not supported.
+You must have an [IBM Cloud Object Storage instance](/docs/cloud-object-storage/basics?topic=cloud-object-storage-order-storage#creating-a-new-ibm-cloud-platform-account) ordered through the {{site.data.keyword.cloud_notm}} console (cloud.ibm.com) to use this import feature.  IBM Cloud Object Storage from control.softlayer.com is not supported.
 {: important}
 
 After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an {{site.data.keyword.cos_full_notm}} service instance can be either VHD, VMDK, or custom ISOs. VHD and VMDK imports are restricted to the following 64-bit operating systems:  
@@ -167,7 +167,7 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 | Bucket | Select the {{site.data.keyword.cos_full_notm}} bucket where your image is stored. Only buckets that exist in the regional  location that you selected are valid. You will receive an error message if you select a bucket that doesn't exist in the selected location.|
 | Image File | Select the image file in the {{site.data.keyword.cos_full_notm}} service instance that you want to import. Supported file types are VHD (Virtual Hard Disk), VMDK (Virtual Machine Disk), and ISO. If you are importing an encrypted image, the image must be in the VHD file format and encrypted with the vhd-util tool. |
 | Image Name | Specify a descriptive name for your image. This is the image that you will use to provision virtual server instances. |
-| API Key | Specify the API key that gives access to your {{site.data.keyword.cos_full_notm}} service instance. When importing an encrypted image, the API Key must also have access to Key Protect. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Working with API keys](/docs/iam?topic=iam-manapikey#manapikey). |
+| API Key | Specify the API key that gives access to your {{site.data.keyword.cos_full_notm}} service instance. When importing an encrypted image, the API Key must also have access to your key management service instance. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Working with API keys](/docs/iam?topic=iam-manapikey#manapikey). |
 | Operating System | Select the operating system that is included in your image. |
 | Cloud-init | If the image that you are importing is cloud-init enabled, select this check box. If you are importing an image that has a cloud-init enabled Windows operating system and you select this option, you cannot concurrently select **Your License**. If you are importing an encrypted image, this option is selected by default and not editable because your encrypted image must be cloud-init enabled. |
 | Your License | If you plan to provide your own operating system license, select this check box. If you are importing an image with a Windows operating system, you can select this option if you plan to use the image to provision [dedicated host instances](/docs/vsi?topic=virtual-servers-dedicated-hosts-and-dedicated-instances#dedicated-hosts-and-dedicated-instances). If your version of Windows operating system does not support using your own license, this option is disabled. For Windows images, you cannot select Cloud Init if you specify that you will use your own license. If you are importing an encrypted image with Red Hat Enterprise Linux as your operating system, this option is selected by default and not editable because your encrypted image must include its own operating system license. |
@@ -186,8 +186,8 @@ To import an encrypted image, your account must have access to the End to End (E
 | Field | Value |
 | ----- | ----- |
 | Wrapped Data Encryption Key | When importing an encrypted image, specify the cipher text that is associated with the data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/services/key-protect?topic=key-protect-wrap-keys#api). |
-| {{site.data.keyword.keymanagementserviceshort}} Service Instance | Select a Key Protect instance in your account from the drop-down list. The Key Protect instance must include the customer root key that you used to wrap your data encryption key. |
-| Key Name | Select the name of the root key within the {{site.data.keyword.keymanagementserviceshort}} Service instance that you used to wrap your data encryption key. For more information, see [Viewing keys](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
+| Key Management Service Instance | Select a key management service instance in your account from the drop-down list. The key management service instance must include the customer root key that you used to wrap your data encryption key. |
+| Key Name | Select the name of the root key within the key management service instance that you used to wrap your data encryption key. For more information, see [Viewing keys](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
 {: caption="Table 2. Values for importing an encrypted image from IBM Cloud Object Storage" caption-side="top"}
 
 ## Next Steps
@@ -196,4 +196,4 @@ After the import begins, the system locates the image file in the {{site.data.ke
 the Image Templates page. After the import completes, the image can be used to order a new device or to start an existing device.
 Additionally, the image template can be deleted at any time. Image import times vary based on file size, but generally take several minutes to an hour.
 
-After an image is imported into the image template repository, you can delete it from {{site.data.keyword.cos_full_notm}}. You can continue   accessing the image template from the **Image Templates** page and using it to provision virtual server instances.
+After an image is imported into the image template repository, you can delete it from {{site.data.keyword.cos_full_notm}}. You can continue accessing the image template from your **Image Templates** page and using it to provision virtual server instances.
