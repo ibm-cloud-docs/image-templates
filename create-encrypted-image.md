@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-04-29"
 
 keywords: VHD image file, encryption, encrypted image, image
 
@@ -60,7 +60,7 @@ Follow these steps to create your encrypted VHD image:
    ```
    {: pre}
 
-4. Identify the AES encryption key that you need to encrypt and decrypt your disk image and write it into a keyfile. This AES encryption key is the same data encryption key that you wrapped with the Key Protect customer root key in [Preparing your environment](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). Key material that is written into keyfiles must be unwrapped and not be encoded. 
+4. Identify the AES encryption key that you need to encrypt and decrypt your disk image and write it into a keyfile. This AES encryption key is the same data encryption key that you wrapped with your key management service-provided customer root key in [Preparing your environment](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). Key material that is written into keyfiles must be unwrapped and not be encoded. 
 
    Because the data_key is not base64 encoded inside the keyfiles, you cannot print or view the keyfile content from the command line      by using standard ASCII characters. 
    {: tip}
