@@ -49,9 +49,8 @@ config = {'name':'my_encrypted_image',
       'byol': True,
       'encrypted': True,
       'ibmApiKey':'<api_key>',
-      'rootKeyId':'my root key ID',
+      'crkCrn': 'crn:v1:bluemix:public:hs-crypto:us-south:a/0d06ba51fa0e430090956d1761da1b7b:5ef6cebe-26d7-4ef3-abdc-fb50f336780f:key:a9640391-aec5-4c86-8942-6e6c47bb40b5',
       'wrappedDek':'my wrapped DEK',
-      'keyProtectId':'<key_protect_instance_id>',
       }
 ret = group_svc.createFromIcos(config)
 print(ret)
