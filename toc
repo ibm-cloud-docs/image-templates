@@ -24,6 +24,7 @@ Image Templates
     Using end-to-end encryption to provision
         provision-encrypted-image.md
         create-encrypted-image.md
+        import-encrypted-image-api.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
