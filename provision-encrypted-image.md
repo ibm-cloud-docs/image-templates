@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-05-13"
 
 keywords:
 
@@ -48,15 +48,14 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
 1. You must have an upgraded account to use E2E encryption for virtual servers. For more information, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
 2. Use your key management service to create and manage keys.  The following example steps are specific to {{site.data.keyword.keymanagementserviceshort}}, but the general flow also applies to {{site.data.keyword.hscrypto}}. If you're using {{site.data.keyword.hscrypto}}, see the [documentation](/docs/services/hs-crypto?topic=hs-crypto-get-started#get-started) for that service for corresponding instructions.
       1. Provision the [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-provision#provision) service.
-      2. [Create](/docs/services/key-protect?topic=key-protect-create-root-keys#create-root-keys) or [import](/docs/services/key-protect?topic=key-protect-import-root-keys#import-root-keys) a root key (CRK) in {{site.data.keyword.keymanagementservicelong_notm}}.
-      3. **Optional**: If you choose, you can [create](/docs/services/key-protect?topic=key-protect-create-standard-keys#create-standard-keys) or [import](/docs/services/key-protect?topic=key-protect-import-standard-keys#import-standard-keys) a standard key for decryption.
-      4. [Set up the Key Protect API](/docs/services/key-protect?topic=key-protect-set-up-api#set-up-api) so that you can wrap the data encryption key that you intend to use to encrypt your VHD image.
-      5. [Wrap the data encryption key](/docs/services/key-protect/wrap-keys.html#wrap-keys) with the root key. You need the cipher text that is associated with the wrapped data encryption key (WDEK) when you import your encrypted image to {{site.data.keyword.cloud_notm}} console.  
+      2. [Create](/docs/services/key-protect?topic=key-protect-create-root-keys) or [import](/docs/services/key-protect?topic=key-protect-import-root-keys#import-root-keys) a root key (CRK) in {{site.data.keyword.keymanagementservicelong_notm}}.
+      3. **Optional**: If you choose, you can [create](/docs/services/key-protect?topic=key-protect-create-standard-keys#create-standard-keys) or [import](/docs/services/key-protect?topic=key-protect-import-standard-keys#import-standard-keys) a standard key for decryption.      
+      4. [Set up the {{site.data.keyword.cloud_notm}} Key Protect CLI plug-in](/docs/services/key-protect?topic=key-protect-set-up-cli) so you can [Wrap the data encryption key](/docs/services/key-protect?topic=key-protect-cli-reference#kp-wrap) with the root key. You need the cipher text that is associated with the wrapped data encryption key (WDEK) when you import your encrypted image to {{site.data.keyword.cloud_notm}} console.  
          
-         Key Protect doesn't save additional authentication data (AAD), but you can still use AAD to further secure a key with up to              255 strings, each delimited by a comma and containing up to 255 characters.  If you supply AAD for key wrapping, save the data          to a secure location to ensure that you can access and provide the same AAD on future key unwrapping requests.
-         {: tip}
+Key Protect doesn't save additional authentication data (AAD), but you can still use AAD to further secure a key with up to              255 strings, each delimited by a comma and containing up to 255 characters.  If you supply AAD for key wrapping, save the data          to a secure location to ensure that you can access and provide the same AAD on future key unwrapping requests.
+{: tip}
       
-3. From IBM {{site.data.keyword.iamshort}} (IAM), [authorize access](/docs/iam?topic=iam-serviceauth#create-auth) between **your Cloud Block Storage** (source service) and **your key management service** (target service). If you import encrypted images from {{site.data.keyword.cos_full_notm}} must have an [access policy defined](/docs/iam?topic=iam-userroles#userroles) for your key management service in IAM.
+3. From IBM {{site.data.keyword.iamshort}} (IAM), [authorize access](/docs/iam?topic=iam-serviceauth#create-auth) between your **Cloud Block Storage** (source service) and your **Key Management Service** (target service). If you import encrypted images from {{site.data.keyword.cos_full_notm}} must have an [access policy defined](/docs/iam?topic=iam-userroles#userroles) for your key management service in IAM.
 4. In IBM Cloud Console, create  an instance of {{site.data.keyword.cos_full_notm}} and create a bucket to store data. For more information, see [Getting started tutorial for {{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-tutorial).
       1. Create the {{site.data.keyword.cos_full_notm}} instance in the region where your key management service is provisioned.
       2. When you create the bucket, the **Resiliency** setting must be _Regional_.
