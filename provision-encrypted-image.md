@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-05-23"
 
 keywords:
 
@@ -59,7 +59,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
 4. In IBM Cloud Console, create  an instance of {{site.data.keyword.cos_full_notm}} and create a bucket to store data. For more information, see the [Getting started tutorial for {{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-getting-started)
       1. Create the {{site.data.keyword.cos_full_notm}} instance in the region where your key management service is provisioned.
       2. When you create the bucket, the **Resiliency** setting must be _Regional_.
-      3. Optionally, when you create the bucket, you can [encrypt it with your key](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-sse-kp#sse-kp).   
+      3. Optionally, when you create the bucket, you can [encrypt it with your key](/docs/services/cloud-object-storage?topic=cloud-object-storage-encryption#encryption-kp).   
 
 ## Preparing your encrypted images
 
