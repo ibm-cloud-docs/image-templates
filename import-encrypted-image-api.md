@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2019-05-20"
+lastupdated: "2019-05-24"
 
 keywords:
 
@@ -29,7 +29,7 @@ and create an image template. When your image template is created, you can use i
 To limit access to only the information that is needed to complete the import task, authenticate with a service ID. The service ID should have access only to the encrypted image in IBM Cloud Object Storage that you want to import and the Key Protect instance where your root key is stored.  
 
 The following python snippet shows an example of how you can access the
-[SoftLayer_Virtual_Guest_Block_Device_Template_Group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://softlayer.github.io/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/) API and use the
+[SoftLayer_Virtual_Guest_Block_Device_Template_Group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://sldn.softlayer.com/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/) API and use the
 _createFromIcos_ method to create an image template.
 
 ```python
