@@ -30,7 +30,7 @@ virtual server based on the image.
 
 The ISO Template is a type of template that is specifically reserved for ISOs that can be used to boot a VSI. ISO templates are available in two versions: public and private. Public ISO Templates are preconfigured templates that are provided by {{site.data.keyword.BluSoftlayer_notm}} and can be used by any customer. Private ISO Templates are created by importing an image of an ISO stored on an {{site.data.keyword.objectstorageshort}} Account. In order for an ISO to be imported to the Image Templates screen, the ISO must be bootable.
 
-Only {{site.data.keyword.BluSoftlayer_notm}} Supported Operating Systems can be used to load an ISO template onto a VSI. For more information, see [Supported Operating Systems ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.softlayer.com/services/software/).
+Only {{site.data.keyword.BluSoftlayer_notm}} Supported Operating Systems can be used to load an ISO template onto a VSI. For more information, see [Supported Operating Systems ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/server-software).
 {:tip}
 
 ## What is the difference between a Public Image and a Private Image?
