@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-05-24"
 
 keywords:
 
@@ -52,8 +52,8 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
       3. **Optional**: If you choose, you can [create](/docs/services/key-protect?topic=key-protect-create-standard-keys#create-standard-keys) or [import](/docs/services/key-protect?topic=key-protect-import-standard-keys#import-standard-keys) a standard key for decryption.      
       4. [Set up the {{site.data.keyword.cloud_notm}} Key Protect CLI plug-in](/docs/services/key-protect?topic=key-protect-set-up-cli) so you can [wrap the data encryption key](/docs/services/key-protect?topic=key-protect-cli-reference#kp-wrap) that you intend to use to encrypt your VHD image with the root key. You need the cipher text that is associated with the wrapped data encryption key (WDEK) when you import your encrypted image to {{site.data.keyword.cloud_notm}} console.  
          
-       Key Protect doesn't save additional authentication data (AAD), but you can still use AAD to further secure a key with up to              255 strings, each delimited by a comma and containing up to 255 characters.  If you supply AAD for key wrapping, save the data          to a secure location to ensure that you can access and provide the same AAD on future key unwrapping requests.
-       {: tip}
+        Key Protect doesn't save additional authentication data (AAD), but you can still use AAD to further secure a key with up                                                                to 255 strings, each delimited by a comma and containing up to 255 characters.  If you supply AAD for key wrapping, save the data to a secure location to ensure that you can access and provide the same AAD on future key unwrapping requests.
+        {: tip}
       
 3. From IBM {{site.data.keyword.iamshort}} (IAM), [authorize access](/docs/iam?topic=iam-serviceauth#create-auth) between your **Cloud Block Storage** (source service) and your **Key Management Service** (target service). If you import encrypted images from {{site.data.keyword.cos_full_notm}} must have an [access policy defined](/docs/iam?topic=iam-userroles#userroles) for your key management service in IAM.
 4. In IBM Cloud Console, create  an instance of {{site.data.keyword.cos_full_notm}} and create a bucket to store data. For more information, see the [Getting started tutorial for {{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-getting-started)
@@ -67,7 +67,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
 2. If you're using an image template from {{site.data.keyword.slportal}}, [export the unencrypted image](/docs/infrastructure/image-templates?topic=image-templates-exporting-an-image-to-ibm-cloud-object-storage) to {{site.data.keyword.cos_full_notm}}.
 3. Download the image file from {{site.data.keyword.cos_full_notm}} to a secure local machine to encrypt the image. In your service dashboard, select the **Download** action to retrieve your object from storage. You can use the Aspera high-speed transfer plug-in to download images larger than 200 MB.
 4. Use the vhd-util tool to [encrypt your VHD image](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image).
-5. In {{site.data.keyword.cos_full_notm}}, navigate to your bucket and click **Add Objects** to [upload](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload-data#upload-data) the encrypted image. You can use the Aspera high-speed transfer plug-in to upload images larger than 200 MB.
+5. In {{site.data.keyword.cos_full_notm}}, navigate to your bucket and click **Add Objects** to [upload](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload) the encrypted image. You can use the Aspera high-speed transfer plug-in to upload images larger than 200 MB.
 
 ## Importing an encrypted image and ordering an instance
 
@@ -75,7 +75,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
       1. Create a [service ID](/docs/iam?topic=iam-serviceids#serviceids).
       2. Assign an [access policy](/docs/iam?topic=iam-serviceidpolicy#serviceidpolicy). Assign access for these services: {{site.data.keyword.cos_full_notm}} and key management.
       3. Create an [API key for a service ID](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
-      4. For more information, see [Introducing {{site.data.keyword.cloud_notm}} IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/){: new_window}.
+      4. For more information, see [Introducing {{site.data.keyword.cloud_notm}} IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: new_window}.
 2. From {{site.data.keyword.cloud_notm}} console, [import the encrypted image](/docs/infrastructure/image-templates?topic=image-templates-import-icos#import-icos) to the Image Templates page.
 3. From the Image Templates page, you can use your encrypted image to [order](/docs/infrastructure/image-templates?topic=image-templates-ordering-an-instance-from-an-image-template#ordering-an-instance-from-an-image-template) a virtual server instance.
 4. With an encrypted virtual server provisioned, you have the option to audit [virtual server events](/docs/vsi?topic=virtual-servers-at_events#at_events) through [Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov#activity_tracker_ov).
