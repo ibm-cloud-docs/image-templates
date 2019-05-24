@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-05-24"
 
 keywords:
 
@@ -21,13 +21,13 @@ subcollection: image-templates
 # Preparing and importing images
 {: #preparing-and-importing-images}
 
-The Image Templates screen in the {{site.data.keyword.slportal_full}} allows you to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage#about-ibm-cloud-object-storage) service instance. You can import images that are in Virtual Hard Disk (VHD) or Virtual Machine Disk (VMDK) format. After import, VMDK images are converted to VHD. After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.slportal}}.
+The Image Templates screen in the {{site.data.keyword.slportal_full}} allows you to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about) service instance. You can import images that are in Virtual Hard Disk (VHD) or Virtual Machine Disk (VMDK) format. After import, VMDK images are converted to VHD. After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.slportal}}.
 {:shortdesc}
 
 You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more information, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
 {: tip}
 
-You must have an [IBM Cloud Object Storage instance](/docs/cloud-object-storage/basics?topic=cloud-object-storage-order-storage#creating-a-new-ibm-cloud-platform-account) ordered through the {{site.data.keyword.cloud_notm}} console (cloud.ibm.com) to use this import feature.  IBM Cloud Object Storage from control.softlayer.com is not supported.
+You must have an [IBM Cloud Object Storage instance](/docs/services/cloud-object-storage?topic=cloud-object-storage-provision#provision-account) ordered through the {{site.data.keyword.cloud_notm}} console (cloud.ibm.com) to use this import feature.  IBM Cloud Object Storage from control.softlayer.com is not supported.
 {: important}
 
 After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an {{site.data.keyword.cos_full_notm}} service instance can be either VHD, VMDK, or custom ISOs. VHD and VMDK imports are restricted to the following 64-bit operating systems:  
@@ -82,7 +82,7 @@ To ensure that an image can be successfully deployed in the {{site.data.keyword.
 * wget must be installed
 * Latest xe-guest-utilities Xen tools must be installed. Complete the following steps:
 
-    1. Download the XenServer ISO from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html)
+    1. Download the XenServer ISO from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.citrix.com/downloads/citrix-hypervisor/)
 
     2. Mount the ISO by running the following command:
 
@@ -139,10 +139,10 @@ You must use the vhd-util tool to encrypt your image, which must be in VHD forma
 
 When your image is ready, you can upload it to {{site.data.keyword.cos_full_notm}}. Make sure to use a bucket in a [regional location](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints).
 
-1. In {{site.data.keyword.cos_full_notm}}, navigate to your bucket and click **Add Objects** to [upload](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload-data#upload-data) the image.
-2. Use the [Aspera](/docs/services/cloud-object-storage?topic=cloud-object-storage-use-aspera-high-speed-transfer#use-aspera-high-speed-transfer) high-speed transfer plug-in for the fastest upload speeds of your image.
+1. In {{site.data.keyword.cos_full_notm}}, navigate to your bucket and click **Add Objects** to [upload](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload) the image.
+2. Use the [Aspera](/docs/services/cloud-object-storage?topic=cloud-object-storage-aspera) high-speed transfer plug-in for the fastest upload speeds of your image.
 
-You can use COS SDK with Aspera to initiate high-speed transfer within your custom applications when using Java, Python, or NodeJS. For more information, see [Using Libraries and SDKs](/docs/services/cloud-object-storage?topic=cloud-object-storage-use-aspera-high-speed-transfer#sdk).
+You can use COS SDK with Aspera to initiate high-speed transfer within your custom applications when using Java, Python, or NodeJS. For more information, see [Using Libraries and SDKs](/docs/services/cloud-object-storage?topic=cloud-object-storage-aspera#aspera-sdk).
 {: tip}
 
 
