@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-01"
+lastupdated: "2019-05-24"
 
 keywords:  fed, ic4g
 
@@ -20,8 +20,8 @@ subcollection: image-templates
 {: import-an-image-from-ibm-cloud-object-storage-to-ibm-cloud-for-government-account}
 
 To import an image from {{site.data.keyword.cos_full}} to an {{site.data.keyword.ibmcloudgov_full_notm}} account, you must use the {{site.data.keyword.slapi_short}}. For more information about the {{site.data.keyword.slapi_short}} and virtual server APIs, see the following resources in the {{site.data.keyword.sldn_full}}:
-* [{{site.data.keyword.slapi_short}} Overview ![External link icon](../icons/launch-glyph.svg "External link icon")](https://softlayer.github.io/reference/softlayerapi/){: new_window}
-* [Getting Started with the {{site.data.keyword.slapi_short}} ![External link icon](../icons/launch-glyph.svg "External link icon")](https://softlayer.github.io/article/getting-started/){: new_window}
+* [{{site.data.keyword.slapi_short}} Overview ![External link icon](../icons/launch-glyph.svg "External link icon")](https://sldn.softlayer.com/reference/softlayerapi/){: new_window}
+* [Getting Started with the {{site.data.keyword.slapi_short}} ![External link icon](../icons/launch-glyph.svg "External link icon")](https://sldn.softlayer.com/article/getting-started/){: new_window}
 
 ## Importing an image
 {: import-gov-image}
