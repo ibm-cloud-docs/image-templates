@@ -28,11 +28,11 @@ a customized image that you've enabled for cloud-init.
 The following operating systems now default to a cloud-init enabled image when you order a virtual server without add-ons. (Add-ons include additional software, post-provisioning scripts, and advanced monitoring.)
 * CentOS 7
 * Debian 8, 9
+* Red Hat Enterprise Linux 7.x
 * Ubuntu 16.04, 18.04
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
-* Red Hat Enterprise Linux 7.x
 
 When you order a virtual server with a cloud-init enabled operating system, you can add user data or metadata with custom provisioning scripts. In the User Data field on the order form, enter optional cloud-init user data or optional metadata for the server.
 
