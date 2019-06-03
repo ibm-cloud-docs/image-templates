@@ -32,7 +32,7 @@ The following operating systems now default to a cloud-init enabled image when y
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
-* RHEL 7.x
+* Red Hat Enterprise Linux 7.x
 
 When you order a virtual server with a cloud-init enabled operating system, you can add user data or metadata with custom provisioning scripts. In the User Data field on the order form, enter optional cloud-init user data or optional metadata for the server.
 
