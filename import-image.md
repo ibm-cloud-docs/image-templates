@@ -82,6 +82,8 @@ To ensure that an image can be successfully deployed in the {{site.data.keyword.
 * wget must be installed
 * Latest xe-guest-utilities Xen tools must be installed. Complete the following steps:
 
+***/boot*** and ***/*** must be the separated partition. Otherwise it may cause the provisioning error even after importing the image successfully. {:note}
+
     1. Download the XenServer ISO from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.citrix.com/downloads/citrix-hypervisor/)
 
     2. Mount the ISO by running the following command:
