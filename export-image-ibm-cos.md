@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-12"
+lastupdated: "2019-06-18"
 
 keywords:
 
@@ -35,6 +35,9 @@ First, navigate to the device menu and ensure you have the correct account permi
 * Ensure you have write access to {{site.data.keyword.cos_full_notm}}. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
 
 For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
+
+If you plan to export this image template to {{site.data.keyword.cos_full_notm}}, make sure its name does not contain any characters that might be problematic in a web address. For example, ?, =, <, and other special characters might cause unwanted behavior if not URL-encoded.
+{: tip}
 
 ## Exporting an image to IBM Cloud Object Storage
 
