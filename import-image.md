@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-24"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -33,9 +33,9 @@ You must have an [IBM Cloud Object Storage instance](/docs/services/cloud-object
 After images are imported as an image template, they can be used to provision or start an existing virtual server. Images that are imported from an {{site.data.keyword.cos_full_notm}} service instance can be either VHD, VMDK, or custom ISOs. VHD and VMDK imports are restricted to the following 64-bit operating systems:  
 
 * CentOS 6 and 7
+* Microsoft Server Standard 2012, R2 2012, and 2016
 * RedHat Enterprise Linux 6 and 7
 * Ubuntu 14.04, and 16.04
-* Microsoft Server Standard 2012, R2 2012, and 2016
 
 Imports are limited to 100 GB disks. Images must be named according to the following example: filename.vhd-0.vhd or filename.vmdk-0.vmdk
 
@@ -151,14 +151,19 @@ You can use COS SDK with Aspera to initiate high-speed transfer within your cust
 
 Complete the following steps to import an image from {{site.data.keyword.cos_full_notm}}.
 
-1. In the [{{site.data.keyword.slportal}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/) or [{{site.data.keyword.cloud_notm}} console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/classic), access the **Image Templates** page by selecting **Devices > Manage > Images**. 
+1. Navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
+
+   * Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+   * Ensure you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
+
+   For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-    infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
 
    If you are importing an encrypted image, you must use {{site.data.keyword.cloud_notm}} console.
    {: important}
-
-2. Click the **Import Image from IBM COS** tab to open the Import tool.
-3. Complete the required fields (see Table 1).
-4. When the import is complete from {{site.data.keyword.cos_full_notm}}, the image appears on the Image Templates page.
+2. Access the **Image Templates** page by selecting **Devices > Manage > Images**.
+3. Click the **Import Image from IBM COS** tab to open the Import tool.
+4. Complete the required fields (see Table 1).
+5. When the import is complete from {{site.data.keyword.cos_full_notm}}, the image appears on the Image Templates page.
 
 | Field | Value |
 | ----- | ----- |

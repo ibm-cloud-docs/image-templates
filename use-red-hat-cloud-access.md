@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-04-04"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -18,10 +18,11 @@ subcollection: image-templates
 # Using your own OS license or subscription
 {: #using-your-own-os-license-or-subscription}
 
-When you create an image template with a VHD image, you can select to provide your own RHEL operating system license through the [Red Hat Cloud Access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) subscription or a Windows license through the Microsoft Enterprise Agreement.
+When you create an image template with a VHD image, you can select to provide your own RHEL operating system license through the [Red Hat Cloud
+Access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) subscription or a Windows license through the Microsoft Enterprise Agreement.
 {:shortdesc}
 
-If you deploy an image in {{site.data.keyword.BluSoftlayer_full}} that indicates you are using your own license, the following support terms exist:
+If you deploy an image in {{site.data.keyword.cloud}} that indicates you are using your own license, the following support terms exist:
 * {{site.data.keyword.IBM_notm}} provides support for hypervisors, provisioning instances, importing images, rebooting an image, reloading an OS, and capturing an image.
 * The company that you purchase the operating system license from provides support for the image itself. {{site.data.keyword.IBM_notm}} does not provide support for the image.
 
@@ -40,6 +41,14 @@ The following operating systems are supported:
 
 If you have questions about your existing Windows license eligibility or understanding reporting requirements, contact your Microsoft representative. When you create an image template that specifies that you are using your own Windows license, you must provision that image on a dedicated host. You cannot provision a public instance or a dedicated instance that is auto-assigned to a host when you use an image that indicates that you are using your own Windows license. Additionally, when you create or update a Windows image template that specifies that you are using your own license, the Windows image cannot be a cloud-init image.
 
+## Before you begin
+First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
+
+* Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Ensure you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
+
+For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
+
 ## Importing an image that designates your own license
 
 You can import a VHD image and specify that you are providing your own license or subscription for the operating system.
@@ -48,7 +57,7 @@ To access the Import Image page of Image Templates and mark a VHD image to use y
 1. From the **Devices** menu select **Manage > Images**.
 2. Click the **Import Image** tab.
 3. Complete the required information for importing your VHD image, and select the **Your License** checkbox that’s shown near the **Operating System**
-dropdown box. For more information about importing images, see [Preparing and importing images](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images).
+dropdown box. For more information about importing images, see [Preparing and importing images](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images).
 
 ## Updating an image template to specify a user provided OS license
 

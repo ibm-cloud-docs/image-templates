@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-10-05"
+  years: 2017, 2018
+lastupdated: "2018-09-18"
 
 keywords: image templates
 
@@ -24,9 +24,10 @@ With {{site.data.keyword.BluSoftlayer_full}} image templates, you can capture an
 {: #creating-template}
 
 Complete the following steps to use image templates:
-1. Learn about [image templates](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates).
-2. [Create a standard image](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
+1. Learn about [image templates](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates#about-image-templates).
+2. [Create an image template](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
 
 ## Next steps
+{: #next-steps}
 
-After you've created one or more image templates, you can [access and manage them](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page) on the Image Templates page.
+After you've created one or more image templates, you can [access and manage them](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page#managing-images-from-the-image-templates-page) on the Image Templates page.

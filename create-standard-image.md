@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -23,20 +23,29 @@ With image templates, you can replicate various configuration options for {{site
 
 At any point during the life of a virtual server, you can create an image template. Then, you can use it to quickly replicate portions of its configuration in another virtual server. You can create image templates from any virtual server, regardless of its operating system. When your image template is complete, you can use it to create another virtual server.
 
+## Before you begin
+First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
+
+* Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Ensure you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
+
+For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
+
+## Creating an image template
+
 Complete the following steps to create an image template of a virtual server.
 
-1. Access the [{{site.data.keyword.slportal_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){: new_window} by using your unique credentials.
-2. From the **Devices** menu, select **Device List**.
-3. Click the virtual server that you want to use to create an image template.
+1. From the **Devices** menu, select **Device List**.
+2. Click the virtual server that you want to use to create an image template.
 
   Check the **Passwords** tab of the **Device Details** page. Ensure that any passwords listed on the **Device Details** page match the actual operating system passwords and any other software add-on passwords. If passwords do not match, virtual servers that are created from this image template fail.
   {:tip}
 
-4. From the **Actions** menu, select **Create Image Template**.
-5. Enter the new name for the image in the **Image Name** field.
-6. Enter any necessary notes for the image in the **Note** field.
-7. Select the **Agree** check box when all information is entered.
-8. Click **Create Template** to create the image template.
+3. From the **Actions** menu, select **Create Image Template**.
+4. Enter the new name for the image in the **Image Name** field.
+5. Enter any necessary notes for the image in the **Note** field.
+6. Select the **Agree** check box when all information is entered.
+7. Click **Create Template** to create the image template.
 
 ## Next steps
 

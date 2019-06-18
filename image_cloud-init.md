@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2019-06-03"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -19,7 +19,7 @@ subcollection: image-templates
 
 
 # Provisioning with a cloud-init enabled image
-{: #provisioning-wiht-a-cloud-init-enabled-image}
+{: #provisioning-with-a-cloud-init-enabled-image}
 
 When you order a virtual server, many operating systems now use a cloud-init enabled image to optimize provisioning time. You can also import
 a customized image that you've enabled for cloud-init.
@@ -35,6 +35,14 @@ The following operating systems now default to a cloud-init enabled image when y
 * Windows Server 2016
 
 When you order a virtual server with a cloud-init enabled operating system, you can add user data or metadata with custom provisioning scripts. In the User Data field on the order form, enter optional cloud-init user data or optional metadata for the server.
+
+## Before you begin
+First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
+
+* Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Ensure you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
+
+For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
 
 ## Import a customized cloud-init enabled image
 
@@ -77,4 +85,4 @@ environment by using the [Config Drive ![External link icon](../../icons/launch-
 ### Windows requirements
 * Cloudbase-init Metadata Service for public and private network support in {{site.data.keyword.cloud_notm}} infrastructure. The service  also updates the Customer Portal with the Windows virtual server credentials. You can access the service at
 [https://github.com/softlayer/bluemix-cloudbase-init ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/softlayer/bluemix-cloudbase-init).
-* If you are using a Vyatta in your environment, you must configure the Vyatta to allow API calls to API load balancers. For more information, see [Brocade vRouter (Vyatta) Set up Guide for VMware Environments with File Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/infrastructure/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips).
+* If you are using a Vyatta in your environment, you must configure the Vyatta to allow API calls to API load balancers. For more information, see [Brocade vRouter (Vyatta) Set up Guide for VMware Environments with File Storage](/docs/infrastructure/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips).

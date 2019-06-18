@@ -72,7 +72,7 @@ The image import/export feature that is located on the Image Templates page in t
 ## How do I create an image template for my entire server and not just my primary drive?
 {: faq}
 
-To create an image template for your entire server, see the instructions in [Creating an image template](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
+To create an image template for your entire server, see the instructions in [Creating an image template](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
 
 If you choose to export an image template to IBM Cloud Object Storage, each block device (or disk) has its own associated file. For example, if your image file is named image.vhd, the first block device is exported as image-0.vhd. The second block device is exported as image-1.vhd, and so on.
 {: tip}
