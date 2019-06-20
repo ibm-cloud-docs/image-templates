@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-06-20"
 
 keywords:
 
@@ -45,7 +45,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
 
 ## Preparing your environment
 
-1. You must have an upgraded account to use E2E encryption for virtual servers. For more information, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
+1. You must have an upgraded account to use E2E encryption for virtual servers. For more information, see [Switching to IBMid and linking accounts](/docs/account?topic=account-unifyingaccounts).
 2. Use your key management service to create and manage keys.  The following example steps are specific to {{site.data.keyword.keymanagementserviceshort}}, but the general flow also applies to {{site.data.keyword.hscrypto}}. If you're using {{site.data.keyword.hscrypto}}, see the [documentation](/docs/services/hs-crypto?topic=hs-crypto-get-started#get-started) for that service for corresponding instructions.
       1. Provision the [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-provision#provision) service.
       2. [Create](/docs/services/key-protect?topic=key-protect-create-root-keys) or [import](/docs/services/key-protect?topic=key-protect-import-root-keys#import-root-keys) a root key (CRK) in {{site.data.keyword.keymanagementservicelong_notm}}.
