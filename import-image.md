@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-06-21"
 
 keywords:
 
@@ -24,7 +24,7 @@ subcollection: image-templates
 The Image Templates screen in the {{site.data.keyword.slportal_full}} allows you to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about) service instance. You can import images that are in Virtual Hard Disk (VHD) or Virtual Machine Disk (VMDK) format. After import, VMDK images are converted to VHD. After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.slportal}}.
 {:shortdesc}
 
-You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more information, see [Switching to IBMid and linking accounts](/docs/account/softlayerlink.html).
+You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more information, see [Switching to IBMid and linking accounts](/docs/account?topic=account-unifyingaccounts).
 {: tip}
 
 You must have an [IBM Cloud Object Storage instance](/docs/services/cloud-object-storage?topic=cloud-object-storage-provision#provision-account) ordered through the {{site.data.keyword.cloud_notm}} console (cloud.ibm.com) to use this import feature.  IBM Cloud Object Storage from control.softlayer.com is not supported.
