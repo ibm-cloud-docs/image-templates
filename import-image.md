@@ -39,29 +39,6 @@ After images are imported as an image template, they can be used to provision or
 
 Imports are limited to 100 GB disks. Images must be named according to the following example: filename.vhd-0.vhd or filename.vmdk-0.vmdk
 
-## Converting images to VHD
-{: #convert-to-vhd}
-
-VHD and VMDK format are the only supported image formats for virtual servers. To convert images to VHD from any format other than VMDK, use the following information:
-
-* Qemu-img 2.7.0 or newer is required
-* Convert the image with the following command:
-
-  ```
-  qemu-img convert -f <image format> <image name> -O vpc -o force_size <image name>
-  ```
-  {: pre}
-
-* Example command:
-
-  ```
-  qemu-img convert -f qcow2 test -O vpc -o force_size test
-  ```
-  {: pre}
-
-For more information, see [Converting image formats ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikibooks.org/wiki/QEMU/Images#Converting_image_formats) in the QEMU
-documentation.
-
 ## ISO Templates
 {: #iso-templates}
 
