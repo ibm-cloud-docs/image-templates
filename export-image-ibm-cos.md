@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-20"
+lastupdated: "2019-06-26"
 
 keywords:
 
@@ -40,6 +40,7 @@ If you plan to export this image template to {{site.data.keyword.cos_full_notm}}
 {: tip}
 
 ## Exporting an image to IBM Cloud Object Storage
+{: #exporting-an-image-to-ibm-cloud-object-storage_steps}
 
 Use the following steps to export an image template to IBM Cloud Object Storage.
 
