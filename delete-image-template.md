@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2019-06-11"
+lastupdated: "2019-06-26"
 
 keywords:
 
@@ -28,7 +28,8 @@ First, navigate to the device menu and ensure you have the correct account permi
 For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
 
 ## Deleting an image template
-)
+{: #deleting-an-image-template_steps}
+
 Upon deletion, image templates cannot be retrieved and are wiped permanently from all data centers. Use the following steps to delete an image template.
 
 1. From the **Devices** menu, select **Manage > Images**.
