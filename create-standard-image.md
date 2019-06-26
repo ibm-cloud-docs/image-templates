@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2019-06-11"
+lastupdated: "2019-06-26"
 
 keywords:
 
@@ -32,6 +32,7 @@ First, navigate to the device menu and ensure you have the correct account permi
 For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
 
 ## Creating an image template
+{: #creating-an-image-template_steps}
 
 Complete the following steps to create an image template of a virtual server.
 
