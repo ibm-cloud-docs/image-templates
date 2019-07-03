@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -22,10 +22,20 @@ subcollection: image-templates
 
 从映像引导虚拟服务器可使设备安全联机，以便可以解决问题。在大多数情况下，“从映像引导”功能支持在环境中进行故障诊断，而不必担心因操作系统重装而可能造成的严重数据丢失风险。虽然发生严重数据丢失的可能性要比使用操作系统重装时更小，但还是建议您在启动引导之前备份设备。
 
+## 开始之前
+首先，导航至设备菜单，并确保您有正确的帐户许可权来完成任务。
+
+* 导航至控制台的设备菜单。有关更多信息，请参阅[导航至设备](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices)。
+* 确保您有任何必要的帐户许可权和设备访问权。仅帐户所有者（或具有**管理用户**经典基础架构许可权的用户）可以调整许可权。
+
+有关许可权的更多信息，请参阅[经典基础架构许可权](/docs/iam?topic=iam-infrapermission#infrapermission)和[管理设备访问权](/docs/vsi?topic=virtual-servers-managing-device-access)。
+
+## 从映像引导 VSI
+
 使用以下步骤从映像启动虚拟服务器。
 
 1. 备份设备上的所有数据。
-2. 从 [{{site.data.keyword.slportal_full}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://control.softlayer.com/) 的**设备**菜单中，选择**设备列表**。
+2. 从**设备**菜单中，选择**设备列表**。
 3. 在“设备列表”中，单击要从 ISO 模板启动的虚拟服务器。
 4. 在虚拟服务器的“设备详细信息”页面上，选择**操作 > 从映像引导**。
 5. 对于所需映像，单击**从此映像引导**。

@@ -20,8 +20,8 @@ subcollection: image-templates
 {: import-an-image-from-ibm-cloud-object-storage-to-ibm-cloud-for-government-account}
 
 要将映像从 {{site.data.keyword.cos_full}} 导入 {{site.data.keyword.ibmcloudgov_full_notm}} 帐户，必须使用 {{site.data.keyword.slapi_short}}。有关 {{site.data.keyword.slapi_short}} 和虚拟服务器 API 的更多信息，请参阅 {{site.data.keyword.sldn_full}} 中的以下资源：
-* [{{site.data.keyword.slapi_short}} 概述 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://softlayer.github.io/reference/softlayerapi/){: new_window}
-* [ {{site.data.keyword.slapi_short}} 入门 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://softlayer.github.io/article/getting-started/){: new_window}
+* [{{site.data.keyword.slapi_short}} 概述 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/softlayerapi/){: new_window}
+* [{{site.data.keyword.slapi_short}} 入门 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/article/getting-started/){: new_window}
 
 ## 导入映像
 {: import-gov-image}
@@ -48,3 +48,4 @@ subcollection: image-templates
     ]
 }
 ```
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-30"
+lastupdated: "2019-05-24"
 
 keywords:
 
@@ -28,7 +28,7 @@ subcollection: image-templates
 
 ISO 模板是一种专为可用于引导 VSI 的 ISO 保留的模板类型。ISO 模板有两个版本：公共和专用。公共 ISO 模板是 {{site.data.keyword.BluSoftlayer_notm}} 提供的预配置模板，可供任何客户使用。专用 ISO 模板通过导入{{site.data.keyword.objectstorageshort}}帐户上存储的 ISO 的映像进行创建。ISO 必须可引导，才能导入到“映像模板”屏幕。
 
-仅 {{site.data.keyword.BluSoftlayer_notm}} 支持的操作系统可用于将 ISO 模板装入到 VSI 上。有关更多信息，请参阅 [Supported Operating Systems ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://www.softlayer.com/services/software/)。
+仅 {{site.data.keyword.BluSoftlayer_notm}} 支持的操作系统可用于将 ISO 模板装入到 VSI 上。有关更多信息，请参阅 [Supported Operating Systems ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/cloud/server-software)。
 {:tip}
 
 ## 公共映像与专用映像有何差别？
@@ -64,7 +64,7 @@ ISO 模板是一种专为可用于引导 VSI 的 ISO 保留的模板类型。ISO
 ## 如何为整个服务器而不仅仅是主驱动器创建映像模板？
 {: faq}
 
-要为整个服务器创建映像模板，请参阅[创建映像模板](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template)中的指示信息。
+要为整个服务器创建映像模板，请参阅[创建映像模板](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template)中的指示信息。
 
 如果选择将映像模板导出到 IBM Cloud Object Storage，那么每个块设备（或磁盘）都会有其自己的关联文件。例如，如果映像文件命名为 image.vhd，那么第一个块设备将导出为 image-0.vhd。第二个块设备导出为 image-1.vhd，依此类推。
 {: tip}

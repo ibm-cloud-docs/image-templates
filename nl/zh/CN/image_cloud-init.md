@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -19,7 +19,7 @@ subcollection: image-templates
 
 
 # 使用启用了 cloud-init 的映像进行供应
-{: #provisioning-wiht-a-cloud-init-enabled-image}
+{: #provisioning-with-a-cloud-init-enabled-image}
 
 订购虚拟服务器时，许多操作系统现在都使用启用了 cloud-init 的映像来优化供应时间。您还可以导入启用了 cloud-init 的定制映像。
 {:shortdesc}
@@ -27,12 +27,21 @@ subcollection: image-templates
 订购不带附加组件的虚拟服务器时，以下操作系统现在缺省为启用了 cloud-init 的映像。（附加组件包括其他软件、供应后脚本和高级监视。）
 * CentOS 7
 * Debian 8 和 9
+* Red Hat Enterprise Linux 7.x
 * Ubuntu 16.04 和 18.04
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
 
 使用启用了 cloud-init 的操作系统来订购虚拟服务器时，可以使用定制供应脚本添加用户数据或元数据。在订购表单上的“用户数据”字段中，输入服务器的可选 cloud-init 用户数据或可选元数据。
+
+## 开始之前
+首先，导航至设备菜单，并确保您有正确的帐户许可权来完成任务。
+
+* 导航至控制台的设备菜单。有关更多信息，请参阅[导航至设备](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices)。
+* 确保您有任何必要的帐户许可权和设备访问权。仅帐户所有者（或具有**管理用户**经典基础架构许可权的用户）可以调整许可权。
+
+有关许可权的更多信息，请参阅[经典基础架构许可权](/docs/iam?topic=iam-infrapermission#infrapermission)和[管理设备访问权](/docs/vsi?topic=virtual-servers-managing-device-access)。
 
 ## 导入启用了 cloud-init 的定制映像
 
@@ -67,4 +76,4 @@ Cloud-init 通常只运行一次。但是，如果基于启用了 cloud-init 的
 
 ### Windows 需求
 * Cloudbase-init Metadata Service，用于在 {{site.data.keyword.cloud_notm}} 基础架构中支持公用和专用网络。该服务还使用 Windows 虚拟服务器凭证来更新客户门户网站。您可以通过以下网址访问该服务：[https://github.com/softlayer/bluemix-cloudbase-init ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/softlayer/bluemix-cloudbase-init)。
-* 如果在环境中使用的是 Vyatta，那么必须配置 Vyatta 以允许对 API 负载均衡器进行 API 调用。[针对使用 File Storage 的 VMware 环境的 Brocade vRouter (Vyatta) 设置指南 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标 ")](/docs/infrastructure/FileStorage?topic=FileStorage-configureVyatta#setting-up-brocade-vrouter-vyatta-for-vmware-environments-with-file-storage)。
+* 如果在环境中使用的是 Vyatta，那么必须配置 Vyatta 以允许对 API 负载均衡器进行 API 调用。有关更多信息，请参阅[针对使用 File Storage 的 VMware 环境的 Brocade vRouter (Vyatta) 设置指南](/docs/infrastructure/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips)。

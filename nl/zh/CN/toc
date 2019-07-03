@@ -10,20 +10,22 @@ Image Templates
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
+    /vsi/virtual-servers-navigating-devices
     access-image-templates-screen.md
     create-standard-image.md
-    import-image.md    
+    import-image.md
     export-image-ibm-cos.md
     delete-image-template.md
     order-vsi-from-image-template.md
     boot-vsi-image.md
     image_cloud-init.md
     use-red-hat-cloud-access.md
-
+    
     {: .topicgroup}
     使用端到端加密供应
         provision-encrypted-image.md
         create-encrypted-image.md
+        import-encrypted-image-api.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

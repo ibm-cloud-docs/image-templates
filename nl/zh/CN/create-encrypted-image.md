@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-04-29"
 
 keywords: VHD image file, encryption, encrypted image, image
 
@@ -60,7 +60,7 @@ subcollection: image-templates
    ```
    {: pre}
 
-4. 确定加密和解密磁盘映像并将其写入密钥文件所需的 AES 加密密钥。此 AES 加密密钥是在[准备您的环境](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment)中使用 Key Protect 客户根密钥打包的相同数据加密密钥。写入密钥文件的密钥材料必须解包，并且不得进行编码。 
+4. 确定加密和解密磁盘映像并将其写入密钥文件所需的 AES 加密密钥。此 AES 加密密钥是在[准备您的环境](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment)中使用密钥管理服务提供的客户根密钥打包的相同数据加密密钥。写入密钥文件的密钥材料必须解包，并且不得进行编码。 
 
    因为 data_key 在密钥文件中不是 Base64 编码的，所以无法使用标准 ASCII 字符从命令行打印或查看密钥文件内容。
    {: tip}

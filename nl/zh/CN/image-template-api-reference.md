@@ -26,13 +26,13 @@ subcollection: image-templates
 {{site.data.keyword.slapi_short}} 是一种远程过程调用系统。每个调用都涉及向 API 端点发送数据以及接收所返回的结构化数据。通过 {{site.data.keyword.slapi_short}} 发送和接收数据时所使用的格式取决于您所选择的 API 实现。{{site.data.keyword.slapi_short}} 当前使用 SOAP、XML-RPC 或 REST 进行数据传输。
 
 有关 {{site.data.keyword.slapi_short}} 和虚拟服务器 API 的更多信息，请参阅 {{site.data.keyword.sldn_full}} 中的以下资源：
-* [{{site.data.keyword.slapi_short}} 概述 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://softlayer.github.io/reference/softlayerapi/){: new_window}
-* [ {{site.data.keyword.slapi_short}} 入门 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://softlayer.github.io/article/getting-started/){: new_window}
+* [{{site.data.keyword.slapi_short}} 概述 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/softlayerapi/){: new_window}
+* [{{site.data.keyword.slapi_short}} 入门 ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/article/getting-started/){: new_window}
 * [API 参考：SoftLayer_Virtual_Guest::createObject ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://softlayer.github.io/reference/services/SoftLayer_Virtual_Guest/createObject/){: new_window}
-* [API 参考：SoftLayer_Account::getBlockDeviceTemplateGroups ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://softlayer.github.io/reference/services/SoftLayer_Account/getBlockDeviceTemplateGroups/){: new_window}
-* [API 参考：SoftLayer_Virtual_Guest_Block_Device_Template_Group::getPublicImages ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://softlayer.github.io/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getPublicImages/){: new_window}
+* [API 参考：SoftLayer_Account::getBlockDeviceTemplateGroups ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Account/getBlockDeviceTemplateGroups/){: new_window}
+* [API 参考：SoftLayer_Virtual_Guest_Block_Device_Template_Group::getPublicImages ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://sldn.softlayer.com/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getPublicImages/){: new_window}
 
 有关 API 用法示例，请参阅以下资源：
 * [How to create a virtual server from an image template with the {{site.data.keyword.slapi_short}} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://stackoverflow.com/questions/41138874/how-to-create-virtual-server-using-standard-template-softlayer-using-rest-api){: new_window}
-* [{{site.data.keyword.slapi_short}} Python Client: Working with Virtual Servers ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](http://softlayer-python.readthedocs.io/en/latest/cli/vs.html){: new_window}
+* [{{site.data.keyword.slapi_short}} Python Client: Working with Virtual Servers ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://softlayer-api-python-client.readthedocs.io/en/latest/api/managers/vs/){: new_window}
 * [{{site.data.keyword.slapi_short}} Python Client: SoftLayer.image ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")](https://softlayer-api-python-client.readthedocs.io/en/latest/api/managers/image/){: new_window}
