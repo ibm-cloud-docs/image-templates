@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-10-27"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -16,15 +16,22 @@ subcollection: image-templates
 # Gestione delle immagini dalla pagina Template dell'immagine
 {: #managing-images-from-the-image-templates-page}
 
-La pagina Template dell'immagine nel {{site.data.keyword.slportal_full}} visualizza tutte le immagini associate
+La pagina Template dell'immagine nella console {{site.data.keyword.cloud}} visualizza tutte le immagini associate
 a un account. Dalla pagina Template dell'immagine puoi interagire con tali immagini e importare le nuove immagini memorizzate
 in account Object Storage esistenti.
 {:shortdesc}
 
-Utilizza i seguenti passi per accedere alla pagina Template dell'immagine.
+## Prima di cominciare
+Innanzitutto, passa al menu del dispositivo e assicurati di disporre delle autorizzazioni di account corrette per completare le attività.
 
-1. Accedi al [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/) utilizzando le tue credenziali univoche.
-2. Seleziona **Dispositivi > Gestisci > Immagini** per accedere alla pagina Template dell'immagine.
+* Passa al menu del dispositivo della tua console. Per ulteriori informazioni, vedi [Passaggio ai dispositivi](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Assicurati di disporre delle autorizzazioni di account e dell'accesso al dispositivo necessari. Solo il proprietario dell'account o un utente con l'autorizzazione dell'infrastruttura classica **Gestisci utenti** possono modificare le autorizzazioni.
+
+Per ulteriori informazioni sulle autorizzazioni, vedi [Autorizzazioni dell'infrastruttura classica](/docs/iam?topic=iam-infrapermission#infrapermission) e [Gestione accesso dispositivo](/docs/vsi?topic=virtual-servers-managing-device-access).
+
+## Gestione delle immagini dalla pagina Template dell'immagine
+
+Accedi alla pagina **Template dell'immagine** selezionando **Dispositivi > Gestisci > Immagini**.
 
 Nella pagina *Template dell'immagine*, vedrai tutte le immagini private associate all'account. Tutte le interazioni con le immagini private si verificano qui. Da questa pagina, puoi trascinare le colonne per personalizzare la vista. Puoi anche accedere alle immagini pubbliche facendo clic sul selettore a discesa **Immagini private** e scegliendo invece **Immagini pubbliche**.
 

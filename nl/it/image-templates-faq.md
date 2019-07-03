@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-30"
+lastupdated: "2019-05-24"
 
 keywords:
 
@@ -30,7 +30,7 @@ operativo e di creare un nuovo server virtuale basato sull'immagine.
 
 Il template ISO è un tipo di template riservato specificatamente per gli ISO che possono essere utilizzati per avviare una VSI. I template ISO sono disponibili in due versioni: pubblici e privati. I template ISO pubblici sono template preconfigurati forniti da {{site.data.keyword.BluSoftlayer_notm}} e possono essere utilizzati da qualsiasi cliente. I template ISO privati vengono creati importando un'immagine di un ISO memorizzato in un account {{site.data.keyword.objectstorageshort}}. Per poter importare un ISO nella schermata Template dell'immagine, è necessario che l'ISO sia avviabile.
 
-Per caricare un template ISO in una VSI, possono essere utilizzati solo sistemi operativi supportati {{site.data.keyword.BluSoftlayer_notm}}. Per ulteriori informazioni, vedi [Supported Operating Systems ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](http://www.softlayer.com/services/software/).
+Per caricare un template ISO in una VSI, possono essere utilizzati solo sistemi operativi supportati {{site.data.keyword.BluSoftlayer_notm}}. Per ulteriori informazioni, vedi [Supported Operating Systems ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/cloud/server-software).
 {:tip}
 
 ## Qual è la differenza tra un'immagine pubblica e una privata?
@@ -72,7 +72,7 @@ La funzione di importazione/esportazione dell'immagine che si trova nella pagina
 ## Come creo un template dell'immagine per tutto il mio server e non solo per la mia unità primaria?
 {: faq}
 
-Per creare un template dell'immagine per tutto il tuo server, vedi le istruzioni presenti in [Creazione di un template dell'immagine](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
+Per creare un template dell'immagine per tutto il tuo server, vedi le istruzioni presenti in [Creazione di un template dell'immagine](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
 
 Se scegli di esportare un template dell'immagine in IBM Cloud Object Storage, ciascun dispositivo a blocchi (o disco) ha il suo proprio file associato. Ad esempio, se il tuo file immagine è denominato image.vhd, il primo dispositivo a blocchi viene esportato come image-0.vhd. Il secondo dispositivo a blocchi viene esportato come image-1.vhd, e così via.
 {: tip}

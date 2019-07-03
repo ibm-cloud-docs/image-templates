@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-04-29"
 
 keywords: VHD image file, encryption, encrypted image, image
 
@@ -29,10 +29,10 @@ Per utilizzare la funzione di crittografia E2E, devi crittografare la tua immagi
 ## Requisiti dell'immagine VHD crittografata
 {: #encrypted-image-reqs}
 
-Le immagini VHD crittografate devono soddisfare i seguenti requisiti: 
+Le immagini VHD crittografate devono soddisfare i seguenti requisiti:
 
 * Formato VHD.
-* Compatibilità con l'ambiente dell'infrastruttura {{site.data.keyword.cloud}} Console. 
+* Compatibilità con l'ambiente dell'infrastruttura {{site.data.keyword.cloud}} Console.
 * Eseguito il provisioning con un [sistema operativo supportato](/docs/infrastructure/image-templates/?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images).
 * Abilitato a Cloud-init.
 * Eseguita crittografia con [lo strumento vhd-util](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image#vhd-util-tool).
@@ -42,27 +42,27 @@ Le immagini VHD crittografate devono soddisfare i seguenti requisiti:
 
 Segui questi passi per creare la tua immagine VHD crittografata:
 
-1. Seleziona un sistema CentOS su cui è in esecuzione la versione 7 o successiva per crittografare la tua immagine del disco virtuale (file VHD) per {{site.data.keyword.cloud_notm}}. Se non hai accesso all'hardware fisico con CentOS installato, puoi eseguire il provisioning di un'istanza del server virtuale con CentOS 7 in {{site.data.keyword.cloud_notm}} utilizzando un host pubblico o dedicato. Il sistema CentOS utilizzato per crittografare i file VHD non ha bisogno di essere crittografato. 
+1. Seleziona un sistema CentOS su cui è in esecuzione la versione 7 o successiva per crittografare la tua immagine del disco virtuale (file VHD) per {{site.data.keyword.cloud_notm}}. Se non hai accesso all'hardware fisico con CentOS installato, puoi eseguire il provisioning di un'istanza del server virtuale con CentOS 7 in {{site.data.keyword.cloud_notm}} utilizzando un host pubblico o dedicato. Il sistema CentOS utilizzato per crittografare i file VHD non ha bisogno di essere crittografato.
 
 2. Accedi al tuo sistema CentOS e collegati alla tua VPN del cliente, quindi [vai al sito di download di SoftLayer ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](http://downloads.service.softlayer.com/citrix/xen/){: new_window} e seleziona il file del pacchetto RPM dello strumento vhd-util: vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm   
 
-   Se non puoi scaricare il file del pacchetto RPM direttamente nel tuo sistema CentOS, scarica il file nella workstation su cui stai attualmente lavorando. Puoi quindi caricarlo nel tuo sistema CentOS utilizzando il comando secure copy (scp). Se stai utilizzando un'istanza del server virtuale in {{site.data.keyword.cloud_notm}}, utilizza l'indirizzo IP pubblico del sistema per questo caricamento utilizzando il seguente comando. 
+   Se non puoi scaricare il file del pacchetto RPM direttamente nel tuo sistema CentOS, scarica il file nella workstation su cui stai attualmente lavorando. Puoi quindi caricarlo nel tuo sistema CentOS utilizzando il comando secure copy (scp). Se stai utilizzando un'istanza del server virtuale in {{site.data.keyword.cloud_notm}}, utilizza l'indirizzo IP pubblico del sistema per questo caricamento utilizzando il seguente comando.
 
    ```
    scp vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm root@<vsi_public_ip>:
    ```
    {: pre}
 
-3. Installa RPM utilizzando il seguente comando: 
+3. Installa RPM utilizzando il seguente comando:
 
    ```
    rpm -iv vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm
    ```
    {: pre}
 
-4. Identifica la chiave di crittografia AES di cui hai bisogno per crittografare e decrittografare la tua immagine del disco e scrivila in un keyfile. Questa chiave di crittografia AES è la stessa chiave di crittografia dei dati che hai impacchettato con la chiave root del cliente Key Protect in [Preparazione del tuo ambiente](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). Il materiale della chiave scritto nei keyfile deve essere spacchettato e non codificato.  
+4. Identifica la chiave di crittografia AES di cui hai bisogno per crittografare e decrittografare la tua immagine del disco e scrivila in un keyfile. Questa chiave di crittografia AES è la stessa chiave di crittografia dei dati che hai impacchettato con la chiave root del cliente fornita dal servizio di gestione delle chiavi in [Preparazione del tuo ambiente](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). Il materiale della chiave scritto nei keyfile deve essere spacchettato e non codificato. 
 
-   Poiché data_key non è codificato base64 all'interno dei keyfile, non puoi stampare o visualizzare il contenuto del keyfile dalla riga di comando utilizzando i caratteri ASCII standard.
+   Poiché data_key non è codificato base64 all'interno dei keyfile, non puoi stampare o visualizzare il contenuto del keyfile dalla riga di comando utilizzando i caratteri ASCII standard. 
    {: tip}
 
    Utilizza il seguente comando per creare i keyfile con una chiave di crittografia **AES a 256 bit** o **AES a 512 bit**: 
@@ -79,7 +79,7 @@ Segui questi passi per creare la tua immagine VHD crittografata:
    ```
    {: screen}
 
-5. Utilizza il seguente comando per verificare i keyfile che hai creato nel passo precedente: 
+5. Utilizza il seguente comando per verificare i keyfile che hai creato nel passo precedente:
 
    ```
    vhd-util key -C -k <keyfile_name>
@@ -112,7 +112,7 @@ Segui questi passi per creare la tua immagine VHD crittografata:
    ```
    {: screen}
 
-7. Verifica che i file VHD vengano crittografati utilizzando il seguente comando. 
+7. Verifica che i file VHD vengano crittografati utilizzando il seguente comando.
 
    ```
    vhd-util key -p -n <vhd_filename>

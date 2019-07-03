@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -19,7 +19,7 @@ subcollection: image-templates
 
 
 # Provisioning con un'immagine abilitata a cloud-init
-{: #provisioning-wiht-a-cloud-init-enabled-image}
+{: #provisioning-with-a-cloud-init-enabled-image}
 
 Quando ordini un server virtuale, molti sistemi operativi ora utilizzano un'immagine abilitata a cloud-init per ottimizzare il tempo di provisioning. Puoi anche importare
 un'immagine personalizzata che hai abilitato per cloud-init.
@@ -28,12 +28,21 @@ un'immagine personalizzata che hai abilitato per cloud-init.
 Ora, per impostazione predefinita, i seguenti sistemi operativi vengono configurati con un'immagine abilitata a cloud-init quando ordini un server virtuale senza componenti aggiuntivi. (I componenti aggiuntivi includono software aggiuntivo, script di post-provisioning e monitoraggio avanzato.)
 * CentOS 7
 * Debian 8, 9
+* Red Hat Enterprise Linux 7.x
 * Ubuntu 16.04, 18.04
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
 
 Quando ordini un server virtuale con un sistema operativo abilitato a cloud-init, puoi aggiungere i metadati o i dati utente con gli script di provisioning personalizzati. Nel campo Dati utente nel modulo dell'ordine, immetti i dati utente cloud-init facoltativi oppure i metadati facoltativi per il server.
+
+## Prima di cominciare
+Innanzitutto, passa al menu del dispositivo e assicurati di disporre delle autorizzazioni di account corrette per completare le attività.
+
+* Passa al menu del dispositivo della tua console. Per ulteriori informazioni, vedi [Passaggio ai dispositivi](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Assicurati di disporre delle autorizzazioni di account e dell'accesso al dispositivo necessari. Solo il proprietario dell'account o un utente con l'autorizzazione dell'infrastruttura classica **Gestisci utenti** possono modificare le autorizzazioni.
+
+Per ulteriori informazioni sulle autorizzazioni, vedi [Autorizzazioni dell'infrastruttura classica](/docs/iam?topic=iam-infrapermission#infrapermission) e [Gestione accesso dispositivo](/docs/vsi?topic=virtual-servers-managing-device-access).
 
 ## Importa un'immagine abilitata a cloud-init personalizzata
 
@@ -76,4 +85,4 @@ l'ambiente utilizzando l'origine dati [Config Drive ![Icona link esterno](../../
 ### Requisiti Windows
 * Servizio metadati Cloudbase-init per il supporto di reti pubbliche e private nell'infrastruttura {{site.data.keyword.cloud_notm}}. Il servizio aggiorna anche il portale del cliente con le credenziali del server virtuale Windows. Puoi accedere al servizio all'indirizzo
 [https://github.com/softlayer/bluemix-cloudbase-init ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/softlayer/bluemix-cloudbase-init).
-* Se stai utilizzando Vyatta nel tuo ambiente, devi configurarlo per consentire le chiamate API ai programmi di bilanciamento del carico dell'API. Per ulteriori informazioni, consulta [Brocade vRouter (Vyatta) Set up Guide for VMware Environments with File Storage ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](/docs/infrastructure/FileStorage?topic=FileStorage-configureVyatta#setting-up-brocade-vrouter-vyatta-for-vmware-environments-with-file-storage).
+* Se stai utilizzando Vyatta nel tuo ambiente, devi configurarlo per consentire le chiamate API ai programmi di bilanciamento del carico dell'API. Per ulteriori informazioni, consulta il manuale [Brocade vRouter (Vyatta) Set up Guide for VMware Environments with File Storage](/docs/infrastructure/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips).

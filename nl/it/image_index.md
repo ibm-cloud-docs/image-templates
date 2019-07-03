@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-10-05"
+  years: 2017, 2018
+lastupdated: "2018-09-18"
 
 keywords: image templates
 
@@ -25,9 +25,10 @@ replicarne velocemente la configurazione con modifiche minime nel processo di or
 {: #creating-template}
 
 Completare i seguenti passi per utilizzare i template dell'immagine:
-1. Acquisisci informazioni sui [template dell'immagine](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates).
-2. [Crea un'immagine standard](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
+1. Acquisisci informazioni sui [template dell'immagine](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates#about-image-templates).
+2. [Crea un template dell'immagine](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
 
 ## Passi successivi
+{: #next-steps}
 
-Una volta che hai creato uno o più template dell'immagine, puoi [accedervi e gestirli](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page) nella pagina Template dell'immagine.
+Una volta che hai creato uno o più template dell'immagine, puoi [accedervi e gestirli](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page#managing-images-from-the-image-templates-page) nella pagina Template dell'immagine.

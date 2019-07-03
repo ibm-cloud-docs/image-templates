@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -23,10 +23,20 @@ Object Storage.
 
 L'avvio di un server virtuale da un'immagine porta online il dispositivo in modo sicuro cosicché possano essere risolti i problemi. Nella maggior parte dei casi, la funzione di avvio da immagine consente di risolvere i problemi in un ambiente senza rischiare una perdita di dati significativa che potrebbe verificarsi con un ricaricamento del sistema operativo. Sebbene la perdita di dati significativa sia meno probabile rispetto al ricaricamento del sistema operativo, ti consigliamo di eseguire il backup del dispositivo prima di iniziare l'operazione di avvio.
 
+## Prima di cominciare
+Innanzitutto, passa al menu del dispositivo e assicurati di disporre delle autorizzazioni di account corrette per completare le attività.
+
+* Passa al menu del dispositivo della tua console. Per ulteriori informazioni, vedi [Passaggio ai dispositivi](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Assicurati di disporre delle autorizzazioni di account e dell'accesso al dispositivo necessari. Solo il proprietario dell'account o un utente con l'autorizzazione dell'infrastruttura classica **Gestisci utenti** possono modificare le autorizzazioni.
+
+Per ulteriori informazioni sulle autorizzazioni, vedi [Autorizzazioni dell'infrastruttura classica](/docs/iam?topic=iam-infrapermission#infrapermission) e [Gestione accesso dispositivo](/docs/vsi?topic=virtual-servers-managing-device-access).
+
+## Avvio di una VSI da un'immagine
+
 Utilizza i seguenti passi per avviare un server virtuale da un'immagine.
 
 1. Esegui il backup di tutti i dati del dispositivo.
-2. Dal menu **Dispositivi** nel [{{site.data.keyword.slportal_full}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/), seleziona **Elenco dispositivi**.
+2. Dal menu **Dispositivi**, seleziona **Elenco dispositivi**.
 3. Da Elenco dispositivi, fai clic sul server virtuale da cui desideri avviare un template ISO.
 4. Nella pagina Dettagli del dispositivo del server virtuale, seleziona **Azioni > Carica da immagine**.
 5. Fai clic su **Avvia da questa immagine** per l'immagine desiderata

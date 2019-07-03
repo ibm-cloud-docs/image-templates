@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2019-06-11"
 
 keywords:
 
-sunbcollection: image-templates
+subcollection: image-templates
 
 ---
 
@@ -19,12 +19,24 @@ sunbcollection: image-templates
 
 
 # Ordinazione di un'istanza da un template dell'immagine
-{: #order-instance-image-templates}
+{: #ordering-an-instance-from-an-image-template}
 
 Nella pagina Template dell'immagine, puoi eseguire il provisioning di un'istanza del server virtuale da un template dell'immagine.
 {:shortdesc}
 
-1. Nel [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/){: new_window}, accedi alla pagina **Template dell'immagine** selezionando **Dispositivi > Gestisci > Immagini**.
+## Prima di cominciare
+Innanzitutto, passa al menu del dispositivo e assicurati di disporre delle autorizzazioni di account corrette per completare le attività.
+
+* Passa al menu del dispositivo della tua console. Per ulteriori informazioni, vedi [Passaggio ai dispositivi](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Assicurati di disporre delle autorizzazioni di account e dell'accesso al dispositivo necessari. Solo il proprietario dell'account o un utente con l'autorizzazione dell'infrastruttura classica **Gestisci utenti** possono modificare le autorizzazioni.
+
+Per ulteriori informazioni sulle autorizzazioni, vedi [Autorizzazioni dell'infrastruttura classica](/docs/iam?topic=iam-infrapermission#infrapermission) e [Gestione accesso dispositivo](/docs/vsi?topic=virtual-servers-managing-device-access).
+
+## Ordinazione di un'istanza da un template dell'immagine
+
+Utilizza la seguente procedura per ordinare un'istanza da un template dell'immagine.
+
+1. Accedi alla pagina **Template dell'immagine** selezionando **Dispositivi > Gestisci > Immagini**.
 2. Fai clic sul menu **Azioni** per il template dell'immagine che desideri utilizzare e seleziona il tipo di server virtuale che vuoi ordinare.
 3. Nella pagina _Configura il tuo server cloud_, completa tutte le informazioni pertinenti.
 4. Fai clic sul pulsante **Aggiungi all'ordine** per continuare.

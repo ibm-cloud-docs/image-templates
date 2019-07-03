@@ -17,16 +17,16 @@ subcollection: image-templates
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# Controllo degli eventi del server virtuale con il Programma di traccia dell'attività
+# Controllo degli eventi del server virtuale con l'Activity Tracker
 {: #auditing-virtual-server-events-with-activity-tracker}
 
-Puoi controllare un'istanza del server virtuale per tutto il suo ciclo di vita utilizzando il [Programma di traccia dell'attività](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov). Devi avere un'istanza del Programma di traccia dell'attività con il piano di servizio premium fornito negli Stati Uniti Sud. Il piano premium ti fornisce l'accesso al dashboard Kibana che contiene molte più opzioni per il filtraggio e la ricerca nei log di controllo.
+Puoi controllare un'istanza del server virtuale per tutto il suo ciclo di vita utilizzando l'[Activity Tracker](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov). Devi avere un'istanza dell'Activity Tracker con il piano di servizio premium fornito negli Stati Uniti Sud. Il piano premium ti fornisce l'accesso al dashboard Kibana che contiene molte più opzioni per il filtraggio e la ricerca nei log di controllo.
 
 I log sono visibili nella sezione dei log dell'account del proprietario dell'account {{site.data.keyword.cloud}}. Il proprietario dell'account può visualizzare i seguenti log:
 * Eventi attivati dal proprietario dell'account.
 * Eventi attivati dagli utenti collegati con l'account.
 
-Tramite il Programma di traccia dell'attività, puoi controllare i seguenti eventi dell'istanza del server virtuale:
+Tramite l'Activity Tracker, puoi controllare i seguenti eventi dell'istanza del server virtuale:
 * Provisioning di un'istanza del server virtuale
 * Disabilitazione di una porta per un'interfaccia privata o pubblica
 * Abilitazione di una porta per un'interfaccia privata o pubblica

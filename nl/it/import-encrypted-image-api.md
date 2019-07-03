@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2019-05-13"
 
 keywords:
 
@@ -29,7 +29,7 @@ e creare un template dell'immagine. Quando il tuo template dell'immagine viene c
 Per limitare l'accesso alle sole informazioni necessarie per completare l'attività di importazione, esegui l'autenticazione con un ID servizio. L'ID servizio deve avere accesso solo all'immagine crittografata nell'IBM Cloud Object Storage che desideri importare e all'istanza Key Protect in cui è memorizzata la tua chiave root.  
 
 Il frammento python riportato di seguito mostra un esempio di come puoi accedere all'API
-[SoftLayer_Virtual_Guest_Block_Device_Template_Group ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://softlayer.github.io/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/)
+[SoftLayer_Virtual_Guest_Block_Device_Template_Group ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://sldn.softlayer.com/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/)
 e di come puoi utilizzare il metodo _createFromIcos_ per creare un template dell'immagine.
 
 ```python
@@ -49,9 +49,8 @@ config = {'name':'my_encrypted_image',
       'byol': True,
       'encrypted': True,
       'ibmApiKey':'<api_key>',
-      'rootKeyId':'my root key ID',
+      'crkCrn': 'crn:v1:bluemix:public:hs-crypto:us-south:a/0d06ba51fa0e431290956d1761da1b7b:5ef6cebe-26d7-4ef3-abdc-fb50f345780f:key:a9640391-aec5-4c86-8942-6e6c59bb40b5',
       'wrappedDek':'my wrapped DEK',
-      'keyProtectId':'<key_protect_instance_id>',
       }
 ret = group_svc.createFromIcos(config)
 print(ret)
@@ -63,8 +62,7 @@ Per ulteriori informazioni sull'individuazione dei valori necessari per importar
 
 | Campo    | Valore   |
 | -------- | ------- |
-| ibmApiKey | Specifica la chiave API di cui hai preso nota nel momento in cui l'hai creata. Se la chiave API viene persa, dovrai crearne una nuova. Per ulteriori informazioni, vedi [Gestione delle tue chiavi API](/docs/iam?topic=iam-userapikey). |
-| rootKeyId | Specifica l'ID della chiave root che è stata utilizzata per impacchettare la chiave di crittografia dei dati. Per ulteriori informazioni, vedi [Visualizzazione delle chiavi](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
+| ibmApiKey | Specifica la chiave API di cui hai preso nota nel momento in cui l'hai creata. Se la chiave API viene persa, dovrai crearne una nuova. Per ulteriori informazioni, vedi [Gestione delle tue chiavi API](/docs/iam?topic=iam-userapikey#userapikey). |
+| crkCrn | Specifica il [CRN (Cloud Resource Name)](/docs/overview?topic=overview-crn) per la chiave root che hai utilizzato per impacchettare la tua chiave di crittografia dei dati. Per individuare e copiare il CRN della tua chiave root, vai all'istanza del servizio [{{site.data.keyword.keymanagementserviceshort}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/resources){: new_window}, passa il puntatore del mouse sulla tua chiave root, fai clic sui tre puntini **(...)** sull'estrema destra dello schermo, seleziona quindi l'opzione "Visualizza CRN" e fai clic sull'icona di copia. |
 | wrappedDek | Specifica il testo crittografato associato alla tua chiave di crittografia dei dati impacchettata utilizzata per crittografare la tua immagine. Per ulteriori informazioni, vedi [Impacchettamento delle chiavi utilizzando l'API](/docs/services/key-protect?topic=key-protect-wrap-keys#wrap-keys). |
-| keyProtectId | Puoi utilizzare la CLI {{site.data.keyword.cloud_notm}} per trovare il tuo ID dell'istanza {{site.data.keyword.keymanagementserviceshort}}. Per ulteriori informazioni, vedi [Richiamo del tuo ID dell'istanza](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
 {: caption="Tabella 1. Valori necessari per importare l'immagine crittografata" caption-side="top"}

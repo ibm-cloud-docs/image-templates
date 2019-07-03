@@ -21,8 +21,8 @@ subcollection: image-templates
 
 Per importare un'immagine da {{site.data.keyword.cos_full}} a un account {{site.data.keyword.ibmcloudgov_full_notm}}, devi utilizzare {{site.data.keyword.slapi_short}}. Per ulteriori informazioni sulla {{site.data.keyword.slapi_short}} e sulle API del server virtuale, consulta le seguenti risorse in
 {{site.data.keyword.sldn_full}}:
-* [Panoramica di {{site.data.keyword.slapi_short}} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")](https://softlayer.github.io/reference/softlayerapi/){: new_window}
-* [Introduzione a {{site.data.keyword.slapi_short}} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")](https://softlayer.github.io/article/getting-started/){: new_window}
+* [Panoramica di {{site.data.keyword.slapi_short}} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")](https://sldn.softlayer.com/reference/softlayerapi/){: new_window}
+* [Introduzione a {{site.data.keyword.slapi_short}} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")](https://sldn.softlayer.com/article/getting-started/){: new_window}
 
 ## Importazione di un'immagine
 {: import-gov-image}
@@ -49,3 +49,4 @@ Il corpo della richiesta JSON riportato di seguito è un esempio generico.
     ]
 }
 ```
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -21,28 +21,28 @@ subcollection: image-templates
 # Preparazione e importazione delle immagini
 {: #preparing-and-importing-images}
 
-La schermata Template dell'immagine nel {{site.data.keyword.slportal_full}} ti consente di importare un'immagine da un'istanza del servizio [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage#about-ibm-cloud-object-storage). Puoi importare immagini che hanno formato VHD (Virtual Hard Disk) o VMDK (Virtual Machine Disk). Dopo l'importazione, le immagini VMDK vengono convertite in VHD. Una volta caricata un'immagine in un bucket in un'istanza del servizio {{site.data.keyword.cos_full_notm}}, puoi importarla nel repository dei template dell'immagine nel {{site.data.keyword.slportal}}.
+La schermata Template dell'immagine nel {{site.data.keyword.slportal_full}} ti consente di importare un'immagine da un'istanza del servizio [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about). Puoi importare immagini che hanno formato VHD (Virtual Hard Disk) o VMDK (Virtual Machine Disk). Dopo l'importazione, le immagini VMDK vengono convertite in VHD. Una volta caricata un'immagine in un bucket in un'istanza del servizio {{site.data.keyword.cos_full_notm}}, puoi importarla nel repository dei template dell'immagine nel {{site.data.keyword.slportal}}.
 {:shortdesc}
 
 Devi disporre di un account aggiornato per importare le immagini da {{site.data.keyword.cos_full_notm}}. Per ulteriori informazioni, vedi [Passaggio all'ID IBM e collegamento degli account](/docs/account/softlayerlink.html).
 {: tip}
 
-Devi disporre di un'[istanza IBM Cloud Object Storage](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-order-storage#creating-a-new-ibm-cloud-platform-account) ordinata tramite la console {{site.data.keyword.cloud_notm}} (cloud.ibm.com) per utilizzare questa funzione di importazione.  IBM Cloud Object Storage da control.softlayer.com non è supportato.
+Devi disporre di un'[istanza IBM Cloud Object Storage](/docs/services/cloud-object-storage?topic=cloud-object-storage-provision#provision-account) ordinata tramite la console {{site.data.keyword.cloud_notm}} (cloud.ibm.com) per utilizzare questa funzione di importazione.  IBM Cloud Object Storage da control.softlayer.com non è supportato.
 {: important}
 
-Una volta importate le immagini come un template dell'immagine, possono essere utilizzate per eseguire il provisioning o per avviare un server virtuale esistente. Le immagini importate da un'istanza del servizio {{site.data.keyword.cos_full_notm}} possono essere VHD, VMDK o ISO personalizzati. Le importazioni VHD e VMDK sono limitate ai seguenti sistemi operativi a 64 bit:   
+Una volta importate le immagini come un template dell'immagine, possono essere utilizzate per eseguire il provisioning o per avviare un server virtuale esistente. Le immagini importate da un'istanza del servizio {{site.data.keyword.cos_full_notm}} possono essere VHD, VMDK o ISO personalizzati. Le importazioni VHD e VMDK sono limitate ai seguenti sistemi operativi a 64 bit:  
 
 * CentOS 6 e 7
+* Microsoft Server Standard 2012, R2 2012 e 2016
 * RedHat Enterprise Linux 6 e 7
 * Ubuntu 14.04 e 16.04
-* Microsoft Server Standard 2012, R2 2012 e 2016
 
 Le importazioni sono limitate a dischi da 100 GB. Le immagini devono essere denominate in base al seguente esempio: filename.vhd-0.vhd oppure filename.vmdk-0.vmdk
 
 ## Conversione delle immagini in VHD
 {: #convert-to-vhd}
 
-I formati VHD e VMDK sono gli unici formati immagine supportati per i server virtuali. Per convertire le immagini in VHD da qualsiasi formato diverso da VMDK, utilizza le seguenti informazioni: 
+I formati VHD e VMDK sono gli unici formati immagine supportati per i server virtuali. Per convertire le immagini in VHD da qualsiasi formato diverso da VMDK, utilizza le seguenti informazioni:
 
 * È necessario Qemu-img 2.7.0 o più recente
 * Converti l'immagine con il seguente comando:
@@ -82,7 +82,7 @@ Per assicurarti che un'immagine possa essere distribuita correttamente nell'ambi
 * wget deve essere installato
 * Devono essere installati gli strumenti Xen xe-guest-utilities più recenti. Completa i seguenti passi:
 
-    1. Scarica l'ISO di XenServer da Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html)
+    1. Scarica l'ISO di XenServer da Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.citrix.com/downloads/citrix-hypervisor/)
 
     2. Monta l'ISO eseguendo il seguente comando:
 
@@ -131,7 +131,7 @@ Per ulteriori informazioni sulle immagini abilitate a cloud-init, vedi [Provisio
 
 Se intendi importare un'immagine VHD crittografata con la tua chiave di crittografia dei dati, assicurati di completare i prerequisiti e le istruzioni per la crittografia descritti in [Utilizzo della crittografia End to End (E2E) per eseguire il provisioning di un'istanza crittografata](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
 
-Devi utilizzare lo strumento vhd-util per crittografare la tua immagine che deve essere in formato VHD. Per ulteriori informazioni, vedi [Crittografia delle immagini VHD](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image).
+Devi utilizzare lo strumento vhd-util per crittografare la tua immagine che deve essere in formato VHD. Per ulteriori informazioni, vedi [Crittografia delle immagini VHD](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image). 
 {: important}
 
 ## Caricamento di un'immagine in {{site.data.keyword.cos_full_notm}}
@@ -139,10 +139,10 @@ Devi utilizzare lo strumento vhd-util per crittografare la tua immagine che deve
 
 Quando la tua immagine è pronta, puoi caricarla in {{site.data.keyword.cos_full_notm}}. Assicurati di utilizzare un bucket in un'[ubicazione regionale](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints).
 
-1. In {{site.data.keyword.cos_full_notm}}, passa al tuo bucket e fai clic su **Aggiungi oggetti** per [caricare](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload-data#upload-data) l'immagine.
-2. Utilizza il plug-in di trasferimento ad alta velocità [Aspera](/docs/services/cloud-object-storage?topic=cloud-object-storage-use-aspera-high-speed-transfer#use-aspera-high-speed-transfer) per velocità di caricamento più rapide della tua immagine.
+1. In {{site.data.keyword.cos_full_notm}}, passa al tuo bucket e fai clic su **Aggiungi oggetti** per [caricare](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload) l'immagine.
+2. Utilizza il plug-in di trasferimento ad alta velocità [Aspera](/docs/services/cloud-object-storage?topic=cloud-object-storage-aspera) per velocità di caricamento più rapide della tua immagine.
 
-Puoi utilizzare COS SDK con Aspera per inizializzare il trasferimento ad alta velocità all'interno delle tue applicazioni personalizzate quando si utilizza Java, Python o NodeJS. Per ulteriori informazioni, vedi [Using Libraries and SDKs](/docs/services/cloud-object-storage?topic=cloud-object-storage-use-aspera-high-speed-transfer#sdk).
+Puoi utilizzare COS SDK con Aspera per inizializzare il trasferimento ad alta velocità all'interno delle tue applicazioni personalizzate quando si utilizza Java, Python o NodeJS. Per ulteriori informazioni, vedi [Using Libraries and SDKs](/docs/services/cloud-object-storage?topic=cloud-object-storage-aspera#aspera-sdk).
 {: tip}
 
 
@@ -151,14 +151,19 @@ Puoi utilizzare COS SDK con Aspera per inizializzare il trasferimento ad alta ve
 
 Completa i seguenti passi per importare un'immagine da {{site.data.keyword.cos_full_notm}}.
 
-1. Nel [{{site.data.keyword.slportal}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://control.softlayer.com/) o nella [console {{site.data.keyword.cloud_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/classic), accedi alla pagina **Template dell'immagine** selezionando **Dispositivi > Gestisci > Immagini**. 
+1. Passa al menu del dispositivo e assicurati di disporre delle autorizzazioni di account corrette per completare le attività.
+
+   * Passa al menu del dispositivo della tua console. Per ulteriori informazioni, vedi [Passaggio ai dispositivi](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+   * Assicurati di disporre delle autorizzazioni di account e dell'accesso al dispositivo necessari. Solo il proprietario dell'account o un utente con l'autorizzazione dell'infrastruttura classica **Gestisci utenti** possono modificare le autorizzazioni.
+
+   Per ulteriori informazioni sulle autorizzazioni, vedi [Autorizzazioni dell'infrastruttura classica](/docs/iam?topic=iam-    infrapermission#infrapermission) e [Gestione accesso dispositivo](/docs/vsi?topic=virtual-servers-managing-device-access).
 
    Se sta importando un'immagine crittografata, devi utilizzare la console {{site.data.keyword.cloud_notm}}.
    {: important}
-
-2. Fai clic sulla scheda **Importa immagine da IBM COS** per aprire lo strumento di importazione.
-3. Completa i campi obbligatori (vedi Tabella 1).
-4. Una volta completata l'importazione da {{site.data.keyword.cos_full_notm}}, l'immagine compare nella pagina Template dell'immagine.
+2. Accedi alla pagina **Template dell'immagine** selezionando **Dispositivi > Gestisci > Immagini**.
+3. Fai clic sulla scheda **Importa immagine da IBM COS** per aprire lo strumento di importazione.
+4. Completa i campi obbligatori (vedi Tabella 1).
+5. Una volta completata l'importazione da {{site.data.keyword.cos_full_notm}}, l'immagine compare nella pagina Template dell'immagine.
 
 | Campo | Valore |
 | ----- | ----- |
@@ -167,7 +172,7 @@ Completa i seguenti passi per importare un'immagine da {{site.data.keyword.cos_f
 | Bucket | Seleziona il bucket {{site.data.keyword.cos_full_notm}} in cui è memorizzata la tua immagine. Sono validi solo i bucket presenti nell'ubicazione regionale che hai selezionato. Riceverai un messaggio di errore se selezioni un bucket che non è presente nell'ubicazione selezionata.|
 | File immagine | Seleziona il file immagine nell'istanza del servizio {{site.data.keyword.cos_full_notm}} che desideri importare. I tipi di file supportati sono VHD (Virtual Hard Disk), VMDK (Virtual Machine Disk) e ISO. Se stai importando un'immagine crittografata, l'immagine deve essere in formato file VHD e crittografata con lo strumento vhd-util. |
 | Nome immagine | Specifica un nome descrittivo per la tua immagine. Si tratta dell'immagine che utilizzerai per eseguire il provisioning delle istanze del server virtuale. |
-| Chiave API | Specifica la chiave API che ti concede l'accesso alla tua istanza del servizio {{site.data.keyword.cos_full_notm}}. Quando importi un'immagine crittografata, anche la chiave API deve avere l'accesso a Key Protect. La chiave API è disponibile solo per essere copiata o scaricata al momento della creazione. Se la chiave API viene persa, dovrai crearne una nuova. Per ulteriori informazioni, vedi [Gestione delle chiavi API](/docs/iam?topic=iam-manapikey#manapikey). |
+| Chiave API | Specifica la chiave API che ti concede l'accesso alla tua istanza del servizio {{site.data.keyword.cos_full_notm}}. Quando importi un'immagine crittografata, anche la chiave API deve avere l'accesso all'istanza del servizio di gestione chiavi. La chiave API è disponibile solo per essere copiata o scaricata al momento della creazione. Se la chiave API viene persa, dovrai crearne una nuova. Per ulteriori informazioni, vedi [Gestione delle chiavi API](/docs/iam?topic=iam-manapikey#manapikey). |
 | Sistema operativo | Seleziona il sistema operativo incluso nella tua immagine. |
 | Cloud-init | Se l'immagine che stai importando è abilitata a cloud-init, seleziona questa casella di spunta. Se stai importando un'immagine che ha un sistema operativo Windows abilitato a cloud-init e selezioni questa opzione, non puoi selezionare contemporaneamente **La tua licenza**. Se stai importando un'immagine crittografata, questa opzione è selezionata per impostazione predefinita e non è modificabile in quanto la tua immagine crittografata deve essere abilitata a cloud-init. |
 | La tua licenza | Se intendi fornire la tua licenza di sistema operativo, seleziona questa casella di spunta. Se stai importando un'immagine con un sistema operativo Windows, puoi selezionare questa opzione se intendi utilizzare l'immagine per eseguire il provisioning di [istante host dedicate](/docs/vsi?topic=virtual-servers-dedicated-hosts-and-dedicated-instances#dedicated-hosts-and-dedicated-instances). Se la tua versione del sistema operativo Windows non supporta l'utilizzo della tua licenza, questa opzione è disabilitata. Per le immagini Windows, non puoi selezionare Cloud Init se specifichi che utilizzerai la tua licenza. Se stai importando un'immagine crittografata con Red Hat Enterprise Linux come sistema operativo, questa opzione è selezionata per impostazione predefinita e non è modificabile in quanto la tua immagine crittografata deve includere la sua licenza di sistema operativo. |
@@ -186,8 +191,8 @@ To import an encrypted image, your account must have access to the End to End (E
 | Campo | Valore |
 | ----- | ----- |
 | Chiave di crittografia dei dati impacchettata (WDEK) | Quando importi un'immagine crittografata, specifica il testo crittografato associato alla chiave di crittografia dei dati che hai utilizzato per crittografare la tua immagine. Per ulteriori informazioni, vedi [Impacchettamento delle chiavi utilizzando l'API](/docs/services/key-protect?topic=key-protect-wrap-keys#api). |
-| Istanza del servizio {{site.data.keyword.keymanagementserviceshort}} | Seleziona un'istanza Key Protect nel tuo account dall'elenco a discesa. L'istanza Key Protect deve includere la chiave root del cliente che hai utilizzato per impacchettare la tua chiave di crittografia dei dati. |
-| Nome chiave | Seleziona il nome della chiave root all'interno dell'istanza del servizio {{site.data.keyword.keymanagementserviceshort}} che hai utilizzato per impacchettare la tua chiave di crittografia dei dati. Per ulteriori informazioni, vedi [Visualizzazione delle chiavi](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
+| Istanza del servizio di gestione chiavi | Seleziona un'istanza del servizio di gestione chiavi nel tuo account dall'elenco a discesa. L'istanza del servizio di gestione chiavi deve includere la chiave root del cliente che hai utilizzato per impacchettare la tua chiave di crittografia dei dati. |
+| Nome chiave | Seleziona il nome della chiave root all'interno dell'istanza del servizio di gestione chiavi che hai utilizzato per impacchettare la tua chiave di crittografia dei dati. Per ulteriori informazioni, vedi [Visualizzazione delle chiavi](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
 {: caption="Tabella 2. Valori per l'importazione di un'immagine crittografata da IBM Cloud Object Storage" caption-side="top"}
 
 ## Passi successivi
@@ -196,4 +201,4 @@ Una volta avviata l'importazione, il sistema individua il file immagine nell'ist
 nella pagina Template dell'immagine. Una volta completata l'importazione, l'immagine può essere utilizzata per ordinare un nuovo dispositivo o avviarne uno esistente.
 Inoltre, il template dell'immagine può essere eliminato in qualsiasi momento. I tempi di importazione dell'immagine variano a seconda della dimensione del file, ma generalmente durano da diversi minuti a un'ora.
 
-Una volta importata un'immagine nel repository dei template dell'immagine, puoi eliminarla da {{site.data.keyword.cos_full_notm}}. Puoi continuare ad accedere al template dell'immagine dalla pagina **Template dell'immagine** e utilizzarlo per eseguire il provisioning delle istanze del server virtuale.
+Una volta importata un'immagine nel repository dei template dell'immagine, puoi eliminarla da {{site.data.keyword.cos_full_notm}}. Puoi continuare ad accedere al template dell'immagine dalla tua pagina **Template dell'immagine** e utilizzarlo per eseguire il provisioning delle istanze del server virtuale.
