@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -22,10 +22,20 @@ La fonction Initialiser à partir d'une image démarre une instance de serveur v
 
 L'initialisation d'un serveur virtuel à partir d'une image met en ligne l'unité en toute sécurité, afin de résoudre les problèmes. Dans la plupart des cas, la fonction Initialiser à partir d'une image permet de traiter les incidents dans un environnement qui ne présente pas de risque de perte des données importantes, comme cela peut se produire après un rechargement du système d'exploitation. Bien que le risque de perte des données importantes soit moins probable qu'avec un rechargement du système d'exploitation, il est conseillé de sauvegarder l'unité avant de lancer l'initialisation.
 
+## Avant de commencer
+Tout d'abord, accédez au menu Unité et assurez-vous de disposer des droits de compte appropriés pour exécuter les tâches. 
+
+* Accédez au menu Unité de votre console. Pour plus d'informations, voir [Accès aux unités](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Vérifiez que vous disposez des droits de compte et accès aux unités requis. Seul le propriétaire de compte ou un utilisateur disposant de droit d'infrastructure classique **Gérer les utilisateurs** peut modifier les droits. 
+
+Pour plus d'informations sur les droits, voir [Droits d'infrastructure classique](/docs/iam?topic=iam-infrapermission#infrapermission) et [Gestion de l'accès aux unités](/docs/vsi?topic=virtual-servers-managing-device-access).
+
+## Initialisation d'une VSI à partir d'une image
+
 Procédez comme suit pour démarrer un serveur virtuel à partir d'une image.
 
 1. Sauvegardez toutes les données de l'unité.
-2. Dans le menu **Unités** du portail [{{site.data.keyword.slportal_full}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://control.softlayer.com/), sélectionnez **Liste des unités**.
+2. Dans le menu **Unités**, sélectionnez **Liste d'unités**.
 3. Dans la liste des unités, cliquez sur le serveur virtuel que vous souhaitez démarrer à partir d'un modèle ISO.
 4. Sur la page Détails de l'unité du serveur virtuel, sélectionnez **Actions > Initialiser à partir d'une image**.
 5. Cliquez sur **Initialiser à partir de cette image** pour l'image souhaitée.

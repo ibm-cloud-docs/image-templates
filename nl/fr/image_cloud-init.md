@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -19,7 +19,7 @@ subcollection: image-templates
 
 
 # Mise à disposition avec une image cloud-init
-{: #provisioning-wiht-a-cloud-init-enabled-image}
+{: #provisioning-with-a-cloud-init-enabled-image}
 
 Lorsque vous commandez un serveur virtuel, de nombreux systèmes d'exploitation utilisent désormais une image cloud-init pour optimiser le temps de mise à disposition. Vous pouvez également importer une image personnalisée que vous avez activée pour cloud-init.
 {:shortdesc}
@@ -27,12 +27,21 @@ Lorsque vous commandez un serveur virtuel, de nombreux systèmes d'exploitation 
 Les systèmes d'exploitation suivants utilisent maintenant par défaut une image de type cloud-init lorsque vous commandez un serveur virtuel sans modules complémentaires. (Les modules complémentaires incluent des logiciels supplémentaires, des scripts postérieurs à la mise à disposition et la surveillance avancée.)
 * CentOS 7
 * Debian 8, 9
+* Red Hat Enterprise Linux 7.x
 * Ubuntu 16.04, 18.04
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
 
 Lorsque vous commandez un serveur virtuel avec un système d'exploitation cloud-init, vous pouvez ajouter des données utilisateur ou des métadonnées avec des scripts de mise à disposition personnalisés. Dans la zone de données utilisateur du formulaire de commande, saisissez éventuellement des données utilisateur cloud-init ou des métadonnées pour le serveur.
+
+## Avant de commencer
+Tout d'abord, accédez au menu Unité et assurez-vous de disposer des droits de compte appropriés pour exécuter les tâches. 
+
+* Accédez au menu Unité de votre console. Pour plus d'informations, voir [Accès aux unités](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Vérifiez que vous disposez des droits de compte et accès aux unités requis. Seul le propriétaire de compte ou un utilisateur disposant de droit d'infrastructure classique **Gérer les utilisateurs** peut modifier les droits. 
+
+Pour plus d'informations sur les droits, voir [Droits d'infrastructure classique](/docs/iam?topic=iam-infrapermission#infrapermission) et [Gestion de l'accès aux unités](/docs/vsi?topic=virtual-servers-managing-device-access).
 
 ## Importation d'une image cloud-init personnalisée
 
@@ -71,4 +80,4 @@ Pour plus d'informations sur les sources de données, voir [Sources de données 
 ### Configuration requise pour Windows
 * Support Cloudbase-init Metadata Service pour réseau public et privé dans l'infrastructure {{site.data.keyword.cloud_notm}}. Le service met également à jour le portail client avec les informations d'identification du serveur virtuel Windows. Vous pouvez accéder au service sur le site
 [https://github.com/softlayer/bluemix-cloudbase-init ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/softlayer/bluemix-cloudbase-init).
-* Si vous utilisez Vyatta dans votre environnement, vous devez configurer Vyatta pour autoriser les appels d'API vers les équilibreurs de charge d'API. Pour plus d'informations, voir [Configuration de Brocade vRouter (Vyatta) pour les environnements VMware avec File Storage ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](/docs/infrastructure/FileStorage?topic=FileStorage-configureVyatta#setting-up-brocade-vrouter-vyatta-for-vmware-environments-with-file-storage).
+* Si vous utilisez Vyatta dans votre environnement, vous devez configurer Vyatta pour autoriser les appels d'API vers les équilibreurs de charge d'API. Pour plus d'informations, voir [Brocade vRouter (Vyatta) - Guide de configuration pour environnements VMware avec File Storage](/docs/infrastructure/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips).

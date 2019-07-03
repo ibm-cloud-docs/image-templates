@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-04-04"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -18,10 +18,11 @@ subcollection: image-templates
 # Utilisation de votre propre licence de système d'exploitation ou abonnement
 {: #using-your-own-os-license-or-subscription}
 
-Lorsque vous créez un modèle d'image avec une image VHD, vous pouvez choisir de fournir votre propre licence de système d'exploitation RHEL via l'abonnement à [Red Hat Cloud Access ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) ou une licence Windows via l'abonnement Accord Entreprise Microsoft.
+Lorsque vous créez un modèle d'image avec une image VHD, vous pouvez choisir de fournir votre propre licence de système d'exploitation RHEL via l'abonnement à [Red Hat Cloud
+Access ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) ou une licence Windows via l'abonnement Accord Entreprise Microsoft.
 {:shortdesc}
 
-Si vous déployez une image dans {{site.data.keyword.BluSoftlayer_full}} qui indique que vous utilisez votre propre licence, les conditions de support suivantes s'appliquent :
+Si vous déployez une image dans {{site.data.keyword.cloud}} qui indique que vous utilisez votre propre licence, les conditions de support suivantes s'appliquent :
 * {{site.data.keyword.IBM_notm}} fournit du support pour les hyperviseurs, la mise à disposition d'instances, l'importation d'images, la réinitialisation d'une image, le rechargement d'un système d'exploitation et la capture d'une image.
 * La société auprès de laquelle vous achetez la licence du système d'exploitation fournit du support pour l'image elle-même. {{site.data.keyword.IBM_notm}} ne fournit pas de support pour l'image.
 
@@ -40,6 +41,14 @@ Les systèmes d'exploitation suivants sont pris en charge :
 
 Si vous avez des questions concernant l'éligibilité de votre licence Windows existante, ou pour comprendre les exigences de génération de rapports, contactez votre interlocuteur Microsoft. Lorsque vous créez un modèle d'image qui indique que vous utilisez votre propre licence Windows, vous devez mettre à disposition cette image sur un hôte dédié. Vous ne pouvez pas mettre à disposition une instance publique ou une instance dédiée qui est automatiquement affectée à un hôte, lorsque vous utilisez une image qui indique que vous utilisez votre propre licence Windows. En outre, lorsque vous créez ou mettez à jour un modèle d'image Windows qui indique que vous utilisez votre propre licence, l'image Windows ne peut pas être de type cloud-init.
 
+## Avant de commencer
+Tout d'abord, accédez au menu Unité et assurez-vous de disposer des droits de compte appropriés pour exécuter les tâches. 
+
+* Accédez au menu Unité de votre console. Pour plus d'informations, voir [Accès aux unités](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Vérifiez que vous disposez des droits de compte et accès aux unités requis. Seul le propriétaire de compte ou un utilisateur disposant de droit d'infrastructure classique **Gérer les utilisateurs** peut modifier les droits. 
+
+Pour plus d'informations sur les droits, voir [Droits d'infrastructure classique](/docs/iam?topic=iam-infrapermission#infrapermission) et [Gestion de l'accès aux unités](/docs/vsi?topic=virtual-servers-managing-device-access).
+
 ## Importation d'une image désignant votre propre licence
 
 Vous pouvez importer une image VHD et indiquer que vous fournissez votre propre licence ou abonnement pour le système d'exploitation.
@@ -47,7 +56,7 @@ Vous pouvez importer une image VHD et indiquer que vous fournissez votre propre 
 Pour accéder à la page Importer image des modèles d'image et marquer une image VHD pour qu'elle utilise votre propre licence ou abonnement, procédez comme suit :
 1. Dans le menu **Unités**, sélectionnez **Gérer > Images**.
 2. Cliquez sur l'onglet **Importer image**.
-3. Complétez les informations requises pour l'importation de votre image VHD et cochez la case **Votre licence** qui s'affiche en regard de la liste déroulante **Système d'exploitation**. Pour plus d'informations sur l'importation d'images, voir [Préparation et importation d'images](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images).
+3. Complétez les informations requises pour l'importation de votre image VHD et cochez la case **Votre licence** qui s'affiche en regard de la liste déroulante **Système d'exploitation**. Pour plus d'informations sur l'importation d'images, voir [Préparation et importation d'images](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images).
 
 ## Mise à jour d'un modèle d'image pour spécifier une licence de système d'exploitation fournie par un utilisateur
 
