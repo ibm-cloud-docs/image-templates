@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-30"
+lastupdated: "2019-05-24"
 
 keywords:
 
@@ -30,7 +30,7 @@ subcollection: image-templates
 
 ISO 템플리트는 VSI 부팅에 사용될 수 있는, ISO용으로 특별히 예약된 템플리트의 유형입니다. ISO 템플리트는 두 가지 버전(공용 및 개인용)으로 사용 가능합니다. 공용 ISO 템플리트는 {{site.data.keyword.BluSoftlayer_notm}}에 의해 제공되고 임의의 고객이 사용할 수 있는 사전 구성된 템플리트입니다. 개인용 ISO 템플리트는 {{site.data.keyword.objectstorageshort}} 계정에 저장된 ISO 이미지를 가져옴으로써 작성됩니다. ISO를 이미지 템플리트 화면으로 가져오려면 ISO가 부팅 가능해야 합니다.
 
-오직 {{site.data.keyword.BluSoftlayer_notm}} 지원 운영 체제만을 사용하여 ISO 템플리트를 VSI로 로드할 수 있습니다. 자세한 정보는 [지원 운영 체제 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://www.softlayer.com/services/software/)를 참조하십시오.
+오직 {{site.data.keyword.BluSoftlayer_notm}} 지원 운영 체제만을 사용하여 ISO 템플리트를 VSI로 로드할 수 있습니다. 자세한 정보는 [지원 운영 체제 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/cloud/server-software)를 참조하십시오.
 {:tip}
 
 ## 공용 이미지와 개인용 이미지 간의 차이점은 무엇입니까?
@@ -72,7 +72,7 @@ ISO 템플리트는 VSI 부팅에 사용될 수 있는, ISO용으로 특별히 �
 ## 기본 드라이브만이 아니라 전체 서버용으로 이미지 템플리트를 작성하는 방법은 무엇입니까?
 {: faq}
 
-전체 서버의 이미지 템플리트를 작성하려면 [이미지 템플리트 작성](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template)의 지시사항을 참조하십시오.
+전체 서버의 이미지 템플리트를 작성하려면 [이미지 템플리트 작성](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template)의 지시사항을 참조하십시오.
 
 이미지 템플리트를 IBM Cloud Object Storage로 내보내도록 선택하면 각 블록 디바이스(또는 디스크)에는 연관된 고유 파일이 있습니다. 예를 들어 이미지 파일의 이름을 image.vhd로 지정하면 첫 번째 블록 디바이스를 image-0.vhd로 내보냅니다. 두 번째 블록 디바이스는 image-1.vhd로 내보내는 식입니다.
 {: tip}

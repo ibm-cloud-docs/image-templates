@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-10-05"
+  years: 2017, 2018
+lastupdated: "2018-09-18"
 
 keywords: image templates
 
@@ -24,9 +24,10 @@ subcollection: image-templates
 {: #creating-template}
 
 이미지 템플리트를 사용하려면 다음 단계를 완료하십시오.
-1. [이미지 템플리트](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates)에 대해 알아보십시오.
-2. [표준 이미지를 작성](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template)하십시오.
+1. [이미지 템플리트](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates#about-image-templates)에 대해 알아보십시오.
+2. [이미지 템플리트를 작성](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template)하십시오. 
 
 ## 다음 단계
+{: #next-steps}
 
-하나 이상의 이미지 템플리트가 작성된 후에는 이미지 템플리트 페이지에서 [이미지 템플리트의 액세스 및 관리](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page)가 가능합니다.
+하나 이상의 이미지 템플리트가 작성된 후에는 이미지 템플리트 페이지에서 [이미지 템플리트의 액세스 및 관리](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page#managing-images-from-the-image-templates-page)가 가능합니다.

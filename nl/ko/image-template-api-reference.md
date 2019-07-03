@@ -33,13 +33,13 @@ subcollection: image-templates
 
 {{site.data.keyword.slapi_short}} 및 가상 서버 API에 관한 자세한 정보는 {{site.data.keyword.sldn_full}}의
 다음 리소스를 참조하십시오.
-* [{{site.data.keyword.slapi_short}} 개요 ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer.github.io/reference/softlayerapi/){: new_window}
-* [{{site.data.keyword.slapi_short}} 시작하기 ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer.github.io/article/getting-started/){: new_window}
+* [{{site.data.keyword.slapi_short}} 개요 ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/softlayerapi/){: new_window}
+* [{{site.data.keyword.slapi_short}} 시작하기![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/article/getting-started/){: new_window}
 * [API 참조: SoftLayer_Virtual_Guest::createObject ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer.github.io/reference/services/SoftLayer_Virtual_Guest/createObject/){: new_window}
-* [API 참조: SoftLayer_Account::getBlockDeviceTemplateGroups ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer.github.io/reference/services/SoftLayer_Account/getBlockDeviceTemplateGroups/){: new_window}
-* [API 참조: SoftLayer_Virtual_Guest_Block_Device_Template_Group::getPublicImages ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer.github.io/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getPublicImages/){: new_window}
+* [API 참조: SoftLayer_Account::getBlockDeviceTemplateGroups ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/services/SoftLayer_Account/getBlockDeviceTemplateGroups/){: new_window}
+* [API 참조: SoftLayer_Virtual_Guest_Block_Device_Template_Group::getPublicImages ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://sldn.softlayer.com/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getPublicImages/){: new_window}
 
 API 사용 예는 다음 리소스를 참조하십시오.
 * [{{site.data.keyword.slapi_short}}를 사용하여 이미지 템플리트에서 가상 서버를 작성하는 방법 ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://stackoverflow.com/questions/41138874/how-to-create-virtual-server-using-standard-template-softlayer-using-rest-api){: new_window}
-* [{{site.data.keyword.slapi_short}} Python 클라이언트: 가상 서버 작업 ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](http://softlayer-python.readthedocs.io/en/latest/cli/vs.html){: new_window}
+* [{{site.data.keyword.slapi_short}} Python 클라이언트: 가상 서버 작업 ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer-api-python-client.readthedocs.io/en/latest/api/managers/vs/){: new_window}
 * [{{site.data.keyword.slapi_short}} Python 클라이언트: SoftLayer.image ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://softlayer-api-python-client.readthedocs.io/en/latest/api/managers/image/){: new_window}
