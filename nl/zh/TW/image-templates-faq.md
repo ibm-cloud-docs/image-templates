@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-30"
+lastupdated: "2019-05-24"
 
 keywords:
 
@@ -29,7 +29,7 @@ subcollection: image-templates
 
 「ISO 範本」是為了可用來進行 VSI 開機的 ISO 而特別保留的範本類型。ISO 範本提供兩種版本：公用及專用。公用 ISO 範本是預先配置的範本，由 {{site.data.keyword.BluSoftlayer_notm}} 提供並可供任何客戶使用。專用 ISO 範本的建立是透過匯入儲存在 {{site.data.keyword.objectstorageshort}} 帳戶上之 ISO 的映像檔。若要讓 ISO 匯入至「映像檔範本」畫面，該 ISO 必須是可開機的。
 
-只有 {{site.data.keyword.BluSoftlayer_notm}} 支援的作業系統可以用來將 ISO 範本匯入到 VSI。如需相關資訊，請參閱[支援的作業系統 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://www.softlayer.com/services/software/)。
+只有 {{site.data.keyword.BluSoftlayer_notm}} 支援的作業系統可以用來將 ISO 範本匯入到 VSI。如需相關資訊，請參閱[支援的作業系統 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/cloud/server-software)。
 {:tip}
 
 ## 公用映像檔與專用映像檔之間的差異為何？
@@ -65,7 +65,7 @@ subcollection: image-templates
 ## 如何為整個伺服器建立映像檔範本，而不只是我的主要磁碟機？
 {: faq}
 
-若要建立整個伺服器的映像檔範本，請參閱[建立映像檔範本](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template)中的指示。
+若要建立整個伺服器的映像檔範本，請參閱[建立映像檔範本](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template)中的指示。
 
 如果您選擇要將映像檔範本匯出至 IBM Cloud Object Storage，則每一個區塊裝置（或磁碟）都有它自己的關聯檔案。比方說，如果您的映像檔命名為 image.vhd，則第一個區塊裝置會匯出為 image-0.vhd。第二個區塊裝置會匯出為 image-1.vhd，依此類推。
 {: tip}

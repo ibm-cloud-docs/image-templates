@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-04-04"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -21,7 +21,7 @@ subcollection: image-templates
 當您使用 VHD 映像檔建立映像檔範本時，可以選擇透過 [Red Hat Cloud Access ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) 訂閱提供自己的 RHEL 作業系統授權，或透過 Microsoft 企業合約提供 Windows 授權。
 {:shortdesc}
 
-如果您在 {{site.data.keyword.BluSoftlayer_full}} 部署了一個映像檔，指出您正在使用自己的授權，則會存在下列支援條款：
+如果您在 {{site.data.keyword.cloud}} 部署了一個映像檔，指出您正在使用自己的授權，則會存在下列支援條款：
 * {{site.data.keyword.IBM_notm}} 提供 Hypervisor、佈建實例、匯入映像檔、重新開機映像檔、重新載入 OS 及擷取映像檔等支援。
 * 您向其購買作業系統授權的公司則提供對於映像檔本身的支援。{{site.data.keyword.IBM_notm}} 不提供映像檔的支援。
 
@@ -40,6 +40,14 @@ subcollection: image-templates
 
 如果您對於現有 Windows 授權資格有問題，或是不瞭解報告需求，請與您的 Microsoft 代表聯絡。當您建立映像檔範本，指定您使用自己的 Windows 授權，則必須在專用主機上佈建該映像檔。當您使用的映像檔指出您是使用自己的 Windows 授權時，您無法佈建公用實例或自動指派給主機的專用實例。此外，當您建立或更新 Windows 映像檔範本，而它指定您使用自己的授權，Windows 映像檔便不得為 cloud-init 映像檔。
 
+## 開始之前
+首先，請導覽至裝置功能表，並確保您具備完成作業的正確帳戶許可權。
+
+* 導覽至主控台的裝置功能表。如需相關資訊，請參閱[導覽至裝置](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices)。
+* 確保您具備所有必要的帳戶許可權及裝置存取權。只有帳戶擁有者及具備**管理使用者**標準基礎架構許可權的使用者，才能調整許可權。
+
+如需許可權的相關資訊，請參閱[標準基礎架構許可權](/docs/iam?topic=iam-infrapermission#infrapermission)及[管理裝置存取權](/docs/vsi?topic=virtual-servers-managing-device-access)。
+
 ## 匯入自行指定授權的映像檔
 
 您可以匯入 VHD 映像檔，然後指定您要針對作業系統提供自己的授權或訂閱。
@@ -47,7 +55,7 @@ subcollection: image-templates
 若要存取映像檔範本的「匯入映像檔」頁面，並將 VHD 映像檔標示為使用您自己的授權或訂閱，請完成下列步驟：
 1. 從**裝置**功能表，選取**管理 > 映像檔**。
 2. 按一下**匯入映像檔**標籤。
-3. 完成匯入  VHD 映像檔的必要資訊，然後選取接近**作業系統**下拉方框處顯示的**授權**勾選框。如需匯入映像檔的相關資訊，請參閱[準備及匯入映像檔](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images)。
+3. 完成匯入  VHD 映像檔的必要資訊，然後選取接近**作業系統**下拉方框處顯示的**授權**勾選框。如需匯入映像檔的相關資訊，請參閱[準備及匯入映像檔](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images)。
 
 ## 更新映像檔範本以指定使用者提供的 OS 授權
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-04-29"
 
 keywords: VHD image file, encryption, encrypted image, image
 
@@ -42,7 +42,7 @@ subcollection: image-templates
 
 遵循這些步驟建立您的加密 VHD 映像檔：
 
-1. 選取執行第 7 版或更高版本的 CentOS 系統，以加密 {{site.data.keyword.cloud_notm}}　的虛擬磁碟映像檔（VHD 檔）。如果您無法存取已安裝 CentOS 的實體硬體，您可以使用公用或專用主機在 {{site.data.keyword.cloud_notm}} 內部佈建具有 CentOS 7 的虛擬伺服器實例。用來加密 VHD 檔案的 CentOS 系統本身不需加密。
+1. 選取執行第 7 版或更高版本的 CentOS 系統，以加密 {{site.data.keyword.cloud_notm}} 的虛擬磁碟映像檔（VHD 檔）。如果您無法存取已安裝 CentOS 的實體硬體，您可以使用公用或專用主機在 {{site.data.keyword.cloud_notm}} 內部佈建具有 CentOS 7 的虛擬伺服器實例。用來加密 VHD 檔案的 CentOS 系統本身不需加密。
 
 2. 登入 CentOS 系統並連接至您的客戶 VPN，然後[前往 SoftLayer 下載網站 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://downloads.service.softlayer.com/citrix/xen/){: new_window}，並選取 vhd-util 工具 RPM 套件檔：vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm   
 
@@ -60,7 +60,7 @@ subcollection: image-templates
    ```
    {: pre}
 
-4. 識別加密及解密磁碟映像檔所需的 AES 加密金鑰，並將其寫入金鑰檔。此 AES 加密金鑰與您在[準備您的環境](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment)中使用 Key Protect 客戶根金鑰包裝的資料加密金鑰相同。寫入金鑰檔的金鑰資料必須解除包裝，且不能經過編碼。 
+4. 識別加密及解密磁碟映像檔所需的 AES 加密金鑰，並將其寫入金鑰檔。此 AES 加密金鑰與您在[準備您的環境](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment)中使用金鑰管理服務提供之客戶根金鑰包裝的資料加密金鑰相同。寫入金鑰檔的金鑰資料必須解除包裝，且不能經過編碼。 
 
    因為 data_key 不是在金鑰檔中進行 base64 編碼，因此無法使用標準 ASCII 字元列印或檢視金鑰檔內容。
    {: tip}

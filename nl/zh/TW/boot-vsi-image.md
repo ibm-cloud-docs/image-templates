@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -22,10 +22,20 @@ subcollection: image-templates
 
 從映像檔啟動虛擬伺服器能讓裝置安全地上線，以便解決問題。在大部分情況下，從映像檔開機特性允許在環境中進行疑難排解，而不必冒著 OS 重新載入時可能遭遇的重大資料流失風險。雖然比起 OS 重新載入而言較不可能發生重大的資料流失，仍然建議您在起始開機之前先備份裝置。
 
+## 開始之前
+首先，請導覽至裝置功能表，並確保您具備完成作業的正確帳戶許可權。
+
+* 導覽至主控台的裝置功能表。如需相關資訊，請參閱[導覽至裝置](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices)。
+* 確保您具備所有必要的帳戶許可權及裝置存取權。只有帳戶擁有者及具備**管理使用者**標準基礎架構許可權的使用者，才能調整許可權。
+
+如需許可權的相關資訊，請參閱[標準基礎架構許可權](/docs/iam?topic=iam-infrapermission#infrapermission)及[管理裝置存取權](/docs/vsi?topic=virtual-servers-managing-device-access)。
+
+## 從映像檔啟動 VSI
+
 請使用下列步驟，以從映像檔啟動虛擬伺服器。
 
 1. 備份裝置上的所有資料。
-2. 從 [{{site.data.keyword.slportal_full}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://control.softlayer.com/) 中的**裝置**功能表，選取**裝置清單**。
+2. 從**裝置**功能表，選取**裝置清單**。
 3. 從「裝置清單」，按一下您要從 ISO 範本啟動的虛擬伺服器。
 4. 在虛擬伺服器的「裝置詳細資料」頁面，選取**動作 > 從映像檔開機**。
 5. 針對想要的映像檔，按一下**從這個映像檔開機**。
