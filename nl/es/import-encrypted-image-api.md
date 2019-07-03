@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2019-05-13"
 
 keywords:
 
@@ -27,7 +27,7 @@ Puede utilizar la {{site.data.keyword.slapi_short}} para importar una imagen cif
 
 Para limitar el acceso sólo a la información que se necesita para completar la tarea de importación, autentíquese con un ID de servicio. El ID de servicio debe tener acceso sólo a la imagen cifrada en IBM Cloud Object Storage que desea importar y a la instancia de Key Protect donde se almacena la clave raíz.  
 
-El siguiente fragmento de código de python muestra un ejemplo de cómo puede acceder a la API [SoftLayer_Virtual_Guest_Block_Device_Template_Group ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://softlayer.github.io/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/) y utilizar el método _createFromIcos_ para crear una plantilla de imagen.
+El siguiente fragmento de código de python muestra un ejemplo de cómo puede acceder a la API [SoftLayer_Virtual_Guest_Block_Device_Template_Group ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://sldn.softlayer.com/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/) y utilizar el método _createFromIcos_ para crear una plantilla de imagen.
 
 ```python
 import SoftLayer
@@ -46,9 +46,8 @@ config = {'name':'my_encrypted_image',
       'byol': True,
       'encrypted': True,
       'ibmApiKey':'<api_key>',
-      'rootKeyId':'my root key ID',
+      'crkCrn': 'crn:v1:bluemix:public:hs-crypto:us-south:a/0d06ba51fa0e431290956d1761da1b7b:5ef6cebe-26d7-4ef3-abdc-fb50f345780f:key:a9640391-aec5-4c86-8942-6e6c59bb40b5',
       'wrappedDek':'my wrapped DEK',
-      'keyProtectId':'<key_protect_instance_id>',
       }
 ret = group_svc.createFromIcos(config)
 print(ret)
@@ -60,8 +59,10 @@ Para obtener más información sobre cómo localizar valores que son necesarios 
 
 | Campo    | Valor   |
 | -------- | ------- |
-| ibmApiKey | Especifique la clave de API que ha anotado al crearla. Si se pierde la clave de API, deberá crear una nueva clave de API. Para obtener más información, consulte [Gestión de las claves de API](/docs/iam?topic=iam-userapikey). |
-| rootKeyId | Especifique el ID de la clave raíz que se ha utilizado para envolver la clave de cifrado de datos. Para obtener más información, consulte [Visualización de claves](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
+| ibmApiKey | Especifique la clave de API que ha anotado al crearla. Si se pierde la clave de API, deberá crear una nueva clave de API. Para obtener más información, consulte [Gestión de las claves de API](/docs/iam?topic=iam-userapikey#userapikey). |
+| crkCrn | Especifique el nombre [Cloud Resource Name (CRN)](/docs/overview?topic=overview-crn) para la clave raíz que ha utilizado para encapsular su clave de cifrado de datos.  Para localizar y copiar
+su CRN de clave raíz, acceda a la instancia de servicio de [{{site.data.keyword.keymanagementserviceshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/resources){: new_window},
+pase el puntero del ratón sobre su clave raíz, pulse en los puntos suspensivos **(...)** en el extremo derecho de la pantalla y, a continuación, seleccione la opción
+"Ver CRN" y pulse en el icono de copia.  |
 | wrappedDek | Especifique el texto cifrado que está asociado con la clave de cifrado de datos envuelta que ha utilizado para cifrar la imagen. Para obtener más información, consulte [Envolvimiento de claves utilizando la API](/docs/services/key-protect?topic=key-protect-wrap-keys#wrap-keys). |
-| keyProtectId | Puede utilizar la CLI de {{site.data.keyword.cloud_notm}} para encontrar el ID de instancia de {{site.data.keyword.keymanagementserviceshort}}. Para obtener más información, consulte [Recuperación del ID de instancia](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
 {: caption="Tabla 1. Valores necesarios para importar la imagen cifrada" caption-side="top"}

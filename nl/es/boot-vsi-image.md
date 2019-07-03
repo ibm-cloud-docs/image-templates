@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -22,10 +22,22 @@ La característica de arranque desde imagen inicia una instancia de servidor vir
 
 El arranque un servidor virtual desde una imagen lleva el dispositivo en línea de forma segura, y así pueden solucionarse los problemas. En la mayoría de los casos, la característica de arranque desde imagen permite la resolución de problemas en un entorno sin arriesgar la pérdida de datos importantes que pueden ser experimentados en una recarga del SO. A pesar de que una pérdida de datos significativos es menos probable que una recarga del SO, se recomienda que realice copias de seguridad del dispositivo antes de iniciar el arranque.
 
+## Antes de empezar
+En primer lugar, acceda al menú de dispositivo y asegúrese de que tiene los permisos de cuenta correctos para completar las tareas.
+
+* Acceda al menú del dispositivo de la consola. Para obtener más información, consulte
+[Navegación a dispositivos](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Asegúrese de que tiene los permisos de cuenta y el acceso de dispositivo necesarios. Solo el propietario de cuenta o un usuario con el permiso de infraestructura clásico **Gestionar usuarios**
+puede ajustar los permisos.
+
+Para obtener más información sobre los permisos, consulte [Permisos clásicos de infraestructura](/docs/iam?topic=iam-infrapermission#infrapermission) y [Gestión de acceso a dispositivos](/docs/vsi?topic=virtual-servers-managing-device-access).
+
+## Arranque de un VSI desde una imagen
+
 Realice los pasos siguientes para iniciar un servidor virtual desde una imagen.
 
 1. Realice una copia de seguridad de todos los datos del dispositivo.
-2. Desde el menú **Dispositivos** del [{{site.data.keyword.slportal_full}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/), seleccione **Lista de dispositivos**.
+2. Desde el menú **Dispositivos**, seleccione **Lista de dispositivos**.
 3. En la lista de dispositivos, pulse el servidor virtual que desea iniciar desde una plantilla ISO.
 4. En la página de detalles del dispositivo para el servidor virtual, seleccione **Acciones > Arrancar desde imagen**.
 5. Pulse **Arrancar desde esta imagen** para seleccionar la imagen deseada.

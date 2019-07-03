@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-30"
+lastupdated: "2019-05-24"
 
 keywords:
 
@@ -30,7 +30,7 @@ Imágenes estándar que permiten a los usuarios capturar una imagen de un servid
 La plantilla ISO es un tipo de plantilla que está reservada específicamente para las ISO que pueden utilizarse para arrancar un VSI. Las plantillas ISO están disponibles en dos versiones: públicas y privadas. Las plantillas ISO públicas son plantillas preconfiguradas que se suministran por {{site.data.keyword.BluSoftlayer_notm}} and y pueden utilizar cualquier cliente. Las plantillas ISO privadas se crean importando una imagen de un ISO almacenado en una cuenta de {{site.data.keyword.objectstorageshort}}. Para que una ISO se importe a la pantalla Plantillas de imagen, el ISO debe ser de arranque.
 
 Sólo se pueden utilizar los sistemas operativos admitidos {{site.data.keyword.BluSoftlayer_notm}} para cargar una plantilla ISO en una VSI. Para obtener más información, consulte [Sistemas operativos admitidos
-![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://www.softlayer.com/services/software/).
+![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/cloud/server-software).
 {:tip}
 
 ## ¿Cuál es la diferencia entre imagen pública y privada?
@@ -67,7 +67,7 @@ La característica de importación/exportación de imágenes que se encuentra en
 ## ¿Cómo se crea una plantilla de imagen para todo mi servidor y no solo para mi unidad principal?
 {: faq}
 
-Para crear una plantilla de imagen para todo el servidor, consulte las instrucciones en [Creación de una plantilla de imagen](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
+Para crear una plantilla de imagen para todo el servidor, consulte las instrucciones en [Creación de una plantilla de imagen](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
 
 Si opta por exportar una plantilla de imagen a IBM Cloud Object Storage, cada dispositivo de bloque (o disco) tiene su propio archivo asociado. Por ejemplo, si el archivo de imagen se denomina image.vhd, el primer dispositivo de bloque se exporta como image-0.vhd. El segundo dispositivo de bloque se exporta como image-1.vhd, y así sucesivamente.
 {: tip}

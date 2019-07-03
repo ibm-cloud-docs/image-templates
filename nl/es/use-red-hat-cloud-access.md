@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-04-04"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -18,10 +18,10 @@ subcollection: image-templates
 # Mediante su propia licencia de sistema operativo o suscripción
 {: #using-your-own-os-license-or-subscription}
 
-Cuando se crea una plantilla de imagen con una imagen VHD, puede seleccionar proporcionar su propia licencia de sistema operativo RHEL a través de la suscripción a [Red Hat Cloud Access ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) o una licencia de Windows a través del Contrato empresarial de Microsoft.
+Cuando se crea una plantilla de imagen con una imagen VHD, puede seleccionar proporcionar su propia licencia de sistema operativo RHEL a través de la suscripción a [Red Hat Cloud Access ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) o una licencia de Windows a través del contrato empresarial de Microsoft.
 {:shortdesc}
 
-Si despliega una imagen en {{site.data.keyword.BluSoftlayer_full}} que indica que está utilizando su propia licencia, aparecen los siguientes términos de soporte:
+Si despliega una imagen en {{site.data.keyword.cloud}} que indica que está utilizando su propia licencia, aparecen los siguientes términos de soporte:
 * {{site.data.keyword.IBM_notm}} proporciona soporte para hipervisores, suministro de instancias, importación de imágenes, rearranque de imágenes, captura de imágenes.
 * La empresa de la que adquiere la licencia del sistema operativo proporciona un soporte para la imagen en sí misma. {{site.data.keyword.IBM_notm}} no proporciona soporte para la imagen.
 
@@ -40,6 +40,16 @@ Se admiten los siguientes sistemas operativos:
 
 Si tiene preguntas acerca de la elegibilidad de su licencia de Windows existente o entender requisitos de informes, póngase en contacto con el representante de Microsoft. Cuando cree una plantilla de imagen que especifique que está utilizando su propia licencia de Windows, debe suministrar esa imagen en un host dedicado. No puede suministrar una instancia pública o una instancia dedicada que se auto-asigna a un host cuando utiliza una imagen que indica que utiliza su propia licencia de Windows. Adicionalmente, cuando crea o actualiza una plantilla de imagen de Windows que especifica que está utilizando su propia licencia, la imagen de Windows puede no ser una imagen de cloud-init.
 
+## Antes de empezar
+En primer lugar, acceda al menú de dispositivo y asegúrese de que tiene los permisos de cuenta correctos para completar las tareas.
+
+* Acceda al menú del dispositivo de la consola. Para obtener más información, consulte
+[Navegación a dispositivos](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Asegúrese de que tiene los permisos de cuenta y el acceso de dispositivo necesarios. Solo el propietario de cuenta o un usuario con el permiso de infraestructura clásico **Gestionar usuarios**
+puede ajustar los permisos.
+
+Para obtener más información sobre los permisos, consulte [Permisos clásicos de infraestructura](/docs/iam?topic=iam-infrapermission#infrapermission) y [Gestión de acceso a dispositivos](/docs/vsi?topic=virtual-servers-managing-device-access).
+
 ## Importación de una imagen que designa su propia licencia
 
 Puede importar una imagen de VHD y especificar que proporciona su propia licencia y suscripción para el sistema operativo.
@@ -48,7 +58,7 @@ Para acceder a la página Importar Imagen de las Plantillas de imagen y marcar u
 complete los siguientes pasos:
 1. Desde el menú **Dispositivos** seleccione **Gestionar > Imágenes**.
 2. Pulse el separador **Importar imagen**.
-3. Complete la información necesaria para importar su imagen de VHD, y seleccione el recuadro de selección **Su licencia** que se muestra junto al recuadro desplegable **Sistema operativo**. Para obtener más información acerca de la importación de imágenes, consulte [Preparación e importación de imágenes](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images).
+3. Complete la información necesaria para importar su imagen de VHD, y seleccione el recuadro de selección **Su licencia** que se muestra junto al recuadro desplegable **Sistema operativo**. Para obtener más información acerca de la importación de imágenes, consulte [Preparación e importación de imágenes](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images).
 
 ## Actualización de una plantilla de imagen para especificar que un usuario ha proporcionado una licencia de SO
 

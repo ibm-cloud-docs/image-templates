@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -21,21 +21,21 @@ subcollection: image-templates
 # Preparación e importación de imágenes
 {: #preparing-and-importing-images}
 
-La pantalla Plantillas de imagen del {{site.data.keyword.slportal_full}} le permite importar una imagen desde una instancia de servicio de [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage#about-ibm-cloud-object-storage). Puede importar imágenes que estén en formato VHD (disco duro virtual) o VMDK (disco de máquina virtual). Tras la importación, las imágenes VMDK se convierten a VHD. Una vez que se ha subido una imagen a un grupo en una instancia de servicio de {{site.data.keyword.cos_full_notm}}, puede importarla al repositorio de plantillas de imagen en el {{site.data.keyword.slportal}}.
+La pantalla Plantillas de imagen del {{site.data.keyword.slportal_full}} le permite importar una imagen desde una instancia de servicio de [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about). Puede importar imágenes que estén en formato VHD (disco duro virtual) o VMDK (disco de máquina virtual). Tras la importación, las imágenes VMDK se convierten a VHD. Una vez que se ha subido una imagen a un grupo en una instancia de servicio de {{site.data.keyword.cos_full_notm}}, puede importarla al repositorio de plantillas de imagen en el {{site.data.keyword.slportal}}.
 {:shortdesc}
 
 Debe tener una cuenta actualizada para importar imágenes de {{site.data.keyword.cos_full_notm}}. Para obtener más información, consulte [Cómo cambiar a IBMid y enlazar cuentas](/docs/account/softlayerlink.html).
 {: tip}
 
-Para utilizar esta función de importación, debe haber solicitado una [instancia de IBM Cloud Object Storage](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-order-storage#creating-a-new-ibm-cloud-platform-account) a través de la consola de {{site.data.keyword.cloud_notm}} (cloud.ibm.com).  No se admite IBM Cloud Object Storage desde control.softlayer.com.
+Para utilizar esta función de importación, debe haber solicitado una [instancia de IBM Cloud Object Storage](/docs/services/cloud-object-storage?topic=cloud-object-storage-provision#provision-account) a través de la consola de {{site.data.keyword.cloud_notm}} (cloud.ibm.com).  No se admite IBM Cloud Object Storage desde control.softlayer.com.
 {: important}
 
 Después de que las imágenes se importan como una plantilla de imagen, pueden utilizarse para suministrar o iniciar un servidor virtual existente. Las imágenes que se importan desde una instancia de servicio de {{site.data.keyword.cos_full_notm}} pueden ser VHD, VMDK o ISO personalizadas. Las importaciones de VHD y VMDK están restringidas a las siguientes sistemas operativos de 64 bit:  
 
 * CentOS 6 y 7
+* Microsoft Server Standard 2012, R2 2012, y 2016
 * RedHat Enterprise Linux 6 y 7
 * Ubuntu 14.04, y 16.04
-* Microsoft Server Standard 2012, R2 2012, y 2016
 
 Las importaciones se limitan a discos de 100 GB. Las imágenes deben nombrarse según el siguiente ejemplo: filename.vhd-0.vhd o filename.vmdk-0.vmdk
 
@@ -82,7 +82,8 @@ de {{site.data.keyword.BluSoftlayer_notm}}, el servidor virtual de imágenes deb
 * Debe instalarse wget
 * Deben instalarse las utilidades xe-guest más actuales. Siga estos pasos:
 
-    1. Descargue la ISO de XenServer de Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html ![Icono enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html)
+    1. Descargue la ISO de XenServer de Citrix:
+[https://www.citrix.com/downloads/citrix-hypervisor/![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.citrix.com/downloads/citrix-hypervisor/)
 
     2. Monte la ISO ejecutando el siguiente mandato:
 
@@ -139,10 +140,10 @@ Debe utilizar la herramienta vhd-util para cifrar su imagen, que debe estar en f
 
 Cuando la imagen esté lista, puede cargarla en {{site.data.keyword.cos_full_notm}}. Utilice un grupo en una [ubicación regional](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints).
 
-1. En {{site.data.keyword.cos_full_notm}}, vaya al grupo y pulse **Añadir objetos** para [subir](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload-data#upload-data) la imagen.
-2. Utilice el plugin de transferencia de alta velocidad de [Aspera](/docs/services/cloud-object-storage?topic=cloud-object-storage-use-aspera-high-speed-transfer#use-aspera-high-speed-transfer) para obtener las velocidades de carga más rápidas de la imagen.
+1. En {{site.data.keyword.cos_full_notm}}, vaya al grupo y pulse **Añadir objetos** para [subir](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload) la imagen.
+2. Utilice el plugin de transferencia de alta velocidad de [Aspera](/docs/services/cloud-object-storage?topic=cloud-object-storage-aspera) para obtener las velocidades de carga más rápidas de la imagen.
 
-Puede utilizar el SDK de COS con Aspera para iniciar la transferencia de alta velocidad dentro de las aplicaciones personalizadas al utilizar Java, Python o NodeJS. Para obtener más información, consulte [Uso de bibliotecas y SDK](/docs/services/cloud-object-storage?topic=cloud-object-storage-use-aspera-high-speed-transfer#sdk).
+Puede utilizar el SDK de COS con Aspera para iniciar la transferencia de alta velocidad dentro de las aplicaciones personalizadas al utilizar Java, Python o NodeJS. Para obtener más información, consulte [Uso de bibliotecas y SDK](/docs/services/cloud-object-storage?topic=cloud-object-storage-aspera#aspera-sdk).
 {: tip}
 
 
@@ -151,14 +152,21 @@ Puede utilizar el SDK de COS con Aspera para iniciar la transferencia de alta ve
 
 Complete los pasos siguientes para importar una imagen de {{site.data.keyword.cos_full_notm}}.
 
-1. En el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/) o la consola de [{{site.data.keyword.cloud_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/classic), acceda a la página **Plantillas de imagen** seleccionando **Dispositivos > Gestionar > Imágenes**. 
+1. Acceda al menú de dispositivo y asegúrese de que tiene los permisos de cuenta correctos para completar las tareas.
+
+   * Acceda al menú del dispositivo de la consola. Para obtener más información, consulte
+[Navegación a dispositivos](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+   * Asegúrese de que tiene los permisos de cuenta y el acceso de dispositivo necesarios. Solo el propietario de cuenta o un usuario con el permiso de infraestructura clásico **Gestionar usuarios**
+puede ajustar los permisos.
+
+   Para obtener más información sobre los permisos, consulte [Permisos clásicos de infraestructura](/docs/iam?topic=iam-    infrapermission#infrapermission) y [Gestión de acceso a dispositivos](/docs/vsi?topic=virtual-servers-managing-device-access).
 
    Si va a importar una imagen cifrada, debe utilizar la consola de {{site.data.keyword.cloud_notm}}.
    {: important}
-
-2. Pulse el separador **Importar imagen de IBM COS** para abrir la herramienta de importación.
-3. Complete los campos necesarios (consulte la Tabla 1).
-4. Cuando la importación se haya completado desde {{site.data.keyword.cos_full_notm}}, la imagen aparecerá en la página Plantillas de imagen.
+2. Acceda a la página **Plantillas de imagen** seleccionando **Dispositivos> Gestionar > Imágenes**.
+3. Pulse el separador **Importar imagen de IBM COS** para abrir la herramienta de importación.
+4. Complete los campos necesarios (consulte la Tabla 1).
+5. Cuando la importación se haya completado desde {{site.data.keyword.cos_full_notm}}, la imagen aparecerá en la página Plantillas de imagen.
 
 | Campo | Valor |
 | ----- | ----- |
@@ -167,7 +175,8 @@ Complete los pasos siguientes para importar una imagen de {{site.data.keyword.co
 | Grupo | Seleccione el grupo de {{site.data.keyword.cos_full_notm}} en el que se almacena la imagen. Solo son válidos los grupos que existen en la ubicación regional que ha seleccionado. Recibirá un mensaje de error si selecciona un grupo que no existe en la ubicación seleccionada.|
 | Archivo de imagen | Seleccione el archivo de imagen en la instancia de servicio de {{site.data.keyword.cos_full_notm}} que desea importar. Los tipos de archivos soportados son VHD (disco duro virtual), VMDK (disco de máquina virtual) e ISO. Si está importando una imagen cifrada, la imagen debe estar en formato de archivo VHD y cifrada con la herramienta vhd-util. |
 | Nombre de imagen | Especifique un nombre descriptivo para la imagen. Esta es la imagen que utilizará para suministrar instancias de servidor virtual. |
-| Clave de API | Especifique la clave de API que proporciona acceso a la instancia de servicio de {{site.data.keyword.cos_full_notm}}. Al importar una imagen cifrada, la clave de API también debe tener acceso a Key Protect. La clave de API sólo está disponible para copiarse o descargarse en el momento de la creación. Si se pierde la clave de API, deberá crear una nueva clave de API. Para obtener más información, consulte [Cómo trabajar con claves de API](/docs/iam?topic=iam-manapikey#manapikey). |
+| Clave de API | Especifique la clave de API que proporciona acceso a la instancia de servicio de {{site.data.keyword.cos_full_notm}}. Al importar una imagen cifrada, la clave de API también debe tener acceso a la instancia de servicio de gestión
+de claves. La clave de API sólo está disponible para copiarse o descargarse en el momento de la creación. Si se pierde la clave de API, deberá crear una nueva clave de API. Para obtener más información, consulte [Cómo trabajar con claves de API](/docs/iam?topic=iam-manapikey#manapikey). |
 | Sistema operativo | Seleccione el sistema operativo que se incluye en la imagen. |
 | Cloud-init | Si la imagen que está importando está habilitada para cloud-init, marque este recuadro de selección. Si va a importar una imagen que tiene un sistema operativo Windows habilitado para cloud-init y selecciona esta opción, no puede especificar al mismo tiempo **Su licencia**. Si va a importar una imagen cifrada, esta opción se selecciona de forma predeterminada y no puede editarse porque la imagen cifrada debe estar habilitada para cloud-init. |
 | Su licencia | Si tiene planificado proporcionar su propia licencia del sistema operativo, marque este recuadro de selección. Si va a importar una imagen con un sistema operativo Windows, puede seleccionar esta opción si tiene previsto utilizar la imagen para suministrar [instancias de host dedicadas](/docs/vsi?topic=virtual-servers-dedicated-hosts-and-dedicated-instances#dedicated-hosts-and-dedicated-instances). Si la versión del sistema operativo Windows no es compatible con el uso de su propia licencia, esta opción queda inhabilitada. Para las imágenes de Windows, no puede seleccionar Cloud Init si especifica que va a utilizar su propia licencia. Si va a importar una imagen cifrada con Red Hat Enterprise Linux como sistema operativo, esta opción está seleccionada de forma predeterminada y no se puede editar, porque la imagen cifrada debe incluir su propia licencia de sistema operativo. |
@@ -186,8 +195,9 @@ To import an encrypted image, your account must have access to the End to End (E
 | Campo | Valor |
 | ----- | ----- |
 | Clave de cifrado de datos encapsulada | Al importar una imagen cifrada, especifique el texto de cifrado que está asociado a la clave de cifrado de datos que ha utilizado para cifrar la imagen. Para obtener más información, consulte [Envolvimiento de claves utilizando la API](/docs/services/key-protect?topic=key-protect-wrap-keys#api). |
-| Instancia de servicio de {{site.data.keyword.keymanagementserviceshort}} | Seleccione en la cuenta una instancia de Key Protect en la lista desplegable. La instancia de Key Protect debe incluir la clave raíz de cliente que haya utilizado para envolver la clave de cifrado de datos. |
-| Nombre de clave | Seleccione el nombre de la clave raíz dentro de la instancia de servicio de {{site.data.keyword.keymanagementserviceshort}} que ha utilizado para envolver la clave de cifrado de datos. Para obtener más información, consulte [Visualización de claves](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
+| Instancia del servicio de gestión de claves | Seleccione en la cuenta una instancia del servicio de gestión de claves en la lista desplegable. La instancia del servicio de gestión de claves debe incluir la clave raíz de cliente que haya utilizado para envolver la clave de cifrado de datos. |
+| Nombre de clave | Seleccione el nombre de la clave raíz en la instancia del servicio de gestión de claves que ha utilizado para
+encapsular a su clave de cifrado de datos. Para obtener más información, consulte [Visualización de claves](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
 {: caption="Tabla 2. Valores para importar una imagen cifrada de IBM Cloud Object Storage" caption-side="top"}
 
 ## Siguientes pasos

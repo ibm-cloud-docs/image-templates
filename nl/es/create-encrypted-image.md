@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-04-29"
 
 keywords: VHD image file, encryption, encrypted image, image
 
@@ -60,7 +60,8 @@ Siga estos pasos para crear la imagen VHD cifrada:
    ```
    {: pre}
 
-4. Identifique la clave de cifrado AES que necesita para cifrar y descifrar la imagen de disco y grábela en un archivo de claves. Esta clave de cifrado AES es la misma clave de cifrado de datos que ha envuelto con la clave raíz de cliente de Key Protect en [Preparación del entorno](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). El material de claves que se graba en archivos de claves debe estar desenvuelto y no codificado. 
+4. Identifique la clave de cifrado AES que necesita para cifrar y descifrar la imagen de disco y grábela en un archivo de claves. Esta clave de cifrado AES es la misma clave de cifrado de datos que ha envuelto con su
+clave raíz de cliente proporcionada por el servicio de gestión de claves en [Preparación del entorno](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). El material de claves que se graba en archivos de claves debe estar desenvuelto y no codificado. 
 
    Puesto que data_key no está codificado con base64 en los archivos de claves, no puede imprimir ni ver el contenido del archivo de claves desde la línea de mandatos mediante caracteres ASCII estándar. 
    {: tip}

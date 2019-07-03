@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2019-06-11"
 
 keywords:
 
-sunbcollection: image-templates
+subcollection: image-templates
 
 ---
 
@@ -19,12 +19,26 @@ sunbcollection: image-templates
 
 
 # Solicitud de una instancia a partir de una plantilla de imagen
-{: #order-instance-image-templates}
+{: #ordering-an-instance-from-an-image-template}
 
 En la página Plantillas de imagen, puede suministrar una instancia de servidor virtual a partir de una plantilla de imagen.
 {:shortdesc}
 
-1. En el [{{site.data.keyword.slportal}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://control.softlayer.com/){: new_window}, acceda a la página **Plantillas de imagen** seleccionando **Dispositivos > Gestionar > Imágenes**.
+## Antes de empezar
+En primer lugar, acceda al menú de dispositivo y asegúrese de que tiene los permisos de cuenta correctos para completar las tareas.
+
+* Acceda al menú del dispositivo de la consola. Para obtener más información, consulte
+[Navegación a dispositivos](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Asegúrese de que tiene los permisos de cuenta y el acceso de dispositivo necesarios. Solo el propietario de cuenta o un usuario con el permiso de infraestructura clásico **Gestionar usuarios**
+puede ajustar los permisos.
+
+Para obtener más información sobre los permisos, consulte [Permisos clásicos de infraestructura](/docs/iam?topic=iam-infrapermission#infrapermission) y [Gestión de acceso a dispositivos](/docs/vsi?topic=virtual-servers-managing-device-access).
+
+## Solicitud de una instancia a partir de una plantilla de imagen
+
+Utilice los pasos siguientes para ordenar una instancia desde una plantilla de imagen.
+
+1. Acceda a la página **Plantillas de imagen** seleccionando **Dispositivos> Gestionar > Imágenes**.
 2. Pulse el menú **Acciones** para la plantilla de imagen que desea utilizar y seleccione el tipo de servidor virtual que desea solicitar.
 3. En la página _Configurar el servidor de nube_, complete toda la información relevante.
 4. Pulse el botón **Añadir a pedido** para continuar.
