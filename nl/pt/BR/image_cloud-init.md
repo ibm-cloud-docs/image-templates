@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -19,7 +19,7 @@ subcollection: image-templates
 
 
 # Fornecimento com uma imagem ativada para cloud-init
-{: #provisioning-wiht-a-cloud-init-enabled-image}
+{: #provisioning-with-a-cloud-init-enabled-image}
 
 Quando você solicita um servidor virtual, muitos sistemas operacionais agora usam uma imagem ativada para cloud-init para otimizar o tempo de fornecimento. Também é possível importar
 uma imagem customizada que você tem ativada para cloud-init.
@@ -28,12 +28,22 @@ uma imagem customizada que você tem ativada para cloud-init.
 Os sistemas operacionais a seguir agora assumirão o padrão para uma imagem ativada por cloud-init quando você pedir um servidor virtual sem complementos. (Os complementos incluem software adicional, scripts de pós-fornecimento e monitoramento avançado.)
 * CentOS 7
 * Debian 8, 9
+* Red Hat Enterprise Linux 7.x
 * Ubuntu 16.04, 18.04
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
 
 Quando você solicitar um servidor virtual com um sistema operacional ativado para cloud-init, será possível incluir dados do usuário ou metadados com scripts de fornecimento customizados. No campo Dados do usuário no formulário de pedido, insira dados do usuário cloud-init ou metadados opcionais para o servidor.
+
+## Antes
+de Começar
+Primeiro, navegue até o menu do dispositivo e assegure-se de ter as permissões de conta corretas para concluir as tarefas.
+
+* Navegue até o menu do dispositivo do console. Para obter mais informações, veja [Navegando até dispositivos](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Assegure-se de ter quaisquer permissões de conta necessárias e de ter acesso ao dispositivo. Somente o proprietário da conta ou um usuário com a permissão de infraestrutura clássica **Gerenciar usuários** poderá ajustar as permissões.
+
+Para obter mais informações sobre permissões, veja [Permissões de infraestrutura clássica](/docs/iam?topic=iam-infrapermission#infrapermission) e [Gerenciando o acesso ao dispositivo](/docs/vsi?topic=virtual-servers-managing-device-access).
 
 ## Importar uma imagem ativada para cloud-init customizada
 
@@ -76,4 +86,4 @@ ambiente usando a origem de dados [Config Drive ![Ícone de link externo](../../
 ### Requisitos do Windows
 * Cloudbase-init Metadata Service para suporte de rede pública e privada na infraestrutura do {{site.data.keyword.cloud_notm}}. O serviço também atualiza o Portal do Cliente com as credenciais do servidor virtual do Windows. É possível acessar o serviço em
 [https://github.com/softlayer/bluemix-cloudbase-init ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/softlayer/bluemix-cloudbase-init).
-* Se você estiver usando um Vyatta em seu ambiente, configure o Vyatta para permitir chamadas de API para balanceadores de carga de API. Para obter mais informações, consulte [Guia de configuração do Brocade vRouter (Vyatta) para Ambientes do VMware com o File Storage ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](/docs/infrastructure/FileStorage?topic=FileStorage-configureVyatta#setting-up-brocade-vrouter-vyatta-for-vmware-environments-with-file-storage).
+* Se você estiver usando um Vyatta em seu ambiente, configure o Vyatta para permitir chamadas de API para balanceadores de carga de API. Para obter mais informações, veja o [Guia de configuração do Brocade vRouter (Vyatta) para ambientes VMware com o File Storage](/docs/infrastructure/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips).

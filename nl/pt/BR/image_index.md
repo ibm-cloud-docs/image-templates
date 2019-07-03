@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-10-05"
+  years: 2017, 2018
+lastupdated: "2018-09-18"
 
 keywords: image templates
 
@@ -24,9 +24,10 @@ Com os modelos de imagem do {{site.data.keyword.BluSoftlayer_full}}, é possíve
 {: #creating-template}
 
 Conclua as etapas a seguir para usar modelos de imagem:
-1. Aprenda sobre [modelos de imagem](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates).
-2. [Crie uma imagem padrão](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
+1. Aprenda sobre [modelos de imagem](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates#about-image-templates).
+2. [Crie um modelo de imagem](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
 
 ## Próximas etapas
+{: #next-steps}
 
-Depois de ter criado um ou mais modelos de imagem, é possível [acessar e gerenciá-los](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page) na página Modelos de Imagem.
+Depois de ter criado um ou mais modelos de imagem, é possível [acessar e gerenciá-los](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page#managing-images-from-the-image-templates-page) na página Modelos de Imagem.

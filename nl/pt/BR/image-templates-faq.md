@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-30"
+lastupdated: "2019-05-24"
 
 keywords:
 
@@ -30,7 +30,7 @@ um novo servidor virtual baseado na imagem.
 
 O Modelo ISO é um tipo de modelo que é especificamente reservado para ISOs que podem ser usados para inicializar uma VSI. Os modelos ISO estão disponíveis em duas versões: público e privado. Os modelos ISO públicos são modelos pré-configurados fornecidos pelo {{site.data.keyword.BluSoftlayer_notm}} e podem ser usados por qualquer cliente. Os modelos ISO privados são criados importando uma imagem de um ISO armazenado em uma Conta do {{site.data.keyword.objectstorageshort}}. Para que um ISO seja importado para a tela Modelos de imagem, o ISO deve ser inicializável.
 
-Apenas Sistemas Operacionais Suportados pelo {{site.data.keyword.BluSoftlayer_notm}} podem ser usados para carregar um modelo ISO em uma VSI. Para obter mais informações, consulte [Sistemas operacionais suportados ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://www.softlayer.com/services/software/).
+Apenas Sistemas Operacionais Suportados pelo {{site.data.keyword.BluSoftlayer_notm}} podem ser usados para carregar um modelo ISO em uma VSI. Para obter mais informações, consulte [Sistemas operacionais suportados ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/cloud/server-software).
 {:tip}
 
 ## Qual é a diferença entre uma imagem pública e uma imagem privada?
@@ -72,7 +72,7 @@ O recurso de importação/exportação de imagem que está localizado na página
 ## Como criar um modelo de imagem para meu servidor inteiro e não apenas para minha unidade primária?
 {: faq}
 
-Para criar um modelo de imagem para o seu servidor inteiro, consulte as instruções em [Criando um modelo de imagem](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
+Para criar um modelo de imagem para o seu servidor inteiro, consulte as instruções em [Criando um modelo de imagem](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
 
 Se você escolher exportar um modelo de imagem para o IBM Cloud Object Storage, cada dispositivo de bloco (ou disco) terá o seu próprio arquivo associado. Por exemplo, se o seu arquivo de imagem for nomeado image.vhd, o primeiro dispositivo de bloco será exportado como image-0.vhd. O segundo dispositivo de bloco será exportado como image-1.vhd e assim por diante.
 {: tip}

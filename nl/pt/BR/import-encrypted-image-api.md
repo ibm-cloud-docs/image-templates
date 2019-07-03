@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2019-05-13"
 
 keywords:
 
@@ -29,7 +29,7 @@ e criar um modelo de imagem. Quando o seu modelo de imagem for criado, será pos
 Para limitar o acesso apenas às informações que são necessárias para concluir a tarefa de importação, autentique com um ID de serviço. O ID de serviço deve ter acesso somente à imagem criptografada no IBM Cloud Object Storage que você deseja importar e à instância do Key Protect na qual a sua chave raiz está armazenada.  
 
 O fragmento de python a seguir mostra um exemplo de como é possível acessar a
-API [SoftLayer_Virtual_Guest_Block_Device_Template_Group ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://softlayer.github.io/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/) e usar o
+API [SoftLayer_Virtual_Guest_Block_Device_Template_Group ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://sldn.softlayer.com/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/) e usar o
 método _createFromIcos_ para criar um modelo de imagem.
 
 ```python
@@ -49,9 +49,8 @@ config = {'name':'my_encrypted_image',
       'byol': True,
       'encrypted': True,
       'ibmApiKey':'<api_key>',
-      'rootKeyId':'my root key ID',
+      'crkCrn': 'crn:v1:bluemix:public:hs-crypto:us-south:a/0d06ba51fa0e431290956d1761da1b7b:5ef6cebe-26d7-4ef3-abdc-fb50f345780f:key:a9640391-aec5-4c86-8942-6e6c59bb40b5',
       'wrappedDek':'my wrapped DEK',
-      'keyProtectId':'<key_protect_instance_id>',
       }
 ret = group_svc.createFromIcos(config)
 print(ret)
@@ -63,8 +62,9 @@ Para obter mais informações sobre a localização de valores que são necessá
 
 | Campo    | Value   |
 | -------- | ------- |
-| ibmApiKey | Especifique a chave de API que você anotou quando a criou. Se a chave API for perdida, uma nova chave API deverá ser criada. Para obter mais informações, consulte [Gerenciando as suas chaves de API](/docs/iam?topic=iam-userapikey). |
-| rootKeyId | Especifique o ID da chave raiz que foi usada para agrupar a chave de criptografia de dados. Para obter mais informações, consulte [Visualizando chaves](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
+| ibmApiKey | Especifique a chave de API que você anotou quando a criou. Se a chave API for perdida, uma nova chave API deverá ser criada. Para obter mais informações, consulte [Gerenciando as suas chaves de API](/docs/iam?topic=iam-userapikey#userapikey). |
+| crkCrn | Especifique o [Cloud Resource Name (CRN)](/docs/overview?topic=overview-crn) para a chave raiz usada para agrupar sua chave de criptografia de dados.  Para localizar e copiar seu CRN da chave raiz, acesse a [instância de serviço do {{site.data.keyword.keymanagementserviceshort}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/resources){: new_window}, passe o mouse sobre a chave raiz, clique nas
+reticências **(...)** no lado direito da tela, selecione a opção "Visualizar CRN"
+e clique no ícone de cópia.  |
 | wrappedDek | Especifique o texto cifrado que está associado à sua chave de criptografia de dados agrupada que você usou para criptografar a sua imagem. Para obter mais informações, consulte [Agrupando chaves usando a API](/docs/services/key-protect?topic=key-protect-wrap-keys#wrap-keys). |
-| keyProtectId | É possível usar a CLI do {{site.data.keyword.cloud_notm}} para localizar o seu ID da instância do {{site.data.keyword.keymanagementserviceshort}}. Para obter mais informações, consulte [Recuperando o seu ID da instância](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID). |
 {: caption="Tabela 1. Valores necessários para importar a imagem criptografada" caption-side="top"}

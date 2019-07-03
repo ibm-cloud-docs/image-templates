@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-04-29"
 
 keywords: VHD image file, encryption, encrypted image, image
 
@@ -60,9 +60,9 @@ Siga estas etapas para criar sua imagem VHD criptografada:
    ```
    {: pre}
 
-4. Identifique a chave de criptografia AES necessária para criptografar e decriptografar sua imagem de disco e grave-a em um arquivo-chave. Essa chave de criptografia AES é a mesma chave de criptografia de dados que você agrupou com a chave raiz do cliente Key Protect em [Preparando seu ambiente](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). O material de chave que é gravado em arquivos-chave deve ser desagrupado e não ser codificado. 
+4. Identifique a chave de criptografia AES necessária para criptografar e decriptografar sua imagem de disco e grave-a em um arquivo-chave. Essa chave de criptografia AES é a mesma chave de criptografia de dados que você agrupou com a chave raiz do cliente fornecida pelo serviço de gerenciamento de chaves em [Preparando seu ambiente](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). O material de chave que é gravado em arquivos-chave deve ser desagrupado e não ser codificado. 
 
-   Como o data_key não é codificado em base64 nos arquivos-chave, não é possível imprimir ou visualizar o conteúdo do arquivo-chave por meio da linha de comando usando caracteres ASCII padrão.
+   Como o data_key não é codificado em base64 nos arquivos-chave, não é possível imprimir ou visualizar o conteúdo do arquivo-chave por meio da linha de comando usando caracteres ASCII padrão. 
    {: tip}
 
    Use o comando a seguir para criar arquivos-chave com uma chave de criptografia **AES de 256 bits** ou **AES de 512 bits**: 

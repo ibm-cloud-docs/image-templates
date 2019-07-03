@@ -27,16 +27,16 @@ a API *SoftLayer_Virtual_Guest/createObject* para implementar uma instância de 
 O {{site.data.keyword.slapi_short}} é um sistema de Chamada de Procedimento Remoto. Cada chamada envolve enviar dados para um terminal de API e receber dados estruturados em retorno. O formato usado para enviar e receber dados com o {{site.data.keyword.slapi_short}} depende de qual implementação da API você escolher. O {{site.data.keyword.slapi_short}} usa atualmente SOAP, XML-RPC ou REST para transmissão de dados.
 
 Para obter mais informações sobre o {{site.data.keyword.slapi_short}} e as APIs de servidor virtual, consulte os recursos a seguir no {{site.data.keyword.sldn_full}}:
-* [{{site.data.keyword.slapi_short}} Visão geral ![Ícone de linkexterno](../icons/launch-glyph.svg "Ícone de link externo")](https://softlayer.github.io/reference/softlayerapi/){: new_window}
+* [{{site.data.keyword.slapi_short}} Visão geral ![Ícone de linkexterno](../icons/launch-glyph.svg "Ícone de link externo")](https://sldn.softlayer.com/reference/softlayerapi/){: new_window}
 
-* [Introdução ao {{site.data.keyword.slapi_short}} ![Ícone de linkexterno](../icons/launch-glyph.svg "Ícone de link externo")](https://softlayer.github.io/article/getting-started/){: new_window}
+* [Introdução ao {{site.data.keyword.slapi_short}} ![Ícone de linkexterno](../icons/launch-glyph.svg "Ícone de link externo")](https://sldn.softlayer.com/article/getting-started/){: new_window}
 
 * [Referência de API: SoftLayer_Virtual_Guest::createObject ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de linkexterno")](https://softlayer.github.io/reference/services/SoftLayer_Virtual_Guest/createObject/){: new_window}
 
-* [Referência de API: SoftLayer_Account::getBlockDeviceTemplateGroups ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://softlayer.github.io/reference/services/SoftLayer_Account/getBlockDeviceTemplateGroups/){: new_window}
-* [Referência de API: SoftLayer_Virtual_Guest_Block_Device_Template_Group::getPublicImages ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://softlayer.github.io/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getPublicImages/){: new_window}
+* [Referência de API: SoftLayer_Account::getBlockDeviceTemplateGroups ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://sldn.softlayer.com/reference/services/SoftLayer_Account/getBlockDeviceTemplateGroups/){: new_window}
+* [Referência de API: SoftLayer_Virtual_Guest_Block_Device_Template_Group::getPublicImages ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://sldn.softlayer.com/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getPublicImages/){: new_window}
 
 Para obter exemplos de uso da API, veja os recursos a seguir:
 * [Como criar um servidor virtual por meio de um modelo de imagem com o {{site.data.keyword.slapi_short}} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://stackoverflow.com/questions/41138874/how-to-create-virtual-server-using-standard-template-softlayer-using-rest-api){: new_window}
-* [{{site.data.keyword.slapi_short}} Python Client: Trabalhando com Virtual Servers ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](http://softlayer-python.readthedocs.io/en/latest/cli/vs.html){: new_window}
+* [{{site.data.keyword.slapi_short}} Python Client: Trabalhando com Virtual Servers ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://softlayer-api-python-client.readthedocs.io/en/latest/api/managers/vs/){: new_window}
 * [Cliente {{site.data.keyword.slapi_short}} Python: SoftLayer.image ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://softlayer-api-python-client.readthedocs.io/en/latest/api/managers/image/){: new_window}
