@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-10-05"
+  years: 2017, 2018
+lastupdated: "2018-09-18"
 
 keywords: image templates
 
@@ -24,9 +24,10 @@ subcollection: image-templates
 {: #creating-template}
 
 イメージ・テンプレートを使用するには、以下の手順を実行してください。
-1. [イメージ・テンプレート](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates)について学習する。
-2. [標準イメージを作成](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template)する。
+1. [イメージ・テンプレート](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates#about-image-templates)について学習する。
+2. [イメージ・テンプレートを作成します](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template)。
 
 ## 次のステップ
+{: #next-steps}
 
-1 つ以上のイメージ・テンプレートを作成した後は、「イメージ・テンプレート」ページで[それらをアクセスおよび管理](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page)できます。
+1 つ以上のイメージ・テンプレートを作成した後は、「イメージ・テンプレート」ページで[それらをアクセスおよび管理](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page#managing-images-from-the-image-templates-page)できます。

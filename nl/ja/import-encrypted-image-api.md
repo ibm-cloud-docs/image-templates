@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-08-09"
+lastupdated: "2019-05-13"
 
 keywords:
 
@@ -27,7 +27,7 @@ subcollection: image-templates
 
 インポート作業の実行に必要な情報だけにアクセスを制限するために、サービス ID で認証を受けます。 そのサービス ID でアクセスできるのは、IBM Cloud オブジェクト・ストレージ内のインポート対象の暗号化イメージと、ルート鍵が保管されている Key Protect インスタンスだけにする必要があります。  
 
-以下の Python スニペットは、[SoftLayer_Virtual_Guest_Block_Device_Template_Group ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer.github.io/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/) API にアクセスし、_createFromIcos_ メソッドを使用してイメージ・テンプレートを作成する方法の例を示しています。
+以下の Python スニペットは、[SoftLayer_Virtual_Guest_Block_Device_Template_Group ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://sldn.softlayer.com/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/) API にアクセスし、_createFromIcos_ メソッドを使用してイメージ・テンプレートを作成する方法の例を示しています。
 
 ```python
 import SoftLayer
@@ -46,9 +46,8 @@ config = {'name':'my_encrypted_image',
       'byol': True,
       'encrypted': True,
       'ibmApiKey':'<api_key>',
-      'rootKeyId':'my root key ID',
+      'crkCrn': 'crn:v1:bluemix:public:hs-crypto:us-south:a/0d06ba51fa0e431290956d1761da1b7b:5ef6cebe-26d7-4ef3-abdc-fb50f345780f:key:a9640391-aec5-4c86-8942-6e6c59bb40b5',
       'wrappedDek':'my wrapped DEK',
-      'keyProtectId':'<key_protect_instance_id>',
       }
 ret = group_svc.createFromIcos(config)
 print(ret)
@@ -60,8 +59,7 @@ print(ret)
 
 | フィールド    | 値   |
 | -------- | ------- |
-| ibmApiKey | API キーの作成時にメモした API キーを指定します。 API キーを紛失した場合は、新しい API キーを作成する必要があります。 詳しくは、[API キーの管理](/docs/iam?topic=iam-userapikey)を参照してください。 |
-| rootKeyId | データ暗号化鍵のラップに使用したルート鍵の ID を指定します。 詳しくは、[鍵の表示](/docs/services/key-protect?topic=key-protect-view-keys#view-keys)を参照してください。 |
+| ibmApiKey | API キーの作成時にメモした API キーを指定します。 API キーを紛失した場合は、新しい API キーを作成する必要があります。 詳しくは、[API キーの管理](/docs/iam?topic=iam-userapikey#userapikey)を参照してください。 |
+| crkCrn | データ暗号化鍵のラップに使用したルート鍵に [Cloud Resource Name (CRN)](/docs/overview?topic=overview-crn) を指定します。ルート鍵 CRN を見つけてコピーするには、[{{site.data.keyword.keymanagementserviceshort}} サービス・インスタンス ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/resources){: new_window}に移動し、ルート鍵の上にマウスを合わせ、画面の右端の方にある省略符号 **(...)** をクリックして、「CRN の表示 (View CRN)」オプションを選択してコピー・アイコンをクリックします。|
 | wrappedDek | イメージの暗号化に使用したデータ暗号化鍵をラップしたものに関連付けられた暗号テキストを指定します。 詳しくは、[鍵のラッピング](/docs/services/key-protect?topic=key-protect-wrap-keys#wrap-keys)を参照してください。 |
-| keyProtectId | {{site.data.keyword.keymanagementserviceshort}} インスタンス ID は、{{site.data.keyword.cloud_notm}} CLI を使用して調べられます。 詳しくは、[インスタンス ID の取得](/docs/services/key-protect?topic=key-protect-retrieve-instance-ID#retrieve-instance-ID)を参照してください。 |
 {: caption="表 1. 暗号化イメージをインポートするために必要な値" caption-side="top"}

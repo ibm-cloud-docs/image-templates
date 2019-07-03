@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-30"
+lastupdated: "2019-05-24"
 
 keywords:
 
@@ -29,7 +29,7 @@ subcollection: image-templates
 
 ISO テンプレートは、特に ISO 用に予約されているタイプのテンプレートであり、VSI のブートに使用できます。 ISO テンプレートには、パブリックとプライベートという 2 つのバージョンがあります。 パブリック ISO テンプレートは、{{site.data.keyword.BluSoftlayer_notm}} によって提供されている事前構成済みテンプレートで、どのお客様も使用できます。 プライベート ISO テンプレートは、{{site.data.keyword.objectstorageshort}}・アカウントに保管されている ISO のイメージをインポートして作成されます。 「イメージ・テンプレート」画面に ISO をインポートするためには、ISO がブート可能でなければなりません。
 
-ISO テンプレートを VSI にロードするために使用できるのは、{{site.data.keyword.BluSoftlayer_notm}} がサポートするオペレーティング・システムだけです。 詳細情報については、[Supported Operating Systems ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://www.softlayer.com/services/software/) を参照してください。
+ISO テンプレートを VSI にロードするために使用できるのは、{{site.data.keyword.BluSoftlayer_notm}} がサポートするオペレーティング・システムだけです。 詳細情報については、[Supported Operating Systems ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/cloud/server-software) を参照してください。
 {:tip}
 
 ## パブリック・イメージとプライベート・イメージとの違いは?
@@ -65,7 +65,7 @@ ISO テンプレートを VSI にロードするために使用できるのは�
 ## 1 次ドライブだけでなくサーバー全体のイメージ・テンプレートを作成するには、どうしたらよいですか?
 {: faq}
 
-サーバー全体のイメージ・テンプレートを作成するには、[イメージ・テンプレートの作成](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template)の手順を参照してください。
+サーバー全体のイメージ・テンプレートを作成するには、[イメージ・テンプレートの作成](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template)の手順を参照してください。
 
 イメージ・テンプレートを IBM Cloud オブジェクト・ストレージにエクスポートした場合は、各ブロック・デバイス (またはディスク) に独自のファイルが関連付けられます。 例えば、イメージ・ファイルの名前が image.vhd の場合、1 つ目のブロック・デバイスは image-0.vhd としてエクスポートされます。 2 つ目のブロック・デバイスは image-1.vhd としてエクスポートされる、というように続きます。
 {: tip}

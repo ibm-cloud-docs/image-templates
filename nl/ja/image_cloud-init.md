@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -19,7 +19,7 @@ subcollection: image-templates
 
 
 # cloud-init 対応イメージでのプロビジョニング
-{: #provisioning-wiht-a-cloud-init-enabled-image}
+{: #provisioning-with-a-cloud-init-enabled-image}
 
 仮想サーバーをオーダーする場合、現在、多くのオペレーティング・システムでは、cloud-init 対応イメージを使用してプロビジョニング時間の最適化が行われています。 また、cloud-init に対応させたカスタマイズ・イメージをインポートすることもできます。
 {:shortdesc}
@@ -27,12 +27,21 @@ subcollection: image-templates
 現在は、以下のオペレーティング・システムが、アドオンなしで仮想サーバーを注文した場合にデフォルトで cloud-init 対応イメージになります (アドオンには、追加のソフトウェア、ポストプロビジョニング・スクリプト、拡張モニタリングが含まれます)。
 * CentOS 7
 * Debian 8、9
+* Red Hat Enterprise Linux 7.x
 * Ubuntu 16.04、18.04
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
 
 cloud-init 対応のオペレーティング・システムで仮想サーバーをオーダーするとき、カスタム・プロビジョニング・スクリプトを使用してユーザー・データまたはメタデータを追加することができます。 オーダー・フォームの「ユーザー・データ」フィールドに、サーバーのオプション cloud-init ユーザー・データまたはオプション・メタデータを入力します。
+
+## 開始する前に
+まず、デバイス・メニューにナビゲートして、タスクを完了するための正しいアカウント権限があることを確認します。
+
+* コンソールのデバイス・メニューにナビゲートします。詳しくは、[デバイスへのナビゲート](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices)を参照してください。
+* 必要なアカウント権限およびデバイス・アクセス権限があることを確認します。アカウントの所有者、または**ユーザーの管理**クラシック・インフラストラクチャー権限を持つユーザーのみが権限を調整できます。
+
+権限について詳しくは、[クラシック・インフラストラクチャー権限](/docs/iam?topic=iam-infrapermission#infrapermission)および[デバイス・アクセス権限の管理](/docs/vsi?topic=virtual-servers-managing-device-access)を参照してください。
 
 ## カスタマイズされた cloud-init 対応イメージのインポート
 
@@ -67,4 +76,4 @@ Cloud-init が実行されるのは、通常、1 回のみです。 しかし、
 
 ### Windows 要件
 * {{site.data.keyword.cloud_notm}} インフラストラクチャー内でパブリック・ネットワークおよびプライベート・ネットワークをサポートするための Cloudbase-init メタデータ・サービス。 このサービスは、Windows 仮想サーバーの資格情報を使用してカスタマー・ポータルの更新も行います。 このサービスは、[https://github.com/softlayer/bluemix-cloudbase-init ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/softlayer/bluemix-cloudbase-init) で入手できます。
-* ご使用環境で Vyatta を使用している場合は、API ロード・バランサーへの API 呼び出しを許可するように Vyatta を構成する必要があります。 詳細情報については、[File Storage を使用する VMware 環境の Brocade vRouter (Vyatta) のセットアップ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](/docs/infrastructure/FileStorage?topic=FileStorage-configureVyatta#setting-up-brocade-vrouter-vyatta-for-vmware-environments-with-file-storage) を参照してください。
+* ご使用環境で Vyatta を使用している場合は、API ロード・バランサーへの API 呼び出しを許可するように Vyatta を構成する必要があります。 詳細情報については、[File Storage を使用する VMware 環境の Brocade vRouter (Vyatta) のセットアップ](/docs/infrastructure/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips) を参照してください。

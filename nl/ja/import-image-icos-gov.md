@@ -19,9 +19,9 @@ subcollection: image-templates
 # IBM Cloud オブジェクト・ストレージから IBM Cloud for Government アカウントへのイメージのインポート
 {: import-an-image-from-ibm-cloud-object-storage-to-ibm-cloud-for-government-account}
 
-{{site.data.keyword.cos_full}} から {{site.data.keyword.ibmcloudgov_full_notm}} アカウントにイメージをインポートするには、{{site.data.keyword.slapi_short}} を使用する必要があります。{{site.data.keyword.slapi_short}} と仮想サーバー API について詳しくは、{{site.data.keyword.sldn_full}} の以下の資料を参照してください。
-* [{{site.data.keyword.slapi_short}} の概要 ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer.github.io/reference/softlayerapi/){: new_window}
-* [{{site.data.keyword.slapi_short}} 入門![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://softlayer.github.io/article/getting-started/){: new_window}
+{{site.data.keyword.cos_full}} から {{site.data.keyword.ibmcloudgov_full_notm}} アカウントにイメージをインポートするには、{{site.data.keyword.slapi_short}} を使用する必要があります。 {{site.data.keyword.slapi_short}} と仮想サーバー API について詳しくは、{{site.data.keyword.sldn_full}} の以下の資料を参照してください。
+* [{{site.data.keyword.slapi_short}} の概要 ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://sldn.softlayer.com/reference/softlayerapi/){: new_window}
+* [{{site.data.keyword.slapi_short}} 入門![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://sldn.softlayer.com/article/getting-started/){: new_window}
 
 ## イメージのインポート
 {: import-gov-image}
@@ -48,3 +48,4 @@ subcollection: image-templates
     ]
 }
 ```
+

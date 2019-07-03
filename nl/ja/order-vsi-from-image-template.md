@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2019-06-11"
 
 keywords:
 
-sunbcollection: image-templates
+subcollection: image-templates
 
 ---
 
@@ -19,12 +19,24 @@ sunbcollection: image-templates
 
 
 # イメージ・テンプレートからのインスタンスの注文
-{: #order-instance-image-templates}
+{: #ordering-an-instance-from-an-image-template}
 
 「イメージ・テンプレート」ページで、イメージ・テンプレートから仮想サーバー・インスタンスをプロビジョンすることができます。
 {:shortdesc}
 
-1. [{{site.data.keyword.slportal}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://control.softlayer.com/){: new_window} で**「デバイス」>「管理」>「イメージ」**を選択して、**「イメージ・テンプレート」**ページにアクセスします。
+## 開始する前に
+まず、デバイス・メニューにナビゲートして、タスクを完了するための正しいアカウント権限があることを確認します。
+
+* コンソールのデバイス・メニューにナビゲートします。詳しくは、[デバイスへのナビゲート](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices)を参照してください。
+* 必要なアカウント権限およびデバイス・アクセス権限があることを確認します。アカウントの所有者、または**ユーザーの管理**クラシック・インフラストラクチャー権限を持つユーザーのみが権限を調整できます。
+
+権限について詳しくは、[クラシック・インフラストラクチャー権限](/docs/iam?topic=iam-infrapermission#infrapermission)および[デバイス・アクセス権限の管理](/docs/vsi?topic=virtual-servers-managing-device-access)を参照してください。
+
+## イメージ・テンプレートからのインスタンスの注文
+
+イメージ・テンプレートからインスタンスを注文するには、以下の手順を使用します。
+
+1. **「デバイス」>「管理」>「イメージ」**を選択して、**「イメージ・テンプレート」**ページにアクセスします。
 2. 使用するイメージ・テンプレートの**「アクション」**メニューをクリックし、注文する仮想サーバーのタイプを選択します。
 3. _「クラウド・サーバーの構成」_ページで、すべての関連情報を入力します。
 4. **「注文に追加」**ボタンをクリックして続行します。
