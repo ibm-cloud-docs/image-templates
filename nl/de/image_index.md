@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2017
-lastupdated: "2017-10-05"
+  years: 2017, 2018
+lastupdated: "2018-09-18"
 
 keywords: image templates
 
@@ -24,9 +24,10 @@ Mit den {{site.data.keyword.BluSoftlayer_full}}-Imagevorlagen können Sie ein Im
 {: #creating-template}
 
 Führen Sie die folgenden Schritte aus, um Imagevorlagen zu verwenden:
-1. Erfahren Sie mehr über [Imagevorlagen](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates).
-2. [Erstellen Sie eine Imagevorlage](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
+1. Erfahren Sie mehr über [Imagevorlagen](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates#about-image-templates).
+2. [Erstellen Sie eine Imagevorlage](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
 
 ## Nächste Schritte
+{: #next-steps}
 
-Nachdem Sie eine oder mehrere Imagevorlagen erstellt haben, können Sie auf der Seite "Imagevorlagen" darauf [zugreifen und sie verwalten](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page).
+Nachdem Sie eine oder mehrere Imagevorlagen erstellt haben, können Sie auf der Seite "Imagevorlagen" darauf [zugreifen und sie verwalten](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page#managing-images-from-the-image-templates-page).

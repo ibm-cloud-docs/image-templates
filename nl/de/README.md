@@ -1,2 +1,2 @@
 # image-templates
-image-templates
+Imagevorlagenrepository

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2017-10-27"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -16,13 +16,21 @@ subcollection: image-templates
 # Images über die Seite "Imagevorlagen" verwalten
 {: #managing-images-from-the-image-templates-page}
 
-Die Seite "Imagevorlagen" im {{site.data.keyword.slportal_full}} zeigt alle Images an, die zu einem Konto gehören. Sie können auf der Seite "Imagevorlagen" mit diesen Images interagieren und neue Images importieren, die in vorhandenen Object Storage-Konten gespeichert sind.
+Die Seite 'Imagevorlagen' in der {{site.data.keyword.cloud}}-Konsole zeigt alle Images an,
+die zu einem Konto gehören. Sie können auf der Seite "Imagevorlagen" mit diesen Images interagieren und neue Images importieren, die in vorhandenen Object Storage-Konten gespeichert sind.
 {:shortdesc}
 
-Führen Sie die folgenden Schritte aus, um auf die Anzeige "Imagevorlagen" zuzugreifen:
+## Vorbereitungen
+Navigieren Sie zuerst zum Gerätemenü und stellen Sie sicher, dass Sie über die korrekten Kontoberechtigungen verfügen, um die Tasks auszuführen.
 
-1. Öffnen Sie das [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/), indem Sie Ihre eindeutigen Berechtigungsnachweise eingeben.
-2. Wählen Sie **Einheiten > Verwalten > Images** aus, um auf die Seite "Imagevorlagen" zuzugreifen.
+* Navigieren Sie zum Gerätemenü Ihrer Konsole. Weitere Informationen finden Sie unter [Zu Geräten navigieren](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Stellen Sie sicher, dass Sie über alle erforderlichen Kontoberechtigungen und Gerätezugriffe verfügen. Nur der Kontoeigner oder ein Benutzer mit der klassischen Infrastrukturberechtigung **Manage Users** (Benutzer verwalten) kann die Berechtigungen anpassen.
+
+Weitere Informationen zu Berechtigungen finden Sie unter [Klassische Infrastrukturberechtigungen](/docs/iam?topic=iam-infrapermission#infrapermission) und [Gerätezugriff verwalten](/docs/vsi?topic=virtual-servers-managing-device-access).
+
+## Images über die Seite "Imagevorlagen" verwalten
+
+Öffnen Sie die Seite **Imagevorlagen**, indem Sie **Geräte > Verwalten > Images** auswählen.
 
 Auf der Seite *Imagevorlagen* werden alle privaten Images angezeigt, die dem Konto zugeordnet sind. Sämtliche Interaktionen mit privaten Images werden auf dieser Seite ausgeführt. Auf dieser Seite können Sie Spalten ziehen, um die Ansicht anzupassen. Außerdem können Sie öffentliche Images aufrufen, indem Sie auf die Dropdown-Auswahl **Private Images** klicken und **Öffentliche Images** auswählen.
 

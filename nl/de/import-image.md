@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-06-11"
 
 keywords:
 
@@ -21,21 +21,21 @@ subcollection: image-templates
 # Images vorbereiten und importieren
 {: #preparing-and-importing-images}
 
-Über die Anzeige "Imagevorlagen" in {{site.data.keyword.slportal_full}} können Sie ein Image aus einer Instanz des [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage#about-ibm-cloud-object-storage)-Service importieren. Sie können Images im VHD- oder VMDK-Format importieren (VHD = Virtual Hard Disk, VMDK = Virtual Machine Disk). Nach dem Import werden VMDK-Images in das VHD-Format konvertiert. Nachdem ein Image in ein Bucket in einer Serviceinstanz von {{site.data.keyword.cos_full_notm}} hochgeladen worden ist, können Sie es im {{site.data.keyword.slportal}} in das Repository für Imagevorlagen hochladen.
+Über die Anzeige "Imagevorlagen" in {{site.data.keyword.slportal_full}} können Sie ein Image aus einer Instanz des [{{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-about)-Service importieren. Sie können Images im VHD- oder VMDK-Format importieren (VHD = Virtual Hard Disk, VMDK = Virtual Machine Disk). Nach dem Import werden VMDK-Images in das VHD-Format konvertiert. Nachdem ein Image in ein Bucket in einer Serviceinstanz von {{site.data.keyword.cos_full_notm}} hochgeladen worden ist, können Sie es im {{site.data.keyword.slportal}} in das Repository für Imagevorlagen hochladen.
 {:shortdesc}
 
 Um Images von {{site.data.keyword.cos_full_notm}} hochladen zu können, müssen Sie über ein Konto verfügen, für das ein Upgrade durchgeführt wurde. Weitere Informationen finden Sie unter [Zur IBMid wechseln und Konten verknüpfen](/docs/account/softlayerlink.html).
 {: tip}
 
-Sie müssen eine [IBM Cloud Object Storage-Instanz](/docs/services/cloud-object-storage/basics?topic=cloud-object-storage-order-storage#creating-a-new-ibm-cloud-platform-account) über die {{site.data.keyword.cloud_notm}}-Konsole (cloud.ibm.com) bestellt haben, um dieses Importfeature nutzen zu können.  IBM Cloud Object Storage, das Sie über control.softlayer.com beziehen, wird nicht unterstützt.
+Sie müssen eine [IBM Cloud Object Storage-Instanz](/docs/services/cloud-object-storage?topic=cloud-object-storage-provision#provision-account) über die {{site.data.keyword.cloud_notm}}-Konsole (cloud.ibm.com) bestellt haben, um dieses Importfeature nutzen zu können.  IBM Cloud Object Storage, das Sie über control.softlayer.com beziehen, wird nicht unterstützt.
 {: important}
 
 Nach dem Importieren von Images als Imagevorlagen können diese zum Bereitstellen oder Starten eines virtuellen Servers verwendet werden. Images, die aus einer Instanz des {{site.data.keyword.cos_full_notm}}-Service importiert wurden, können entweder VHD-Images, VMDK-Images oder angepasste ISO-Images sein. VHD- und VMDK-Importe sind auf die folgenden 64-Bit-Betriebssysteme beschränkt:  
 
 * CentOS 6 und 7
+* Microsoft Server Standard 2012, R2 2012 und 2016
 * RedHat Enterprise Linux 6 und 7
 * Ubuntu 14.04 und 16.04
-* Microsoft Server Standard 2012, R2 2012 und 2016
 
 Importe sind auf 100-GB-Datenträger beschränkt. Images müssen wie im folgenden Beispiel benannt werden: filename.vhd-0.vhd oder filename.vmdk-0.vmdk
 
@@ -80,7 +80,7 @@ Um sicherzustellen, dass ein Image in der {{site.data.keyword.BluSoftlayer_notm}
 * "wget" muss installiert werden.
 * Die aktuellen Xen-Tools "xe-guest-utilities" müssen installiert sein. Führen Sie die folgenden Schritte aus:
 
-    1. Laden Sie das XenServer-ISO-Image von Citrix herunter: [https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.citrix.com/downloads/citrix-hypervisor/product-software/xenserver-76-free-edition.html)
+    1. Laden Sie das XenServer-ISO-Image von Citrix herunter: [https://www.citrix.com/downloads/citrix-hypervisor/![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.citrix.com/downloads/citrix-hypervisor/)
 
     2. Hängen Sie das ISO-Image mit dem folgenden Befehl an:
 
@@ -129,7 +129,7 @@ Weitere Informationen zu cloud-init-fähige Images finden Sie unter [Bereitstell
 
 Wenn Sie vorhaben, ein VHD-Image zu importieren, das mit Ihrem eigenen Schlüssel zur Datenverschlüsselung verschlüsselt wurde, müssen Sie sicherstellen, dass Sie die unter [End-to-End-Verschlüsselung (E2E) für die Bereitstellung einer verschlüsselten Instanz verwenden](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance) beschriebenen Voraussetzungen und Anweisungen prüfen bzw. durchführen.
 
-Für die Verschlüsselung Ihres Image, das im VHD-Format vorliegen muss, müssen Sie das Tool 'vhd-util' verwenden. Weitere Informationen finden Sie unter [VHD-Images verschlüsseln](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image).
+Für die Verschlüsselung Ihres Image, das im VHD-Format vorliegen muss, müssen Sie das Tool 'vhd-util' verwenden. Weitere Informationen finden Sie unter [VHD-Images verschlüsseln](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image). 
 {: important}
 
 ## Image auf {{site.data.keyword.cos_full_notm}} hochladen
@@ -137,10 +137,10 @@ Für die Verschlüsselung Ihres Image, das im VHD-Format vorliegen muss, müssen
 
 Wenn Ihr Image bereitsteht, können Sie es auf {{site.data.keyword.cos_full_notm}} hochladen. Stellen Sie sicher, dass Sie an einem [regionalen Standort](/docs/services/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints) ein Bucket verwenden.
 
-1. Navigieren Sie in {{site.data.keyword.cos_full_notm}} zu Ihrem Bucket und klicken Sie auf **Objekte hinzufügen**, um das Image [hochzuladen](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload-data#upload-data).
-2. Verwenden Sie das Plug-in [Aspera](/docs/services/cloud-object-storage?topic=cloud-object-storage-use-aspera-high-speed-transfer#use-aspera-high-speed-transfer) für die Hochgeschwindigkeitsübertragung, um die maximale Uploadgeschwindigkeit zum Hochladen Ihres Image nutzen zu können.
+1. Navigieren Sie in {{site.data.keyword.cos_full_notm}} zu Ihrem Bucket und klicken Sie auf **Objekte hinzufügen**, um das Image [hochzuladen](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload).
+2. Verwenden Sie das Plug-in [Aspera](/docs/services/cloud-object-storage?topic=cloud-object-storage-aspera) für die Hochgeschwindigkeitsübertragung, um die maximale Uploadgeschwindigkeit zum Hochladen Ihres Image nutzen zu können.
 
-Sie können das SDK für Cloud Object Storage in Verbindung mit Aspera nutzen, um die Hochgeschwindigkeitsübertragung innerhalb Ihrer angepassten Anwendungen zu initiieren, wenn Sie Java, Python oder NodeJS verwenden. Weitere Informationen finden Sie unter [Bibliotheken und SDKs verwenden](/docs/services/cloud-object-storage?topic=cloud-object-storage-use-aspera-high-speed-transfer#sdk).
+Sie können das SDK für Cloud Object Storage in Verbindung mit Aspera nutzen, um die Hochgeschwindigkeitsübertragung innerhalb Ihrer angepassten Anwendungen zu initiieren, wenn Sie Java, Python oder NodeJS verwenden. Weitere Informationen finden Sie unter [Bibliotheken und SDKs verwenden](/docs/services/cloud-object-storage?topic=cloud-object-storage-aspera#aspera-sdk).
 {: tip}
 
 
@@ -149,14 +149,19 @@ Sie können das SDK für Cloud Object Storage in Verbindung mit Aspera nutzen, u
 
 Führen Sie zum Importieren eines Image aus{{site.data.keyword.cos_full_notm}} die folgenden Schritte aus.
 
-1. Öffnen Sie im [{{site.data.keyword.slportal}} ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://control.softlayer.com/) oder in der [{{site.data.keyword.cloud_notm}}-Konsole ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/classic) die Seite **Imagevorlagen**, indem Sie die Optionen **Geräte > Verwalten > Images** auswählen. 
+1. Navigieren Sie zum Gerätemenü und stellen Sie sicher, dass Sie über die korrekten Kontoberechtigungen verfügen, um die Tasks auszuführen.
+
+   * Navigieren Sie zum Gerätemenü Ihrer Konsole. Weitere Informationen finden Sie unter [Zu Geräten navigieren](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+   * Stellen Sie sicher, dass Sie über alle erforderlichen Kontoberechtigungen und Gerätezugriffe verfügen. Nur der Kontoeigner oder ein Benutzer mit der klassischen Infrastrukturberechtigung **Manage Users** (Benutzer verwalten) kann die Berechtigungen anpassen.
+
+   Weitere Informationen zu Berechtigungen finden Sie unter [Klassische Infrastrukturberechtigungen](/docs/iam?topic=iam-    infrapermission#infrapermission) und [Gerätezugriff verwalten](/docs/vsi?topic=virtual-servers-managing-device-access).
 
    Wenn Sie ein verschlüsseltes Image importieren, müssen Sie die {{site.data.keyword.cloud_notm}}-Konsole verwenden.
    {: important}
-
-2. Klicken Sie auf die Registerkarte **Image von IBM COS importieren**, um das Importtool zu öffnen.
-3. Füllen Sie die Pflichtangabefelder aus (siehe Tabelle 1).
-4. Wenn der Vorgang für den Import aus {{site.data.keyword.cos_full_notm}} abgeschlossen ist, wird das Image auf der Seite "Imagevorlagen" angezeigt.
+2. Öffnen Sie die Seite **Imagevorlagen**, indem Sie **Geräte > Verwalten > Images** auswählen.
+3. Klicken Sie auf die Registerkarte **Image von IBM COS importieren**, um das Importtool zu öffnen.
+4. Füllen Sie die Pflichtangabefelder aus (siehe Tabelle 1).
+5. Wenn der Vorgang für den Import aus {{site.data.keyword.cos_full_notm}} abgeschlossen ist, wird das Image auf der Seite "Imagevorlagen" angezeigt.
 
 | Feld | Wert |
 | ----- | ----- |
@@ -165,7 +170,7 @@ Führen Sie zum Importieren eines Image aus{{site.data.keyword.cos_full_notm}} d
 | Bucket | Wählen Sie das {{site.data.keyword.cos_full_notm}}-Bucket aus, in dem Ihr Image gespeichert ist. Es sind nur Buckets gültig, die innerhalb des von Ihnen ausgewählten Standorts vorhanden sind. Wenn Sie ein Bucket auswählen, das nicht am ausgewählten Standort vorhanden ist, erhalten Sie eine Fehlernachricht.|
 | Imagedatei | Wählen Sie in der {{site.data.keyword.cos_full_notm}}-Serviceinstanz die Imagedatei aus, die Sie importieren wollen. Es werden die folgenden Dateitypen unterstützt: VHD (Virtual Hard Disk), VMDK (Virtual Machine Disk) und ISO. Wenn Sie ein verschlüsseltes Image importieren, muss das Image im Dateiformat VHD vorliegen und mit dem Tool vhd-util verschlüsselt sein. |
 | Imagename | Geben Sie einen beschreibenden Namen für Ihr Image an. Dabei handelt es sich um das Image, das Sie für die Bereitstellung von virtuellen Serverinstanzen (VSIs) verwenden werden. |
-| API-Schlüssel | Geben Sie den API-Schlüssel an, der den Zugriff auf Ihre {{site.data.keyword.cos_full_notm}}-Serviceinstanz ermöglicht. Wenn ein verschlüsseltes Image importiert wird, muss der API-Schlüssel auch Zugriff auf Key Protect haben. Der API-Schlüssel steht nur zum Zeitpunkt der Erstellung zum Kopieren oder Herunterladen zur Verfügung. Wenn der API-Schlüssel verloren geht, müssen Sie einen neuen API-Schlüssel erzeugen. Weitere Informationen finden Sie unter [Mit API-Schlüsseln arbeiten](/docs/iam?topic=iam-manapikey#manapikey). |
+| API-Schlüssel | Geben Sie den API-Schlüssel an, der den Zugriff auf Ihre {{site.data.keyword.cos_full_notm}}-Serviceinstanz ermöglicht. Wenn ein verschlüsseltes Image importiert wird, muss der API-Schlüssel auch Zugriff auf die Instanz Ihres Schlüsselmanagementservice haben. Der API-Schlüssel steht nur zum Zeitpunkt der Erstellung zum Kopieren oder Herunterladen zur Verfügung. Wenn der API-Schlüssel verloren geht, müssen Sie einen neuen API-Schlüssel erzeugen. Weitere Informationen finden Sie unter [Mit API-Schlüsseln arbeiten](/docs/iam?topic=iam-manapikey#manapikey). |
 | Betriebssystem | Wählen Sie das Betriebssystem aus, das in Ihrem Image enthalten ist. |
 | Cloud-init | Wenn das Image, das Sie importieren, cloud-init-fähig ist, wählen Sie dieses Kontrollkästchen aus. Wenn Sie ein Image importieren, das ein cloud-init-fähiges Windows-Betriebssystem umfasst, und Sie diese Option auswählen, können Sie nicht gleichzeitig **Ihre Lizenz** auswählen. Wenn Sie ein verschlüsseltes Image importieren, ist diese Option standardmäßig ausgewählt und kann nicht bearbeitet werden, da Ihr verschlüsseltes Image cloud-init-fähig sein muss. |
 | Ihre Lizenz | Wenn Sie beabsichtigen, Ihre eigene Betriebssystemlizenz anzugeben, wählen Sie dieses Kontrollkästchen aus. Wenn Sie ein Image mit einem Windows-Betriebssystem importieren, können Sie diese Option auswählen, falls Sie vorhaben, das Image für die Bereitstellung von [dedizierte Hostinstanzen](/docs/vsi?topic=virtual-servers-dedicated-hosts-and-dedicated-instances#dedicated-hosts-and-dedicated-instances) zu verwenden. Falls Ihre Version des Betriebssysteme Windows die Verwendung einer eigenen Lizenz nicht unterstützt, ist diese Option inaktiviert. Bei Windows-Images können Sie "Cloud-Init" nicht auswählen, wenn Sie angeben, dass Sie Ihre eigene Lizenz verwenden möchten. Wenn Sie ein verschlüsseltes Image mit Red Hat Enterprise Linux als Betriebssystem importieren, ist diese Option standardmäßig ausgewählt und kann nicht bearbeitet werden, da Ihr verschlüsseltes Image eine eigene Betriebssystemlizenz einschließen muss. |
@@ -184,8 +189,8 @@ To import an encrypted image, your account must have access to the End to End (E
 | Feld | Wert |
 | ----- | ----- |
 | Durch Wrapping erstellter Datenverschlüsselungsschlüssel | Geben Sie beim Importieren eines verschlüsselten Image den verschlüsselten Text an, der dem Datenverschlüsselungsschlüssel zugeordnet ist, den Sie zum Verschlüsseln Ihres Image verwendet haben. Weitere Informationen finden Sie unter [Wrapping für Schlüssel über die API durchführen](/docs/services/key-protect?topic=key-protect-wrap-keys#api). |
-| Instanz des {{site.data.keyword.keymanagementserviceshort}}-Service | Wählen Sie in der Dropdown-Liste eine Key Protect-Instanz in Ihrem Konto aus. Die Key Protect-Instanz muss den Kundenrootschlüssel einbeziehen, den Sie für das Wrapping Ihres Schlüssels zur Datenverschlüsselung verwendet haben. |
-| Schlüsselname | Wählen Sie den Namen des Rootschlüssels in der Instanz des {{site.data.keyword.keymanagementserviceshort}}-Service aus, den Sie für das Wrapping Ihres Schlüssels zur Datenverschlüsselung verwendet haben. Weitere Informationen finden Sie unter [Schlüssel anzeigen](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
+| Instanz des Schlüsselmanagementservice | Wählen Sie in der Dropdown-Liste eine Instanz des Schlüsselmanagementservice in Ihrem Konto aus. Die Instanz des Schlüsselmanagementservice muss den Kundenrootschlüssel einbeziehen, den Sie für das Wrapping Ihres Schlüssels zur Datenverschlüsselung verwendet haben. |
+| Schlüsselname | Wählen Sie den Namen des Rootschlüssels in der Instanz des Schlüsselmanagementservice aus, den Sie für das Wrapping Ihres Schlüssels zur Datenverschlüsselung verwendet haben. Weitere Informationen finden Sie unter [Schlüssel anzeigen](/docs/services/key-protect?topic=key-protect-view-keys#view-keys). |
 {: caption="Tabelle 2. Werte für den Import eines verschlüsselten Image aus IBM Cloud Object Storage" caption-side="top"}
 
 ## Nächste Schritte

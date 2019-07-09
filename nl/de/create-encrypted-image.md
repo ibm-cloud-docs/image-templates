@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-04-29"
 
 keywords: VHD image file, encryption, encrypted image, image
 
@@ -60,9 +60,9 @@ Führen Sie die folgenden Schritte aus, um Ihr verschlüsseltes VHD-Image zu ers
    ```
    {: pre}
 
-4. Geben Sie den AES-Verschlüsselungsschlüssel an, den Sie für die Ver- und Entschlüsselung Ihres Plattenimage benötigen, und schreiben Sie ihn in eine Schlüsseldatei. Dieser AES-Verschlüsselungsschlüssel ist mit dem Schlüssel zur Datenverschlüsselung identisch, für den Sie mit dem Key Protect-Kundenrootschlüssel im Schritt zur [Vorbereitung Ihrer Umgebung](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment) ein Wrapping durchgeführt haben. Für die Schlüsselinformationen, die in Schlüsseldateien geschrieben werden, darf kein Wrapping durchgeführt worden sein und sie dürfen nicht verschlüsselt sein. 
+4. Geben Sie den AES-Verschlüsselungsschlüssel an, den Sie für die Ver- und Entschlüsselung Ihres Plattenimage benötigen, und schreiben Sie ihn in eine Schlüsseldatei. Dieser AES-Verschlüsselungsschlüssel ist mit dem Schlüssel zur Datenverschlüsselung identisch, für den Sie mit dem vom Schlüsselmanagementservice bereitgestellten Kundenrootschlüssel im Schritt zur [Vorbereitung Ihrer Umgebung](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment) ein Wrapping durchgeführt haben. Für die Schlüsselinformationen, die in Schlüsseldateien geschrieben werden, darf kein Wrapping durchgeführt worden sein und sie dürfen nicht verschlüsselt sein. 
 
-   Da der Datenschlüssel innerhalb der Schlüsseldateien nicht mit Base64 verschlüsselt ist, ist es nicht möglich, mithilfe der standardmäßigen ASCII-Zeichen den Inhalt der Schlüsseldatei über die Befehlszeile zu drucken oder anzuzeigen.
+   Da der Datenschlüssel innerhalb der Schlüsseldateien nicht mit Base64 verschlüsselt ist, ist es nicht möglich, mithilfe der standardmäßigen ASCII-Zeichen den Inhalt der Schlüsseldatei über die Befehlszeile zu drucken oder anzuzeigen. 
    {: tip}
 
    Verwenden Sie für die Erstellung von Schlüsseldateien unter Anwendung des Verschlüsselungsschlüssels **AES 256-Bit** oder **AES 512-Bit** den folgenden Befehl: 

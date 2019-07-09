@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2018-10-30"
+lastupdated: "2019-05-24"
 
 keywords:
 
@@ -29,7 +29,7 @@ Standard-Imagevorlagen ermöglichen unabhängig vom Betriebssystem die Imageerfa
 
 Die ISO-Imagevorlage ist eine Vorlage speziell für ISO-Images, die zum Booten einer VSI verwendet werden können. ISO-Vorlagen sind in zwei Versionen verfügbar: öffentlich und privat. Öffentliche ISO-Vorlagen sind vorkonfigurierte Vorlagen, die von {{site.data.keyword.BluSoftlayer_notm}} bereitgestellt werden und von jedem Kunden genutzt werden können. Private ISO-Vorlagen werden erstellt, indem ein Image von einem ISO-Image importiert wird, das für ein {{site.data.keyword.objectstorageshort}}-Konto gespeichert ist. Damit eine ISO-Vorlage in die Anzeige "Imagevorlagen" importiert werden kann, muss die ISO-Datei bootfähig sein.
 
-Nur unterstützte {{site.data.keyword.BluSoftlayer_notm}}-Betriebssysteme können zum Laden einer ISO-Vorlage in eine VSI verwendet werden. Weitere Informationen finden Sie unter [Unterstützte Betriebssysteme ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://www.softlayer.com/services/software/).
+Nur unterstützte {{site.data.keyword.BluSoftlayer_notm}}-Betriebssysteme können zum Laden einer ISO-Vorlage in eine VSI verwendet werden. Weitere Informationen finden Sie unter [Unterstützte Betriebssysteme ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/cloud/server-software).
 {:tip}
 
 ## Worin besteht der Unterschied zwischen einem öffentlichen und einem privaten Image?
@@ -65,7 +65,7 @@ Die Funktion zum Importieren/Exportieren von Images befindet sich auf der Seite 
 ## Wie erstelle ich eine Imagevorlage für meinen gesamten Server und nicht nur für mein primäres Laufwerk?
 {: faq}
 
-Wenn Sie eine Imagevorlage für Ihren gesamten Server erstellen wollen, lesen Sie die Anweisungen in [Imagevorlage erstellen](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
+Wenn Sie eine Imagevorlage für Ihren gesamten Server erstellen wollen, lesen Sie die Anweisungen in [Imagevorlage erstellen](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
 
 Wenn Sie eine Imagevorlage in IBM Cloud Object Storage exportieren, so ist jeder Blockeinheit (oder Platte) eine eigene Datei zugeordnet. Wenn Ihre Imagedatei beispielsweise den Namen "image.vhd" hat, so wird die erste Blockeinheit als "image-0.vhd" exportiert. Die zweite Blockeinheit wird dann mit dem Namen "image-1.vhd" exportiert usw.
 {: tip}
