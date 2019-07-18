@@ -34,5 +34,7 @@ Image Templates
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    image-templates-faq.md
+    {: .topicgroup}
+    FAQs
+        /vsi/virtual-servers-faq-image-templates
     {: .navgroup-end}
