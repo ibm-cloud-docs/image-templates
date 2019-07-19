@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-17"
+lastupdated: "2019-07-19"
 
 keywords:
 
@@ -52,12 +52,12 @@ ISOs that are imported by using this tool must be bootable in order for the imag
 
 To ensure that an image can be successfully deployed in the {{site.data.keyword.BluSoftlayer_notm}} infrastructure environment, virtual server images must be configured to the following specifications:
 
-* ***/boot*** must be first partition
-* ***/boot*** and ***/*** must be ext3 or ext4 file system
-* ***/etc***  and /root must be on the same partition as ***/***
+* ***/boot*** must be mounted to the first partition
+* ***/boot*** and ***/*** must be mounted to separate partitions, and each must be formatted with the ext3 or ext4 file system
+* ***/etc***  and ***/root*** must be on the same partition as ***/***
 * ***/etc/fstab -> LABEL=SWAP-xvdb1 swap swap :*** to mount the swap disk that is attached to the system
 * wget must be installed
-* Latest xe-guest-utilities Xen tools must be installed. Complete the following steps:
+* The latest xe-guest-utilities Xen tools must be installed. Complete the following steps:
 
     1. Download the XenServer ISO from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.citrix.com/downloads/citrix-hypervisor/)
 
