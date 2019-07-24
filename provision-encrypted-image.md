@@ -39,7 +39,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
 
 | Key Management Service | HSM Encryption Certification |
 | ----- | ----- |
-| [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect/concepts?topic=key-protect-getting-started-tutorial#getting-started-tutorial) | FIPS 140-2 *Level 2* compliance |
+| [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect/concepts?topic=key-protect-getting-started-tutorial#getting-started-tutorial) | FIPS 140-2 *Level 3* compliance |
 | [{{site.data.keyword.hscrypto}}](/docs/services/hs-crypto?topic=hs-crypto-get-started#get-started) | FIPS 140-2 *Level 4* compliance |
 {: caption="Table 1. Available key management service options" caption-side="top"}
 
