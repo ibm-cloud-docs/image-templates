@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2019-06-26"
+lastupdated: "2019-07-23"
 
 keywords:
 
@@ -12,6 +12,7 @@ subcollection: image-templates
 
 {:shortdesc: .shortdesc}
 {:tip: .tip}
+{:note: .note}
 {:new_window: target="_blank"}
 
 
@@ -34,6 +35,7 @@ For more information about permissions, see [Classic infrastructure permissions]
 ## Creating an image template
 {: #creating-an-image-template_steps}
 
+
 Complete the following steps to create an image template of a virtual server.
 
 1. From the **Devices** menu, select **Device List**.
@@ -47,6 +49,9 @@ Complete the following steps to create an image template of a virtual server.
 5. Enter any necessary notes for the image in the **Note** field.
 6. Select the **Agree** check box when all information is entered.
 7. Click **Create Template** to create the image template.
+
+Your server will be offline until the imaging process completes.  The image template processing time varies based on the resources that are available on the physical host and how much data is being captured in the image template. 
+{:note}
 
 ## Next steps
 
