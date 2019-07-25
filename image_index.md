@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-18"
+lastupdated: "2019-07-23"
 
 keywords: image templates
 
@@ -11,13 +11,17 @@ subcollection: image-templates
 ---
 
 {:shortdesc: .shortdesc}
+{:note: .note}
 {:new_window: target="_blank"}
 
 # Getting started with image templates
 {: #getting-started-with-image-templates}
 
-With {{site.data.keyword.BluSoftlayer_full}} image templates, you can capture an image of a virtual server to quickly replicate its configuration with minimal changes in the order process.
+With {{site.data.keyword.cloud}} image templates, you can capture an image of a virtual server to quickly replicate its configuration with minimal changes in the order process.
 {:shortdesc}
+
+Image templates are not intended for use as a backup strategy.
+{:note}
 
 
 ## Creating an image template
