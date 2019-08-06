@@ -53,7 +53,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
       3. **Optional**: If you choose, you can [create](/docs/services/key-protect?topic=key-protect-create-standard-keys#create-standard-keys) or [import](/docs/services/key-protect?topic=key-protect-import-standard-keys#import-standard-keys) a standard key for decryption.      
       4. [Set up the {{site.data.keyword.cloud_notm}} Key Protect CLI plug-in](/docs/services/key-protect?topic=key-protect-set-up-cli) so you can [wrap the data encryption key](/docs/services/key-protect?topic=key-protect-cli-reference#kp-wrap) that you intend to use to encrypt your VHD image with the root key. You need the cipher text that is associated with the wrapped data encryption key (WDEK) when you import your encrypted image to {{site.data.keyword.cloud_notm}} console.  
          
-       Key Protect doesn't save additional authentication data (AAD), so use wrapped DEKs that don't require ADD for unwrapping them.  (You can still use AAD with Key Protect APIs on-premises to further secure a key with up to 255 strings, each delimited by a comma and containing up to 255 characters.)
+       Key Protect doesn't save additional authentication data (AAD), so use wrapped DEKs that don't require ADD for unwrapping them.
        {:tip}
       
 3. From IBM {{site.data.keyword.iamshort}} (IAM), [authorize access](/docs/iam?topic=iam-serviceauth#create-auth) between your **Cloud Block Storage** (source service) and your **Key Management Service** (target service). If you import encrypted images from {{site.data.keyword.cos_full_notm}} must have an [access policy defined](/docs/iam?topic=iam-userroles#userroles) for your key management service in IAM.
