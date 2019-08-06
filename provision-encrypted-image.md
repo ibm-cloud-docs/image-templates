@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-06-20"
+lastupdated: "2019-08-06"
 
 keywords:
 
@@ -13,6 +13,7 @@ subcollection: image-templates
 {:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
 {:screen: .screen}
+{:tip: .tip}
 {:new_window: target="_blank"}
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
@@ -52,8 +53,8 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
       3. **Optional**: If you choose, you can [create](/docs/services/key-protect?topic=key-protect-create-standard-keys#create-standard-keys) or [import](/docs/services/key-protect?topic=key-protect-import-standard-keys#import-standard-keys) a standard key for decryption.      
       4. [Set up the {{site.data.keyword.cloud_notm}} Key Protect CLI plug-in](/docs/services/key-protect?topic=key-protect-set-up-cli) so you can [wrap the data encryption key](/docs/services/key-protect?topic=key-protect-cli-reference#kp-wrap) that you intend to use to encrypt your VHD image with the root key. You need the cipher text that is associated with the wrapped data encryption key (WDEK) when you import your encrypted image to {{site.data.keyword.cloud_notm}} console.  
          
-       Key Protect doesn't save additional authentication data (AAD), but you can still use AAD to further secure a key with up to              255 strings, each delimited by a comma and containing up to 255 characters.  If you supply AAD for key wrapping, save the data          to a secure location to ensure that you can access and provide the same AAD on future key unwrapping requests.
-       {: tip}
+       Key Protect doesn't save additional authentication data (AAD), so use wrapped DEKs that don't require ADD for unwrapping them.  (You can still use AAD with Key Protect APIs on-premises to further secure a key with up to 255 strings, each delimited by a comma and containing up to 255 characters.)
+       {:tip}
       
 3. From IBM {{site.data.keyword.iamshort}} (IAM), [authorize access](/docs/iam?topic=iam-serviceauth#create-auth) between your **Cloud Block Storage** (source service) and your **Key Management Service** (target service). If you import encrypted images from {{site.data.keyword.cos_full_notm}} must have an [access policy defined](/docs/iam?topic=iam-userroles#userroles) for your key management service in IAM.
 4. In IBM Cloud Console, create  an instance of {{site.data.keyword.cos_full_notm}} and create a bucket to store data. For more information, see the [Getting started tutorial for {{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-getting-started)
