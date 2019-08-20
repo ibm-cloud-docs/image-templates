@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2017
-lastupdated: "2019-06-26"
+lastupdated: "2019-08-20"
 
 keywords:
 
@@ -22,6 +22,8 @@ Storage accounts.
 {:shortdesc}
 
 ## Before you begin
+{: #byb-manage-imt}
+
 First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
 
 * Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
