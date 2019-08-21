@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2019-07-23"
+lastupdated: "2019-08-21"
 
 keywords:
 
@@ -25,6 +25,8 @@ With image templates, you can replicate various configuration options for {{site
 At any point during the life of a virtual server, you can create an image template. Then, you can use it to quickly replicate portions of its configuration in another virtual server. You can create image templates from any virtual server, regardless of its operating system. When your image template is complete, you can use it to create another virtual server.
 
 ## Before you begin
+{: #byb-create_template}
+
 First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
 
 * Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
@@ -54,6 +56,7 @@ Your server will be offline until the imaging process completes.  The image temp
 {:note}
 
 ## Next steps
+{: #ns-create_template}
 
 After the image template is created, more virtual servers can be created by using the template. The new
 virtual servers have the same configurations that are included in the image template.
