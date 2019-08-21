@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2019-06-11"
+lastupdated: "2019-08-21"
 
 keywords:
 
@@ -24,6 +24,8 @@ imported from an Object Storage Account.
 Booting a virtual server from an image brings the device online safely so that issues can be resolved. In most cases, the boot from image feature allows for troubleshooting to occur in an environment without risking significant data loss that might be experienced from an OS reload. Though significant data loss is less likely than with an OS reload, it is recommended that you back up the device before initiating the boot.
 
 ## Before you begin
+{: #byb-boot-vsi}
+
 First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
 
 * Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
@@ -47,6 +49,7 @@ Use the following steps to start a virtual server from an image.
 6. Click **Boot from Image** to boot the device by using the selected image. Click **Close** to cancel the action.
 
 ## Next Steps
+{: #ns-boot-vsi}
 
 After you initiate the boot process, the image is powered off and then started by using the selected image. Boot time varies, as the size and type of
 each image varies. After the virtual server is started by using the selected image, it can be accessed as a regularly booted device, but is configured according to the image. Restart the virtual server to power down and return the device to its original state.
