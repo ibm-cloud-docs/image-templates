@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2019-06-11"
+lastupdated: "2019-08-21"
 
 keywords:
 
@@ -35,6 +35,7 @@ For more information about our certification as a Red Hat Enterprise Linux cloud
 
 ## Using your own Windows license
 The following operating systems are supported:
+* Windows Server 2019
 * Windows Server 2016
 * Windows Server 2012
 * Windows Server 2012 R2
