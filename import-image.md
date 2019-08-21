@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-08-21"
 
 keywords:
 
@@ -173,6 +173,7 @@ To import an encrypted image, your account must have access to the End to End (E
 {: caption="Table 2. Values for importing an encrypted image from IBM Cloud Object Storage" caption-side="top"}
 
 ## Next Steps
+{: #ns-image-prep}
 
 After the import begins, the system locates the image file in the {{site.data.keyword.cos_full_notm}} service instance in the specified bucket. The image file is imported as an image template that is then accessible on
 the Image Templates page. After the import completes, the image can be used to order a new device or to start an existing device.
