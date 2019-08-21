@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2019-06-26"
+lastupdated: "2019-08-21"
 
 keywords:
 
@@ -20,6 +20,8 @@ Standard image templates can be deleted at any time after they are created.
 {:shortdesc}
 
 ## Before you begin
+{: #byb-delete-template}
+
 First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
 
 * Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
