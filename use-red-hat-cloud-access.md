@@ -43,6 +43,8 @@ The following operating systems are supported:
 If you have questions about your existing Windows license eligibility or understanding reporting requirements, contact your Microsoft representative. When you create an image template that specifies that you are using your own Windows license, you must provision that image on a dedicated host. You cannot provision a public instance or a dedicated instance that is auto-assigned to a host when you use an image that indicates that you are using your own Windows license. Additionally, when you create or update a Windows image template that specifies that you are using your own license, the Windows image cannot be a cloud-init image.
 
 ## Before you begin
+{: #byb-redhat-imt}
+
 First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
 
 * Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
