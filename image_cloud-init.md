@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2019-06-11"
+lastupdated: "2019-08-21"
 
 keywords:
 
@@ -37,6 +37,8 @@ The following operating systems now default to a cloud-init enabled image when y
 When you order a virtual server with a cloud-init enabled operating system, you can add user data or metadata with custom provisioning scripts. In the User Data field on the order form, enter optional cloud-init user data or optional metadata for the server.
 
 ## Before you begin
+{: #byb-cloud-init-imt}
+
 First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
 
 * Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
