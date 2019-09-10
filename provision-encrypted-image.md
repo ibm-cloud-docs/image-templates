@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-09-10"
 
 keywords:
 
@@ -56,7 +56,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
        Key Protect doesn't save additional authentication data (AAD), so use wrapped DEKs that don't require ADD for unwrapping them.
        {:tip}
       
-3. From IBM {{site.data.keyword.iamshort}} (IAM), [authorize access](/docs/iam?topic=iam-serviceauth#create-auth) between your **Cloud Block Storage** (source service) and your **Key Management Service** (target service). If you import encrypted images from {{site.data.keyword.cos_full_notm}} must have an [access policy defined](/docs/iam?topic=iam-userroles#userroles) for your key management service in IAM.
+3. If you import encrypted images from {{site.data.keyword.cos_full_notm}}, you must have an [access policy defined](/docs/iam?topic=iam-userroles#userroles) for your key management service in IAM.  From IBM {{site.data.keyword.iamshort}} (IAM), [create an access policy](/docs/iam?topic=iam-serviceauth#create-auth) between your **Cloud Block Storage** (source service) and your **Key Management Service** (target service).   
 4. In IBM Cloud Console, create  an instance of {{site.data.keyword.cos_full_notm}} and create a bucket to store data. For more information, see the [Getting started tutorial for {{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-getting-started)
       1. Create the {{site.data.keyword.cos_full_notm}} instance in the region where your key management service is provisioned.
       2. When you create the bucket, the **Resiliency** setting must be _Regional_.
