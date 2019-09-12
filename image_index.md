@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2019-07-23"
+  years: 2017, 2018, 2019
+lastupdated: "2019-09-12"
 
 keywords: image templates
 
@@ -34,4 +34,4 @@ Complete the following steps to use image templates:
 ## Next steps
 {: #next-steps}
 
-After you've created one or more image templates, you can [access and manage them](/docs/infrastructure/image-templates?topic=image-templates-managing-images-from-the-image-templates-page#managing-images-from-the-image-templates-page) on the Image Templates page.
+After the image template is created, you can [order more virtual servers](/docs/image-templates?topic=image-templates-ordering-an-instance-from-an-image-template) based on the template.  Your new virtual servers have the same configurations that are included in the image template.
