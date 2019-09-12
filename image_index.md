@@ -27,9 +27,18 @@ Image templates are not intended for use as a backup strategy.
 ## Creating an image template
 {: #creating-template}
 
-Complete the following steps to use image templates:
-1. Learn about [image templates](/docs/infrastructure/image-templates?topic=image-templates-about-image-templates#about-image-templates).
-2. [Create an image template](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
+Complete the following steps to create an image template of a virtual server.
+
+1. Navigate to your console's device menu and ensure you have the correct account permissions to complete the tasks.
+2. From the **Devices** menu, select **Device List**.
+3. Click the virtual server that you want to use to create an image template.
+
+  Check the **Passwords** tab of the **Device Details** page. Ensure that any passwords listed on the **Device Details** page match the actual operating system passwords and any other software add-on passwords. If passwords do not match, virtual servers that are created from this image template fail.
+  {:tip}
+
+4. From the **Actions** menu, select **Create Image Template** and complete the required fields.
+
+For more information, see [**Creating an image template**](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
 
 ## Next steps
 {: #next-steps}
