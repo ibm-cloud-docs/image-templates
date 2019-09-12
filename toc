@@ -6,7 +6,6 @@ Image Templates
 
     {: .navgroup id="learn"}
     image_index.md
-    image_about.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
