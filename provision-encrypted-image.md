@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-30"
 
 keywords:
 
@@ -48,27 +48,30 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
 
 1. You must have an upgraded account to use E2E encryption for virtual servers. For more information, see [Switching to IBMid and linking accounts](/docs/account?topic=account-unifyingaccounts).
 2. Use your key management service to create and manage keys.  The following example steps are specific to {{site.data.keyword.keymanagementserviceshort}}, but the general flow also applies to {{site.data.keyword.hscrypto}}. If you're using {{site.data.keyword.hscrypto}}, see the [documentation](/docs/services/hs-crypto?topic=hs-crypto-get-started#get-started) for that service for corresponding instructions.
-      1. Provision the [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-provision#provision) service.
-      2. [Create](/docs/services/key-protect?topic=key-protect-create-root-keys) or [import](/docs/services/key-protect?topic=key-protect-import-root-keys#import-root-keys) a root key (CRK) in {{site.data.keyword.keymanagementservicelong_notm}}.
-      3. **Optional**: If you choose, you can [create](/docs/services/key-protect?topic=key-protect-create-standard-keys#create-standard-keys) or [import](/docs/services/key-protect?topic=key-protect-import-standard-keys#import-standard-keys) a standard key for decryption.      
-      4. [Set up the {{site.data.keyword.cloud_notm}} Key Protect CLI plug-in](/docs/services/key-protect?topic=key-protect-set-up-cli) so you can [wrap the data encryption key](/docs/services/key-protect?topic=key-protect-cli-reference#kp-wrap) that you intend to use to encrypt your VHD image with the root key. You need the cipher text that is associated with the wrapped data encryption key (WDEK) when you import your encrypted image to {{site.data.keyword.cloud_notm}} console.  
-         
-       Key Protect doesn't save additional authentication data (AAD), so use wrapped DEKs that don't require ADD for unwrapping them.
-       {:tip}
-      
-3. From IBM {{site.data.keyword.iamshort}} (IAM), [create an authorization](/docs/iam?topic=iam-serviceauth#create-auth) between your **Cloud Block Storage** (source service) and your **Key Management Service** (target service). The authorization permits the {{site.data.keyword.cloud_notm}} backplane services to use your WDEK for data encryption.   
-4. In IBM Cloud Console, create  an instance of {{site.data.keyword.cos_full_notm}} and create a bucket to store data. For more information, see the [Getting started tutorial for {{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-getting-started)
+      1. Provision the [{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-provision#provision) service. 
+      2. [Install the {{site.data.keyword.cloud_notm}} Key Protect CLI plug-in](/docs/services/key-protect?topic=key-protect-set-up-cli). You must use the Key Protect CLI to wrap the base64-encoded 32-byte standard data encrytion key (DEK) that you intend to use to encrypt your VHD image with the root key. 
+      3. [Create](/docs/services/key-protect?topic=key-protect-create-root-keys) or [import](/docs/services/key-protect?topic=key-protect-import-root-keys#import-root-keys) a root key (CRK) in {{site.data.keyword.keymanagementserviceshort}}. You will use your root key in the next step to wrap the data encryption key that you use to encrypt your image.      
+      4. Identify the DEK that you will use to encrypt your image, and then [wrap it with your root key](/docs/services/key-protect?topic=key-protect-cli-reference#kp-wrap). If you need to generate a DEK, you can use the [**kp wrap**](/docs/services/key-protect?topic=key-protect-cli-reference#kp-wrap) command with no plaintext parameter (-p) to generate the key and wrap it. If you already have a DEK, you can [import](/docs/services/key-protect?topic=key-protect-import-standard-keys#import-standard-keys) it and then wrap it by specifying the plaintext parameter on the **kp wrap** command. Make sure to save the cipher text that is returned by the **kp wrap** command. You must specify the WDEK cipher text when you import your encrypted image to {{site.data.keyword.cloud_notm}} console.
+              
+       Key Protect doesn't save additional authentication data (AAD), so use WDEKs that don't require ADD for unwrapping them.
+       {: tip}  
+     
+3. From IBM {{site.data.keyword.iamshort}} (IAM), [create an authorization](/docs/iam?topic=iam-serviceauth#create-auth) between your **Cloud Block Storage** (source service) and your **Key Management Service** (target service). The authorization permits the {{site.data.keyword.cloud_notm}} backplane services to use your WDEK for data encryption. 
+4. In IBM Cloud Console, create an instance of {{site.data.keyword.cos_full_notm}} and create a bucket to store the data. For more information, see the [Getting started tutorial for {{site.data.keyword.cos_full_notm}}](/docs/services/cloud-object-storage?topic=cloud-object-storage-getting-started)
       1. Create the {{site.data.keyword.cos_full_notm}} instance in the region where your key management service is provisioned.
       2. When you create the bucket, the **Resiliency** setting must be _Regional_.
-      3. Optionally, when you create the bucket, you can [encrypt it with your key](/docs/services/cloud-object-storage?topic=cloud-object-storage-encryption#encryption-kp).   
+      3. Optionally, when you create the bucket, you can [encrypt it with your DEK](/docs/services/cloud-object-storage?topic=cloud-object-storage-encryption#encryption-kp).   
 
 ## Preparing your encrypted images
 
 1. Select an unencrypted image that works in the {{site.data.keyword.cloud_notm}} infrastructure environment that you want to encrypt. One option is to use an existing virtual server to [create an image template](/docs/infrastructure/image-templates/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template). For more information, see [Work with an image template created from a cloud-init provisioned virtual server](/docs/infrastructure/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#work-with-an-image-template-created-from-a-cloud-init-provisioned-virtual-server). You can also use an existing VHD image. Ensure that the image meets [encrypted image requirements](/docs/infrastructure/image-templates?topic=image-templates-encrypted-image-reqs#encrypted-image-reqs).
 2. If you're using an image template from {{site.data.keyword.slportal}}, [export the unencrypted image](/docs/infrastructure/image-templates?topic=image-templates-exporting-an-image-to-ibm-cloud-object-storage) to {{site.data.keyword.cos_full_notm}}.
 3. Download the image file from {{site.data.keyword.cos_full_notm}} to a secure local machine to encrypt the image. In your service dashboard, select the **Download** action to retrieve your object from storage. You can use the Aspera high-speed transfer plug-in to download images larger than 200 MB.
-4. Use the vhd-util tool to [encrypt your VHD image](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image).
+4. Use the vhd-util tool to [encrypt your VHD image](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image). 
 5. In {{site.data.keyword.cos_full_notm}}, navigate to your bucket and click **Add Objects** to [upload](/docs/services/cloud-object-storage?topic=cloud-object-storage-upload) the encrypted image. You can use the Aspera high-speed transfer plug-in to upload images larger than 200 MB.
+
+If you're interested in automating image encryption, check out this {{site.data.keyword.cloud_notm}} [blog post](https://www.ibm.com/cloud/blog/automate-the-encryption-of-a-virtual-server-image-for-deployment-onto-classic-infrastructure). 
+{: tip}  
 
 ## Importing an encrypted image and ordering an instance
 
