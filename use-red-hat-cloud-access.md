@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2018
-lastupdated: "2019-08-21"
+lastupdated: "2019-11-13"
 
 keywords:
 
@@ -66,7 +66,7 @@ dropdown box. For more information about importing images, see [Preparing and im
 
 If you have an existing VHD image template, you can specify that you want to provide your own license or subscription for the operating system.
 
-To access an image template and designate that it use your own existing license or subscription, complete the following steps:
+To access an image template and designate that it uses your own existing license or subscription, complete the following steps:
 1. From the **Devices** menu select **Manage > Images**.
 2. From the list of templates, click the image template name that you want to update.
 3. On the Image Template Details page, select the **User Provided** checkbox under the **OS License** heading, and click **Update**.
