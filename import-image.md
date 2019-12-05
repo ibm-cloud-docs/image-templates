@@ -1,9 +1,10 @@
 ---
 
 copyright:
-  years: 2014, 2019-11-07"
+  years: 2014, 2019
+lastupdated: "2019-12-05"
 
-keywords:
+keywords: image template, image, import image, {{site.data.keyword.cloud}}, {{site.data.keyword.cloud_notm}}
 
 subcollection: image-templates
 
@@ -12,6 +13,7 @@ subcollection: image-templates
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:tip: .tip}
+{:note: .note}
 {:important: .important}
 {:pre: .pre}
 {:screen: .screen}
@@ -37,7 +39,7 @@ After images are imported as an image template, they can be used to provision or
 * RedHat Enterprise Linux 6 and 7
 * Ubuntu 16.04 and Ubuntu 18.04
 
-Imports are limited to 100 GB disks. Images must be named according to the following example: filename.vhd-0.vhd or filename.vmdk-0.vmdk
+Imports are limited to 100 GB disks. Only the boot volume is imported, not secondary disks. Imported images must be named according to the following example: filename.vhd-0.vhd or filename.vmdk-0.vmdk
 
 ## ISO Templates
 {: #iso-templates}
@@ -47,20 +49,26 @@ Supported Operating Systems can be found here: [https://www.ibm.com/cloud/server
 
 ISOs that are imported by using this tool must be bootable in order for the image to be eligible for import.
 
-## Configuring an Image for {{site.data.keyword.virtualmachinesshort}}
+## Configuring unencrypted custom images for {{site.data.keyword.virtualmachinesshort}}
 {: #config-image-vsi}
 
-To ensure that an image can be successfully deployed in the {{site.data.keyword.BluSoftlayer_notm}} infrastructure environment, virtual server images must be configured to the following specifications:
+### Configuring a Linux custom image
+{: #linux-custom-image}
+
+To ensure that it can be successfully deployed in the {{site.data.keyword.BluSoftlayer_notm}} infrastructure environment, virtual server images must be configured to the following specifications:
 
 * ***/boot*** must be mounted to the first partition
 * ***/boot*** and ***/*** must be mounted to separate partitions, and each must be formatted with the ext3 or ext4 file system
 * ***/etc***  and ***/root*** must be on the same partition as ***/***
 * ***/etc/fstab -> LABEL=SWAP-xvdb1 swap swap :*** to mount the swap disk that is attached to the system
+    
+    The Linux boot volume does not support LVM. 
+    {: note}
 * wget must be installed
 * The latest xe-guest-utilities Xen tools must be installed. Complete the following steps:
 
-    1. Download the XenServer ISO from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.citrix.com/downloads/citrix-hypervisor/)
-
+    1. Download the latest Citrix Hypervisor ISO (version 8.0 and later) from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.citrix.com/downloads/citrix-hypervisor/).  A free Express edition can be found [here](https://www.citrix.com/downloads/citrix-hypervisor/product-software/hypervisor-80-express-edition.html).
+    
     2. Mount the ISO by running the following command:
 
         ```
@@ -68,7 +76,7 @@ To ensure that an image can be successfully deployed in the {{site.data.keyword.
         ```
         {: pre}
 
-    3. Locate the RPM for the ISO by running the following command:
+    3. Locate the Redhat Package Manager (RPM) for the ISO by running the following command:
 
         ```
         ls -l /mnt/Packages/xenserver-pv*
@@ -78,18 +86,18 @@ To ensure that an image can be successfully deployed in the {{site.data.keyword.
     4. The output lists an RPM similar to:
 
         ```
-        xenserver-pv-tools-7.1.0-137222c.2185.noarch.rpm
+        xenserver-pv-tools-7.41.0-1.noarch.rpm
         ```
         {: screen}
 
-     5. You can copy the RPM and then extract the ISO for xentools. Run the following command to create a directory structure that houses the ISO:
+    5. You can copy the RPM and then extract the ISO for xentools. Run the following command to create a directory structure that houses the ISO:
 
         ```
-        rpm2cpio <xenserver-pv-tools-7.1.0-137222c.2185.noarch.rpm> | cpio -idv
+        rpm2cpio <xenserver-pv-tools-7.41.0-1.noarch.rpm> | cpio -idv
         ```
         {: pre}
 
-     6. From the resulting directory structure, you can mount the *guest-tools* ISO and locate *rpm/debs* to install xentools. See the following example directory structure:
+    6. From the resulting directory structure, you can mount the *guest-tools* ISO and locate *rpm/debs* to install xentools. See the following example directory structure:
 
         ```
         [root@mysystem user1]# rpm2cpio ../xenserver-pv-tools-7.1.0-137222c.2185.noarch.rpm | cpio -idv
@@ -100,10 +108,34 @@ To ensure that an image can be successfully deployed in the {{site.data.keyword.
         [root@mysystem user1]#
         ```
         {: pre}
+        
+    7. Make sure that your image is cloud-init enabled. 
 
+       * For more information about cloud-init, see [cloud-init documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloudinit.readthedocs.io/en/latest/).
+       * For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/infrastructure/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
+       * For more information about datasources, see [Datasources ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html). {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) - Version 2 datasource to supply the metadata.
+       * Linux images require Cloud-init version 0.7.7 or greater.
+    
 
+### Configuring a Windows custom image
+{: #windows-custom-image}
 
-For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/infrastructure/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
+Complete the following steps to ensure that your own Windows custom image can be successfully deployed in the {{site.data.keyword.cloud_notm}} infrastructure environment.
+
+1. Begin with a single image file in VHD format. Disable its firewall so that it moves smoothly through provisioning.
+
+2. Install the latest xe-guest-utilities Xen tools. Complete the following steps:
+
+    1. Download the latest Citrix Hypervisor ISO (version 8.0 and later) from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/](https://www.citrix.com/downloads/citrix-hypervisor/){: external}. A free Express edition can be found [here](https://www.citrix.com/downloads/citrix-hypervisor/product-software/hypervisor-80-express-edition.html).
+    2. Mount the ISO by right-clicking the .iso file that you downloaded and selecting **Mount**.
+    3. Navigate to the Windows Installer, for example, _managementagent64_, and double-click to open the **Citrix XenServer Windows Management Agent Setup** wizard. Complete the installation wizard to install XenServer Tools.
+
+3. Make sure that your image is cloud-init enabled. 
+    * For more information, see [cloudbase-init’s documentation](https://cloudbase-init.readthedocs.io/en/latest/index.html){: external}.
+    * For more information about datasources, see [Datasources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the
+environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} - Version 2 datasource to supply the metadata.
+
+4. Windows images require the Cloudbase-init Metadata Service for public and private network support in {{site.data.keyword.cloud_notm}} infrastructure. You can access the service at [https://github.com/softlayer/bluemix-cloudbase-init](https://github.com/softlayer/bluemix-cloudbase-init){: external}.
 
 ## Preparing to import an encrypted image
 {: #preparing-to-import-an-encrypted-image}
@@ -137,8 +169,8 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 
    For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
 
-   If you are importing an encrypted image, you must use {{site.data.keyword.cloud_notm}} console.
-   {: important}
+   You might need to check your Windows firewall settings to ensure that you can import an image from {{site.data.keyword.cos_full_notm}}.
+   {: tip}
 2. Access the **Image Templates** page by selecting **Devices > Manage > Images**.
 3. Click the **Import Custom Image** link to open the Import tool.
 4. Complete the required fields (see Table 1).
