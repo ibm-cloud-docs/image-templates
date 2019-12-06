@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2019
-lastupdated: "2019-12-05"
+lastupdated: "2019-12-06"
 
 keywords: image template, image, import image, {{site.data.keyword.cloud}}, {{site.data.keyword.cloud_notm}}
 
@@ -17,6 +17,7 @@ subcollection: image-templates
 {:important: .important}
 {:pre: .pre}
 {:screen: .screen}
+{:external: target="_blank" .external}
 
 
 # Preparing and importing images
@@ -67,7 +68,7 @@ To ensure that it can be successfully deployed in the {{site.data.keyword.BluSof
 * wget must be installed
 * The latest xe-guest-utilities Xen tools must be installed. Complete the following steps:
 
-    1. Download the latest Citrix Hypervisor ISO (version 8.0 and later) from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.citrix.com/downloads/citrix-hypervisor/).  A free Express edition can be found [here](https://www.citrix.com/downloads/citrix-hypervisor/product-software/hypervisor-80-express-edition.html).
+    1. Download the latest Citrix Hypervisor ISO (version 8.0 and later) from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.citrix.com/downloads/citrix-hypervisor/).  A free Express edition can be found [here](https://www.citrix.com/downloads/citrix-hypervisor/product-software/hypervisor-80-express-edition.html){: external}.
     
     2. Mount the ISO by running the following command:
 
@@ -126,7 +127,7 @@ Complete the following steps to ensure that your own Windows custom image can be
 
 2. Install the latest xe-guest-utilities Xen tools. Complete the following steps:
 
-    1. Download the latest Citrix Hypervisor ISO (version 8.0 and later) from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/](https://www.citrix.com/downloads/citrix-hypervisor/){: external}. A free Express edition can be found [here](https://www.citrix.com/downloads/citrix-hypervisor/product-software/hypervisor-80-express-edition.html).
+    1. Download the latest Citrix Hypervisor ISO (version 8.0 and later) from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/](https://www.citrix.com/downloads/citrix-hypervisor/){: external}. A free Express edition can be found [here](https://www.citrix.com/downloads/citrix-hypervisor/product-software/hypervisor-80-express-edition.html){: external}.
     2. Mount the ISO by right-clicking the .iso file that you downloaded and selecting **Mount**.
     3. Navigate to the Windows Installer, for example, _managementagent64_, and double-click to open the **Citrix XenServer Windows Management Agent Setup** wizard. Complete the installation wizard to install XenServer Tools.
 
