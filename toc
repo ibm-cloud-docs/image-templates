@@ -33,5 +33,6 @@ Image Templates
     {: .navgroup-end}
 
     {: .navgroup id="help"}
+    get-help-and-support.md
     [FAQs: Image Templates](/vsi/virtual-servers-faq-image-templates)
     {: .navgroup-end}
