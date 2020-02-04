@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018, 2019
-lastupdated: "2019-09-30"
+  years: 2014, 2020
+lastupdated: "2020-02-04"
 
 keywords:
 
@@ -161,6 +161,17 @@ environment by using the [Config Drive ![External link icon](../../icons/launch-
 
 ### Windows requirements
 
-* Cloudbase-init Metadata Service for public and private networks support in {{site.data.keyword.cloud_notm}} infrastructure. The service also updates the Customer Portal with the Windows virtual server credentials. You can access the service at
+* The Cloudbase-init Metadata Service is required for public and private networks support in {{site.data.keyword.cloud_notm}} infrastructure. You can access the service at
 [https://github.com/softlayer/bluemix-cloudbase-init ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/softlayer/bluemix-cloudbase-init).
 * If you are using a Vyatta in your environment, you must configure the Vyatta to allow API calls to API load balancers. For more information, see [Brocade vRouter (Vyatta) Set up Guide for VMware Environments with File Storage](/docs/infrastructure/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips).
+* Run the following commands to sysprep the image:
+  
+  ```
+  C:\Program Files\Cloudbase Solutions\Cloudbase-Init\bin\SetSetupComplete.cmd
+  ```
+  {: pre}
+  
+  ```
+  C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:"C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\Unattend.xml"
+  ```
+  {: pre}
