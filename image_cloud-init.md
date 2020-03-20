@@ -41,7 +41,7 @@ When you order a virtual server with a cloud-init enabled operating system, you 
 
 First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
 
-* Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
 * Ensure you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
 
 For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
@@ -54,7 +54,7 @@ the {{site.data.keyword.slportal_full}}.
 To access the Import Image page of Image Templates and mark an image as cloud-init enabled, complete the following steps:
 1. From the **Devices** menu select **Manage** > **Images**.
 2. Click the **Import Image** tab.
-3. Complete the required information for importing your cloud-init enabled image, and select the **Cloud-init** checkbox that’s shown near the **Operating System** dropdown box. For more information about importing images, see [Import an Image](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images#import-icos).
+3. Complete the required information for importing your cloud-init enabled image, and select the **Cloud-init** checkbox that’s shown near the **Operating System** dropdown box. For more information about importing images, see [Import an Image](/docs/image-templates?topic=image-templates-preparing-and-importing-images#import-icos).
 
 ## Mark an image template as cloud-init enabled
 
@@ -163,7 +163,7 @@ environment by using the [Config Drive ![External link icon](../../icons/launch-
 
 * The Cloudbase-init Metadata Service is required for public and private networks support in {{site.data.keyword.cloud_notm}} infrastructure. You can access the service at
 [https://github.com/softlayer/bluemix-cloudbase-init ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/softlayer/bluemix-cloudbase-init).
-* If you are using a Vyatta in your environment, you must configure the Vyatta to allow API calls to API load balancers. For more information, see [Brocade vRouter (Vyatta) Set up Guide for VMware Environments with File Storage](/docs/infrastructure/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips).
+* If you are using a Vyatta in your environment, you must configure the Vyatta to allow API calls to API load balancers. For more information, see [Brocade vRouter (Vyatta) Set up Guide for VMware Environments with File Storage](/docs/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips).
 * Run the following commands to sysprep the image:
   
   ```

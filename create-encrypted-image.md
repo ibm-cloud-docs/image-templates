@@ -33,9 +33,9 @@ Encrypted VHD images must meet the following requirements:
 
 * VHD formatted.
 * Compatibility with the {{site.data.keyword.cloud}} Console infrastructure environment.
-* Provisioned with a [supported OS](/docs/infrastructure/image-templates/?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images).
+* Provisioned with a [supported OS](/docs/image-templates/?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images).
 * Cloud-init enabled.
-* Encrypted with [the vhd-util tool](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image#vhd-util-tool).
+* Encrypted with [the vhd-util tool](/docs/image-templates?topic=image-templates-create-encrypted-image#vhd-util-tool).
 
 ## Encrypting your VHD image
 {: #vhd-util-tool}
@@ -46,7 +46,7 @@ Follow these steps to create your encrypted VHD image:
 
 2. Download the encryption tool from {{site.data.keyword.cloud_notm}}, then use the best available option to encrypt your VHD.
 
-   **Option 1** If your CentOS system is not running in {{site.data.keyword.cloud_notm}}, log in and connect to your customer [VPN](https://www.ibm.com/cloud/vpn-access). For more information about setting up a VPN, see ["Set up SSL VPN connections"](https://cloud.ibm.com/docs/infrastructure/iaas-vpn?topic=VPN-setup-ssl-vpn-connections). After you connect to your VPN, [go to the SoftLayer download site ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://downloads.service.softlayer.com/citrix/xen/){: new_window} and select the vhd-util tool RPM package file: vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm .
+   **Option 1** If your CentOS system is not running in {{site.data.keyword.cloud_notm}}, log in and connect to your customer [VPN](https://www.ibm.com/cloud/vpn-access). For more information about setting up a VPN, see ["Set up SSL VPN connections"](https://cloud.ibm.com/docs/iaas-vpn?topic=VPN-setup-ssl-vpn-connections). After you connect to your VPN, [go to the SoftLayer download site ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://downloads.service.softlayer.com/citrix/xen/){: new_window} and select the vhd-util tool RPM package file: vhd-util-standalone-3.5.0-xs.2+1.0_71.2.2.x86_64.rpm .
 
    **Option 2** If you can't download the RPM package file directly into your CentOS system, then connect to your customer VPN and download the file to the workstation you're currently working on. You can then upload it to your CentOS system by using the secure copy (scp) command. If you're using a virtual server instance in {{site.data.keyword.cloud_notm}}, use the system’s public IP address for the upload by using the following command.
 
@@ -70,7 +70,7 @@ Follow these steps to create your encrypted VHD image:
    ```
    {: pre}
 
-4. Identify and select the AES data encryption key (DEK) that you need to encrypt and decrypt your disk image, then write it into a keyfile. This DEK is the same base64-encoded DEK that you wrapped with your key management service-provided customer root key in [Preparing your environment](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). Key material that is written into keyfiles must be [unwrapped](/docs/services/key-protect?topic=key-protect-cli-reference#kp-unwrap) and not be encoded. 
+4. Identify and select the AES data encryption key (DEK) that you need to encrypt and decrypt your disk image, then write it into a keyfile. This DEK is the same base64-encoded DEK that you wrapped with your key management service-provided customer root key in [Preparing your environment](/docs/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). Key material that is written into keyfiles must be [unwrapped](/docs/services/key-protect?topic=key-protect-cli-reference#kp-unwrap) and not be encoded. 
 
    Because the keyfile isn't base64-encoded, you can't print or view the keyfile content from the command line by using standard ASCII characters. 
    {: tip}

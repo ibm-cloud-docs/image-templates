@@ -31,7 +31,7 @@ The image export process takes a preexisting, private standard image template or
 ## Before you begin
 First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
 
-* Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
 * Ensure you have write access to {{site.data.keyword.cos_full_notm}}. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
 
 For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
@@ -46,7 +46,7 @@ Use the following steps to export an image template to IBM Cloud Object Storage.
 
 1. From the **Devices** menu, select **Manage > Images**.
 2. Click **Actions** for the image template that you want to export and select **Export Image to IBM COS**. If an image template with the configuration that you want is not yet
-available, see [Creating an Image Template](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
+available, see [Creating an Image Template](/docs/image-templates?topic=image-templates-creating-an-image-template#creating-an-image-template).
 3. Complete the required fields (see table 1).
 4. Click **OK** to export the image to the specified location in the {{site.data.keyword.cos_full_notm}} Account.
 

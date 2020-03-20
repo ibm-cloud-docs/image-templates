@@ -52,7 +52,7 @@ Complete the following steps to create an image template of a virtual server.
 
 4. From the **Actions** menu, select **Create Image Template** and complete the required fields.
 
-For more information, see [**Creating an image template**](/docs/infrastructure/image-templates?topic=image-templates-creating-an-image-template).
+For more information, see [**Creating an image template**](/docs/image-templates?topic=image-templates-creating-an-image-template).
 
 ## Next steps
 {: #next-steps}

@@ -113,7 +113,7 @@ To ensure that it can be successfully deployed in the {{site.data.keyword.BluSof
     7. Make sure that your image is cloud-init enabled. 
 
        * For more information about cloud-init, see [cloud-init documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloudinit.readthedocs.io/en/latest/).
-       * For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/infrastructure/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
+       * For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
        * For more information about datasources, see [Datasources ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html). {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) - Version 2 datasource to supply the metadata.
        * Linux images require Cloud-init version 0.7.7 or greater.
     
@@ -141,9 +141,9 @@ environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/lates
 ## Preparing to import an encrypted image
 {: #preparing-to-import-an-encrypted-image}
 
-If you plan to import a VHD image that's encrypted with your own data encryption key, make sure that you complete the prerequisites and instructions for encryption that are described in [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
+If you plan to import a VHD image that's encrypted with your own data encryption key, make sure that you complete the prerequisites and instructions for encryption that are described in [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
 
-You must use the vhd-util tool to encrypt your image, which must be in VHD format. For more information see, [Encrypting VHD images](/docs/infrastructure/image-templates?topic=image-templates-create-encrypted-image). 
+You must use the vhd-util tool to encrypt your image, which must be in VHD format. For more information see, [Encrypting VHD images](/docs/image-templates?topic=image-templates-create-encrypted-image). 
 {: important}
 
 ## Uploading an image to {{site.data.keyword.cos_full_notm}}
@@ -165,7 +165,7 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 
 1. Navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
 
-   * Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+   * Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
    * Ensure you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
 
    For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
@@ -194,7 +194,7 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 
 {: caption="Table 1. Values for importing a custom image from IBM Cloud Object Storage" caption-side="top"}
 
-The following table shows additional fields that are applicable only to importing encrypted images using the  {{site.data.keyword.cloud_notm}} console. For more information about encrypted images, see [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/infrastructure/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
+The following table shows additional fields that are applicable only to importing encrypted images using the  {{site.data.keyword.cloud_notm}} console. For more information about encrypted images, see [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
 
 <!--
 To import an encrypted image, your account must have access to the End to End (E2E) Encryption feature. To enable your account for E2E Encryption, please contact [Support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).

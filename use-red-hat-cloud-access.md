@@ -46,7 +46,7 @@ If you have questions about your existing Windows license eligibility or reporti
 
 First, navigate to the device menu and ensure that you have the correct account permissions to complete the tasks.
 
-* Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/infrastructure/image-templates?topic=virtual-servers-navigating-devices).
+* Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
 * Ensure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
 
 For more information about permissions, see [Classic infrastructure permissions](/docs/iam?topic=iam-infrapermission#infrapermission) and [Managing device access](/docs/vsi?topic=virtual-servers-managing-device-access).
@@ -58,7 +58,7 @@ You can import a VHD image and specify that you are providing your own license o
 To access the Import Image page of Image Templates and mark a VHD image to use your own license or subscription, complete the following steps:
 1. From the **Devices** menu, select **Manage > Images**.
 2. Click the **Import Image** tab.
-3. Complete the required information for importing your VHD image, and select the **Your License** checkbox shown near the **Operating System** dropdown box. For more information about importing images, see [Preparing and importing images](/docs/infrastructure/image-templates?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images).
+3. Complete the required information for importing your VHD image, and select the **Your License** checkbox shown near the **Operating System** dropdown box. For more information about importing images, see [Preparing and importing images](/docs/image-templates?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images).
 
 ## Updating an image template to specify a user provided OS license
 
