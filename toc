@@ -9,7 +9,7 @@ Image Templates
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    /vsi/virtual-servers-navigating-devices
+    /virtual-servers/virtual-servers-navigating-devices
     access-image-templates-screen.md
     create-standard-image.md
     import-image.md
@@ -34,5 +34,5 @@ Image Templates
 
     {: .navgroup id="help"}
     get-help-and-support.md
-    [FAQs: Image Templates](/vsi/virtual-servers-faq-image-templates)
+    [FAQs: Image Templates](/virtual-servers/virtual-servers-faq-image-templates)
     {: .navgroup-end}
