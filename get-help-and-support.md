@@ -35,4 +35,4 @@ When you use the forums to ask a question, tag your question so that it is seen 
 <!--Insert the appropriate dW Answers tag for your service for <service_keyword> in URL below:  -->
 * For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/ibm-cloud/?smartspace=bluemix){:external} forum. Include the `ibm cloud` tag.
 
-For more information about opening an IBM support ticket, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+For more information about opening an IBM support ticket, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
