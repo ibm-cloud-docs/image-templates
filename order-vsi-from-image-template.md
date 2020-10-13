@@ -25,6 +25,7 @@ On the Image Templates page, you can provision a virtual server instance from an
 {:shortdesc}
 
 ## Before you begin
+{: #byb-imt}
 First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
 
 * Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).

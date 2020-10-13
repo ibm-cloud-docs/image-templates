@@ -29,6 +29,7 @@ The image export process takes a preexisting, private standard image template or
 *Note:* If you imported a VMDK image, you can export that image in VHD or VMDK format. Because of the differences between the image formats, there is a chance of data loss. To protect your data in the case of data loss, the original VHD file is retained.
 
 ## Before you begin
+{: #byb-manage-cos}
 First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
 
 * Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).

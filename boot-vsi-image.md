@@ -34,6 +34,7 @@ First, navigate to the device menu and ensure you have the correct account permi
 For more information about permissions, see [Classic infrastructure permissions](/docs/account?topic=account-infrapermission#infrapermission) and [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
 
 ## Booting a VSI from an image
+{: #boot-vsi}
 
 Use the following steps to start a virtual server from an image.
 
