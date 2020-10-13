@@ -39,7 +39,7 @@ The following operating systems are supported:
 * Windows Server 2012
 * Windows Server 2012 R2
 
-If you have questions about your existing Windows license eligibility or reporting requirements, contact your Microsoft representative. When you create an image template using your own Windows license, you must provision that image on a dedicated host. You can't provision a public instance or a dedicated instance that is auto-assigned to a host when you use an image under your own Windows license. Additionally, when you create or update a Windows image template under your own license, the Windows image can't be a cloud-init image.
+If you have questions about your existing Windows license eligibility or reporting requirements, contact your Microsoft representative. When you create an image template by using your own Windows license, you must provision that image on a dedicated host. You can't provision a public instance or a dedicated instance that is auto-assigned to a host when you use an image under your own Windows license. Additionally, when you create or update a Windows image template under your own license, the Windows image can't be a cloud-init image.
 
 ## Before you begin
 {: #byb-redhat-imt}
@@ -58,7 +58,7 @@ You can import a VHD image and specify that you are providing your own license o
 To access the Import Image page of Image Templates and mark a VHD image to use your own license or subscription, complete the following steps:
 1. From the **Devices** menu, select **Manage > Images**.
 2. Click the **Import Image** tab.
-3. Complete the required information for importing your VHD image, and select the **Your License** checkbox shown near the **Operating System** dropdown box. For more information about importing images, see [Preparing and importing images](/docs/image-templates?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images).
+3. Complete the required information for importing your VHD image, and select the **Your License** checkbox that is shown near the **Operating System** dro-pdown box. For more information about importing images, see [Preparing and importing images](/docs/image-templates?topic=image-templates-preparing-and-importing-images#preparing-and-importing-images).
 
 ## Updating an image template to specify a user provided OS license
 

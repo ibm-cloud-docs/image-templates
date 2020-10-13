@@ -24,7 +24,7 @@ The {{site.data.keyword.slapi_full}} is the development interface that gives dev
 {{site.data.keyword.cloud}} backend system. The {{site.data.keyword.slapi_short}} powers many of the features in the
 {{site.data.keyword.slportal_full}}, meaning that if an interaction is possible in the {{site.data.keyword.slportal}}, it can also
 typically be run in the API. Because you can programmatically interact with all portions of the {{site.data.keyword.BluSoftlayer_full}} environment
-within the API, {{site.data.keyword.slapi_short}} enables you to automate tasks. For example, you can use
+within the API, you can use {{site.data.keyword.slapi_short}} you to automate tasks. For example, you can use
 the *SoftLayer_Virtual_Guest/createObject* API to deploy a virtual server instance from an image template.
 {:shortdesc}
 

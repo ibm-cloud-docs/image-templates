@@ -27,10 +27,10 @@ When you order a virtual server, many operating systems now use a cloud-init ena
 a customized image that you've enabled for cloud-init.
 {:shortdesc}
 
-The following operating systems now default to a cloud-init enabled image when you order a virtual server without add-ons. (Add-ons include additional software, post-provisioning scripts, and advanced monitoring.)
+The following operating systems now default to a cloud-init enabled image when you order a virtual server without add-ons. (Add-ons include more software, post-provisioning scripts, and advanced monitoring.)
 * CentOS 6, 7
 * Debian 8, 9
-* Red Hat Enterprise Linux 6.x, 7.x
+* Red Hat Enterprise Linux&reg; 6.x, 7.x
 * Ubuntu 16.04, 18.04
 * Windows Server 2012, 2012 R2, 2016, 2019
 
@@ -70,9 +70,9 @@ To access an image template and mark it as cloud-init enabled, complete the foll
 If your image is encrypted, the **Cloud-init** checkbox is already selected by default since encrypted images must be cloud-init enabled.
 {: note}
 
-## Work with an image template created from a cloud-init provisioned virtual server
+## Work with an image template that is created from a cloud-init provisioned virtual server
 
-Cloud-init typically only runs once. However, if you provision a virtual server from a cloud-init enabled image and subsequently create
+Cloud-init typically only runs once. However, if you provision a virtual server from a cloud-init enabled image and after create
 an image template from that virtual server, the UUID is recorded. If that image template is used to create another
 virtual server, cloud-init runs again.
 
@@ -81,30 +81,30 @@ virtual server, cloud-init runs again.
 For information about configuring images, see
 [cloud-init documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloudinit.readthedocs.io/en/latest/).
 
-For information about datasources, see [Datasources ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html). {{site.data.keyword.cloud_notm}} cloud-init images are created for the
-environment by using the [Config Drive ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) - Version 2 datasource to supply the metadata.
+For information about data sources, see [Datasources ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html). {{site.data.keyword.cloud_notm}} cloud-init images are created for the
+environment by using the [Config Drive ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) - Version 2 data source to supply the metadata.
 
 ### Linux requirements
 
 * Cloud-init version 0.7.7 or greater
 * Cloud-init image configured to use SSH for logging in to your virtual server instance.
 
-  The following example cloud.cfg file shows settings used in a Red Hat Enterprise Linux 7 deployment. These settings differ from the     default settings in the cloud-init installation package on Red Hat Enterprise Linux 7.
+  The following example cloud.cfg file shows settings that are used in a Red Hat Enterprise Linux 7 deployment. These settings differ from the     default settings in the cloud-init installation package on Red Hat Enterprise Linux 7.
 
   ```
   # cat /etc/cloud/cloud.cfg
-  # Configure the Datasource for both instances
+  # Configure the data source for both instances
   datasource_list: [ ConfigDrive ]
- 
+
   user: root
   ssh_pwauth: True
   disable_root: False
   manage_etc_hosts: True
- 
+
   system_info:
-   # This will affect which distro class gets used
+   # This affects which distro class gets used
    distro: rhel
-   # Other config here will be given to the distro class and/or path classes
+   # Other config here is given to the distro class and/or path classes
    paths:
       cloud_dir: /var/lib/cloud/
       templates_dir: /etc/cloud/templates/
@@ -156,7 +156,7 @@ environment by using the [Config Drive ![External link icon](../../icons/launch-
    - phone-home
    - final-message
    - power-state-change
-  ``` 
+  ```
   {: pre}
 
 ### Windows requirements
@@ -165,12 +165,12 @@ environment by using the [Config Drive ![External link icon](../../icons/launch-
 [https://github.com/softlayer/bluemix-cloudbase-init ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/softlayer/bluemix-cloudbase-init).
 * If you are using a Vyatta in your environment, you must configure the Vyatta to allow API calls to API load balancers. For more information, see [Brocade vRouter (Vyatta) Set up Guide for VMware Environments with File Storage](/docs/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips).
 * Run the following commands to sysprep the image:
-  
+
   ```
   C:\Program Files\Cloudbase Solutions\Cloudbase-Init\bin\SetSetupComplete.cmd
   ```
   {: pre}
-  
+
   ```
   C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:"C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\Unattend.xml"
   ```

@@ -114,8 +114,8 @@ To ensure that it can be successfully deployed in the {{site.data.keyword.BluSof
 
        * For more information about cloud-init, see [cloud-init documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloudinit.readthedocs.io/en/latest/).
        * For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
-       * For more information about datasources, see [Datasources ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html). {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) - Version 2 datasource to supply the metadata.
-       * Linux images require Cloud-init version 0.7.7 or greater.
+       * For more information about datasources, see [Datasources ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html). {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) - Version 2 data source to supply the metadata.
+       * Linux&reg; images require Cloud-init version 0.7.7 or greater.
 
 
 ### Configuring a Windows custom image
@@ -133,10 +133,10 @@ Complete the following steps to ensure that your own Windows custom image can be
 
 3. Make sure that your image is cloud-init enabled.
     * For more information, see [cloudbase-init’s documentation](https://cloudbase-init.readthedocs.io/en/latest/index.html){: external}.
-    * For more information about datasources, see [Datasources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the
-environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} - Version 2 datasource to supply the metadata.
+    * For more information about data sources, see [data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the
+environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} - Version 2 data source to supply the metadata.
 
-4. Windows images require the Cloudbase-init Metadata Service for public and private network support in {{site.data.keyword.cloud_notm}} infrastructure. You can access the service at [https://github.com/softlayer/bluemix-cloudbase-init](https://github.com/softlayer/bluemix-cloudbase-init){: external}.
+4. Windows images require the Cloudbase-init metadata Service for public and private network support in {{site.data.keyword.cloud_notm}} infrastructure. You can access the service at [https://github.com/softlayer/bluemix-cloudbase-init](https://github.com/softlayer/bluemix-cloudbase-init){: external}.
 
 ## Preparing to import an encrypted image
 {: #preparing-to-import-an-encrypted-image}
@@ -154,7 +154,7 @@ When your image is ready, you can upload it to {{site.data.keyword.cos_full_notm
 1. In {{site.data.keyword.cos_full_notm}}, navigate to your bucket and select **Upload > Files** to [upload](/docs/cloud-object-storage?topic=cloud-object-storage-upload) the image.
 2. Use the [Aspera](/docs/cloud-object-storage?topic=cloud-object-storage-aspera) high-speed transfer plug-in for the fastest upload speeds of your image.
 
-You can use COS SDK with Aspera to initiate high-speed transfer within your custom applications when using Java, Python, or NodeJS. For more information, see [Using Libraries and SDKs](/docs/cloud-object-storage?topic=cloud-object-storage-aspera#aspera-sdk).
+You can use the Cloud Object Storage SDK with Aspera to initiate high-speed transfer within your custom applications when you use Java, Python, or NodeJS. For more information, see [Using Libraries and SDKs](/docs/cloud-object-storage?topic=cloud-object-storage-aspera#aspera-sdk).
 {: tip}
 
 
@@ -179,33 +179,33 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 
 | Field | Value |
 | ----- | ----- |
-| Image Name | Specify a descriptive name for your new image. This is the image that you will use to provision virtual server instances. |
+| Image Name | Specify a descriptive name for your new image. You will use this image to provision virtual server instances. |
 | IBM Cloud API Key |Specify the API key that gives access to your {{site.data.keyword.cos_full_notm}} service instance. This is the object storage service _Service Credentials_ API key. When importing an encrypted image, the API Key must also have access to your key management service instance. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Working with API keys](/docs/account?topic=account-manapikey#manapikey). |
-| Notes | Add any notes related to the image that might be helpful to users. |
-|COS service instance | Select the {{site.data.keyword.cos_full_notm}} service instance where the image that you want to import is stored.|
+| Notes | Add any notes that are related to the image that might be helpful to users. |
+|Cloud Object Storage service instance | Select the {{site.data.keyword.cos_full_notm}} service instance where the image that you want to import is stored.|
 | Location | Select the specific geographic region where your image is stored. You can import images into the following regions and associated data centers: US-South (DAL13), US-East (WDC07), EU-Great Britain (LON02), EU-Germany (FRA02), AP-Japan, and AU-Sydney. After the image is imported to one of the data centers that are listed, you can move it to another data center. |
-| Bucket | Select the {{site.data.keyword.cos_full_notm}} bucket where your image is stored. Only buckets that exist in the regional  location that you selected are valid. You will receive an error message if you select a bucket that doesn't exist in the selected location.|
-| Name | Select the image file in the {{site.data.keyword.cos_full_notm}} service instance that you want to import. Supported file types are VHD (Virtual Hard Disk), VMDK (Virtual Machine Disk), and ISO. If you are importing an encrypted image, the image must be in the VHD file format and encrypted with the vhd-util tool. |
+| Bucket | Select the {{site.data.keyword.cos_full_notm}} bucket where your image is stored. Only buckets that exist in the regional location that you selected are valid. You receive an error message if you select a bucket that doesn't exist in the selected location.|
+| Name | Select the image file in the {{site.data.keyword.cos_full_notm}} service instance that you want to import. Supported file types are VHD (Virtual hard disk), VMDK (virtual machine Disk), and ISO. If you are importing an encrypted image, the image must be in the VHD file format and encrypted with the vhd-util tool. |
 | Operating System | Select the operating system that is included in your image. |
 | Boot Mode | Select the boot mode for your image. If a default boot mode is set for the operating system that you specify, that boot mode is selected here automatically. |
-| Your License | If you plan to provide your own operating system license, select this check box. If you are importing an image with a Windows operating system, you can select this option if you plan to use the image to provision [dedicated host instances](/docs/virtual-servers?topic=virtual-servers-dedicated-hosts-and-dedicated-instances#dedicated-hosts-and-dedicated-instances). If your version of Windows operating system does not support using your own license, this option is disabled. For Windows images, you cannot select Cloud Init if you specify that you will use your own license. If you are importing an encrypted image with Red Hat Enterprise Linux as your operating system, this option is selected by default and not editable because your encrypted image must include its own operating system license. |
-| Cloud-init | If the image that you are importing is cloud-init enabled, select this check box. If you are importing an image that has a cloud-init enabled Windows operating system and you select this option, you cannot concurrently select **Your License**. If you are importing an encrypted image, this option is selected by default and not editable because your encrypted image must be cloud-init enabled. |
-| Encryption | If you are importing an image that you have encrypted with your own data encryption key by using the vhd-util tool, select this check box. |
+| Your license | If you plan to provide your own operating system license, select this checkbox. If you are importing an image with a Windows operating system, you can select this option if you plan to use the image to provision [dedicated host instances](/docs/virtual-servers?topic=virtual-servers-dedicated-hosts-and-dedicated-instances#dedicated-hosts-and-dedicated-instances). If your version of Windows operating system does not support use of your own license, this option is disabled. For Windows images, you cannot select Cloud Init if you specify that you use your own license. If you are importing an encrypted image with Red Hat Enterprise Linux as your operating system, this option is selected by default and not editable because your encrypted image must include its own operating system license. |
+| Cloud-init | If the image that you are importing is cloud-init enabled, select this checkbox. If you are importing an image that has a cloud-init enabled Windows operating system and you select this option, you cannot concurrently select **Your License**. If you are importing an encrypted image, this option is selected by default and not editable because your encrypted image must be cloud-init enabled. |
+| Encryption | If you are importing an image that you have encrypted with your own data encryption key by using the vhd-util tool, select this checkbox. |
 
 {: caption="Table 1. Values for importing a custom image from IBM Cloud Object Storage" caption-side="top"}
 
-The following table shows additional fields that are applicable only to importing encrypted images using the  {{site.data.keyword.cloud_notm}} console. For more information about encrypted images, see [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
+The following table shows more fields that are applicable only to importing encrypted images that use the  {{site.data.keyword.cloud_notm}} console. For more information about encrypted images, see [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
 
 <!--
-To import an encrypted image, your account must have access to the End to End (E2E) Encryption feature. To enable your account for E2E Encryption, please contact [Support](/docs/get-support?topic=get-support-using-avatar#getting-customer-support).
+To import an encrypted image, your account must have access to the End to End (E2E) Encryption feature. To enable your account for E2E Encryption, contact [Support](/docs/get-support?topic=get-support-using-avatar#getting-customer-support).
 {: tip}
 -->
 
 | Field | Value |
 | ----- | ----- |
 | Wrapped Data Encryption Key | When importing an encrypted image, specify the ciphertext that is associated with the wrapped data encryption key (DEK) that is produced by wrapping the DEK you used to encrypt your image. For more information, see **Wrapping keys** using either the [{{site.data.keyword.keymanagementservicelong}} API](/docs/key-protect?topic=key-protect-cli-reference#kp-key-command) or the [{{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} API](/docs/hs-crypto?topic=hs-crypto-wrap-keys#wrap-keys-api). |
-| Key Management Service Instance | Select a key management service instance in your account from the drop-down list (either the Key Protect service or the Hyper Protect Crypto service). The key management service instance must include the customer root key that you used to wrap your data encryption key. |
-| Key Name | Select the name of the root key within the key management service instance that you used to wrap your data encryption key. For more information, see [Viewing keys in Key Protect](/docs/key-protect?topic=key-protect-view-keys#view-keys) or [Viewing keys in Hyper Protect Crypto](/docs/key-protect?topic=key-protect-view-keys#view-keys). |
+| Key Management Service Instance | Select a key management service instance in your account from the drop-down list (either the Key Protect service or the Hyper Protect crypto service). The key management service instance must include the customer root key that you used to wrap your data encryption key. |
+| Key Name | Select the name of the root key within the key management service instance that you used to wrap your data encryption key. For more information, see [Viewing keys in Key Protect](/docs/key-protect?topic=key-protect-view-keys#view-keys) or [Viewing keys in Hyper Protect crypto](/docs/key-protect?topic=key-protect-view-keys#view-keys). |
 {: caption="Table 2. Values for importing an encrypted image from IBM Cloud Object Storage" caption-side="top"}
 
 ## Next Steps
@@ -215,6 +215,6 @@ After the import begins, the system locates the image file in the {{site.data.ke
 the Image Templates page. After the import completes, the image can be used to order a new device or to start an existing device.
 Additionally, the image template can be deleted at any time. Image import times vary based on file size, but generally take several minutes to an hour.
 
-The information you provided to import encrypted image files from IBM Cloud Object Storage is stored along with the image file to create an encrypted image template you can use when ordering a new device. You don't have to reenter this information when you order new devices from encrypted image templates.
+The information you provided to import encrypted image files from IBM Cloud Object Storage is stored along with the image file to create an encrypted image template you can use when ordering a new device. You don't need to reenter this information when you order new devices from encrypted image templates.
 
-After an image is imported into the image template repository, you can delete it from {{site.data.keyword.cos_full_notm}}. You can continue accessing the image template from your **Image Templates** page and using it to provision virtual server instances.
+After an image is imported into the image template repository, you can delete it from {{site.data.keyword.cos_full_notm}}. You can continue accessing the image template from your **Image Templates** page and use it to provision virtual server instances.
