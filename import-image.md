@@ -23,7 +23,7 @@ subcollection: image-templates
 # Preparing and importing images
 {: #preparing-and-importing-images}
 
-The Image Templates screen in the {{site.data.keyword.cloud}} console allows you to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started) service instance. You can import images that are in Virtual Hard Disk (VHD), Virtual Machine Disk (VMDK) or custom ISO 9660 format.  After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.cloud_notm}} console.  VMDK images are converted to VHD after the import.
+The Image Templates screen in the {{site.data.keyword.cloud}} console allows you to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage-cloud-object-storage) service instance. You can import images that are in Virtual Hard Disk (VHD), Virtual Machine Disk (VMDK) or custom ISO 9660 format.  After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.cloud_notm}} console.  VMDK images are converted to VHD after the import.
 {:shortdesc}
 
 You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more information, see [Switching to IBMid and linking accounts](/docs/account?topic=account-account-getting-started).
@@ -203,7 +203,7 @@ To import an encrypted image, your account must have access to the End to End (E
 
 | Field | Value |
 | ----- | ----- |
-| Wrapped Data Encryption Key | When importing an encrypted image, specify the ciphertext that is associated with the wrapped data encryption key (DEK) that is produced by wrapping the DEK you used to encrypt your image. For more information, see **Wrapping keys** using either the [{{site.data.keyword.keymanagementservicelong}} API](/docs/key-protect?topic=key-protect-wrap-keys#api) or the [{{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} API](/docs/hs-crypto?topic=hs-crypto-wrap-keys#wrap-keys-api). |
+| Wrapped Data Encryption Key | When importing an encrypted image, specify the ciphertext that is associated with the wrapped data encryption key (DEK) that is produced by wrapping the DEK you used to encrypt your image. For more information, see **Wrapping keys** using either the [{{site.data.keyword.keymanagementservicelong}} API](/docs/key-protect?topic=key-protect-cli-reference#kp-key-command) or the [{{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} API](/docs/hs-crypto?topic=hs-crypto-wrap-keys#wrap-keys-api). |
 | Key Management Service Instance | Select a key management service instance in your account from the drop-down list (either the Key Protect service or the Hyper Protect Crypto service). The key management service instance must include the customer root key that you used to wrap your data encryption key. |
 | Key Name | Select the name of the root key within the key management service instance that you used to wrap your data encryption key. For more information, see [Viewing keys in Key Protect](/docs/key-protect?topic=key-protect-view-keys#view-keys) or [Viewing keys in Hyper Protect Crypto](/docs/key-protect?topic=key-protect-view-keys#view-keys). |
 {: caption="Table 2. Values for importing an encrypted image from IBM Cloud Object Storage" caption-side="top"}

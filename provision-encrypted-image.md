@@ -32,7 +32,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
 * {{site.data.keyword.cos_full_notm}} securely stores your encrypted image when you upload it.
 * In {{site.data.keyword.cloud_notm}} console you can import your encrypted image and create an image template.
 * With an encrypted image template available in the {{site.data.keyword.cloud_notm}} console infrastructure environment, you can provision encrypted virtual server instances.
-* Finally, you can audit events that are associated with your encrypted virtual servers through [Activity Tracker](/docs/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov#activity_tracker_ov).
+* Finally, you can audit events that are associated with your encrypted virtual servers through [Activity Tracker](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started).
 
 ## Encryption key management services
 
@@ -51,16 +51,16 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
       1. Provision the [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision#provision) service.
       2. [Install the {{site.data.keyword.cloud_notm}} Key Protect CLI plug-in](/docs/key-protect?topic=key-protect-set-up-cli). You must use the Key Protect CLI to wrap the base64-encoded 32-byte standard data encrytion key (DEK) that you intend to use to encrypt your VHD image with the root key.
       3. [Create](/docs/key-protect?topic=key-protect-create-root-keys) or [import](/docs/key-protect?topic=key-protect-import-root-keys#import-root-keys) a root key (CRK) in {{site.data.keyword.keymanagementserviceshort}}. You will use your root key in the next step to wrap the data encryption key that you use to encrypt your image.      
-      4. Identify the DEK that you will use to encrypt your image, and then [wrap it with your root key](/docs/key-protect?topic=key-protect-cli-reference#kp-wrap). If you need to generate a DEK, you can use the [**kp wrap**](/docs/key-protect?topic=key-protect-cli-reference#kp-wrap) command with no plaintext parameter (-p) to generate the key and wrap it. If you already have a DEK, you can [import](/docs/key-protect?topic=key-protect-import-standard-keys#import-standard-keys) it and then wrap it by specifying the plaintext parameter on the **kp wrap** command. Make sure to save the cipher text that is returned by the **kp wrap** command. You must specify the WDEK cipher text when you import your encrypted image to {{site.data.keyword.cloud_notm}} console.
+      4. Identify the DEK that you will use to encrypt your image, and then [wrap it with your root key](/docs/key-protect?topic=key-protect-cli-reference#kp-key-command). If you need to generate a DEK, you can use the [**kp wrap**](/docs/key-protect?topic=key-protect-cli-reference#kp-key-command) command with no plaintext parameter (-p) to generate the key and wrap it. If you already have a DEK, you can [import](/docs/key-protect?topic=key-protect-import-standard-keys#import-standard-keys) it and then wrap it by specifying the plaintext parameter on the **kp wrap** command. Make sure to save the cipher text that is returned by the **kp wrap** command. You must specify the WDEK cipher text when you import your encrypted image to {{site.data.keyword.cloud_notm}} console.
 
        Key Protect doesn't save additional authentication data (AAD), so use WDEKs that don't require ADD for unwrapping them.
        {: tip}  
 
 3. From IBM {{site.data.keyword.iamshort}} (IAM), [create an authorization](/docs/account?topic=account-serviceauth#create-auth) between your **Cloud Block Storage** (source service) and your **Key Management Service** (target service). The authorization permits the {{site.data.keyword.cloud_notm}} backplane services to use your WDEK for data encryption.
-4. In IBM Cloud Console, create an instance of {{site.data.keyword.cos_full_notm}} and create a bucket to store the data. For more information, see the [Getting started tutorial for {{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started)
+4. In IBM Cloud Console, create an instance of {{site.data.keyword.cos_full_notm}} and create a bucket to store the data. For more information, see the [Getting started tutorial for {{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage-cloud-object-storage)
       1. Create the {{site.data.keyword.cos_full_notm}} instance in the region where your key management service is provisioned.
       2. When you create the bucket, the **Resiliency** setting must be _Regional_.
-      3. Optionally, when you create the bucket, you can [encrypt it with your DEK](/docs/cloud-object-storage?topic=cloud-object-storage-encryption#encryption-kp).   
+      3. Optionally, when you create the bucket, you can [encrypt it with your DEK](/docs/cloud-object-storage?topic=cloud-object-storage-encryption).   
 
 ## Preparing your encrypted images
 
@@ -77,9 +77,9 @@ If you're interested in automating image encryption, check out this {{site.data.
 
 1. Using IBM {{site.data.keyword.iamshort}} (IAM), create a service ID to authenticate with when you import the encrypted image into {{site.data.keyword.cloud_notm}} console.
       1. Create a [service ID](/docs/account?topic=account-serviceids#serviceids).
-      2. Assign an [access policy](/docs/account?topic=account-serviceidpolicy#serviceidpolicy). Assign access for these services: {{site.data.keyword.cos_full_notm}} and key management.
+      2. Assign an [access policy](/docs/account?topic=account-userroles#policytypes). Assign access for these services: {{site.data.keyword.cos_full_notm}} and key management.
       3. Create an [API key for a service ID](/docs/account?topic=account-serviceidapikeys#create_service_key).
       4. For more information, see [Introducing {{site.data.keyword.cloud_notm}} IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: new_window}.
 2. From {{site.data.keyword.cloud_notm}} console, [import the encrypted image](/docs/image-templates?topic=image-templates-import-icos#import-icos) to the Image Templates page.
 3. From the Image Templates page, you can use your encrypted image to [order](/docs/image-templates?topic=image-templates-ordering-an-instance-from-an-image-template#ordering-an-instance-from-an-image-template) a virtual server instance.
-4. With an encrypted virtual server provisioned, you have the option to audit [virtual server events](/docs/virtual-servers?topic=virtual-servers-at_events#at_events) through [Activity Tracker](/docs/cloud-activity-tracker?topic=cloud-activity-tracker-activity_tracker_ov#activity_tracker_ov).
+4. With an encrypted virtual server provisioned, you have the option to audit [virtual server events](/docs/virtual-servers?topic=virtual-servers-at_events#at_events) through [Activity Tracker](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started).

@@ -70,7 +70,7 @@ Follow these steps to create your encrypted VHD image:
    ```
    {: pre}
 
-4. Identify and select the AES data encryption key (DEK) that you need to encrypt and decrypt your disk image, then write it into a keyfile. This DEK is the same base64-encoded DEK that you wrapped with your key management service-provided customer root key in [Preparing your environment](/docs/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). Key material that is written into keyfiles must be [unwrapped](/docs/key-protect?topic=key-protect-cli-reference#kp-unwrap) and not be encoded.
+4. Identify and select the AES data encryption key (DEK) that you need to encrypt and decrypt your disk image, then write it into a keyfile. This DEK is the same base64-encoded DEK that you wrapped with your key management service-provided customer root key in [Preparing your environment](/docs/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#preparing-your-environment). Key material that is written into keyfiles must be [unwrapped](/docs/key-protect?topic=key-protect-cli-reference#kp-key-command) and not be encoded.
 
    Because the keyfile isn't base64-encoded, you can't print or view the keyfile content from the command line by using standard ASCII characters.
    {: tip}
