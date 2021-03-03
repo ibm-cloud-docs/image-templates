@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="image-templates" audience="compute" href="/docs/image-templates?topic=image-templates-getting-started-with-image-templates" path="infrastructure/image-templates/"}
-Image Templates
+Image Templates for Classic
 
     {: .navgroup id="learn"}
     image_index.md
