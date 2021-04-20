@@ -69,56 +69,14 @@ To ensure that it can be successfully deployed in the {{site.data.keyword.cloud_
     The Linux boot volume does not support LVM.
     {: note}
 * wget must be installed
-* The latest xe-guest-utilities Xen tools must be installed. Complete the following steps:
-
-    1. Download the latest Citrix Hypervisor ISO (version 8.0 and later) from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.citrix.com/downloads/citrix-hypervisor/).  A free Express edition can be found [here](https://www.citrix.com/downloads/citrix-hypervisor/product-software/hypervisor-80-express-edition.html){: external}.
-
-    2. Mount the ISO by running the following command:
-
-        ```
-        mount -o loop xenserver.iso /mnt
-        ```
-        {: pre}
-
-    3. Locate the Redhat Package Manager (RPM) for the ISO by running the following command:
-
-        ```
-        ls -l /mnt/Packages/xenserver-pv*
-        ```
-        {: pre}
-
-    4. The output lists an RPM similar to:
-
-        ```
-        xenserver-pv-tools-7.41.0-1.noarch.rpm
-        ```
-        {: screen}
-
-    5. You can copy the RPM and then extract the ISO for xentools. Run the following command to create a directory structure that houses the ISO:
-
-        ```
-        rpm2cpio <xenserver-pv-tools-7.41.0-1.noarch.rpm> | cpio -idv
-        ```
-        {: pre}
-
-    6. From the resulting directory structure, you can mount the *guest-tools* ISO and locate *rpm/debs* to install xentools. See the following example directory structure:
-
-        ```
-        [root@mysystem user1]# rpm2cpio ../xenserver-pv-tools-7.1.0-137222c.2185.noarch.rpm | cpio -idv
-        ./opt/xensource/bin/sr_rescan
-        ./opt/xensource/libexec/unmount_halted_xstools.sh
-        ./opt/xensource/packages/iso/guest-tools-7.1.0-137222c.iso
-        139264 blocks
-        [root@mysystem user1]#
-        ```
-        {: pre}
-
-    7. Make sure that your image is cloud-init enabled.
-
-       * For more information about cloud-init, see [cloud-init documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloudinit.readthedocs.io/en/latest/).
-       * For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
-       * For more information about datasources, see [Datasources ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html). {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) - Version 2 data source to supply the metadata.
-       * Linux&reg; images require Cloud-init version 0.7.7 or greater.
+* The latest supported guest tools must be installed. Complete the following steps:
+  * Download http://downloads.service.networklayer.com/citrix/xen/CitrixHypervisor-LinuxGuestTools-7.20.0-1.tar.gz
+  * Untar the package and follow the directions in README.txt
+* Make sure that your image is cloud-init enabled.
+  * For more information about cloud-init, see [cloud-init documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloudinit.readthedocs.io/en/latest/).
+  * For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
+  * For more information about datasources, see [Datasources ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html). {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html) - Version 2 data source to supply the metadata.
+  * Linux&reg; images require Cloud-init version 0.7.7 or greater.
 
 
 ### Configuring a Windows custom image
@@ -128,10 +86,10 @@ Complete the following steps to ensure that your own Windows custom image can be
 
 1. Begin with a single image file in VHD format. Disable its firewall so that it moves smoothly through provisioning.
 
-2. Install the latest xe-guest-utilities Xen tools. Complete the following steps:
+2. Install the latest supported guest tools. Complete the following steps:
 
-    1. Download the latest Citrix Hypervisor ISO (version 8.0 and later) from Citrix: [https://www.citrix.com/downloads/citrix-hypervisor/](https://www.citrix.com/downloads/citrix-hypervisor/){: external}. A free Express edition can be found [here](https://www.citrix.com/downloads/citrix-hypervisor/product-software/hypervisor-80-express-edition.html){: external}.
-    2. Mount the ISO by right-clicking the .iso file that you downloaded and selecting **Mount**.
+    1. Download the latest supported guest tools from http://downloads.service.networklayer.com/citrix/xen/citrix-vm-tools-9.1.5.zip 
+    2. Unzip the package
     3. Navigate to the Windows Installer, for example, _managementagent64_, and double-click to open the **Citrix XenServer Windows Management Agent Setup** wizard. Complete the installation wizard to install XenServer Tools.
 
 3. Make sure that your image is cloud-init enabled.
