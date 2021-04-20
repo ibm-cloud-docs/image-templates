@@ -48,7 +48,7 @@ Imports are limited to 100 GB disks. Only the boot volume is imported, not secon
 ## ISO Templates
 {: #iso-templates}
 
-Only {{site.data.keyword.cloud_notm}} Supported Operating Systems can be used to load an ISO Template onto a VSI. A list of
+Only {{site.data.keyword.cloud_notm}} Supported Operating Systems can be used to load an ISO Template onto a virtual server istance. A list of
 Supported Operating Systems can be found here: [https://www.ibm.com/cloud/server-software ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/server-software)
 
 ISOs that are imported by using this tool must be bootable in order for the image to be eligible for import.
