@@ -24,7 +24,7 @@ subcollection: image-templates
 {: #preparing-and-importing-images}
 
 You use the Image Templates screen in the {{site.data.keyword.cloud}} console to import an image from an [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) service instance. You can import images to classic infrastructure that are in Virtual Hard Disk (VHD), Virtual Machine Disk (VMDK) or custom ISO 9660 format.  After an image is uploaded to a bucket in an {{site.data.keyword.cos_full_notm}} service instance, you can import it to the image templates repository in the {{site.data.keyword.cloud_notm}} console.  VMDK images are converted to VHD after the import.
-{:shortdesc}
+{: shortdesc}
 
 You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more information, see [Switching to IBMid and linking accounts](/docs/account?topic=account-account-getting-started).
 {: tip}
