@@ -32,10 +32,10 @@ You must have an upgraded account to import images from {{site.data.keyword.cos_
 These instructions are specific to importing images to the image templates repository for classic infrastructure. These instructions do not apply to {{site.data.keyword.vpc_short}} infrastructure. 
 {: note}
 
-You must have an [IBM Cloud Object Storage instance](/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-account) ordered through the {{site.data.keyword.cloud_notm}} console (cloud.ibm.com) to use this import feature.  IBM Cloud Object Storage from control.softlayer.com is not supported.
+You must have an [IBM Cloud Object Storage instance](/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-account) ordered through the {{site.data.keyword.cloud_notm}} console{: external} to use this import feature. IBM Cloud Object Storage from control.softlayer.com is not supported.
 {: important}
 
-After images are imported as an image template, they can be used to provision or start an existing virtual server.  VHD and VMDK image imports are restricted to the following 64-bit operating systems:  
+After images are imported as an image template, they can be used to provision or start an existing virtual server. VHD and VMDK image imports are restricted to the following 64-bit operating systems:  
 
 * CentOS 6 and 7
 * Debian 8 and 9
