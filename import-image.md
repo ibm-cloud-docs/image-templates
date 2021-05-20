@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-20"
 
 keywords: image template, image, import image, {{site.data.keyword.cloud}}, {{site.data.keyword.cloud_notm}}
 
@@ -32,10 +32,10 @@ You must have an upgraded account to import images from {{site.data.keyword.cos_
 These instructions are specific to importing images to the image templates repository for classic infrastructure. These instructions do not apply to {{site.data.keyword.vpc_short}} infrastructure. 
 {: note}
 
-You must have an [IBM Cloud Object Storage instance](/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-account) ordered through the {{site.data.keyword.cloud_notm}} console{: external} to use this import feature. IBM Cloud Object Storage from control.softlayer.com is not supported.
+You must have an [IBM Cloud Object Storage instance](/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-account) that was ordered through the {{site.data.keyword.cloud_notm}} console to use this import feature. IBM Cloud Object Storage from control.softlayer.com is not supported.
 {: important}
 
-After images are imported as an image template, they can be used to provision or start an existing virtual server. VHD and VMDK image imports are restricted to the following 64-bit operating systems:  
+After images are imported as an image template, they can be used to provision or start an existing virtual server.  VHD and VMDK image imports are restricted to the following 64-bit operating systems:  
 
 * CentOS 6 and 7
 * Debian 8 and 9
@@ -101,7 +101,7 @@ Complete the following steps to make sure that your own Windows custom image can
 
 2. Install the latest supported guest tools by using following steps.
     - Log in to the IBM Cloud VPN by using your {{site.data.keyword.cloud}} credentials and download the latest supported guest tools [here](http://downloads.service.networklayer.com/citrix/xen/citrix-vm-tools-9.1.5.zip){: external}.
-    - Extract the .zip file.
+    - Extract the compressed .zip file.
     - Go to the Windows Installer, for example, _managementagent64_, and double-click to open the **Citrix XenServer Windows Management Agent Setup** wizard. Complete the installation wizard to install XenServer Tools.
 
 Guest additions are important for reporting performance and health of virtual server instances. Without performance and health information, virtual server instances might be marked for offline migrations when a critical maintenance is needed.
@@ -144,10 +144,10 @@ You can use COS SDK with Aspera to initiate high-speed transfer within your cust
 
 Complete the following steps to import an image from {{site.data.keyword.cos_full_notm}}.
 
-1. Go to the device menu and ensure you have the correct account permissions to complete the tasks.
+1. Go to the device menu and make sure that you have the correct account permissions to complete the tasks.
 
    * Go to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
-   * Ensure you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
+   * Make sure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
 
    For more information about permissions, see [Classic infrastructure permissions](/docs/account?topic=account-infrapermission#infrapermission) and [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
 
