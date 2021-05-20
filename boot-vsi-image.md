@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-20"
 
 keywords:
 
@@ -26,9 +26,9 @@ Booting a virtual server from an image brings the device online safely so that i
 ## Before you begin
 {: #byb-boot-vsi}
 
-First, go to the device menu and ensure you have the correct account permissions to complete the tasks.
+First, go to the device menu and make sure that you have the correct account permissions to complete the tasks.
 
-* Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
+* Go to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
 * Make sure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
 
 For more information about permissions, see [Classic infrastructure permissions](/docs/account?topic=account-infrapermission#infrapermission) and [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
