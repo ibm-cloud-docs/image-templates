@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-06-21"
+  years: 2017, 2021
+lastupdated: "2021-05-20"
 
 keywords:
 
@@ -23,12 +23,12 @@ subcollection: image-templates
 The {{site.data.keyword.slapi_full}} is the development interface that gives developers and system administrators direct interaction with
 {{site.data.keyword.cloud}} backend system. The {{site.data.keyword.slapi_short}} powers many of the features in the
 {{site.data.keyword.slportal_full}}, meaning that if an interaction is possible in the {{site.data.keyword.slportal}}, it can also
-typically be run in the API. Because you can programmatically interact with all portions of the {{site.data.keyword.cloud}} environment
-within the API, you can use {{site.data.keyword.slapi_short}} you to automate tasks. For example, you can use
+typically be run in the API. Because you can programmatically interact with all portions of the {{site.data.keyword.BluSoftlayer_full}} environment
+within the API, {{site.data.keyword.slapi_short}} is used to automate tasks. For example, you can use
 the *SoftLayer_Virtual_Guest/createObject* API to deploy a virtual server instance from an image template.
 {:shortdesc}
 
-The {{site.data.keyword.slapi_short}} is a Remote Procedure Call system. Each call involves sending data towards an API endpoint and
+The {{site.data.keyword.slapi_short}} is a Remote Procedure Call system. Each call involves sending data toward an API endpoint and
 receiving structured data in return. The format used to send and receive data with the {{site.data.keyword.slapi_short}} depends on which
 implementation of the API you choose. The {{site.data.keyword.slapi_short}} currently uses SOAP, XML-RPC or REST for data transmission.
 
