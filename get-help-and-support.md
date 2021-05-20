@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2020-01-17"
+  years: 2017, 2021
+lastupdated: "2021-05-20"
 
 keywords: image templates, help, support
 
@@ -30,9 +30,9 @@ If you have problems or questions when you are using {{site.data.keyword.cloud}}
 {:shortdesc}
 
 When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
-<!--Insert the appropriate Stack Overflow tag for your service for <block-storage> in URL and text below:  -->
-* If you have technical questions about image templates, post your question on [Stack Overflow](http://stackoverflow.com/search?q=image-templates+ibm-cloud){:external} using the `ibm-cloud` and `image-template` tags.
-<!--Insert the appropriate dW Answers tag for your service for <service_keyword> in URL below:  -->
-* For questions about the service and getting started instructions, use the [IBM Support Forums](https://www.ibm.com/mysupport/s/forumshome?language=en_US){:external}.
+
+* If you have technical questions about image templates, post your question on [Stack Overflow](http://stackoverflow.com/search?q=image-templates+ibm-cloud){:external} by using the `ibm-cloud` and `image-template` tags.
+
+* For questions about the service and getting started instructions, use the [IBM Developer Answers](https://developer.ibm.com/answers/topics/ibm-cloud/?smartspace=bluemix){:external} forum. Include the `ibm cloud` tag.
 
 For more information about opening an IBM support ticket, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
