@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2019-05-13"
+  years: 2018, 2021
+lastupdated: "2021-05-20"
 
 keywords:
 
@@ -19,14 +19,14 @@ subcollection: image-templates
 {:table: .aria-labeledby="caption"}
 
 
-# Importing an encrypted image by using the SoftLayer API
+# Importing an encrypted image by using the IBM Cloud API
 {: #importing-an-encrypted-image-by-using-the-softlayer-api}
 
 You can use the {{site.data.keyword.slapi_short}} to import an encrypted image from {{site.data.keyword.cos_full}}
 and create an image template. When your image template is created, you can use it to provision instances.
 {:shortdesc}
 
-To limit access to only the information that is needed to complete the import task, authenticate with a service ID. The service ID should have access only to the encrypted image in IBM Cloud Object Storage that you want to import and the Key Protect instance where your root key is stored.  
+To limit access to only the information that is needed to complete the import task, authenticate with a service ID. The service ID needs access to only the encrypted image in IBM Cloud Object Storage that you want to import and the Key Protect instance where your root key is stored.  
 
 The following python snippet shows an example of how you can access the
 [SoftLayer_Virtual_Guest_Block_Device_Template_Group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://sldn.softlayer.com/reference/services/SoftLayer_Virtual_Guest_Block_Device_Template_Group/) API and use the
@@ -63,6 +63,6 @@ For more information about locating values that are needed to import the encrypt
 | Field    | Value   |
 | -------- | ------- |
 | ibmApiKey | Specify the API key that you noted when you created it. If the API key is lost, you must create a new API key. For more information, see [Managing your API keys](/docs/account?topic=account-userapikey#userapikey). |
-| crkCrn | Specify the [Cloud Resource Name (CRN)](/docs/account?topic=account-crn) for the root key that you used to wrap your data encryption key.  To locate and copy your root key CRN, go to the [{{site.data.keyword.keymanagementserviceshort}} service instance ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window}, hover over your root key, click the ellipsis **(...)** on the far right side of the screen, then select the "View CRN" option and click the copy icon.  |
+| crkCrn | Specify the [Cloud Resource Name (CRN)](/docs/account?topic=account-crn) for the root key that you used to wrap your data encryption key.  To locate and copy your root key CRN, go to the [{{site.data.keyword.keymanagementserviceshort}} service instance ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window}, hover over your root key, click the ellipsis **(...)** on the far right side of the screen, then select the "View CRN" option and click the copy icon. |
 | wrappedDek | Specify the cipher text that is associated with your wrapped data encryption key that you used to encrypt your image. For more information, see [Wrapping keys by using the API](/docs/key-protect?topic=key-protect-wrap-keys#wrap-keys). |
 {: caption="Table 1. Values needed for importing encrypted image" caption-side="top"}
