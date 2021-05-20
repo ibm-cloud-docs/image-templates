@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017, 2018, 2019
+  years: 2017, 2021
 lastupdated: "2019-09-12"
 
 keywords: image templates
@@ -43,7 +43,7 @@ Public images are pre-configured virtual servers that are posted by {{site.data.
 
 Complete the following steps to create an image template of a virtual server.
 
-1. Navigate to your console's device menu and ensure you have the correct account permissions to complete the tasks.
+1. Go to your console's device menu and make sure that you have the correct account permissions to complete the tasks.
 2. From the **Devices** menu, select **Device List**.
 3. Click the virtual server that you want to use to create an image template.
 
@@ -57,4 +57,4 @@ For more information, see [**Creating an image template**](/docs/image-templates
 ## Next steps
 {: #next-steps}
 
-After the image template is created, you can [order more virtual servers](/docs/image-templates?topic=image-templates-ordering-an-instance-from-an-image-template) based on the template.  Your new virtual servers have the same configurations that are included in the image template.
+After the image template is created, you can [order more virtual servers](/docs/image-templates?topic=image-templates-ordering-an-instance-from-an-image-template) based on the template. Your new virtual servers have the same configurations that are included in the image template.
