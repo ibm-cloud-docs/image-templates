@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2018
-lastupdated: "2019-08-21"
+  years: 2014, 2021
+lastupdated: "2021-05-20"
 
 keywords:
 
@@ -27,10 +27,10 @@ At any point during the life of a virtual server, you can create an image templa
 ## Before you begin
 {: #byb-create_template}
 
-First, navigate to the device menu and ensure you have the correct account permissions to complete the tasks.
+First, go to the device menu and make sure that you have the correct account permissions to complete the tasks.
 
-* Navigate to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
-* Ensure you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
+* Go to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
+* Make sure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
 
 For more information about permissions, see [Classic infrastructure permissions](/docs/account?topic=account-infrapermission#infrapermission) and [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
 
@@ -43,20 +43,20 @@ Complete the following steps to create an image template of a virtual server.
 1. From the **Devices** menu, select **Device List**.
 2. Click the virtual server that you want to use to create an image template.
 
-  Check the **Passwords** tab of the **Device Details** page. Ensure that any passwords listed on the **Device Details** page match the actual operating system passwords and any other software add-on passwords. If passwords do not match, virtual servers that are created from this image template fail.
+  Check the **Passwords** tab of the **Device Details** page. Make sure that any passwords that are listed on the **Device Details** page match the actual operating system passwords and any other software add-on passwords. If passwords don't match, virtual servers that are created from this image template fail.
   {:tip}
 
 3. From the **Actions** menu, select **Create Image Template**.
 4. Enter the new name for the image in the **Image Name** field.
 5. Enter any necessary notes for the image in the **Note** field.
-6. Select the **Agree** check box when all information is entered.
+6. Select the **Agree** checkbox when all information is entered.
 7. Click **Create Template** to create the image template.
 
-Your server will be offline until the imaging process completes.  The image template processing time varies based on the resources that are available on the physical host and how much data is being captured in the image template. 
+Your server is offline until the imaging process completes. The image template processing time varies based on the resources that are available on the physical host and how much data is captured in the image template. 
 {:note}
 
 ## Next steps
 {: #ns-create_template}
 
-After the image template is created, more virtual servers can be created by using the template. The new
+After the image template is created, you can create more virtual servers by using the template. The new
 virtual servers have the same configurations that are included in the image template.
