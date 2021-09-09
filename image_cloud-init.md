@@ -24,7 +24,7 @@ subcollection: image-templates
 {: #provisioning-with-a-cloud-init-enabled-image}
 
 When you order a virtual server, many operating systems now use a cloud-init enabled image to optimize provisioning time. You can also import a customized image that you enabled for cloud-init.
-{:shortdesc}
+{: shortdesc}
 
 The following operating systems now default to a cloud-init enabled image when you order a virtual server without add-ons. (Add-ons include extra software, post-provisioning scripts, and advanced monitoring.)
 * CentOS 6, 7
@@ -76,7 +76,7 @@ Cloud-init typically runs only one time. However, if you provision a virtual ser
 
 For information about configuring images, see [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/){: external}.
 
-For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){:external} - Version 2 data source to supply the metadata.
+For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} - Version 2 data source to supply the metadata.
 
 ### Linux requirements
 

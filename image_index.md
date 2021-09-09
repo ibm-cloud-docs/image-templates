@@ -18,10 +18,10 @@ subcollection: image-templates
 {: #getting-started-with-image-templates}
 
 With {{site.data.keyword.cloud}} image templates, you can capture an image of a virtual server to quickly replicate its configuration with minimal changes in the order process. Image templates provide an imaging option for all {{site.data.keyword.virtualmachinesshort}}, regardless of operating system. Image templates are not compatible with bare metal servers.
-{:shortdesc}
+{: shortdesc}
 
 Image templates are not intended for backing up your data.
-{:note}
+{: note}
 
 ## How Image Templates Work
 {: #how-image-templates-work}
@@ -48,7 +48,7 @@ Complete the following steps to create an image template of a virtual server.
 3. Click the virtual server that you want to use to create an image template.
 
   Check the **Passwords** tab of the **Device Details** page. Ensure that any passwords listed on the **Device Details** page match the actual operating system passwords and any other software add-on passwords. If passwords do not match, virtual servers that are created from this image template fail.
-  {:tip}
+  {: tip}
 
 4. From the **Actions** menu, select **Create Image Template** and complete the required fields.
 

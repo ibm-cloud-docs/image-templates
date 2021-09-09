@@ -18,7 +18,7 @@ subcollection: image-templates
 
 The Image Templates page in the {{site.data.keyword.cloud}} console displays all of the images that are associated with
 an account. From the Image Templates page, you can interact with images and import new images that are stored on existing Object Storage accounts.
-{:shortdesc}
+{: shortdesc}
 
 ## Before you begin
 {: #byb-manage-imt}

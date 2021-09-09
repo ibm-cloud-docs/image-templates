@@ -23,7 +23,7 @@ subcollection: image-templates
 {: #using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance}
 
 The End to End (E2E) Encryption feature is used so that you can bring your own encrypted, cloud-init enabled operating system image. You encrypt the image by using a data encryption key that you own and control. After you complete some environment setup, you can import your encrypted image to the image template repository and use it to provision encrypted virtual server instances. E2E encryption provides data-at-rest encryption for the storage that is associated with provisioned virtual server instances.
-{:shortdesc}
+{: shortdesc}
 
 E2E Encryption brings together several {{site.data.keyword.cloud}} components to provide a secure solution for your critical information.
 

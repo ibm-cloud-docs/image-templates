@@ -19,7 +19,7 @@ subcollection: image-templates
 
 The Boot from Image feature starts a virtual server instance by using an ISO template that is
 imported from an Object Storage Account.
-{:shortdesc}
+{: shortdesc}
 
 Booting a virtual server from an image brings the device online safely so that issues can be resolved. In most cases, the boot from image feature that allows for troubleshooting to occur in an environment without risking significant data loss that might be experienced from an OS reload. Though significant data loss is less likely than with an OS reload, it is recommended that you back up the device before you start the boot from image process.
 
@@ -45,7 +45,7 @@ Use the following steps to start a virtual server from an image.
 5. Click **Boot from this Image** for the wanted image
 
   Toggle between public and private images by using the drop-down selection feature.
-  {:tip}
+  {: tip}
 
 6. Click **Boot from Image** to boot the device by using the selected image. Click **Close** to cancel the action.
 

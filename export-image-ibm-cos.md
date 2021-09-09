@@ -24,7 +24,7 @@ subcollection: image-templates
 {: #exporting-an-image-to-ibm-cloud-object-storage}
 
 From the Image Templates page, you can export an image template to an [{{site.data.keyword.cos_full}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage) account.
-{:shortdesc}
+{: shortdesc}
 
 The image export process takes a preexisting, private standard image template, or an encrypted image template and coverts the image into an image file that is stored in a specified location on an {{site.data.keyword.cos_full_notm}} account.
 

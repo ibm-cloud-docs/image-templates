@@ -24,7 +24,7 @@ subcollection: image-templates
 
 You can use the {{site.data.keyword.slapi_short}} to import an encrypted image from {{site.data.keyword.cos_full}}
 and create an image template. When your image template is created, you can use it to provision instances.
-{:shortdesc}
+{: shortdesc}
 
 To limit access to only the information that is needed to complete the import task, authenticate with a service ID. The service ID needs access to only the encrypted image in IBM Cloud Object Storage that you want to import and the Key Protect instance where your root key is stored.  
 

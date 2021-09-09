@@ -26,7 +26,7 @@ The {{site.data.keyword.slapi_full}} is the development interface that gives dev
 typically be run in the API. Because you can programmatically interact with all portions of the {{site.data.keyword.BluSoftlayer_full}} environment
 within the API, {{site.data.keyword.slapi_short}} is used to automate tasks. For example, you can use
 the *SoftLayer_Virtual_Guest/createObject* API to deploy a virtual server instance from an image template.
-{:shortdesc}
+{: shortdesc}
 
 The {{site.data.keyword.slapi_short}} is a Remote Procedure Call system. Each call involves sending data toward an API endpoint and
 receiving structured data in return. The format used to send and receive data with the {{site.data.keyword.slapi_short}} depends on which
