@@ -29,7 +29,7 @@ To import an image from {{site.data.keyword.cos_full}} to an {{site.data.keyword
 To import an image from {{site.data.keyword.cos_full_notm}} to an {{site.data.keyword.ibmcloudgov_full_notm}} account, submit a POST request to `https://api.usgov.softlayer.com/rest/v3.1/SoftLayer_Virtual_Guest_Block_Device_Template_Group/createFromIcos.json` with the following JSON in the request body.
 
 The following JSON request body is a generic example.
-{:note}
+{: note}
 
 ### Example JSON request body
 

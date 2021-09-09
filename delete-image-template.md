@@ -17,7 +17,7 @@ subcollection: image-templates
 {: #deleting-an-image-template}
 
 Standard image templates can be deleted at any time after they are created.
-{:shortdesc}
+{: shortdesc}
 
 ## Before you begin
 {: #byb-delete-template}

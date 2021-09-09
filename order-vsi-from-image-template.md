@@ -22,7 +22,7 @@ subcollection: image-templates
 {: #ordering-an-instance-from-an-image-template}
 
 On the Image Templates page, you can provision a virtual server instance from an image template.
-{:shortdesc}
+{: shortdesc}
 
 ## Before you begin
 {: #byb-order-instance-imt}

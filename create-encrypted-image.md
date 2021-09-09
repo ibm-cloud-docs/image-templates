@@ -24,7 +24,7 @@ subcollection: image-templates
 {: #create-encrypted-image}
 
 To use the E2E Encryption feature, you must encrypt your Virtual Hard Drive (VHD) image with the vhd-util tool before you import it into Image Templates to provision encrypted instances. Two levels of AES encryption are supported: AES 256 bit and AES 512 bit.
-{:shortdesc}
+{: shortdesc}
 
 ## Encrypted VHD image requirements
 {: #encrypted-image-reqs}

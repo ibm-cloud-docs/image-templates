@@ -20,7 +20,7 @@ subcollection: image-templates
 {: #using-your-own-os-license-or-subscription}
 
 When you create an image template with a Virtual Hard Disk (VHD) image, you can opt to provide your own RHEL operating system license through the [Red Hat Cloud Access](https://www.redhat.com/en/technologies/cloud-computing/cloud-access){: external} subscription or a Windows license through the Microsoft Enterprise Agreement.
-{:shortdesc}
+{: shortdesc}
 
 If you deploy an image in {{site.data.keyword.cloud}} that indicates you are using your own license, the following support terms exist:
 * {{site.data.keyword.IBM_notm}} supports hypervisors, provisioning instances, importing images, rebooting an image, reloading an OS, and capturing an image.
