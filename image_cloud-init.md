@@ -76,7 +76,7 @@ Cloud-init typically runs only one time. However, if you provision a virtual ser
 
 For information about configuring images, see [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/){: external}.
 
-For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} - Version 2 data source to supply the metadata.
+For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external}  Version 2 data source to supply the metadata.
 
 ### Linux requirements
 
@@ -85,73 +85,73 @@ For more information about data sources, see [Data sources](http://cloudinit.rea
 
   The following example cloud.cfg file shows settings that are used in a Red Hat Enterprise Linux 7 deployment. These settings differ from the default settings in the cloud-init installation package on Red Hat Enterprise Linux 7.
 
-  ```
-  # cat /etc/cloud/cloud.cfg
-  # Configure the Datasource for both instances
-  datasource_list: [ ConfigDrive ]
- 
-  user: root
-  ssh_pwauth: True
-  disable_root: False
-  manage_etc_hosts: True
- 
-  system_info:
-   # This will affect which distro class gets used
-   distro: rhel
-   # Other config here will be given to the distro class and/or path classes
-   paths:
-      cloud_dir: /var/lib/cloud/
-      templates_dir: /etc/cloud/templates/
-
-  cloud_init_modules:
-   - migrator
-   - seed_random
-   - bootcmd
-   - write-files
-   - disk_setup
-   - mounts
-   - ca-certs
-   - rsyslog
-   - users-groups
-   - ssh
-
-  cloud_config_modules:
-  # Emit the cloud config ready event
-  # this can be used by upstart jobs for 'start on cloud-config'.
-   - snap_config
-   - locale
-   - set-passwords
-   - ntp
-   - timezone
-   - disable-ec2-metadata
-   - set_hostname
-   - update_hostname
-   - update_etc_hosts
-   - runcmd
-
-  # The modules that run in the 'final' stage
-  cloud_final_modules:
-   - snappy
-   - package-update-upgrade-install
-   - fan
-   - lxd
-   - puppet
-   - chef
-   - salt-minion
-   - mcollective
-   - rightscale_userdata
-   - scripts-vendor
-   - scripts-per-once
-   - scripts-per-boot
-   - scripts-per-instance
-   - scripts-user
-   - ssh-authkey-fingerprints
-   - keys-to-console
-   - phone-home
-   - final-message
-   - power-state-change
-  ``` 
-  {: pre}
+   ```
+   # cat /etc/cloud/cloud.cfg
+   # Configure the Datasource for both instances
+   datasource_list: [ ConfigDrive ]
+   
+   user: root
+   ssh_pwauth: True
+   disable_root: False
+   manage_etc_hosts: True
+   
+   system_info:
+    # This will affect which distro class gets used
+    distro: rhel
+    # Other config here will be given to the distro class and/or path classes
+    paths:
+       cloud_dir: /var/lib/cloud/
+       templates_dir: /etc/cloud/templates/
+   
+   cloud_init_modules:
+    - migrator
+    - seed_random
+    - bootcmd
+    - write-files
+    - disk_setup
+    - mounts
+    - ca-certs
+    - rsyslog
+    - users-groups
+    - ssh
+   
+   cloud_config_modules:
+   # Emit the cloud config ready event
+   # this can be used by upstart jobs for 'start on cloud-config'.
+    - snap_config
+    - locale
+    - set-passwords
+    - ntp
+    - timezone
+    - disable-ec2-metadata
+    - set_hostname
+    - update_hostname
+    - update_etc_hosts
+    - runcmd
+   
+   # The modules that run in the 'final' stage
+   cloud_final_modules:
+    - snappy
+    - package-update-upgrade-install
+    - fan
+    - lxd
+    - puppet
+    - chef
+    - salt-minion
+    - mcollective
+    - rightscale_userdata
+    - scripts-vendor
+    - scripts-per-once
+    - scripts-per-boot
+    - scripts-per-instance
+    - scripts-user
+    - ssh-authkey-fingerprints
+    - keys-to-console
+    - phone-home
+    - final-message
+    - power-state-change
+   ``` 
+   {: pre}
 
 ### Windows requirements
 
@@ -159,13 +159,13 @@ For more information about data sources, see [Data sources](http://cloudinit.rea
 [IBM Cloud-cloudbase-init](https://github.com/softlayer/bluemix-cloudbase-init){: external}.
 * If you are using a Vyatta in your environment, you must configure the Vyatta to allow API calls to [API load balancers](/docs/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips).
 * Run the following commands to sysprep the image:
-  
-  ```
-  C:\Program Files\Cloudbase Solutions\Cloudbase-Init\bin\SetSetupComplete.cmd
-  ```
-  {: pre}
-  
-  ```
-  C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:"C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\Unattend.xml"
-  ```
-  {: pre}
+   
+   ```
+   C:\Program Files\Cloudbase Solutions\Cloudbase-Init\bin\SetSetupComplete.cmd
+   ```
+   {: pre}
+   
+   ```
+   C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:"C:\Program  Files\Cloudbase Solutions\Cloudbase-Init\conf\Unattend.xml"
+   ```
+   {: pre}

@@ -76,16 +76,16 @@ To make sure that an image can be successfully deployed in the {{site.data.keywo
     {: important}
 
 * The latest supported guest tools must be installed. Complete the following steps to install guest tools.
-  1. Download the [Linux Guest Tool package](http://downloads.service.networklayer.com/citrix/xen/CitrixHypervisor-LinuxGuestTools-7.20.0-1.tar.gz){: external}.
+    1. Download the [Linux Guest Tool package](http://downloads.service.networklayer.com/citrix/xen/CitrixHypervisor-LinuxGuestTools-7.20.0-1.tar.gz){: external}.
 
-  2. Extract the package and follow the directions that are in the `README.txt`.
+    2. Extract the package and follow the directions that are in the `README.txt`.
 
 * Make sure that your image is cloud-init enabled.
 
-     - For more information about cloud-init, see the [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/){: external}.
-     - For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
-     - For more information about cloud-init data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} - Version 2 data source to supply the metadata.
-     - Linux images require Cloud-init version 0.7.7 or greater.
+    - For more information about cloud-init, see the [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/){: external}.
+    - For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
+    - For more information about cloud-init data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} Version 2 data source to supply the metadata.
+    - Linux images require Cloud-init version 0.7.7 or greater.
 
 ### Next steps
 {: #next-steps-guest-addtions}
