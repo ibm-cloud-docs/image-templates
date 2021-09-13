@@ -104,18 +104,18 @@ Complete the following steps to make sure that your own Windows custom image can
     - Extract the compressed .zip file.
     - Go to the Windows Installer, for example, _managementagent64_, and double-click to open the **Citrix XenServer Windows Management Agent Setup** wizard. Complete the installation wizard to install XenServer Tools.
 
-Guest additions are important for reporting performance and health of virtual server instances. Without performance and health information, virtual server instances might be marked for offline migrations when a critical maintenance is needed.
-{: note}
+    Guest additions are important for reporting performance and health of virtual server instances. Without performance and health information, virtual server instances might be marked for offline migrations when a critical maintenance is needed.
+    {: note}
 
-Don't disable or remove the default guest additions that are installed on {{site.data.keyword.BluSoftlayer_notm}} supplied images.
-{: important}
+    Don't disable or remove the default guest additions that are installed on {{site.data.keyword.BluSoftlayer_notm}} supplied images.
+    {: important}
 
-If you want to make sure that the guest additions are working from the hypervisor point of view, you can [create a case](/docs/get-support?topic=get-support-open-case) and ask for XenTools virtual server validation.
+    If you want to make sure that the guest additions are working from the hypervisor point of view, you can [create a case](/docs/get-support?topic=get-support-open-case) and ask for XenTools virtual server validation.
 
 3. Make sure that your image is cloud-init enabled.
     * For more information, see [cloudbase-init’s documentation](https://cloudbase-init.readthedocs.io/en/latest/index.html){: external}.
     * For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the
-environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} - Version 2 data source to supply the metadata.
+environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} Version 2 data source to supply the metadata.
 
 4. Windows images require the Cloudbase-init Metadata Service for public and private network support in {{site.data.keyword.cloud_notm}} infrastructure. You can access the service [here](https://github.com/softlayer/bluemix-cloudbase-init){: external}.
 
