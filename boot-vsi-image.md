@@ -44,8 +44,8 @@ Use the following steps to start a virtual server from an image.
 4. On the Device Details page for the virtual server, select **Actions > Boot from Image**.
 5. Click **Boot from this Image** for the wanted image
 
-  Toggle between public and private images by using the drop-down selection feature.
-  {: tip}
+    Toggle between public and private images by using the drop-down selection feature.
+    {: tip}
 
 6. Click **Boot from Image** to boot the device by using the selected image. Click **Close** to cancel the action.
 

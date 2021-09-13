@@ -47,8 +47,8 @@ Complete the following steps to create an image template of a virtual server.
 2. From the **Devices** menu, select **Device List**.
 3. Click the virtual server that you want to use to create an image template.
 
-  Check the **Passwords** tab of the **Device Details** page. Ensure that any passwords listed on the **Device Details** page match the actual operating system passwords and any other software add-on passwords. If passwords do not match, virtual servers that are created from this image template fail.
-  {: tip}
+    Check the **Passwords** tab of the **Device Details** page. Ensure that any passwords listed on the **Device Details** page match the actual operating system passwords and any other software add-on passwords. If passwords do not match, virtual servers that are created from this image template fail.
+    {: tip}
 
 4. From the **Actions** menu, select **Create Image Template** and complete the required fields.
 
