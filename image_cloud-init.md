@@ -80,10 +80,13 @@ For more information about data sources, see [Data sources](http://cloudinit.rea
 
 ### Linux requirements
 
-* Cloud-init version 0.7.7 or greater
-* Cloud-init image configured to use SSH for logging in to your virtual server instance.
+Linux images that are cloud-init enabled have the following requirements:
 
-  The following example cloud.cfg file shows settings that are used in a Red Hat Enterprise Linux 7 deployment. These settings differ from the default settings in the cloud-init installation package on Red Hat Enterprise Linux 7.
+* Cloud-init version 0.7.7 or greater is required.
+* Cloud-init image is configured to use SSH for logging in to your virtual server instance.
+
+
+The following example cloud.cfg file shows settings that are used in a Red Hat Enterprise Linux 7 deployment. These settings differ from the default settings in the cloud-init installation package on Red Hat Enterprise Linux 7.
 
    ```
    # cat /etc/cloud/cloud.cfg
