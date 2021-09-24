@@ -37,11 +37,11 @@ You must have an [IBM Cloud Object Storage instance](/docs/cloud-object-storage?
 
 After images are imported as an image template, they can be used to provision or start an existing virtual server.  VHD and VMDK image imports are restricted to the following 64-bit operating systems:  
 
-* CentOS 6 and 7
-* Debian 8 and 9
+* CentOS 7 and 8
+* Debian 9 and 10
 * Windows Server Standard 2012, 2012 R2, 2016, and 2019
-* RedHat Enterprise Linux 6 and 7
-* Ubuntu 16.04 and Ubuntu 18.04
+* RedHat Enterprise Linux 7 and 8
+* Ubuntu 18.04 and Ubuntu 20.04
 
 Imports are limited to 100 GB disks. Only the boot volume is imported, not secondary disks. Imported images must be named according to the following example: filename.vhd-0.vhd or filename.vmdk-0.vmdk
 
