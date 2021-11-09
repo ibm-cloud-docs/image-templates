@@ -1,0 +1,54 @@
+---
+toc:
+  properties:
+    subcollection: image-templates
+    version: 2
+    category: compute_classic
+    audience: service
+    href: /docs/image-templates
+    console-page: "/classic"
+    product-page: "https://www.ibm.com/cloud/image-templates"
+    path: image-templates
+    label: Image Templates for Classic 
+
+  entries: 
+  - navgroup: 
+      id: learn
+      topics:
+       - image_index.md
+          
+  - navgroup: 
+      id: howto
+      topics:
+      - /virtual-servers/virtual-servers-navigating-devices
+      - access-image-templates-screen.md
+      - create-standard-image.md
+      - import-image.md
+      - export-image-ibm-cos.md
+      - delete-image-template.md
+      - order-vsi-from-image-template.md
+      - boot-vsi-image.md
+      - image_cloud-init.md
+      - use-red-hat-cloud-access.md
+      - topicgroup: 
+          label: Using end-to-end encryption to provision
+          topics: 
+          - provision-encrypted-image.md
+          - create-encrypted-image.md
+          - import-encrypted-image-api.md        
+
+  - navgroup:
+      id: reference
+      topics: 
+      - image-template-api-reference.md
+      - import-image-icos-gov.md
+
+  - navgroup:
+      id: help
+      topics: 
+      - get-help-and-support.md
+      - topicgroup: 
+          label: Image Templates FAQs
+          topics: 
+          - /virtual-servers/virtual-servers-faq-image-templates
+      
