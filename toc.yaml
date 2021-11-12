@@ -3,7 +3,6 @@ toc:
   properties:
     subcollection: image-templates
     version: 2
-    category: compute_classic
     audience: service
     href: /docs/image-templates
     console-page: "/classic"
