@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-05-20"
+  years: 2014, 2022
+lastupdated: "2022-02-16"
 
 keywords:
 
@@ -23,6 +23,8 @@ With image templates, you can replicate various configuration options for {{site
 {: shortdesc}
 
 At any point during the life of a virtual server, you can create an image template. Then, you can use it to quickly replicate portions of its configuration in another virtual server. You can create image templates from any virtual server, regardless of its operating system. When your image template is complete, you can use it to create another virtual server.
+
+{{site.data.content.iso-operating-systems}}
 
 ## Before you begin
 {: #byb-create_template}
