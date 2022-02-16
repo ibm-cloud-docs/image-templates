@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2019-09-12"
+  years: 2017, 2022
+lastupdated: "2022-02-16"
 
 keywords: image templates
 
@@ -37,6 +37,8 @@ Private images are images that are created by users on their own accounts or ima
 {: #public-images}
 
 Public images are pre-configured virtual servers that are posted by {{site.data.keyword.cloud_notm}} or made public by customers and are available for use by all {{site.data.keyword.cloud_notm}} customers. Virtual servers that are provisioned through public image templates are generally configured for optimal performance, with specific combinations of different configuration specs.
+
+{{site.data.content.iso-operating-systems}}
 
 ## Creating an image template
 {: #creating-template}
