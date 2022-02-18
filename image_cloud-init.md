@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-05-20"
+  years: 2014, 2022
+lastupdated: "2022-02-18"
 
 keywords:
 
@@ -169,6 +169,7 @@ The following example cloud.cfg file shows settings that are used in a Red Hat E
    {: pre}
    
    ```
-   C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:"C:\Program  Files\Cloudbase Solutions\Cloudbase-Init\conf\Unattend.xml"
+   cd "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\"
+   C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:Unattend.xml
    ```
    {: pre}
