@@ -19,7 +19,7 @@ toc:
   - navgroup: 
       id: howto
       topics:
-      - /virtual-servers/virtual-servers-navigating-devices
+      - include: ../virtual-servers/virtual-servers-navigating-devices.md
       - access-image-templates-screen.md
       - create-standard-image.md
       - import-image.md
@@ -49,5 +49,5 @@ toc:
       - topicgroup: 
           label: Image Templates FAQs
           topics: 
-          - /virtual-servers/virtual-servers-faq-image-templates
+          - include: ../virtual-servers/virtual-servers-faq-image-templates.md
       
