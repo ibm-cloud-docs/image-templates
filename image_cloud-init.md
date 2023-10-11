@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-02-18"
+  years: 2014, 2023
+lastupdated: "2023-10-11"
 
 keywords:
 
@@ -10,15 +10,7 @@ subcollection: image-templates
 
 ---
 
-{:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:important: .important}
-{:note: .note}
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Provisioning with a cloud-init enabled image
 {: #provisioning-with-a-cloud-init-enabled-image}
@@ -31,7 +23,7 @@ The following operating systems now default to a cloud-init enabled image when y
 * Debian 8, 9
 * Red Hat Enterprise Linux 6.x, 7.x
 * Ubuntu 16.04, 18.04
-* Windows Server 2012, 2012 R2, 2016, 2019
+* Windows Server 2016, 2019, 2022
 
 When you order a virtual server with a cloud-init enabled operating system, you can add user data or metadata with custom provisioning scripts. In the User Data field on the order form, enter optional cloud-init user data or optional metadata for the server.
 
@@ -46,6 +38,7 @@ First, go to the device menu and make sure that you have the correct account per
 For more information about permissions, see [Classic infrastructure permissions](/docs/account?topic=account-infrapermission#infrapermission) and [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
 
 ## Import a customized cloud-init enabled image
+{: #import-cloud-init-image}
 
 If you created a customized image that’s cloud-init enabled, you can designate it as a cloud-init image on the Import Image page of
 the {{site.data.keyword.slportal_full}}.
@@ -56,6 +49,7 @@ To access the Import Image page of Image Templates and mark an image as cloud-in
 3. Complete the required information for importing your cloud-init enabled image, and select the **Cloud-init** checkbox that is near the **Operating System** dropdown box. For more information about importing images, see [Import an Image](/docs/image-templates?topic=image-templates-preparing-and-importing-images#import-icos).
 
 ## Mark an image template as cloud-init enabled
+{: #mark-image-cloud-init}
 
 If you have an existing VHD image template that is cloud-init enabled, you can designate it as cloud-init enabled on the details page of
 the image template.
@@ -69,16 +63,19 @@ If your image is encrypted, the **Cloud-init** checkbox is already selected by d
 {: note}
 
 ## Work with an image template that was created from a cloud-init provisioned virtual server
+{: #image-template-from-cloud-init-provision}
 
 Cloud-init typically runs only one time. However, if you provision a virtual server from a cloud-init enabled image and later create an image template from that virtual server, the UUID is recorded. If that image template is used to create another virtual server, cloud-init runs again.
 
 ## Create image templates that are cloud-init enabled
+{: #create-cloud-init-templates}
 
 For information about configuring images, see [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/){: external}.
 
-For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external}  Version 2 data source to supply the metadata.
+For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} - Version 2 data source to supply the metadata.
 
 ### Linux requirements
+{: #linux-reqs-cloud-init}
 
 Linux images that are cloud-init enabled have the following requirements:
 
@@ -157,17 +154,18 @@ The following example cloud.cfg file shows settings that are used in a Red Hat E
    {: pre}
 
 ### Windows requirements
+{: #windows-reqs-cloud-init}
 
 * Cloudbase-init Metadata Service for public and private networks support in {{site.data.keyword.cloud_notm}} infrastructure. The service also updates the Customer Portal with the Windows virtual server credentials. You can access the service at
 [IBM Cloud-cloudbase-init](https://github.com/softlayer/bluemix-cloudbase-init){: external}.
 * If you are using a Vyatta in your environment, you must configure the Vyatta to allow API calls to [API load balancers](/docs/virtual-router-appliance?topic=hardware-firewall-dedicated-ibm-cloud-ip-ranges#load-balancer-ips).
 * Run the following commands to sysprep the image:
-   
+  
    ```
    C:\Program Files\Cloudbase Solutions\Cloudbase-Init\bin\SetSetupComplete.cmd
    ```
    {: pre}
-   
+ 
    ```
    cd "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\"
    C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:Unattend.xml
