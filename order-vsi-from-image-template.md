@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-05-20"
+  years: 2014, 2023
+lastupdated: "2023-10-11"
 
 keywords:
 
@@ -10,18 +10,21 @@ subcollection: image-templates
 
 ---
 
-{:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:new_window: target="_blank"}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Ordering an instance from an image template
 {: #ordering-an-instance-from-an-image-template}
 
-On the Image Templates page, you can provision a virtual server instance from an image template.
+On the **Image templates** page, you can provision a virtual server instance from an image template. If the operating system of the image is end-of-life (EOL) or end-of-support (EOS), it cannot be used for virtual server provisioning. You can deploy a virtual server from images with the following operating systems:
+
+CentOS 7.x
+Debian 10, 11
+Redhat 7.x, 8.x, 9.x
+Rocky Linux 8
+Ubuntu 20, 22
+Microsoft Windows 2016, 2019, 2022
+
 {: shortdesc}
 
 ## Before you begin
