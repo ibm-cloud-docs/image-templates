@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-11"
+lastupdated: "2023-10-23"
 
 keywords:
 
@@ -19,10 +19,10 @@ When you order a virtual server, many operating systems now use a cloud-init ena
 {: shortdesc}
 
 The following operating systems now default to a cloud-init enabled image when you order a virtual server without add-ons. (Add-ons include extra software, post-provisioning scripts, and advanced monitoring.)
-* CentOS 6, 7
-* Debian 8, 9
-* Red Hat Enterprise Linux 6.x, 7.x
-* Ubuntu 16.04, 18.04
+* CentOS 7
+* Debian 10, 11
+* Red Hat Enterprise Linux 7.x, 8.x, 9.x
+* Ubuntu 20.04, 22.04
 * Windows Server 2016, 2019, 2022
 
 When you order a virtual server with a cloud-init enabled operating system, you can add user data or metadata with custom provisioning scripts. In the User Data field on the order form, enter optional cloud-init user data or optional metadata for the server.
