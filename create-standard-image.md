@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-02-16"
+  years: 2014, 2023
+lastupdated: "2023-10-23"
 
 keywords:
 
@@ -10,10 +10,7 @@ subcollection: image-templates
 
 ---
 
-{:shortdesc: .shortdesc}
-{:tip: .tip}
-{:note: .note}
-{:new_window: target="_blank"}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Creating an image template
@@ -32,13 +29,13 @@ At any point during the life of a virtual server, you can create an image templa
 First, go to the device menu and make sure that you have the correct account permissions to complete the tasks.
 
 * Go to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
-* Make sure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
+* Make sure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions. For more information about permissions, see [Classic infrastructure permissions](/docs/account?topic=account-infrapermission#infrapermission) and [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
 
-For more information about permissions, see [Classic infrastructure permissions](/docs/account?topic=account-infrapermission#infrapermission) and [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
+You can't create an image template if {{site.data.keyword.cloud}}-provided third-party software is installed. You need to remove the third-party software applications before you create an image template.
+{: note}
 
 ## Creating an image template
 {: #creating-an-image-template_steps}
-
 
 Complete the following steps to create an image template of a virtual server.
 
