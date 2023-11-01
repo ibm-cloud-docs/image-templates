@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-05-20"
+  years: 2014, 2023
+lastupdated: "2023-11-01"
 
 keywords: image template, image, import image, {{site.data.keyword.cloud}}, {{site.data.keyword.cloud_notm}}
 
@@ -84,7 +84,7 @@ To make sure that an image can be successfully deployed in the {{site.data.keywo
 
     - For more information about cloud-init, see the [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/){: external}.
     - For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
-    - For more information about cloud-init data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} Version 2 data source to supply the metadata.
+    - For more information about cloud-init data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config drive](https://cloudinit.readthedocs.io/en/latest/reference/datasources/configdrive.html){: external} Version 2 data source to supply the metadata.
     - Linux images require Cloud-init version 0.7.7 or greater.
 
 ### Next steps
