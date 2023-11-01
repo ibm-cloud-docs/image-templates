@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-23"
+lastupdated: "2023-11-01"
 
 keywords:
 
@@ -72,7 +72,7 @@ Cloud-init typically runs only one time. However, if you provision a virtual ser
 
 For information about configuring images, see [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/){: external}.
 
-For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} - Version 2 data source to supply the metadata.
+For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive](https://cloudinit.readthedocs.io/en/latest/reference/datasources/configdrive.html){: external} - Version 2 data source to supply the metadata.
 
 ### Linux requirements
 {: #linux-reqs-cloud-init}
