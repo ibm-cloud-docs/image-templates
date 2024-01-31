@@ -50,4 +50,9 @@ toc:
           label: Image Templates FAQs
           topics: 
           - include: ../virtual-servers/virtual-servers-faq-image-templates.md
+      - topicgroup: 
+          label: Troubleshooting
+          topics: 
+          - tbs-dism-image-boot.md 
+          
       
