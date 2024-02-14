@@ -40,7 +40,6 @@ toc:
       id: reference
       topics: 
       - image-template-api-reference.md
-      - import-image-icos-gov.md
 
   - navgroup:
       id: help
