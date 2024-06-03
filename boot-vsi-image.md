@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-05-20"
+  years: 2014, 2024
+lastupdated: "2024-06-03"
 
 keywords:
 
@@ -10,9 +10,7 @@ subcollection: image-templates
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 # Booting a virtual server from an image
 {: #booting-a-vsi-from-an-image}
@@ -28,10 +26,10 @@ Booting a virtual server from an image brings the device online safely so that i
 
 First, go to the device menu and make sure that you have the correct account permissions to complete the tasks.
 
-* Go to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
-* Make sure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
+* Go to your console's device menu. For more information, see [Navigating to devices](//docs/virtual-servers?topic=virtual-servers-navigating-devices).
+* Make sure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage users** classic infrastructure permission, can adjust the permissions.
 
-For more information about permissions, see [Classic infrastructure permissions](/docs/account?topic=account-infrapermission#infrapermission) and [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
+For more information about permissions, see [Classic infrastructure permissions](/docs/virtual-servers?topic=virtual-servers-mngclassicinfra).
 
 ## Booting a virtual server instance from an image
 {: #booting-a-vsi-from-an-image_steps}
@@ -39,15 +37,15 @@ For more information about permissions, see [Classic infrastructure permissions]
 Use the following steps to start a virtual server from an image.
 
 1. Back up all data on the device.
-2. From the **Devices** menu, select **Device List**.
+2. From the **Devices** menu, select **Device list**.
 3. From the Device List, click the virtual server that you want to start from an ISO template.
-4. On the Device Details page for the virtual server, select **Actions > Boot from Image**.
-5. Click **Boot from this Image** for the wanted image
+4. On the Device Details page for the virtual server, select **Actions > Boot from image**.
+5. Click **Boot from this image** for the wanted image
 
     Toggle between public and private images by using the drop-down selection feature.
     {: tip}
 
-6. Click **Boot from Image** to boot the device by using the selected image. Click **Close** to cancel the action.
+6. Click **Boot from image** to boot the device by using the selected image. Click **Close** to cancel the action.
 
 ## Next Steps
 {: #ns-boot-vsi}
