@@ -19,7 +19,6 @@ toc:
   - navgroup: 
       id: howto
       topics:
-      - include: ../virtual-servers/virtual-servers-navigating-devices.md
       - access-image-templates-screen.md
       - create-standard-image.md
       - import-image.md
@@ -48,10 +47,9 @@ toc:
       - topicgroup: 
           label: Image Templates FAQs
           topics: 
-          - include: ../virtual-servers/virtual-servers-faq-image-templates.md
+          - include: ../virtual-servers/image-templates-faqs.md
       - topicgroup: 
           label: Troubleshooting
           topics: 
           - tbs-dism-image-boot.md 
-          
       
