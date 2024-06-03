@@ -1,23 +1,16 @@
 ---
 
 copyright:
-  years: 2014, 2023
-lastupdated: "2023-11-01"
+  years: 2014, 2024
+lastupdated: "2026-06-03"
 
-keywords: image template, image, import image, {{site.data.keyword.cloud}}, {{site.data.keyword.cloud_notm}}
+keywords: prepate image template, image, import image
 
 subcollection: image-templates
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:pre: .pre}
-{:screen: .screen}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Preparing and importing images
@@ -34,6 +27,9 @@ These instructions are specific to importing images to the image templates repos
 
 You must have an [IBM Cloud Object Storage instance](/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-account) that was ordered through the {{site.data.keyword.cloud_notm}} console to use this import feature. IBM Cloud Object Storage from control.softlayer.com is not supported.
 {: important}
+
+## Supported operating systems
+{: #supported-oses-image-templates}
 
 After images are imported as an image template, they can be used to provision or start an existing virtual server.  VHD and VMDK image imports are restricted to the following 64-bit operating systems:  
 
@@ -99,7 +95,7 @@ Complete the following steps to make sure that your own Windows custom image can
 
 1. Begin with a single image file in VHD format. Disable its firewall so that it moves smoothly through provisioning.
 
-2. Install the latest supported guest tools by using following steps.
+2. Install the latest supported guest tools by using the following steps.
     - Log in to the IBM Cloud VPN by using your {{site.data.keyword.cloud}} credentials and download the latest supported guest tools [here](http://downloads.service.networklayer.com/citrix/xen/citrix-vm-tools-9.1.5.zip){: external}.
     - Extract the compressed .zip file.
     - Go to the Windows Installer, for example, _managementagent64_, and double-click to open the **Citrix XenServer Windows Management Agent Setup** wizard. Complete the installation wizard to install XenServer Tools.
@@ -110,12 +106,11 @@ Complete the following steps to make sure that your own Windows custom image can
     Don't disable or remove the default guest additions that are installed on {{site.data.keyword.BluSoftlayer_notm}} supplied images.
     {: important}
 
-    If you want to make sure that the guest additions are working from the hypervisor point of view, you can [create a case](/docs/get-support?topic=get-support-open-case) and ask for XenTools virtual server validation.
+    If you want to make sure that the guest additions are working from the hypervisor point of view, you can [create a case](/docs/get-support?topic=get-support-     open-case) and ask for XenTools virtual server validation.
 
 3. Make sure that your image is cloud-init enabled.
     * For more information, see [cloudbase-init’s documentation](https://cloudbase-init.readthedocs.io/en/latest/index.html){: external}.
-    * For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the
-environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} Version 2 data source to supply the metadata.
+    * For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} Version 2 data source to supply the metadata.
 
 4. Windows images require the Cloudbase-init Metadata Service for public and private network support in {{site.data.keyword.cloud_notm}} infrastructure. You can access the service [here](https://github.com/softlayer/bluemix-cloudbase-init){: external}.
 
@@ -176,11 +171,6 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 {: caption="Table 1. Values for importing a custom image from IBM Cloud Object Storage" caption-side="top"}
 
 The following table shows extra fields that are applicable only to importing encrypted images by using the  {{site.data.keyword.cloud_notm}} console. For more information about encrypted images, see [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
-
-<!--
-To import an encrypted image, your account must have access to the End to End (E2E) Encryption feature. To enable your account for E2E Encryption, contact [Support](/docs/get-support?topic=get-support-using-avatar#getting-customer-support).
-{: tip}
--->
 
 | Field | Value |
 | ----- | ----- |
