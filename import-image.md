@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2026-06-03"
+lastupdated: "2026-06-04"
 
 keywords: prepate image template, image, import image
 
@@ -20,10 +20,8 @@ You use the Image Templates screen in the {{site.data.keyword.cloud}} console to
 {: shortdesc}
 
 You must have an upgraded account to import images from {{site.data.keyword.cos_full_notm}}. For more information, see [Switching to IBMid and linking accounts](/docs/account?topic=account-account-getting-started).
-{: tip}
 
 These instructions are specific to importing images to the image templates repository for classic infrastructure. These instructions do not apply to {{site.data.keyword.vpc_short}} infrastructure. 
-{: note}
 
 You must have an [IBM Cloud Object Storage instance](/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-account) that was ordered through the {{site.data.keyword.cloud_notm}} console to use this import feature. IBM Cloud Object Storage from control.softlayer.com is not supported.
 {: important}
@@ -36,7 +34,7 @@ After images are imported as an image template, they can be used to provision or
 * CentOS 7 and 8
 * Debian 9 and 10
 * Windows Server Standard 2012, 2012 R2, 2016, and 2019
-* RedHat Enterprise Linux 7 and 8
+* RHEL 7, 8 and 9
 * Ubuntu 18.04 and Ubuntu 20.04
 
 Imports are limited to 100 GB disks. Only the boot volume is imported, not secondary disks. Imported images must be named according to the following example: filename.vhd-0.vhd or filename.vmdk-0.vmdk
