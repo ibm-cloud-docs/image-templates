@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-02-17"
+  years: 2017, 2023
+lastupdated: "2023-03-29"
 
 keywords: image templates
 
@@ -10,9 +10,7 @@ subcollection: image-templates
 
 ---
 
-{:shortdesc: .shortdesc}
-{:note: .note}
-{:new_window: target="_blank"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting started with image templates
 {: #getting-started-with-image-templates}
@@ -45,19 +43,18 @@ Public images are pre-configured virtual servers that are posted by {{site.data.
 
 Complete the following steps to create an image template of a virtual server.
 
-1. Go to your console's device menu and make sure that you have the correct account permissions to complete the tasks.
+Image template automation doesn't support software add-ons. You need to remove the add-on software to create an image template.
+{: important}
+
+1. Go to the console device menu and make sure that you have the correct account permissions to complete the tasks.
 2. From the **Devices** menu, select **Device List**.
 3. Click the virtual server that you want to use to create an image template.
+4. Check the **Passwords** tab of the **Device Details** page. Make sure that any passwords that are listed on the **Device Details** page match the actual operating system passwords and any other software add-on passwords. If passwords do not match, virtual servers that are created from this image template fail.
+5. From the **Actions** menu, select **Create Image Template** and complete the fields.
 
-    Check the **Passwords** tab of the **Device Details** page. Ensure that any passwords listed on the **Device Details** page match the actual operating system passwords and any other software add-on passwords. If passwords do not match, virtual servers that are created from this image template fail.
-    {: tip}
-
-4. From the **Actions** menu, select **Create Image Template** and complete the required fields.
-
-For more information, see [**Creating an image template**](/docs/image-templates?topic=image-templates-creating-an-image-template).
+For more information about creating image templates, see [**Creating an image template**](/docs/image-templates?topic=image-templates-creating-an-image-template).
 
 ## Next steps
 {: #next-steps}
 
 After the image template is created, you can [order more virtual servers](/docs/image-templates?topic=image-templates-ordering-an-instance-from-an-image-template) based on the template. Your new virtual servers have the same configurations that are included in the image template.
-
