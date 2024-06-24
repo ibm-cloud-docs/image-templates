@@ -16,7 +16,7 @@ subcollection: image-templates
 {:external: target="_blank" .external}
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
-<!-- Common attributes used in the template are defined as follows: -->
+
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}

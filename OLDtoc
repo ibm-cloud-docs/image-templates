@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="image-templates" version="2" audience="service" href="/docs/image-templates?topic=image-templates-getting-started-with-image-templates" path="infrastructure/image-templates/"}
+{: .toc subcollection="image-templates" version="2" audience="service" href="/docs/image-templates?topic=image-templates-getting-started-with-image-templates" path="image-templates"}
 Image Templates for Classic
 
     {: .navgroup id="learn"}
@@ -31,7 +31,7 @@ Image Templates for Classic
     image-template-api-reference.md
     import-image-icos-gov.md
     {: .navgroup-end}
-
+    
     {: .navgroup id="help"}
     get-help-and-support.md
     [FAQs: Image Templates](/virtual-servers/virtual-servers-faq-image-templates)

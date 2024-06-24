@@ -9,13 +9,11 @@ toc:
     product-page: "https://www.ibm.com/cloud/virtual-servers"
     path: image-templates
     label: Image Templates for Classic 
-
   entries: 
   - navgroup: 
       id: learn
       topics:
        - image_index.md
-          
   - navgroup: 
       id: howto
       topics:
@@ -34,12 +32,10 @@ toc:
           - provision-encrypted-image.md
           - create-encrypted-image.md
           - import-encrypted-image-api.md        
-
   - navgroup:
       id: reference
       topics: 
       - image-template-api-reference.md
-
   - navgroup:
       id: help
       topics: 
@@ -52,4 +48,3 @@ toc:
           label: Troubleshooting
           topics: 
           - tbs-dism-image-boot.md 
-      

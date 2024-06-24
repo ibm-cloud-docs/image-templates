@@ -49,7 +49,7 @@ Complete the following steps to create an image template of a virtual server.
 6. Select the **Agree** checkbox when all information is entered.
 7. Click **Create Template** to create the image template.
 
-Your server is offline until the imaging process completes. The image template processing time varies based on the resources that are available on the physical host and how much data is captured in the image template. 
+Your server is offline until the imaging process completes. The image template processing time varies based on the resources that are available on the physical host and how much data is captured in the image template.
 {: note}
 
 ## Next steps
