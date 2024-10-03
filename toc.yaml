@@ -6,7 +6,7 @@ toc:
     audience: service
     href: /docs/image-templates
     console-page: "/classic"
-    product-page: "https://www.ibm.com/cloud/virtual-servers"
+    product-page: "https://www.ibm.com/products/virtual-servers-classic"
     path: image-templates
     label: Image Templates for Classic 
   entries: 
