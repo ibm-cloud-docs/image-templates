@@ -166,7 +166,7 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 | Cloud-init | If the image that you are importing is cloud-init enabled, select this checkbox. If you are importing an image that is on a cloud-init enabled Windows operating system and you select this option, you cannot concurrently select **Your License**. If you are importing an encrypted image, this option is selected by default and not editable because your encrypted image must be cloud-init enabled. |
 | Encryption | If you are importing an image that you have encrypted with your own data encryption key by using the vhd-util tool, select this checkbox. |
 
-{: caption="Table 1. Values for importing a custom image from IBM Cloud Object Storage" caption-side="top"}
+{: caption="Values for importing a custom image from IBM Cloud Object Storage" caption-side="top"}
 
 The following table shows extra fields that are applicable only to importing encrypted images by using the  {{site.data.keyword.cloud_notm}} console. For more information about encrypted images, see [Using End to End (E2E) Encryption to provision an encrypted instance](/docs/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance#using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance).
 
@@ -175,7 +175,7 @@ The following table shows extra fields that are applicable only to importing enc
 | Wrapped Data Encryption Key | When you import an encrypted image, specify the ciphertext that is associated with the wrapped data encryption key (DEK) that is produced by wrapping the DEK you used to encrypt your image. For more information, see **Wrapping keys** using either the [{{site.data.keyword.keymanagementservicelong}} API](/docs/key-protect?topic=key-protect-cli-reference#kp-key-command) or the [{{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} API](/docs/hs-crypto?topic=hs-crypto-wrap-keys#wrap-keys-api). |
 | Key Management Service Instance | Select a key management service instance in your account from the drop-down list (either the Key Protect service or the Hyper Protect Crypto service). The key management service instance must include the customer root key that you used to wrap your data encryption key. |
 | Key Name | Select the name of the root key within the key management service instance that you used to wrap your data encryption key. For more information, see [Viewing keys in Key Protect](/docs/key-protect?topic=key-protect-view-keys#view-keys) or [Viewing keys in Hyper Protect Crypto](/docs/key-protect?topic=key-protect-view-keys#view-keys). |
-{: caption="Table 2. Values for importing an encrypted image from IBM Cloud Object Storage" caption-side="top"}
+{: caption="Values for importing an encrypted image from IBM Cloud Object Storage" caption-side="top"}
 
 ## Next Steps
 {: #ns-image-prep}
