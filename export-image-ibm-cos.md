@@ -62,7 +62,7 @@ available, see [Creating an Image Template](/docs/image-templates?topic=image-te
 | Location | Select the specific geographic region where you want the image template stored. |
 | Bucket | Select the {{site.data.keyword.cos_full_notm}} bucket where you want the image template stored. Only buckets that exist in the regional location that you selected are valid. An error message is displayed if you specify a bucket that doesn't exist in the selected location. |
 | API Key | Specify the service ID API key that has write access to {{site.data.keyword.cos_full_notm}}. For more information, see [Managing service ID API keys](/docs/account?topic=account-serviceidapikeys#serviceidapikeys). |
-{: caption="Table 1. Values for exporting an image to {{site.data.keyword.cos_full_notm}}" caption-side="top"}
+{: caption="Values for exporting an image to {{site.data.keyword.cos_full_notm}}" caption-side="top"}
 | Target file type | Select the file type that you want to export. If you imported a VMDK image, you can export that image in VHD or VMDK format. If the file was originally in VHD format, you can export only as VHD. |
 
 ## Next Steps

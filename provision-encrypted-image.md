@@ -42,7 +42,7 @@ E2E Encryption brings together several {{site.data.keyword.cloud}} components to
 | ----- | ----- |
 | [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect/concepts?topic=key-protect-getting-started-tutorial#getting-started-tutorial) | FIPS 140-2 *Level 3* compliance |
 | [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started#get-started) | FIPS 140-2 *Level 4* compliance |
-{: caption="Table 1. Available key management service options" caption-side="top"}
+{: caption="Available key management service options" caption-side="top"}
 
 ## Preparing your environment
 
