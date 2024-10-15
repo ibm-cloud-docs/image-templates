@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "title": "Image Templates for Classic",
+  "introduction": "With IBM Cloud® Classic infrastructure image templates, you can capture an image of a virtual server to quickly replicate its configuration with minimal changes in the order process. Image templates provide an imaging option for all Virtual Servers, regardless of operating system. Image templates are not compatible with bare metal servers.",
+  "product_page": "https://www.ibm.com/products/virtual-servers-classic",
+  "console_page": "/classic",
+  "section_topics": {
+    "links": [
+      {
+        "title": "Getting started with image templates",
+        "href": "/docs/image-templates?topic=image-templates-getting-started-with-image-templates"
+      },
+      {
+        "title": "Managing images from the Image Templates page",
+        "href": "/docs/image-templates?topic=image-templates-managing-images-from-the-image-templates-page"
+      },
+      {
+        "title": "Creating an image template",
+        "href": "/docs/image-templates?topic=image-templates-creating-an-image-template"
+      },
+      {
+        "title": "Provisioning with a cloud-init enabled image",
+        "href": "/docs/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image"
+      },
+      {
+        "title": "Using End to End (E2E) Encryption to provision an encrypted instance",
+        "href": "/docs/image-templates?topic=image-templates-using-end-to-end-e2e-encryption-to-provision-an-encrypted-instance"
+      },
+      {
+        "title": "FAQs: Image templates",
+        "href": "/docs/image-templates?topic=image-templates-faq-image-templates"
+      }
+    ]
+  },
+    "section_devtools": {
+    "api": "/docs/image-templates?topic=image-templates-image-template-api-reference"
+  }
+}
