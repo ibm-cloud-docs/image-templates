@@ -32,7 +32,18 @@
       }
     ]
   },
+  "section_highlights": [
+    {
+      "title": "IBM Cloud Virtual Servers on IBM Cloud Classic Infrastructure ",
+      "description": "Public, dedicated, reserved and transient “spot” virtual servers with Intel Xeon processors.",
+      "href": "https://www.ibm.com/products/virtual-servers-classic",
+      "type": "blog"
+    {
+  ],   
   "section_devtools": {
     "api": "/docs/image-templates?topic=image-templates-image-template-api-reference"
-  }
+  },
+  "section_updates": {
+    "view_more": "/docs/virtual-servers?topic=virtual-servers-release-notes"
+  }  
 }
