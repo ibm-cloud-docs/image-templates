@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2023
-lastupdated: "2023-10-11"
+  years: 2014, 2023, 2024
+lastupdated: "2024-12-18"
 
 keywords:
 
@@ -18,12 +18,14 @@ subcollection: image-templates
 
 On the **Image templates** page, you can provision a virtual server instance from an image template. If the operating system of the image is end-of-life (EOL) or end-of-support (EOS), it cannot be used for virtual server provisioning. You can deploy a virtual server from images with the following operating systems:
 
-CentOS 7.x
-Debian 10, 11
-Redhat 7.x, 8.x, 9.x
-Rocky Linux 8
-Ubuntu 20, 22
-Microsoft Windows 2016, 2019, 2022
+* CentOS
+* Debian
+* Red Hat Enterprise Linux (RHEL)
+* Rocky Linux
+* Ubuntu
+* Microsoft Windows Server
+
+To see which versions of the operating system are supported and their end of support dates, go to [Lifecycle for operating systems and add-ons](/docs/bare-metal?topic=bare-metal-product-lifecycle-classic).
 
 {: shortdesc}
 
