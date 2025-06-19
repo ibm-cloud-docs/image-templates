@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-05-20"
+  years: 2019, 2025
+lastupdated: "2025-06-18"
 
 keywords: VHD image file, encryption, encrypted image, image
 
@@ -10,14 +10,7 @@ subcollection: image-templates
 
 ---
 
-{:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:external: target="_blank" .external}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:tip: .tip}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Encrypting VHD images
