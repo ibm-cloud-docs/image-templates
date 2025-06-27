@@ -8,13 +8,13 @@ toc:
     console-page: "/classic"
     product-page: "https://www.ibm.com/products/virtual-servers-classic"
     path: image-templates
-    label: Image Templates for Classic 
-  entries: 
-  - navgroup: 
+    label: Image Templates for Classic
+  entries:
+  - navgroup:
       id: learn
       topics:
        - image_index.md
-  - navgroup: 
+  - navgroup:
       id: howto
       topics:
       - access-image-templates-screen.md
@@ -26,25 +26,28 @@ toc:
       - boot-vsi-image.md
       - image_cloud-init.md
       - use-red-hat-cloud-access.md
-      - topicgroup: 
+      - topicgroup:
+          id: e2e-provisioning
           label: Using end-to-end encryption to provision
-          topics: 
+          topics:
           - provision-encrypted-image.md
           - create-encrypted-image.md
-          - import-encrypted-image-api.md        
+          - import-encrypted-image-api.md
   - navgroup:
       id: reference
-      topics: 
+      topics:
       - image-template-api-reference.md
   - navgroup:
       id: help
-      topics: 
+      topics:
       - get-help-and-support.md
-      - topicgroup: 
-          label: Image Templates FAQs
-          topics: 
+      - topicgroup:
+          id: image-template-faq
+          label: Image templates FAQ
+          topics:
           - include: ../virtual-servers/image-templates-faqs.md
-      - topicgroup: 
+      - topicgroup:
+          id: troubleshooting
           label: Troubleshooting
-          topics: 
-          - tbs-dism-image-boot.md 
+          topics:
+          - tbs-dism-image-boot.md
