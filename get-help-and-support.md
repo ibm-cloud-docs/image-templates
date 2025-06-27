@@ -1,20 +1,18 @@
 ---
 
-
-
 copyright:
   years: 2017, 2025
 lastupdated: "2025-06-27"
 
 keywords:
 
-subcollection: repo-name
+subcollection: imate-templates
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting help and support for _serviceName_
+# Getting help and support for image templates
 {: #help-and-support}
 
 If you experience an issue or have questions when using _serviceName_, you can use the following resources before you open a support case.
