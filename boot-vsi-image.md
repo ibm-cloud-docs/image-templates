@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-06-03"
+  years: 2014, 2026
+lastupdated: "2026-10-15"
 
 keywords:
 
@@ -50,5 +50,4 @@ Use the following steps to start a virtual server from an image.
 ## Next Steps
 {: #ns-boot-vsi}
 
-After you initiate the boot process, the image is powered off and then started by using the selected image. Boot time varies, as the size and type of
-each image varies. After the virtual server is started by using the selected image, it can be accessed as a regularly booted device, but is configured according to the image. Restart the virtual server to power down and return the device to its original state.
+After you initiate the boot process, the image is powered off and then started by using the selected image. Boot time varies. After the virtual server starts by using the selected image, it can be accessed as a regularly booted device, but is configured according to the image. Restart the virtual server to return the device to its original state.
