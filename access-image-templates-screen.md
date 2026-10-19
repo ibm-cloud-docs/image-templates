@@ -27,7 +27,7 @@ First, go to the device menu and make sure that you have the correct account per
 * Go to your console's device menu. For more information, see [Navigating to devices](/docs/virtual-servers?topic=virtual-servers-navigating-devices).
 * Make sure that you have any necessary account permissions and device access. Only the account owner or a user with the **Manage Users** Classic infrastructure permission, can adjust the permissions.
 
-For more information about permissions, see [Classic infrastructure permissions](/docs/virtual-servers?topic=virtual-servers-mngclassicinfra).
+For more information about permissions, see [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
 
 ## Managing images from the Image Templates page
 {: #managing-images-from-the-image-templates-page_steps}
