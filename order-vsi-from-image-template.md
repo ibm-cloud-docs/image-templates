@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2023, 2024
-lastupdated: "2024-12-18"
+  years: 2014, 2026
+lastupdated: "2026-10-20"
 
 keywords:
 
@@ -34,10 +34,10 @@ To see which versions of the operating system are supported and their end of sup
 
 First, go to the device menu and make sure that you have the correct account permissions to complete the tasks.
 
-* Go to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
+* Go to your console's device menu.
 * Make sure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
 
-For more information about permissions, see [Classic infrastructure permissions](/docs/account?topic=account-infrapermission#infrapermission) and [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
+For more information about permissions, see [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
 
 ## Ordering an instance from an image template
 {: #ordering-an-instance-from-an-image-template_steps}
@@ -49,7 +49,7 @@ Use the following steps to order an instance from an image template.
 3. On the _Configure your Cloud Server_ page, complete all of the relevant information.
 4. Click **Add to Order** to continue.
 5. On the _Checkout_ page, complete any advanced system configuration.
-6. Click the **Cloud Service terms** and the **Third-Party Service Agreement** check boxes.
+6. Click the **Cloud Service terms** and the **Third-Party Service Agreement** checkboxes.
 7. Confirm or enter your payment information and click **Submit Order**. You are redirected to a screen with your provisioning order number. You can print the screen because it's also your provisioning order receipt.
 
 You receive an email when your instance is provisioned.
