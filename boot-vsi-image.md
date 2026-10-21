@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-06-03"
+  years: 2014, 2026
+lastupdated: "2026-10-19"
 
 keywords:
 
@@ -26,10 +26,10 @@ Booting a virtual server from an image brings the device online safely so that i
 
 First, go to the device menu and make sure that you have the correct account permissions to complete the tasks.
 
-* Go to your console's device menu. For more information, see [Navigating to devices](//docs/virtual-servers?topic=virtual-servers-navigating-devices).
+* Go to your console's device menu. For more information, see [Navigating to devices](/docs/virtual-servers?topic=virtual-servers-navigating-devices).
 * Make sure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage users** classic infrastructure permission, can adjust the permissions.
 
-For more information about permissions, see [Classic infrastructure permissions](/docs/virtual-servers?topic=virtual-servers-mngclassicinfra).
+For more information about permissions, see [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
 
 ## Booting a virtual server instance from an image
 {: #booting-a-vsi-from-an-image_steps}
@@ -50,5 +50,4 @@ Use the following steps to start a virtual server from an image.
 ## Next Steps
 {: #ns-boot-vsi}
 
-After you initiate the boot process, the image is powered off and then started by using the selected image. Boot time varies, as the size and type of
-each image varies. After the virtual server is started by using the selected image, it can be accessed as a regularly booted device, but is configured according to the image. Restart the virtual server to power down and return the device to its original state.
+After you initiate the boot process, the image is powered off and then started by using the selected image. Boot time varies. After the virtual server starts by using the selected image, it can be accessed as a regularly booted device, but is configured according to the image. Restart the virtual server to return the device to its original state.

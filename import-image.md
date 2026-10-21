@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-28"
+  years: 2014, 2026
+lastupdated: "2026-10-20"
 
 keywords: prepate image template, image, import image
 
@@ -41,7 +41,7 @@ Imports are limited to 100 GB disks. Only the boot volume is imported, not secon
 ## ISO templates
 {: #iso-templates}
 
-{{site.data.keyword.cloud_notm}} Supported operating systems can be used only to load an ISO Template onto a virtual server instance. For a list of supported operating systems, see [Supported operating systems for IBM Cloud virtual servers](/docs/bare-metal?topic=bare-metal-about-software&locale=en#supported-operating-systems-for-ibm-cloud-virtual-servers)
+{{site.data.keyword.cloud_notm}} supported operating systems can be used only to load an ISO template onto a virtual server instance. For a list of supported operating systems, see [Lifecycle for operating systems and add-ons](/docs/bare-metal?topic=bare-metal-product-lifecycle-classic).
 
 ISOs that are imported by using this tool must be bootable in order for the image to be eligible for import.
 
@@ -70,16 +70,11 @@ Guest additions are used for reporting performance and health of virtual server 
 Don't disable or remove the default guest additions that are installed on {{site.data.keyword.BluSoftlayer_notm}} supplied images.
 {: important}
 
-* The latest supported guest tools must be installed. Complete the following steps to install guest tools.
-   1. Download the [Linux Guest Tool package](http://downloads.service.networklayer.com/citrix/xen/CitrixHypervisor-LinuxGuestTools-7.20.0-1.tar.gz){: external}.
+* The most recently supported guest tools must be installed. Complete the following steps to install guest tools.
+   1. Download the [Linux Guest Tool package](https://docs.citrix.com/us/en/linux-virtual-delivery-agent/2206/installation-overview/use-mcs-to-create-linux-vms.html){: external}.
    2. Extract the package and follow the directions that are in the `README.txt`.
 
 * Make sure that your image is cloud-init enabled.
-
-   * For more information about cloud-init, see the [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/){: external}.
-   * For more information about cloud-init enabled images, see [Provisioning with a cloud-init enabled image](/docs/image-templates?topic=image-templates-provisioning-with-a-cloud-init-enabled-image#provisioning-with-a-cloud-init-enabled-image).
-   * For more information about cloud-init data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config drive](https://cloudinit.readthedocs.io/en/latest/reference/datasources/configdrive.html){: external} Version 2 data source to supply the metadata.
-   * Linux images require Cloud-init version 0.7.7 or greater.
 
 ### Next steps
 {: #next-steps-guest-addtions}
@@ -93,9 +88,9 @@ Complete the following steps to make sure that your own Windows custom image can
 
 1. Begin with a single image file in VHD format. Disable its firewall so that it moves smoothly through provisioning.
 
-2. Install the latest supported guest tools by using the following steps.
+2. Install the most recently supported guest tools by using the following steps.
 
-   * Log in to the IBM Cloud VPN by using your {{site.data.keyword.cloud}} credentials and download the latest supported guest tools [here](http://downloads.service.networklayer.com/citrix/xen/citrix-vm-tools-9.1.5.zip){: external}.
+   * Log in to the IBM Cloud VPN by using your {{site.data.keyword.cloud}} credentials and download the most recently supported guest tools [Citrix downloads](https://www.citrix.com/downloads/?srsltid=AU7gw4XzYPQSVovQmbxb4Koo7lulNr7Xy9QWJDK2NwqjnBLdnwggv4eR){: external}.
    * Extract the compressed file.
    * Go to the Windows Installer, for example, _managementagent64_, and double-click to open the **Citrix XenServer Windows Management Agent set up** wizard. Complete the installation wizard to install XenServer Tools.
 
@@ -105,11 +100,9 @@ Complete the following steps to make sure that your own Windows custom image can
    Don't disable or remove the default guest additions that are installed on {{site.data.keyword.BluSoftlayer_notm}} supplied images.
    {: important}
 
-   If you want to make sure that the guest additions are working from the hypervisor point of view, you can [create a support case](/docs/get-support?topic=get-support-open-case) and ask for XenTools virtual server validation.
+   If you want to make sure that the guest additions are working from the hypervisor point of view, you can [create a support case](//docs/image-templates?topic=image-templates-help-and-support) and ask for XenTools virtual server validation.
 
-3. Make sure that your image is cloud-init enabled.
-   * For more information, see [cloudbase-init’s documentation](https://cloudbase-init.readthedocs.io/en/latest/index.html){: external}.
-   * For more information about data sources, see [Data sources](http://cloudinit.readthedocs.io/en/latest/topics/datasources.html){: external}. {{site.data.keyword.cloud_notm}} cloud-init images are created for the environment by using the [Config Drive](http://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html){: external} Version 2 data source to supply the metadata.
+3. Make sure that your image is cloud-init enabled. For more information, see [cloudbase-init’s documentation](https://cloudbase-init.readthedocs.io/en/latest/index.html){: external}
 
 4. Windows images require the Cloudbase-init metadata service for public and private network support in {{site.data.keyword.cloud_notm}} infrastructure. You can access the service from [the bluemix cloudbase init GitHub repo](https://github.com/softlayer/bluemix-cloudbase-init){: external}.
 
@@ -129,7 +122,7 @@ When your image is ready, you can upload it to {{site.data.keyword.cos_full_notm
 1. In {{site.data.keyword.cos_full_notm}}, go to your bucket and select **Upload > Files** to [upload](/docs/cloud-object-storage?topic=cloud-object-storage-upload) the image.
 2. Use the [Aspera](/docs/cloud-object-storage?topic=cloud-object-storage-aspera) high-speed transfer plug-in for the fastest upload speeds of your image.
 
-You can use Cloud Object Storage SDK with Aspera to initiate high-speed transfer within your custom applications when you use Java, Python, or NodeJS. For more information, see [Using Libraries and SDKs](/docs/cloud-object-storage?topic=cloud-object-storage-aspera#aspera-sdk).
+You can use Cloud Object Storage SDK with Aspera to initiate high-speed transfer within your custom applications when you use Java, Python, or NodeJS.
 {: tip}
 
 ## Importing an image from IBM Cloud Object Storage
@@ -139,10 +132,10 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
 
 1. Go to the device menu and make sure that you have the correct account permissions to complete the tasks.
 
-   * Go to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
+   * Go to your console's device menu.
    * Make sure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** Classic infrastructure permission, can adjust the permissions.
 
-   For more information about permissions, see [Classic infrastructure permissions](/docs/account?topic=account-infrapermission#infrapermission) and [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
+   For more information about permissions, see [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
 
    You might need to check your Windows firewall settings to make sure that you can import an image from {{site.data.keyword.cos_full_notm}}.
    {: tip}
@@ -153,7 +146,7 @@ Complete the following steps to import an image from {{site.data.keyword.cos_ful
    | Field | Value |
    | ----- | ----- |
    | Image name | Specify a descriptive name for your new image. This image is the image that you use to provision your virtual server instances. |
-   | IBM Cloud API Key | Specify the API key that gives access to your {{site.data.keyword.cos_full_notm}} service instance. This key is the object storage service _Service Credentials_ API key. When you import an encrypted image, the API Key must also have access to your key management service instance. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. For more information, see [Working with API keys](/docs/account?topic=account-manapikey#manapikey). |
+   | IBM Cloud API Key | Specify the API key that gives access to your {{site.data.keyword.cos_full_notm}} service instance. This key is the object storage service _Service Credentials_ API key. When you import an encrypted image, the API Key must also have access to your key management service instance. The API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key. |
    | Notes | Add any notes that are related to the image that might be helpful to users. |
    |Cloud Object Storage service instance | Select the {{site.data.keyword.cos_full_notm}} service instance where the image that you want to import is stored.|
    | Location | Select the specific geographic region where your image is stored. You can import images into the following regions and associated data centers: US-South (DAL13), US-East (WDC07), EU-Great Britain (LON02), EU-Germany (FRA02), AP-Japan, and AU-Sydney. After the image is imported to one of the data centers that are listed, you can move it to another data center. |
@@ -172,7 +165,7 @@ The following table shows extra fields that are applicable only to importing enc
 
 | Field | Value |
 | ----- | ----- |
-| Wrapped Data Encryption Key | When you import an encrypted image, specify the ciphertext that is associated with the wrapped data encryption key (DEK) that is produced by wrapping the DEK you used to encrypt your image. For more information, see **Wrapping keys** by using either the [{{site.data.keyword.keymanagementservicelong}} API](/docs/key-protect?topic=key-protect-cli-reference#kp-key-command) or the [{{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} API](/docs/hs-crypto?topic=hs-crypto-wrap-keys#wrap-keys-api). |
+| Wrapped Data Encryption Key | When you import an encrypted image, specify the ciphertext that is associated with the wrapped data encryption key (DEK) that is produced by wrapping the DEK you used to encrypt your image. For more information, see **Wrapping keys** by using either the {{site.data.keyword.keymanagementservicelong}} API or by the [{{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} API](/docs/hs-crypto?topic=hs-crypto-wrap-keys#wrap-keys-api). |
 | Key Management Service Instance | Select a key management service instance in your account from the drop-down list (either the Key Protect service or the Hyper Protect Crypto service). The key management service instance must include the customer root key that you used to wrap your data encryption key. |
 | Key name | Select the name of the root key within the key management service instance that you used to wrap your data encryption key. For more information, see [Viewing keys in Key Protect](/docs/key-protect?topic=key-protect-view-keys#view-keys) or [Viewing keys in Hyper Protect Crypto](/docs/key-protect?topic=key-protect-view-keys#view-keys). |
 {: caption="Values for importing an encrypted image from IBM Cloud Object Storage" caption-side="top"}

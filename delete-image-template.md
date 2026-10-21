@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2021
-lastupdated: "2021-05-20"
+  years: 2014, 2026
+lastupdated: "2026-10-19"
 
 keywords:
 
@@ -10,8 +10,7 @@ subcollection: image-templates
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Deleting an image template
 {: #deleting-an-image-template}
@@ -24,10 +23,10 @@ Standard image templates can be deleted at any time after they are created.
 
 First, go to the device menu and make sure that you have the correct account permissions to complete the tasks.
 
-* Go to your console's device menu. For more information, see [Navigating to devices](/docs/image-templates?topic=virtual-servers-navigating-devices).
+* Go to your console's device menu.
 * Make sure that you have any necessary account permissions and device access. Only the account owner, or a user with the **Manage Users** classic infrastructure permission, can adjust the permissions.
 
-For more information about permissions, see [Classic infrastructure permissions](/docs/account?topic=account-infrapermission#infrapermission) and [Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
+For more information about permissions, see {Managing device access](/docs/virtual-servers?topic=virtual-servers-managing-device-access).
 
 ## Deleting an image template
 {: #deleting-an-image-template_steps}
