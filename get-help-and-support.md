@@ -18,7 +18,7 @@ subcollection: image-templates
 If you experience an issue or have questions when you use _serviceName_, you can use the following resources before you open a support case.
 {: shortdesc}
 
-* Troubleshoot with [{{site.data.keyword.paver_full}}](http://cloud.paver.ibm.com){: external}. {{site.data.keyword.paver}} is an embedded AI operator that understands your account context, creates a resolution plan, and runs changes on your behalf. Paver always requires your approval before it touches your live environment.
+* Troubleshoot with [{{site.data.keyword.paver_full}}](http://paver.cloud.ibm.com){: external}. {{site.data.keyword.paver}} is an embedded AI operator that understands your account context, creates a resolution plan, and runs changes on your behalf. Paver always requires your approval before it touches your live environment.
 * Review the [FAQs](/docs/linktoyourfaqtopic) in the product documentation.
 * Review the [troubleshooting documentation](/docs/linktoyourfirsttroubleshootingtopic) to troubleshoot and resolve common issues.
 * Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](/status){: external}.
